@@ -9,7 +9,6 @@ class Controls {
         this.boost = false;
         this.fire = false;
         this.sword = false
-
     }
 
     up_update()    { this.up    = game.input.keyboard.isDown(Phaser.Keyboard.W); }
@@ -28,10 +27,5 @@ class Controls {
         this.boost_update();
         this.fire_update();
         this.sword_update();
-
-        //console.log("UP: "+ this.up + " DOWN: " + this.down + " LEFT: " + this.left + " RIGHT: " + this.right + " BOOST: " + this.boost);
     }
-
-
-
 }

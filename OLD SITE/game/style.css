@@ -1,0 +1,36 @@
+body{
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+pre{
+	font-size: 10px;
+}
+
+#ascii{
+	text-align: left;
+	margin: 0 auto;
+	width:450px;
+}
+
+
+.columns{
+	outline-style: solid;
+	outline-width: 1px;	
+	outline-offset: -2px;
+	height: 300px;
+}
+
+button[disabled]{
+	background-color: #ddd;
+	color:lightgray;
+}
+
+button{
+	margin: 4px;
+}
+
+#right-column button:first-of-type{
+	margin-top:8px;
+}

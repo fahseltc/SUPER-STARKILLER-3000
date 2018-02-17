@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+	<head>	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<title>Hobo Sim</title>
+	</head>
+	<body>	
+		<div id="ascii">
+			<pre id="header">
+ __    __   ______   _______    ______          ______   ______  __       __ 
+|  \  |  \ /      \ |       \  /      \        /      \ |      \|  \     /  \
+| $$  | $$|  $$$$$$\| $$$$$$$\|  $$$$$$\      |  $$$$$$\ \$$$$$$| $$\   /  $$
+| $$__| $$| $$  | $$| $$__/ $$| $$  | $$      | $$___\$$  | $$  | $$$\ /  $$$
+| $$    $$| $$  | $$| $$    $$| $$  | $$       \$$    \   | $$  | $$$$\  $$$$
+| $$$$$$$$| $$  | $$| $$$$$$$\| $$  | $$       _\$$$$$$\  | $$  | $$\$$ $$ $$
+| $$  | $$| $$__/ $$| $$__/ $$| $$__/ $$      |  \__| $$ _| $$_ | $$ \$$$| $$
+| $$  | $$ \$$    $$| $$    $$ \$$    $$       \$$    $$|   $$ \| $$  \$ | $$
+ \$$   \$$  \$$$$$$  \$$$$$$$   \$$$$$$         \$$$$$$  \$$$$$$ \$$      \$$
+
+				   _
+				    \________
+				 ~   \######/       
+				  ~   |####/
+				 ~    |____.
+				______o____o__________ 
+			</pre>
+		</div>		
+
+		<div class="col-md-4 columns" id="left-column">
+			<div id="hungerArea">
+			<h3>Hunger</h3>
+				<div class="progress" id="hungerBarOuter">				
+			  		<div class="progress-bar progress-bar-danger" id="hungerBarInner" role="progressbar"
+			  		aria-valuemin="0" aria-valuemax="100" style="width:50%">
+			  		50%		    
+			  		</div>
+				</div>
+			</div><!-- END HUNGER AREA -->
+
+			<div id="drunkArea">
+			<h3>Drunkardness</h3>
+				<div class="progress" id="drunkBarOuter" data-toggle="tooltip" title="Keep drunkardness between 40 and 80 for a bonus to can rate">
+				
+				  	<div class="progress-bar progress-bar-danger" id="drunkBarInner" role="progressbar"
+				  	aria-valuemin="0" aria-valuemax="100" style="width:50%">
+				  	50%		    
+			  		</div>
+				</div>		
+			</div><!-- END DRUNK AREA -->
+		</div><!-- END LEFT COLUMN -->
+
+
+		
+		<div class="col-md-4 columns" id="center-column">
+			<h5><span id="messageLog">You are homeless</span><h5>
+			<button onClick="beg()" data-toggle="tooltip" title="10% chance for 1&cent, 5% chance for 5&cent">Beg</button>
+			<button onClick="pushCart()" id="pushCartButton" data-toggle="tooltip" title="Chance to find a can: 70%">Push Cart</button>
+			<button onClick="sellCans()" data-toggle="tooltip" title="Cans sell for 2&cent each">Sell Cans</button> 
+
+			<h1>Cans: <span id="canAmount">0</span> / <span id="cartSize">20</span></h1>
+					
+			<h1>Money: <span id="money">$0.00</span></h1>
+
+			
+		</div> <!-- END CENTER COLUMN -->
+
+		<div class="col-md-4 columns" id="right-column">
+			<button id="buyRamen"onClick="buyRamen()" disabled="true" data-toggle="tooltip" title="Restores 30% Hunger">Buy Ramen for 30&cent</button>
+			<br/>
+			<button id="buyBeer" onClick="buyBeer()" disabled="true" data-toggle="tooltip" title="Now with 30% more Drunkardness!">Buy Beer for 67&cent</button> 
+			<button id="buyCartUpgrade" onClick="upgradeCart()" disabled="true" data-toggle="tooltip" title="Increases Can Capacity by 20">Buy a bigger cart for $1.00</button>
+		</div>
+			
+		
+		<script type="text/javascript" src="game.js"></script>
+		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>	
+		<script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
