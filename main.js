@@ -1,4 +1,3 @@
-
 var conf = {
     width: 1400,
     height: 900,

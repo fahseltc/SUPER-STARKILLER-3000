@@ -68,7 +68,6 @@ class Mecha {
         game.physics.enable(this.sword_hitbox, Phaser.Physics.ARCADE);
         this.sprite.addChild(this.sword_hitbox)
 
-
         // group bullets
         this.attack_group = game.add.group();
         this.attack_group.add(this.bullets);
