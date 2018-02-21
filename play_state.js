@@ -18,7 +18,7 @@ var play_state = {
     },
 
     update: function() {
-        game.physics.arcade.overlap(this.mecha.new_sword, this.enemy_manager.bad_guys, this.handle_collision, null, this);
+        game.physics.arcade.overlap(this.mecha.circle_weapon.sprite, this.enemy_manager.bad_guys, this.handle_collision, null, this);
         game.physics.arcade.overlap(this.mecha.bullets, this.enemy_manager.bad_guys, this.handle_collision, null, this);
 
         this.controls.update();
@@ -42,7 +42,7 @@ var play_state = {
             this.score.score_buffer += 5;
             this.enemy_manager.spawn = true;
         }
-        if((obj.key == 'sword_long') && (enemy.key == 'blue')) {
+        if((obj.key == 'circle') && (enemy.key == 'blue')) {
             enemy.kill();
             this.score.score_buffer += 5;
             this.enemy_manager.spawn = true;

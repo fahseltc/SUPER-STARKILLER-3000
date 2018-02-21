@@ -14,16 +14,38 @@ class EnemyManager {
         game.physics.enable(this.bad_guys, Phaser.Physics.ARCADE);
     }
 
-    update() {
+    // update() {
+    //     if(this.spawn) {
+    //         this.spawn_bad_guy();
+    //         this.spawn = false;
+    //     }
+    //     this.bad_guys.forEach(this.debug_render, this, true)
+    // }
+
+       update() {
+
         if(this.spawn) {
+            // var rand = game.rnd.integerInRange(0, 99);
+            // console.log(rand);
+            // switch(rand) {
+            //     case (rand < 40):
+            //         // nothing
+            //     break;
+            //     case (rand >= 40 && rand < 90):
+            //         this.spawn_bad_guy();
+            //     break;
+            //     case (rand >= 90):
+            //         this.spawn_bad_guy();
+            //         this.spawn_bad_guy();
+            //     break
+            // }
             this.spawn_bad_guy();
             this.spawn = false;
         }
-        this.bad_guys.forEach(this.debug_render, this, true)
     }
 
     debug_render(sprite) {
-        this.game.debug.body(sprite);
+        //this.game.debug.body(sprite);
     }
 
     spawn_bad_guy() {
