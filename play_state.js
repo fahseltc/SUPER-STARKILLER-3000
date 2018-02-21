@@ -47,7 +47,6 @@ var play_state = {
             this.score.score_buffer += 5;
             this.enemy_manager.spawn = true;
         }
-
     }
 }
 

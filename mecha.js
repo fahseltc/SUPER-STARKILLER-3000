@@ -100,7 +100,7 @@ class Mecha {
 
     render() {
 
-        //this.draw_flame_trail();
+        this.draw_flame_trail();
         //game.debug.spriteBounds(this.new_sword, "#ff69b4", false);
         //game.debug.spriteBounds(this.sword_hitbox, "#ff69b4", false);
 
