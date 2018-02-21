@@ -1,32 +1,34 @@
 var post_game_state = {
     create: function() {
+        game.stage.backgroundColor = '#000000';
         console.log('menu');
-        var game_label = this.create_label('U died', 200);
+        var game_label = this.create_label('U died', 200, 100);
+        var game_label = this.create_label('but u scored ' + last_score + " points. gj", 350);
         this.create_button();
-        var game_label = this.create_label('Push the button\nto submit score', 450);
+        var game_label = this.create_label('Push the button\nto submit score', 650);
     },
 
     send_score: function() {
         var player = prompt("Please enter your name", "");
         console.log(player);
         if(!player) { alert("You gotta enter a name"); return; };
-        console.log("button pressed");
-        var body = "name=" + player + "&score=" + last_score;
 
+
+        var body = "name=" + player + "&score=" + last_score;
         var request = new XMLHttpRequest();
         request.open('POST', 'https://secure-atoll-50869.herokuapp.com/leaderboard', true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
         request.onload = function () {
-            // do something to response
             console.log(this.responseText);
+            game.state.start('leaderboard');
         };
         request.onerror = function(){ alert (request.responseText); } // failure case
         request.send(body);
     },
 
-    create_label: function(text, height) {
+    create_label: function(text, height, px = 35) {
         var label = game.add.text(game.width/2, height, text, {
-            font: "35px prstart",
+            font: px + "px prstart",
             fill: "#FFFFFF",
             align: "center"
         });
@@ -38,7 +40,7 @@ var post_game_state = {
         var g = this.add.graphics(0, 0);
         g.lineStyle(2, 0x0000FF, 0.5);
         g.beginFill(0x527cc5, 1);
-        g.drawRect(this.world.centerX - 150, this.world.centerY-100, 300, 200);
+        g.drawRect(this.world.centerX - 400, this.world.centerY + 100, 800, 200);
         g.endFill();
 
         g.inputEnabled = true;

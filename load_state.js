@@ -20,5 +20,6 @@ var load_state = {
     create: function() {
         game.state.start('menu');
         //game.state.start('leaderboard');
+        //game.state.start('post');
     }
 };

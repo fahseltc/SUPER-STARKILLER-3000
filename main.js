@@ -6,10 +6,12 @@ var conf = {
     transparent: false,
     antialias: false,
     scaleMode: Phaser.ScaleManager.NO_SCALE
+    // can add more config here and use as global config.
+
 };
 
 var game = new Phaser.Game(conf);
-var last_score = 100;
+var last_score = 0;
 var leaderboard_data;
 
 game.state.add('menu', menu_state);

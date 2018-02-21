@@ -12,7 +12,8 @@ var play_state = {
         this.mecha = new Mecha(400, 300, this.controls);
         this.score = new Score();
         this.enemy_manager = new EnemyManager(game, this.mecha);
-
+        this.timer = new GameTimer(this.score);
+        this.timer.start();
         game.world.bringToTop(this.mecha.sprite);
     },
 
@@ -27,7 +28,7 @@ var play_state = {
     },
 
     render: function() {
-        //game.debug.text(game.time.fps || '--', 2, 14, "#00ff00");
+        this.timer.render();
         this.mecha.render();
     },
 

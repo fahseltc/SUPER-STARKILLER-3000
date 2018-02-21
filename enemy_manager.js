@@ -5,7 +5,7 @@ class EnemyManager {
         this.bad_guys = game.add.group();
 
         this.spawn = true;
-        //this.bad_guys.createMultiple(15, 'red');
+        this.bad_guys.createMultiple(15, 'red');
         this.bad_guys.createMultiple(15, 'blue');
         this.bad_guys.setAll('anchor.x', 0.5);
         this.bad_guys.setAll('anchor.y', 0.5);
@@ -23,7 +23,6 @@ class EnemyManager {
     }
 
     debug_render(sprite) {
-        console.log(sprite)
         this.game.debug.body(sprite);
     }
 
