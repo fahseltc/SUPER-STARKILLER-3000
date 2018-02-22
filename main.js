@@ -1,20 +1,3 @@
-
-var env = document.getElementById("environment").innerText || 'dev';
-console.log("inside JS, env: " + env);
-
-var backend_url;
-switch(env) {
-    case 'production':
-        backend_url = 'https://mecha-leaderboard.herokuapp.com';
-    break;
-    case 'staging':
-        backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
-    break;
-    case 'dev':
-    default:
-        backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
-}
-
 var conf = {
     width: 1400,
     height: 900,
@@ -22,18 +5,28 @@ var conf = {
     parent: 'game',
     transparent: false,
     antialias: false,
-    scaleMode: Phaser.ScaleManager.NO_SCALE,
-    env: env,
-    backend_url: backend_url
-
-    // add more config here and use as global config.
+    scaleMode: Phaser.ScaleManager.NO_SCALE
 };
 
+var temp_env = document.getElementById("environment").innerText;
+if (temp_env == "<?php echo getenv('environment')?>") { temp_env = 'dev' }
+conf.env = temp_env
 
+console.log("inside JS, env: " + conf.env);
+
+switch(conf.env) {
+    case 'production':
+        conf.backend_url = 'https://mecha-leaderboard.herokuapp.com';
+    break;
+    case 'staging':
+        conf.backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
+    break;
+    case 'dev':
+    default:
+        conf.backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
+}
 
 var game = new Phaser.Game(conf);
-console.log("game.config.env " + game.config.env);
-console.log("game.config.url " + game.config.backend_url);
 var last_score = 0;
 var leaderboard_data;
 

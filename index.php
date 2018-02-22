@@ -9,7 +9,6 @@
     <body>
         <script type="text/javascript">
             // the grossest, 'never used php before' hack to get heroku environment variables in a client-side js game.
-            console.log("environment: <?php echo getenv('environment')?>");
             var div = document.createElement('div');
             div.id = 'environment';
             div.hidden = true;
@@ -18,6 +17,7 @@
         </script>
 
         <script type="text/javascript" src="controls.js"></script>
+        <script type="text/javascript" src="utils.js"></script>
         <script type="text/javascript" src="game_timer.js"></script>
         <script type="text/javascript" src="score.js"></script>
         <script type="text/javascript" src="enemy_manager.js"></script>

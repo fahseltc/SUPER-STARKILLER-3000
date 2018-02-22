@@ -3,7 +3,6 @@ var boot_state = {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         game.scale.pageAlignHorizontally = true;
         game.scale.pageAlignVertically = true;
-        console.log('boot');
         game.state.start('load');
     }
 };
