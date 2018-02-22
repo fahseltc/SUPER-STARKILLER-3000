@@ -14,7 +14,7 @@ class CircleWeapon {
             (-radius + 0.5 * this.sprite.width / this.sprite.scale.x),
             (-radius + 0.5 * this.sprite.height / this.sprite.scale.y)
         );
-        this.sprite.body.visible = false;
+        this.sprite.visible = false;
 
         this.active = false;
 
