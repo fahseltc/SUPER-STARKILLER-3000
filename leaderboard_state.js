@@ -36,7 +36,7 @@ var leaderboard_state = {
 
     get_leaderboard_data: function() {
         var request = new XMLHttpRequest();
-        request.open('GET', game.config.leaderboard_url, true);
+        request.open('GET', game.config.backend_url + "/leaderboard", true);
 
         request.onload = function() {
             if(request.status == 200) {
