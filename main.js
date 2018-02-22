@@ -13,7 +13,7 @@ var conf = {
 
     // add more config here and use as global config.
 
-    environment:
+    environment: ""
     leaderboard_url: {
         staging: "https://mecha-leaderboard.herokuapp.com/leaderboard",
         production: ""
