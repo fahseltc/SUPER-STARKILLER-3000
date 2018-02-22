@@ -17,7 +17,7 @@ var post_game_state = {
 
         var body = "name=" + player + "&score=" + last_score;
         var request = new XMLHttpRequest();
-        request.open('POST', 'https://mecha-leaderboard.herokuapp.com/leaderboard', true);
+        request.open('POST', game.config.leaderboard_url, true);
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
         request.onload = function () {
             console.log(this.responseText);

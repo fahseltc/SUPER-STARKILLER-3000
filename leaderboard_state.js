@@ -36,7 +36,7 @@ var leaderboard_state = {
 
     get_leaderboard_data: function() {
         var request = new XMLHttpRequest();
-        request.open('GET', 'https://secure-atoll-50869.herokuapp.com/leaderboard', true);
+        request.open('GET', game.config.leaderboard_url, true);
 
         request.onload = function() {
             if(request.status == 200) {
