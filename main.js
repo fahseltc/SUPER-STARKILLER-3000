@@ -6,7 +6,8 @@ var conf = {
     transparent: false,
     antialias: false,
     scaleMode: Phaser.ScaleManager.NO_SCALE,
-    // can add more config here and use as global config.
+
+    // add more config here and use as global config.
     leaderboard_url: "https://mecha-leaderboard.herokuapp.com/leaderboard"
 
 };
