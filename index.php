@@ -15,8 +15,8 @@
             console.log("environment: <?php echo getenv('environment')?>");
             var div = document.createElement('div');
             div.id = 'environment';
-            div.text = "<?php echo getenv('environment')?>";
             div.hidden = true;
+            div.appendChild(document.createTextNode("<?php echo getenv('environment')?>"));
             document.body.appendChild(div);
         </script>
 
