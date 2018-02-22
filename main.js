@@ -5,14 +5,14 @@ console.log("inside JS, env: " + env);
 var backend_url;
 switch(env) {
     case 'production':
-        backend_url = 'https://mecha-leaderboard.herokuapp.com/';
+        backend_url = 'https://mecha-leaderboard.herokuapp.com';
     break;
     case 'staging':
-        backend_url = 'https://mecha-leaderboard-staging.herokuapp.com/';
+        backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
     break;
     case 'dev':
     default:
-        backend_url = 'https://mecha-leaderboard-staging.herokuapp.com/';
+        backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
 }
 
 var conf = {
