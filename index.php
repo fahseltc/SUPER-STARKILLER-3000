@@ -1,6 +1,3 @@
-
-
-
 <!doctype html>
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -11,7 +8,7 @@
     </head>
     <body>
         <script type="text/javascript">
-            // the grossest, never used php before hack to get heroku environment variables in a client-side js game.
+            // the grossest, 'never used php before' hack to get heroku environment variables in a client-side js game.
             console.log("environment: <?php echo getenv('environment')?>");
             var div = document.createElement('div');
             div.id = 'environment';

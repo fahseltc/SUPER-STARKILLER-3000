@@ -1,3 +1,7 @@
+
+var env = document.getElementById("environment").innerText;
+console.log("inside JS, env: " + env);
+
 var conf = {
     width: 1400,
     height: 900,
@@ -8,8 +12,12 @@ var conf = {
     scaleMode: Phaser.ScaleManager.NO_SCALE,
 
     // add more config here and use as global config.
-    leaderboard_url: "https://mecha-leaderboard.herokuapp.com/leaderboard"
 
+    environment:
+    leaderboard_url: {
+        staging: "https://mecha-leaderboard.herokuapp.com/leaderboard",
+        production: ""
+    }
 };
 
 var game = new Phaser.Game(conf);
