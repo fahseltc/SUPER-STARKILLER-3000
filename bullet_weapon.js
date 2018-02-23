@@ -41,7 +41,7 @@ class BulletWeapon {
 
       if (bullet && this.overheated == false) {
         this.heat += HEAT_GENERATED_PER_SHOT;
-        bullet.reset(this.mecha.sprite.body.x + 10, this.mecha.sprite.body.y + 32);
+        bullet.reset(this.mecha.sprite.body.x + 32, this.mecha.sprite.body.y + 64);
         bullet.lifespan = BULLET_LIFESPAN;
         game.physics.arcade.velocityFromRotation(this.mecha.sprite.rotation, this.mecha.sprite.body.speed + BULLET_ADDITIONAL_SPEED, bullet.body.velocity);
         this.bullet_time = game.time.now + BULLET_DELAY;

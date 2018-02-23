@@ -9,7 +9,7 @@ class Mecha {
 
     // mecha setup
     this.sprite = game.add.sprite(x, y, 'mecha');
-    this.sprite.anchor.setTo(0.25, 0.5);
+    this.sprite.anchor.setTo(0.5, 0.5);
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
     this.sprite.body.angularDrag = 800;
     this.sprite.body.drag.set(150);
