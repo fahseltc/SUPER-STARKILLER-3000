@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <link rel="stylesheet" type = "text/css" href = "font_loader.css">
+    <link rel="stylesheet" type = "text/css" href ="font_loader.css">
     <script src="phaser.min.js"></script>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>Mega Mecha Marxist II</title>
