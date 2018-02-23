@@ -54,7 +54,8 @@ var play_state = {
 
   handle_player_hit: function(mecha, bullet) {
     bullet.kill();
-    mecha.damage(1);
+    if(!this.mecha.invuln){ this.mecha.take_damage(); }
+
     if(!mecha.alive) {
       console.log("u ded");
       last_score = this.score.score + this.score.score_buffer;

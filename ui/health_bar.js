@@ -21,7 +21,6 @@ class HealthBar {
   }
 
   render(mecha) {
-    console.log(mecha.sprite.health);
 
     var visible_sprites = this.display_sprites.slice(0,mecha.sprite.maxHealth - mecha.sprite.health);
     visible_sprites.forEach(function(element) { element.visible = false; })

@@ -1,4 +1,5 @@
 const PLAYER_MAX_HEALTH = 4;
+const INVULN_TIME = 100
 
 class Mecha {
   constructor(x, y, controls) {
@@ -23,11 +24,12 @@ class Mecha {
     // health
     this.sprite.maxHealth = PLAYER_MAX_HEALTH;
     this.sprite.health = PLAYER_MAX_HEALTH;
+
+    this.invuln = false;
   }
 
   update() {
     this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
-
     this.bullet_weapon.update(this.controls);
     this.circle_weapon.update(this.controls);
   }
@@ -35,6 +37,16 @@ class Mecha {
   render() {
     this.flames.render();
     this.bullet_weapon.render();
+  }
+
+  take_damage() {
+    this.sprite.damage(1);
+    console.log('took damage')
+    if(this.sprite.alive) {
+      this.invuln = true;
+      var tween = game.add.tween(this.sprite).to({ tint: 0xFF0000 }, INVULN_TIME, "Linear", true).yoyo(true).repeat(3);
+      tween.onComplete.add(function() { this.tint = 0xFFFFFF; this.invuln = false; }, this);
+    }
   }
 
 };
