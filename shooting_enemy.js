@@ -13,7 +13,7 @@ ShootingEnemy = function(game, mecha, x, y, sprite) {
   this.bullets.setAll('alive', false);
 
   this.bullet_time = this.game.time.now + 500;
-}
+};
 
 ShootingEnemy.prototype = Object.create(Phaser.Sprite.prototype);
 ShootingEnemy.prototype.constructor = constructor;
@@ -37,4 +37,4 @@ ShootingEnemy.prototype.update = function() {
       this.bullet_time = game.time.now + 3000;
     }
   }
-}
+};

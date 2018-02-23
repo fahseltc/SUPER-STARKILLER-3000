@@ -28,4 +28,4 @@ class Controls {
     this.fire_update();
     this.sword_update();
   }
-}
+};

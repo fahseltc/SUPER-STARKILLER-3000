@@ -88,36 +88,6 @@ class Mecha {
     }
   }
 
-  // sword_chop(){
-  //     if(!this.sword_active) {
-  //         // this.sword_active = true;
-  //         // this.sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-  //         // this.sword.visible = true;
-  //         // this.sword.lifespan = 200;
-  //         // this.sword.angle = this.sprite.angle + 90;
-  //         // game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1000, this.sword.body.velocity);
-  //         // this.sword.events.onKilled.add(function(){ this.sword_active = false; }, this);
-  //         this.new_sword.rotation = this.sprite.rotation;
-  //         //this.sword_active = true;
-  //         this.new_sword.rotation = 0.5;
-  //         this.new_sword.active = true;
-  //         //this.new_sword.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-  //         this.new_sword.visible = true;
-  //         //this.new_sword.lifespan = 200;
-  //         //this.new_sword.events.onKilled.add(function(){ this.new_sword.rotation = 0 }, this)
-  //         game.add.tween(this.new_sword).to( { rotation: 2.5 }, 400, Phaser.Easing.Exponential.Out, true, 0, 0, false);
-  //         //this.sword.events.onKilled.add(function(){ console.log('killed it'); this.sword_active = false; }, this);
-  //         game.time.events.add(Phaser.Timer.SECOND * 0.2, this.set_sword_active, this);
-
-  //     }
-  // }
-  // set_sword_active() {
-  //     //this.sword.alive = false;
-  //     //this.sword_active = false
-  //     this.new_sword.visible = false;
-  //     this.new_sword.rotation = 0;
-  // }
-
   fire_bullet() {
 
     if (game.time.now > this.bullet_time) {

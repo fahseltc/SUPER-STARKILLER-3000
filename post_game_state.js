@@ -9,19 +9,19 @@ var post_game_state = {
   },
 
   send_score: function() {
-    var player = prompt("Please enter your name", "");
+    var player = prompt('Please enter your name', '');
     console.log(player);
-    if(!player) { alert("You gotta enter a name"); return; };
+    if(!player) { alert('You gotta enter a name'); return; }
 
-    var body = "name=" + player + "&score=" + last_score;
+    var body = 'name=' + player + '&score=' + last_score;
     var request = new XMLHttpRequest();
-    request.open('POST', game.config.backend_url + "/leaderboard", true);
+    request.open('POST', game.config.backend_url + '/leaderboard', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     request.onload = function () {
       console.log(this.responseText);
       game.state.start('leaderboard');
     };
-    request.onerror = function(){ console.log(request.responseText); } // failure case
+    request.onerror = function(){ console.log(request.responseText); }; // failure case
     request.send(body);
   },
 
@@ -45,7 +45,7 @@ var post_game_state = {
     g2.endFill();
 
     g2.inputEnabled = true;
-    g2.events.onInputDown.add(function() { game.state.start('menu') }, this);
+    g2.events.onInputDown.add(function() { game.state.start('menu'); }, this);
     Utils.create_centered_text('Back to Menu', 810, 30);
   }
-}
+};

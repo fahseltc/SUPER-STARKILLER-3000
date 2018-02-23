@@ -1,0 +1,30 @@
+{
+  "globals": {
+    "Phaser": true,
+    "game": true,
+    "Utils": true,
+    "last_score": true
+  },
+  "env": {
+    "browser": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ]
+  }
+}
