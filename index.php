@@ -20,6 +20,7 @@
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="game_timer.js"></script>
     <script type="text/javascript" src="score.js"></script>
+    <script type="text/javascript" src="shooting_enemy.js"></script>
     <script type="text/javascript" src="enemy_manager.js"></script>
     <script type="text/javascript" src="mecha.js"></script>
     <script type="text/javascript" src="circle_weapon.js"></script>

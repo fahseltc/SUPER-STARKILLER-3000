@@ -5,15 +5,18 @@ class EnemyManager {
     this.bad_guys = game.add.group();
 
     this.spawn = true;
-    this.bad_guys.createMultiple(15, 'red');
-    this.bad_guys.createMultiple(15, 'blue');
+    //this.bad_guys.add(new ShootingEnemy(this.game, mecha, 1, 1, 'red'));
+    for(var i=0; i < 100; i++){ this.bad_guys.add(new ShootingEnemy(this.game, mecha, 1, 1, 'red')); }
+    for(var i=0; i < 100; i++){ this.bad_guys.add(new ShootingEnemy(this.game, mecha, 1, 1, 'blue')); }
+    //this.bad_guys.createMultiple(30, 'red');
+    //this.bad_guys.createMultiple(30, 'blue');
     this.bad_guys.setAll('anchor.x', 0.5);
     this.bad_guys.setAll('anchor.y', 0.5);
     this.bad_guys.setAll('immovable', true);
     this.bad_guys.setAll('exists', false);
     game.physics.enable(this.bad_guys, Phaser.Physics.ARCADE);
 
-    this.next_spawn_time = game.time.now + Math.random() * 400;
+    this.next_spawn_time = 0;
   }
 
   // update() {
@@ -24,17 +27,13 @@ class EnemyManager {
   //     this.bad_guys.forEach(this.debug_render, this, true)
   // }
 
-     update() {
-
-      if(game.time.now > this.next_spawn_time) {
-        this.spawn_bad_guy();
-        this.next_spawn_time = game.time.now + 300 + Math.random() * 400;
-      }
-
-    // if(this.spawn) {
-    //     this.spawn_bad_guy();
-    //     this.spawn = false;
-    // }
+  update() {
+    console.log("bad guys visible: " + this.bad_guys.count('visible', true));
+    if(game.time.now > this.next_spawn_time && this.bad_guys.count('visible', true) < 5) {
+      this.spawn_bad_guy();
+      //this.next_spawn_time = game.time.now + 300 + Math.random() * 400;
+      this.next_spawn_time = game.time.now + 300 + Math.random() * 400;
+    }
   }
 
   debug_render(sprite) {
@@ -55,6 +54,8 @@ class EnemyManager {
       }
 
       bad_guy.reset(temp_x, temp_y);
+      bad_guy.bullet_time = game.time.now + 500;
+      bad_guy.visible = true;
       bad_guy.revive();
     }
   }

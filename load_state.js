@@ -18,6 +18,7 @@ var load_state = {
         game.load.image('circle', 'assets/circle.png');
         game.load.image('spinner', 'assets/spinner.png');
         game.load.image('x', 'assets/x.png');
+        game.load.image('enemy_bullet', 'assets/enemy_bullet.png');
 
     },
     create: function() {
