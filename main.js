@@ -23,7 +23,7 @@ switch(conf.env) {
   break;
   case 'dev':
   default:
-    conf.backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
+    conf.backend_url = '';
 }
 
 var game = new Phaser.Game(conf);

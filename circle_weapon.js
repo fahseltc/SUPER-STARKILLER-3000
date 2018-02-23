@@ -18,7 +18,7 @@ class CircleWeapon {
 
         this.active = false;
 
-        this.shoot_delay = 500;
+        this.shoot_delay = 200;
         this.shoot_time = 0;
     }
 
@@ -27,7 +27,7 @@ class CircleWeapon {
         if(controls.sword && !this.active && game.time.now > this.shoot_time) {
             this.sprite.visible = true;
             this.active = true;
-            var tween = game.add.tween(this.sprite.scale).to( { x:1, y:1 }, 400, Phaser.Easing.Exponential.Out, true).yoyo(true);
+            var tween = game.add.tween(this.sprite.scale).to( { x:1, y:1 }, 200, Phaser.Easing.Exponential.Out, true).yoyo(true);
             tween.onComplete.add(function() {
                 this.active = false;
                 this.sprite.scale.x = 0.1;
