@@ -63,7 +63,7 @@ var leaderboard_state = {
                 } else {
                     counter = 0;
                     leaderboard_data.slice(0, 21).forEach(function(element) {
-                        Utils.create_text(element.username, game.width/2 - 260, 190 + (30 * counter), 25);
+                        Utils.create_text(element.name, game.width/2 - 260, 190 + (30 * counter), 25);
                         Utils.create_text(element.score, game.width/2 + 230, 190 + (30 * counter), 25);
                         counter++;
                     });

@@ -1,11 +1,11 @@
 var conf = {
-    width: 1400,
-    height: 900,
-    renderer: Phaser.CANVAS,
-    parent: 'game',
-    transparent: false,
-    antialias: false,
-    scaleMode: Phaser.ScaleManager.NO_SCALE
+  width: 1400,
+  height: 900,
+  renderer: Phaser.CANVAS,
+  parent: 'game',
+  transparent: false,
+  antialias: false,
+  scaleMode: Phaser.ScaleManager.NO_SCALE
 };
 
 var temp_env = document.getElementById("environment").innerText;
@@ -15,15 +15,15 @@ conf.env = temp_env
 console.log("inside JS, env: " + conf.env);
 
 switch(conf.env) {
-    case 'production':
-        conf.backend_url = 'https://mecha-leaderboard.herokuapp.com';
-    break;
-    case 'staging':
-        conf.backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
-    break;
-    case 'dev':
-    default:
-        conf.backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
+  case 'production':
+    conf.backend_url = 'https://mecha-leaderboard.herokuapp.com';
+  break;
+  case 'staging':
+    conf.backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
+  break;
+  case 'dev':
+  default:
+    conf.backend_url = 'https://mecha-leaderboard-staging.herokuapp.com';
 }
 
 var game = new Phaser.Game(conf);
