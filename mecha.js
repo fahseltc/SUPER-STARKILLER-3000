@@ -1,3 +1,5 @@
+const PLAYER_MAX_HEALTH = 4;
+
 class Mecha {
   constructor(x, y, controls) {
 
@@ -17,6 +19,10 @@ class Mecha {
     this.circle_weapon = new CircleWeapon(this);
     this.bullet_weapon = new BulletWeapon(this);
     this.sprite.addChild(this.circle_weapon.sprite);
+
+    // health
+    this.sprite.maxHealth = PLAYER_MAX_HEALTH;
+    this.sprite.health = PLAYER_MAX_HEALTH;
   }
 
   update() {

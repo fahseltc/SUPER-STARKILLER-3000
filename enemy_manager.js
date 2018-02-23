@@ -3,13 +3,20 @@ class EnemyManager {
     this.game = game;
     this.mecha = mecha;
     this.bad_guys = game.add.group();
+    this.all_bullets = game.add.group();
 
     this.spawn = true;
     //this.bad_guys.add(new ShootingEnemy(this.game, mecha, 1, 1, 'red'));
-    for(var i=0; i < 100; i++){ this.bad_guys.add(new ShootingEnemy(this.game, mecha, 1, 1, 'red')); }
-    for(var i=0; i < 100; i++){ this.bad_guys.add(new ShootingEnemy(this.game, mecha, 1, 1, 'blue')); }
-    //this.bad_guys.createMultiple(30, 'red');
-    //this.bad_guys.createMultiple(30, 'blue');
+    for(var i=0; i < 100; i++){
+      var bg1 = new ShootingEnemy(this.game, mecha, 1, 1, 'red')
+      this.bad_guys.add(bg1);
+      this.all_bullets.add(bg1.bullets);
+    }
+    for(var i=0; i < 100; i++){
+      var bg2 = new ShootingEnemy(this.game, mecha, 1, 1, 'blue')
+      this.bad_guys.add(bg2);
+      this.all_bullets.add(bg2.bullets);
+    }
     this.bad_guys.setAll('anchor.x', 0.5);
     this.bad_guys.setAll('anchor.y', 0.5);
     this.bad_guys.setAll('immovable', true);

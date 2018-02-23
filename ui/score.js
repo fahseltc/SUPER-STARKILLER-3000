@@ -8,9 +8,9 @@ class Score {
     this.score = 0;
     this.score_buffer = 0;
 
-    this.score_label = game.add.text(120, 35, "0", {
-      font: "35px prstart",
-      fill: "#000000",
+    this.score_label = game.add.text(200, 60, "0", {
+      font: "40px prstart",
+      fill: "#FFFFFF",
       align: "center"
     });
     this.score_label.text = 0;

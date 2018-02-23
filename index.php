@@ -19,7 +19,8 @@
     <script type="text/javascript" src="controls.js"></script>
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="game_timer.js"></script>
-    <script type="text/javascript" src="score.js"></script>
+    <script type="text/javascript" src="ui/score.js"></script>
+    <script type="text/javascript" src="ui/health_bar.js"></script>
     <script type="text/javascript" src="shooting_enemy.js"></script>
     <script type="text/javascript" src="enemy_manager.js"></script>
     <script type="text/javascript" src="mecha_flame.js"></script>

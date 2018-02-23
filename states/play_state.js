@@ -1,10 +1,8 @@
 var play_state = {
 
   create: function() {
-    //game.add.tileSprite(0,0, 1400, 900, 'space_bg')
     game.physics.startSystem(Phaser.Physics.ARCADE);
-    //game.stage.backgroundColor = '#0072bc';
-    game.stage.backgroundColor = '#d3d3d3';
+    game.stage.backgroundColor = '#717993';
     game.canvas.oncontextmenu = function (e) { e.preventDefault(); };
     game.input.mouse.capture = true;
 
@@ -12,6 +10,7 @@ var play_state = {
     this.graphics = game.add.graphics(0, 0);
     this.mecha = new Mecha(400, 300, this.controls);
     this.score = new Score();
+    this.health_bar = new HealthBar(this.mecha);
     this.enemy_manager = new EnemyManager(game, this.mecha);
     this.timer = new GameTimer(this.score);
     this.timer.start();
@@ -21,6 +20,8 @@ var play_state = {
   update: function() {
     game.physics.arcade.overlap(this.mecha.circle_weapon.sprite,  this.enemy_manager.bad_guys, this.handle_collision, null, this);
     game.physics.arcade.overlap(this.mecha.bullet_weapon.bullets, this.enemy_manager.bad_guys, this.handle_collision, null, this);
+    var visible_bullets = this.enemy_manager.all_bullets.getAll('alive', true);
+    game.physics.arcade.overlap(this.mecha.sprite, visible_bullets, this.handle_player_hit, null, this);
 
     this.controls.update();
     this.enemy_manager.update();
@@ -31,6 +32,7 @@ var play_state = {
   render: function() {
     this.timer.render();
     this.mecha.render();
+    this.health_bar.render(this.mecha);
   },
 
   handle_collision: function (obj, enemy) {
@@ -48,5 +50,18 @@ var play_state = {
       this.score.score_buffer += 5;
       this.enemy_manager.spawn = true;
     }
+  },
+
+  handle_player_hit: function(mecha, bullet) {
+    bullet.kill();
+    mecha.damage(1);
+    if(!mecha.alive) {
+      console.log("u ded");
+      last_score = this.score.score + this.score.score_buffer;
+      mecha.heal();
+      this.timer.timer.stop();
+      game.state.start('post');
+    }
+    console.log("ouch");
   }
 };
