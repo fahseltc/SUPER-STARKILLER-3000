@@ -7,7 +7,7 @@ var load_state = {
     console.log('load');
 
     game.time.advancedTiming = true;
-    game.load.image('mecha', 'assets/mecha_small.png');
+    game.load.image('mecha', 'assets/mecha.png');
     game.load.image('bullet', 'assets/bullets.png');
     game.load.image('flame', 'assets/flame.png');
     game.load.image('red', 'assets/red.png');

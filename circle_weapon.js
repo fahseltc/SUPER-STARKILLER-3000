@@ -10,12 +10,10 @@ class CircleWeapon {
     this.sprite.scale.x = 0.1;
     this.sprite.scale.y = 0.1;
 
-    var radius = this.sprite.width / 2;
-    this.sprite.body.setCircle(
-      radius,
+    var radius = this.sprite.width / 8;
+    this.sprite.body.setCircle( radius + 140,
       (-radius + 0.5 * this.sprite.width / this.sprite.scale.x),
-      (-radius + 0.5 * this.sprite.height / this.sprite.scale.y)
-    );
+      (-radius + 0.5 * this.sprite.height / this.sprite.scale.y) );
     this.sprite.visible = false;
     this.active = false;
 
@@ -23,11 +21,10 @@ class CircleWeapon {
   }
 
   update(controls) {
-    //game.debug.body(this.sprite);
     if(controls.sword && !this.active && game.time.now > this.shoot_time) {
       this.sprite.visible = true;
       this.active = true;
-      var tween = game.add.tween(this.sprite.scale).to( { x:1, y:1 }, CIRCLE_SHOOT_DELAY, Phaser.Easing.Exponential.Out, true).yoyo(true);
+      var tween = game.add.tween(this.sprite.scale).to( { x:2.5, y:2.5 }, CIRCLE_SHOOT_DELAY, Phaser.Easing.Exponential.Out, true).yoyo(true);
       tween.onComplete.add(function() {
         this.active = false;
         this.sprite.scale.x = 0.1;
@@ -37,11 +34,9 @@ class CircleWeapon {
       }, this)
     }
 
-    var radius = this.sprite.width/2;
-    this.sprite.body.setCircle(
-      radius,
+    var radius = this.sprite.width / 13;
+    this.sprite.body.setCircle(radius,
       (-radius + 0.5 * this.sprite.width / this.sprite.scale.x),
-      (-radius + 0.5 * this.sprite.height / this.sprite.scale.y)
-    );
+      (-radius + 0.5 * this.sprite.height / this.sprite.scale.y) );
   }
 };

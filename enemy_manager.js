@@ -70,7 +70,7 @@ class EnemyManager {
 
   get_random_y() {
     var temp_y = game.world.randomY;
-    while(temp_y < 50 || temp_y > (game.world.height - 50)) {
+    while(temp_y < 130 || temp_y > (game.world.height - 50)) {
       temp_y = game.world.randomY;
     }
     return temp_y;
