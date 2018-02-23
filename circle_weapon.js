@@ -1,3 +1,5 @@
+const CIRCLE_SHOOT_DELAY = 200;
+
 class CircleWeapon {
   constructor(mecha) {
     this.mecha = mecha;
@@ -15,10 +17,8 @@ class CircleWeapon {
       (-radius + 0.5 * this.sprite.height / this.sprite.scale.y)
     );
     this.sprite.visible = false;
-
     this.active = false;
 
-    this.shoot_delay = 200;
     this.shoot_time = 0;
   }
 
@@ -27,13 +27,13 @@ class CircleWeapon {
     if(controls.sword && !this.active && game.time.now > this.shoot_time) {
       this.sprite.visible = true;
       this.active = true;
-      var tween = game.add.tween(this.sprite.scale).to( { x:1, y:1 }, 200, Phaser.Easing.Exponential.Out, true).yoyo(true);
+      var tween = game.add.tween(this.sprite.scale).to( { x:1, y:1 }, CIRCLE_SHOOT_DELAY, Phaser.Easing.Exponential.Out, true).yoyo(true);
       tween.onComplete.add(function() {
         this.active = false;
         this.sprite.scale.x = 0.1;
         this.sprite.scale.y = 0.1;
         this.sprite.visible = false;
-        this.shoot_time = game.time.now + this.shoot_delay;
+        this.shoot_time = game.time.now + CIRCLE_SHOOT_DELAY;
       }, this)
     }
 

@@ -19,14 +19,6 @@ class EnemyManager {
     this.next_spawn_time = 0;
   }
 
-  // update() {
-  //     if(this.spawn) {
-  //         this.spawn_bad_guy();
-  //         this.spawn = false;
-  //     }
-  //     this.bad_guys.forEach(this.debug_render, this, true)
-  // }
-
   update() {
     console.log("bad guys visible: " + this.bad_guys.count('visible', true));
     if(game.time.now > this.next_spawn_time && this.bad_guys.count('visible', true) < 5) {

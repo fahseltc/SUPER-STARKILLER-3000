@@ -9,11 +9,9 @@ var load_state = {
     game.time.advancedTiming = true;
     game.load.image('mecha', 'assets/mecha1.png');
     game.load.image('bullet', 'assets/bullets.png');
-    game.load.image('sword', 'assets/sword.png');
     game.load.image('flame', 'assets/flame.png');
     game.load.image('red', 'assets/red.png');
     game.load.image('blue', 'assets/blue.png');
-    game.load.image('sword_long', 'assets/sword_long.png');
     game.load.image('button', 'assets/button.png');
     game.load.image('circle', 'assets/circle.png');
     game.load.image('spinner', 'assets/spinner.png');

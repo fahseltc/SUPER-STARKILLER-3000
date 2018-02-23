@@ -2,108 +2,33 @@ class Mecha {
   constructor(x, y, controls) {
 
     this.controls = controls;
+    this.flames = new MechaFlame(this);
 
     // mecha setup
     this.sprite = game.add.sprite(x, y, 'mecha');
     this.sprite.anchor.setTo(0.25, 0.5);
-
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
-
     this.sprite.body.angularDrag = 800;
     this.sprite.body.drag.set(150);
     this.sprite.body.maxAngular = 200;
     this.sprite.body.maxVelocity.set(900);
 
-    this.boost_count = 20;
-    this.flame_counter = 0;
-
-    // flames
-    this.flames = game.add.group();
-    this.flames.createMultiple(100, 'flame');
-    this.flames.setAll('anchor.x', 0.5);
-    this.flames.setAll('anchor.y', 0.5);
-    this.flames.setAll('z',-1);
-
-
-    // bullets
-    this.bullets = game.add.group();
-    this.bullets.enableBodyDebug = true;
-    this.bullets.enableBody = true;
-    this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
-    this.bullets.createMultiple(100, 'bullet');
-    this.bullets.setAll('anchor.x', 0.5);
-    this.bullets.setAll('anchor.y', 0.5);
-    this.bullet_time = 0;
-
-    this.heat = 0;
-    this.overheated = false;
-
+    // weapons
     this.circle_weapon = new CircleWeapon(this);
-
+    this.bullet_weapon = new BulletWeapon(this);
     this.sprite.addChild(this.circle_weapon.sprite);
-
-    // group bullets
-    this.attack_group = game.add.group();
-    this.attack_group.add(this.bullets);
-    //this.attack_group.add(this.new_sword);
   }
 
   update() {
-    var distance = Phaser.Math.distance(game.input.activePointer.x, game.input.activePointer.y, this.sprite.x, this.sprite.y);
-    //console.log(distance);
-
     this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
 
-    //this.new_sword.rotation += 0.01;
-
-    if(this.boost_count < 20) { this.boost_count++; }
-
-    if(this.controls.fire)  { this.fire_bullet(); }
-    if (this.heat > 0) { this.heat -= 0.5; }
+    this.bullet_weapon.update(this.controls);
     this.circle_weapon.update(this.controls);
-    //else if(this.controls.sword) { this.circle_weapon.shoot();  }
   }
 
   render() {
-
-    this.draw_flame_trail();
-    //game.debug.spriteBounds(this.new_sword, "#ff69b4", false);
-    //game.debug.spriteBounds(this.sword_hitbox, "#ff69b4", false);
-
-    game.debug.text(this.heat, 200, 14, "#00ff00");
-    //game.debug.spriteBounds(this.sprite, "##ff69b4", true);
-    //game.debug.body(new_sword, "##ff69b4", true);
-    //game.debug.spriteInfo(this.sprite, 32, 32);
+    this.flames.render();
+    this.bullet_weapon.render();
   }
 
-  draw_flame_trail() {
-    var flame = this.flames.getFirstExists(false);
-    if(flame) {
-      flame.rotation = this.sprite.rotation - 30;
-      flame.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-      flame.alpha = 1;
-      flame.lifespan = 1000;
-      //game.add.tween(flame).to( { alpha: 0 }, duration, easetype, autostart, delay, repeat, yoyo);
-      game.add.tween(flame).to( { alpha: 0 }, 1000, Phaser.Easing.Exponential.Out, true, 0, 0, false);
-    }
-  }
-
-  fire_bullet() {
-
-    if (game.time.now > this.bullet_time) {
-      var bullet = this.bullets.getFirstExists(false);
-
-      if (bullet && this.overheated == false) {
-        this.heat++;
-        bullet.reset(this.sprite.body.x + 10, this.sprite.body.y + 32);
-        bullet.lifespan = 1000;
-        //bullet.rotation = sprite.rotation;
-        game.physics.arcade.velocityFromRotation(this.sprite.rotation, this.sprite.body.speed + 1500, bullet.body.velocity);
-        this.bullet_time = game.time.now + 10;
-      }
-
-      if (this.heat > 10) { this.heat = 0; this.overheated = true; game.time.events.add(Phaser.Timer.SECOND * 0.5, function() { this.overheated = false }, this); }
-
-    }
-  }
 };

@@ -1,6 +1,7 @@
 var play_state = {
 
   create: function() {
+    //game.add.tileSprite(0,0, 1400, 900, 'space_bg')
     game.physics.startSystem(Phaser.Physics.ARCADE);
     //game.stage.backgroundColor = '#0072bc';
     game.stage.backgroundColor = '#d3d3d3';
@@ -18,8 +19,8 @@ var play_state = {
   },
 
   update: function() {
-    game.physics.arcade.overlap(this.mecha.circle_weapon.sprite, this.enemy_manager.bad_guys, this.handle_collision, null, this);
-    game.physics.arcade.overlap(this.mecha.bullets, this.enemy_manager.bad_guys, this.handle_collision, null, this);
+    game.physics.arcade.overlap(this.mecha.circle_weapon.sprite,  this.enemy_manager.bad_guys, this.handle_collision, null, this);
+    game.physics.arcade.overlap(this.mecha.bullet_weapon.bullets, this.enemy_manager.bad_guys, this.handle_collision, null, this);
 
     this.controls.update();
     this.enemy_manager.update();
