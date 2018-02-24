@@ -1,5 +1,5 @@
 const PLAYER_MAX_HEALTH = 4;
-const INVULN_TIME = 100
+const INVULN_TIME = 150
 
 class Mecha {
   constructor(x, y, controls) {
@@ -46,7 +46,7 @@ class Mecha {
     console.log('took damage')
     if(this.sprite.alive) {
       this.invuln = true;
-      var tween = game.add.tween(this.sprite).to({ tint: 0xFF0000 }, INVULN_TIME, "Linear", true).yoyo(true).repeat(3);
+      var tween = game.add.tween(this.sprite).to({ tint: 0x000000 }, INVULN_TIME, "Linear", true).yoyo(true).repeat(3);
       tween.onComplete.add(function() { this.tint = 0xFFFFFF; this.invuln = false; }, this);
     }
   }

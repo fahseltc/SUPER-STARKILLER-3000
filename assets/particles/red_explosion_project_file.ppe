@@ -1,0 +1,64 @@
+{
+  "canvas": {
+    "height": 960,
+    "width": 540,
+    "name": "MyProject",
+    "bgColor": "#4e4e4e"
+  },
+  "particle": {
+    "default": {
+      "width": 0,
+      "height": 0,
+      "gravityX": 0,
+      "gravityY": 0,
+      "emitX": 0,
+      "emitY": 0,
+      "maxParticles": 50,
+      "frames": 1,
+      "quantity": 1,
+      "total": 0,
+      "immediate": true,
+      "collide": false,
+      "collideWorldBounds": false,
+      "enableBody": false,
+      "randomScale": false,
+      "minScale": 0.5,
+      "maxScale": 1.5,
+      "scaleFromX": 0,
+      "scaleFromY": 0,
+      "scaleToX": 1.5,
+      "scaleToY": 1.5,
+      "scaleRate": 1500,
+      "scaleEase": "Linear",
+      "scaleEaseMode": "None",
+      "scaleYoyo": false,
+      "alphaMin": 0,
+      "alphaMax": 1,
+      "alphaRate": 1500,
+      "alphaEase": "Linear",
+      "alphaEaseMode": "None",
+      "alphaYoyo": false,
+      "particleArguments": {
+        "lifespan": {
+          "min": 1500,
+          "max": 2000
+        }
+      },
+      "rotationMin": -360,
+      "rotationMax": 360,
+      "bounceX": 0,
+      "bounceY": 0,
+      "angularDrag": 0,
+      "minSpeedX": -200,
+      "minSpeedY": -200,
+      "maxSpeedX": 200,
+      "maxSpeedY": 200,
+      "frequency": 25,
+      "enabled": true,
+      "explode": false,
+      "flow": false,
+      "blendMode": 0,
+      "default": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAHklEQVQ4jWP8////ZgYKAROlBowaMmrIqCGjhkABADAjA9Lg9zWpAAAAAElFTkSuQmCC"
+    }
+  }
+}

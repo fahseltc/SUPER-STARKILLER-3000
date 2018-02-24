@@ -33,20 +33,21 @@ var play_state = {
     this.timer.render();
     this.mecha.render();
     this.health_bar.render(this.mecha);
+    game.debug.text(game.time.fps, 1, 50, "#00ff00");
   },
 
   handle_collision: function (obj, enemy) {
-    this.game.debug.body(obj);
-    this.game.debug.body(enemy);
-
     console.log('hit!');
     if((obj.key == 'bullet') && (enemy.key == 'red')) {
       enemy.kill();
       this.score.score_buffer += 5;
+      game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('red_explosion'));
       this.enemy_manager.spawn = true;
     }
     if((obj.key == 'circle') && (enemy.key == 'blue')) {
       enemy.kill();
+      console.log(enemy);
+      game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('blue_explosion'));
       this.score.score_buffer += 5;
       this.enemy_manager.spawn = true;
     }

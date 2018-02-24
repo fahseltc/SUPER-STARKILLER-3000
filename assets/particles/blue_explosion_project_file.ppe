@@ -1,0 +1,96 @@
+{
+  "canvas": {
+    "height": 960,
+    "width": 540,
+    "name": "MyProject",
+    "bgColor": "#4e4e4e"
+  },
+  "particle": {
+    "default": {
+      "width": 0,
+      "height": 0,
+      "gravityX": 0,
+      "gravityY": 0,
+      "emitX": 0,
+      "emitY": 0,
+      "maxParticles": 50,
+      "frames": 1,
+      "quantity": 1,
+      "total": 50,
+      "immediate": true,
+      "collide": false,
+      "collideWorldBounds": false,
+      "enableBody": false,
+      "randomScale": true,
+      "minScale": 0.5,
+      "maxScale": 1.5,
+      "scaleFromX": 0,
+      "scaleFromY": 0,
+      "scaleToX": 1.5,
+      "scaleToY": 1.5,
+      "scaleRate": 1500,
+      "scaleEase": "Linear",
+      "scaleEaseMode": "None",
+      "scaleYoyo": false,
+      "alphaMin": 0,
+      "alphaMax": 1,
+      "alphaRate": 1500,
+      "alphaEase": "Linear",
+      "alphaEaseMode": "None",
+      "alphaYoyo": true,
+      "particleArguments": {
+        "lifespan": {
+          "min": 500,
+          "max": 750
+        },
+        "color": {
+          "start": {
+            "r": 0,
+            "g": 11,
+            "b": 255,
+            "a": 1,
+            "h": 0,
+            "s": 0,
+            "l": 0,
+            "v": 0,
+            "color": 3071,
+            "color32": -16774145,
+            "rgba": "rgba(0,11,255,1)"
+          },
+          "end": {
+            "r": 0,
+            "g": 11,
+            "b": 255,
+            "a": 1,
+            "h": 0,
+            "s": 0,
+            "l": 0,
+            "v": 0,
+            "color": 3071,
+            "color32": -16774145,
+            "rgba": null
+          },
+          "ease": "Linear",
+          "easeMode": "None",
+          "delay": 0,
+          "rate": 1500
+        }
+      },
+      "rotationMin": -360,
+      "rotationMax": 360,
+      "bounceX": 0,
+      "bounceY": 0,
+      "angularDrag": 0,
+      "minSpeedX": -500,
+      "minSpeedY": -500,
+      "maxSpeedX": "501",
+      "maxSpeedY": "500",
+      "frequency": 25,
+      "enabled": true,
+      "explode": true,
+      "flow": false,
+      "blendMode": 0,
+      "default": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAHklEQVQ4jWP8////ZgYKAROlBowaMmrIqCGjhkABADAjA9Lg9zWpAAAAAElFTkSuQmCC"
+    }
+  }
+}

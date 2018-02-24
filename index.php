@@ -16,6 +16,7 @@
       document.body.appendChild(div);
     </script>
 
+    <script src="//cdn.jsdelivr.net/npm/@koreez/phaser-particle-editor-plugin/dist/plugin.min.js"></script>
     <script type="text/javascript" src="controls.js"></script>
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="game_timer.js"></script>

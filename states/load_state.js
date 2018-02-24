@@ -18,6 +18,9 @@ var load_state = {
     game.load.image('x', 'assets/x.png');
     game.load.image('enemy_bullet', 'assets/enemy_bullet.png');
 
+    game.load.json('red_explosion', 'assets/particles/red_explosion.json')
+    game.load.json('blue_explosion', 'assets/particles/blue_explosion.json')
+
   },
   create: function() {
     game.state.start('menu');
