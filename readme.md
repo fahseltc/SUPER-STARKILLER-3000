@@ -1,4 +1,10 @@
-Mega Mecha Marxist II is a 2D action game made using [Phaser](https://phaser.io/).
+Mega Mecha Marxist II is a 2D action / bullet hell game made using [Phaser](https://phaser.io/).
+
+# Features
+- Fully deployable on heroku free tier.
+- Auto github deploy using heroku.
+- [Staging](https://mega-mecha-marxist-staging.herokuapp.com/) and [Production](https://mega-mecha-marxist.herokuapp.com/) environments using heroku pipelines.
+- [Custom leaderboard](https://github.com/fahseltc/leaderboard-node) in nodejs using heroku postgres.
 
 
 
