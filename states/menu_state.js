@@ -20,9 +20,50 @@ var menu_state = {
 
     var leaderboard_button = game.input.keyboard.addKey(Phaser.Keyboard.L);
     leaderboard_button.onDown.addOnce(function(){ game.state.start('leaderboard') }, this);
+
+    // sounds
+    this.music1 = sound_manager.add('music1');
+    this.music2 = sound_manager.add('music2');
+    this.music2.loop = true;
+    this.music3 = sound_manager.add('music3');
+    this.music4 = sound_manager.add('music4');
+
+    this.music1.onStop.addOnce(function() { this.music2.play(); }, this);
+    //this.music3.onStop.addOnce(function() { this.music4.play(); game.state.start('play'); }, this);
+    this.music1.play();
+
+    var no_icon = game.add.sprite(100, 700, 'no');
+    no_icon.scale.x = 0.3;
+    no_icon.scale.y = 0.3;
+    no_icon.anchor.set(0.5, 0.5);
+    no_icon.visible = false;
+
+
+    var sound_icon = game.add.sprite(100, 700, 'sound_white');
+    sound_icon.scale.x = 0.2;
+    sound_icon.scale.y = 0.2;
+    sound_icon.anchor.set(0.5, 0.5);
+    sound_icon.inputEnabled = true;
+    sound_icon.events.onInputDown.add(function() {
+      if(game.sound.mute == true) {
+        console.log('unmuting');
+        game.sound.mute = false;
+        sound_manager.stopAll();
+        no_icon.visible = false;
+        this.music2.play();
+      } else {
+        console.log('muting');
+        game.sound.mute = true;
+        no_icon.visible = true;
+        sound_manager.stopAll();
+      }
+    }, this);
   },
 
   start: function() {
-      game.state.start('play');
+    this.music1.stop();
+    this.music2.stop();
+    this.music4.play();
+    game.state.start('play')
   }
 }

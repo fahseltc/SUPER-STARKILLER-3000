@@ -12,8 +12,8 @@ var play_state = {
     this.score = new Score();
     this.health_bar = new HealthBar(this.mecha);
     this.enemy_manager = new EnemyManager(game, this.mecha);
-    this.timer = new GameTimer(this.score);
-    this.timer.start();
+   // this.timer = new GameTimer(this.score);
+    //this.timer.start();
     game.world.bringToTop(this.mecha.sprite);
   },
 
@@ -30,7 +30,7 @@ var play_state = {
   },
 
   render: function() {
-    this.timer.render();
+    //this.timer.render();
     this.mecha.render();
     this.health_bar.render(this.mecha);
     game.debug.text(game.time.fps, 1, 50, "#00ff00");
@@ -61,7 +61,6 @@ var play_state = {
       console.log("u ded");
       last_score = this.score.score + this.score.score_buffer;
       mecha.heal();
-      this.timer.timer.stop();
       game.state.start('post');
     }
     console.log("ouch");

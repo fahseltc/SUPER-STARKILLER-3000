@@ -11,7 +11,6 @@ class HealthBar {
     this.display_sprites = [];
 
     for(var i = 0; i < this.mecha.sprite.maxHealth; i++) {
-      console.log('made one')
       var sprite = game.add.sprite(550 + 100 * i, 60, 'mecha');
       sprite.scale.setTo(0.3, 0.3);
       sprite.anchor.x = 0.5;

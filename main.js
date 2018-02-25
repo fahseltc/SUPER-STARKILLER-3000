@@ -27,6 +27,9 @@ switch(conf.env) {
 }
 
 var game = new Phaser.Game(conf);
+var sound_manager = new Phaser.SoundManager(game);
+sound_manager.boot();
+sound_manager.muteOnPause = false;
 var last_score = 0;
 var leaderboard_data;
 

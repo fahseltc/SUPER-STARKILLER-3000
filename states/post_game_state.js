@@ -6,6 +6,12 @@ var post_game_state = {
     Utils.create_centered_text('but you scored ' + last_score + ' points.', 400, 40);
     this.create_submit_score_button();
     this.create_play_again_button();
+
+    this.music = sound_manager._sounds.find(item => { return item.name == "music4" });
+    console.log(this.music);
+    var tween = game.add.tween(this.music).to( { volume: 0 }, 1000).start();
+    console.log("does this not happen every time?");
+    tween.onComplete.add(function() { this.music.stop(); sound_manager.destroy(); }, this);
   },
 
   send_score: function() {

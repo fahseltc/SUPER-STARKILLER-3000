@@ -17,10 +17,16 @@ var load_state = {
     game.load.image('spinner', 'assets/spinner.png');
     game.load.image('x', 'assets/x.png');
     game.load.image('enemy_bullet', 'assets/enemy_bullet.png');
+    game.load.image('sound_white', 'assets/sound_white.png');
+    game.load.image('no', 'assets/no.png');
 
-    game.load.json('red_explosion', 'assets/particles/red_explosion.json')
-    game.load.json('blue_explosion', 'assets/particles/blue_explosion.json')
+    game.load.json('red_explosion', 'assets/particles/red_explosion.json');
+    game.load.json('blue_explosion', 'assets/particles/blue_explosion.json');
 
+    game.load.audio('music1', 'assets/music/lite_buildup.ogg');
+    game.load.audio('music2', 'assets/music/chillin.ogg');
+    game.load.audio('music3', 'assets/music/buildup.ogg');
+    game.load.audio('music4', 'assets/music/the_song.ogg');
   },
   create: function() {
     game.state.start('menu');

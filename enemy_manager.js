@@ -27,7 +27,7 @@ class EnemyManager {
   }
 
   update() {
-    console.log("bad guys visible: " + this.bad_guys.count('visible', true));
+//    console.log("bad guys visible: " + this.bad_guys.count('visible', true));
     if(game.time.now > this.next_spawn_time && this.bad_guys.count('visible', true) < 5) {
       this.spawn_bad_guy();
       //this.next_spawn_time = game.time.now + 300 + Math.random() * 400;
