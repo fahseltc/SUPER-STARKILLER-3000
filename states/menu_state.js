@@ -4,8 +4,8 @@ var menu_state = {
 
     var space_to_begin_text = Utils.create_centered_text('Press Space or Click to begin', 850, 35);
 
-    var now_with_text = Utils.create_text('Now with a PERMANENT\nleaderboard!', 1100, 550, 20, "#FFD700");
-    var now_with_text2 = Utils.create_text('and way more bullets', 1100, 600, 10, "#FFD700");
+    var now_with_text = Utils.create_text('Cool enemy swooshes\nand spacebar!', 1100, 550, 20, "#FFD700");
+    var now_with_text2 = Utils.create_text('and less difficulty?\nbecause its level 1', 1100, 600, 10, "#FFD700");
     now_with_text.angle = -2;
     game.add.tween(now_with_text).to({ angle: 2 }, 5000, function(k) {
        return Math.sin(Math.PI * 2 * k);
@@ -21,7 +21,6 @@ var menu_state = {
 
     var leaderboard_button = game.input.keyboard.addKey(Phaser.Keyboard.L);
     leaderboard_button.onDown.addOnce(function(){ game.state.start('leaderboard') }, this);
-
 
     // sounds
     this.music1 = sound_manager.add('music1');
@@ -39,7 +38,6 @@ var menu_state = {
     no_icon.scale.y = 0.3;
     no_icon.anchor.set(0.5, 0.5);
     no_icon.visible = false;
-
 
     var sound_icon = game.add.sprite(100, 700, 'sound_white');
     sound_icon.scale.x = 0.2;
