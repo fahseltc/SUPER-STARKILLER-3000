@@ -1,0 +1,31 @@
+# Feature list / roadmap
+
+### The Core
+- Timed levels
+- "Level complete" screen
+- Multiple levels, at least 3, maybe 5?
+- UI rework pass
+- Graphics rework pass
+
+### Detail/balance
+- Player weapon balance
+- Enemy attribute balance
+- Enemy attribute scaling balance
+
+### The End
+- Some kind of final boss
+- Story elements. Bother B or chez for helps.
+
+### The Extra
+- Bullet hell levels focused on dodging.
+- Animation between levels (space warp? or something)
+- Simple upgrade system
+- Possible additional enemy behavior 
+- Temporary speed boost or other temp upgrade
+
+### The Awesome
+- more swooshes and tween effects because they are cool
+
+### The "nice to have"
+
+### The rest
