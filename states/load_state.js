@@ -10,9 +10,9 @@ var load_state = {
     game.load.image('mecha', 'assets/mecha.png');
     game.load.image('bullet', 'assets/bullets.png');
     game.load.image('flame', 'assets/flame.png');
+    game.load.image('pat_flame', 'assets/pat_flame.png');
     game.load.image('red', 'assets/red.png');
     game.load.image('blue', 'assets/blue.png');
-    game.load.image('button', 'assets/button.png');
     game.load.image('circle', 'assets/circle.png');
     game.load.image('spinner', 'assets/spinner.png');
     game.load.image('x', 'assets/x.png');
