@@ -2,7 +2,7 @@ var menu_state = {
   create: function() {
     var title_text = Utils.create_centered_text('Mega\nMecha\nMarxist\nII', 300, 100, "#FF0000");
 
-    var space_to_begin_text = Utils.create_centered_text('Press Space to begin', 850, 35);
+    var space_to_begin_text = Utils.create_centered_text('Press Space or Click to begin', 850, 35);
 
     var now_with_text = Utils.create_text('Now with a PERMANENT\nleaderboard!', 1100, 550, 20, "#FFD700");
     var now_with_text2 = Utils.create_text('and way more bullets', 1100, 600, 10, "#FFD700");
@@ -17,9 +17,11 @@ var menu_state = {
 
     var start_button = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     start_button.onDown.addOnce(this.start, this);
+    game.input.activePointer.leftButton.onDown.addOnce(this.start, this);
 
     var leaderboard_button = game.input.keyboard.addKey(Phaser.Keyboard.L);
     leaderboard_button.onDown.addOnce(function(){ game.state.start('leaderboard') }, this);
+
 
     // sounds
     this.music1 = sound_manager.add('music1');
@@ -44,6 +46,7 @@ var menu_state = {
     sound_icon.scale.y = 0.2;
     sound_icon.anchor.set(0.5, 0.5);
     sound_icon.inputEnabled = true;
+    if(conf.env == 'dev') { game.sound.mute = true; }
     sound_icon.events.onInputDown.add(function() {
       if(game.sound.mute == true) {
         console.log('unmuting');

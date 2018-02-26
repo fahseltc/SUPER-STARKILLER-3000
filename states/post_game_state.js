@@ -8,15 +8,12 @@ var post_game_state = {
     this.create_play_again_button();
 
     this.music = sound_manager._sounds.find(item => { return item.name == "music4" });
-    console.log(this.music);
     var tween = game.add.tween(this.music).to( { volume: 0 }, 1000).start();
-    console.log("does this not happen every time?");
     tween.onComplete.add(function() { this.music.stop(); sound_manager.destroy(); }, this);
   },
 
   send_score: function() {
     var player = prompt('Please enter your name', '');
-    console.log(player);
     if(!player) { alert('You gotta enter a name'); return; }
 
     var body = 'name=' + player + '&score=' + last_score;
@@ -24,7 +21,6 @@ var post_game_state = {
     request.open('POST', game.config.backend_url + '/leaderboard', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     request.onload = function () {
-      console.log(this.responseText);
       game.state.start('leaderboard');
     };
     request.onerror = function(){ console.log(request.responseText); }; // failure case

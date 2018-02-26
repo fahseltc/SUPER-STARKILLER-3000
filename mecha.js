@@ -14,7 +14,7 @@ class Mecha {
     this.sprite.anchor.setTo(0.5, 0.5);
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
     this.sprite.body.angularDrag = 800;
-    this.sprite.body.drag.set(150);
+    this.sprite.body.drag.set(1550);
     this.sprite.body.maxAngular = 200;
     this.sprite.body.maxVelocity.set(900);
 
@@ -31,7 +31,11 @@ class Mecha {
   }
 
   update() {
-    this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
+    if(this.controls.space == true) {
+      this.sprite.rotation = game.physics.arcade.angleToPointer(this.sprite);
+    } else {
+      this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
+    }
     this.bullet_weapon.update(this.controls);
     this.circle_weapon.update(this.controls);
   }
@@ -43,10 +47,9 @@ class Mecha {
 
   take_damage() {
     this.sprite.damage(1);
-    console.log('took damage')
     if(this.sprite.alive) {
       this.invuln = true;
-      var tween = game.add.tween(this.sprite).to({ tint: 0x000000 }, INVULN_TIME, "Linear", true).yoyo(true).repeat(3);
+      var tween = game.add.tween(this.sprite).to( { tint: 0x000000 }, INVULN_TIME, "Linear", true).yoyo(true).repeat(3);
       tween.onComplete.add(function() { this.tint = 0xFFFFFF; this.invuln = false; }, this);
     }
   }

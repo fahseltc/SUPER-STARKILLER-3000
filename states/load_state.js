@@ -22,6 +22,7 @@ var load_state = {
 
     game.load.json('red_explosion', 'assets/particles/red_explosion.json');
     game.load.json('blue_explosion', 'assets/particles/blue_explosion.json');
+    game.load.json('levels', 'assets/levels.json');
 
     game.load.audio('music1', 'assets/music/lite_buildup.ogg');
     game.load.audio('music2', 'assets/music/chillin.ogg');

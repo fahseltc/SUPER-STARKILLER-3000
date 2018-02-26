@@ -1,19 +1,25 @@
 var play_state = {
 
+  preload: function() {
+    this.level_data = game.cache.getJSON('levels');
+    console.log(this.level_data);
+  },
+
   create: function() {
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.stage.backgroundColor = '#717993';
     game.canvas.oncontextmenu = function (e) { e.preventDefault(); };
     game.input.mouse.capture = true;
 
+    this.current_level = 1;
+
     this.controls = new Controls(game);
-    this.graphics = game.add.graphics(0, 0);
     this.mecha = new Mecha(400, 300, this.controls);
     this.score = new Score();
     this.health_bar = new HealthBar(this.mecha);
-    this.enemy_manager = new EnemyManager(game, this.mecha);
-   // this.timer = new GameTimer(this.score);
-    //this.timer.start();
+    console.log(this.level_data);
+    this.enemy_manager = new EnemyManager(game, this.mecha, this.level_data, this.current_level);
+
     game.world.bringToTop(this.mecha.sprite);
   },
 
@@ -46,7 +52,6 @@ var play_state = {
     }
     if((obj.key == 'circle') && (enemy.key == 'blue')) {
       enemy.kill();
-      console.log(enemy);
       game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('blue_explosion'));
       this.score.score_buffer += 5;
       this.enemy_manager.spawn = true;
