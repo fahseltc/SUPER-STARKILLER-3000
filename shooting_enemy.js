@@ -5,12 +5,17 @@ const ENEMY_BULLET_LIFESPAN = 6000;
 
 
 ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed) {
-  Phaser.Sprite.call(this, game, 1, 1, sprite);
+  Phaser.Sprite.call(this, game, 1, 1, 'turret_base_' + sprite);
+  this.rotation = Math.PI/4;
   this.mecha = mecha;
   this.game = game;
+  this.turret = game.add.sprite(1, 1, 'turret_top_' + sprite);
+  this.turret.anchor.x = 0.52;
+  this.turret.anchor.y = 0.3;
+  this.addChild(this.turret);
   this.bullet_delay = bullet_delay;
   this.bullet_speed = bullet_speed;
-  console.log('delay: ' + bullet_delay + '  speed: ' + bullet_speed)
+  //console.log('delay: ' + bullet_delay + '  speed: ' + bullet_speed)
 
   this.bullets = this.game.add.group();
   this.bullets.enableBodyDebug = true;
@@ -28,6 +33,7 @@ ShootingEnemy.prototype = Object.create(Phaser.Sprite.prototype);
 ShootingEnemy.prototype.constructor = constructor;
 
 ShootingEnemy.prototype.update = function() {
+  this.turret.rotation = game.physics.arcade.angleToXY(this.mecha.sprite, this.x, this.y) + Math.PI/4;
   if(this.alive && this.visible && this.game.time.now > this.bullet_time) {
     var bullet = this.bullets.getFirstExists(false);
     if(bullet) {

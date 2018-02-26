@@ -4,7 +4,6 @@ class MechaFlame {
   constructor(mecha) {
     this.mecha = mecha;
 
-    // flames
     this.flames = game.add.group();
     this.flames.createMultiple(100, 'pat_flame');
     this.flames.setAll('anchor.x', 0.5);

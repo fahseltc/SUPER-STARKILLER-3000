@@ -44,13 +44,13 @@ var play_state = {
 
   handle_collision: function (obj, enemy) {
     console.log('hit!');
-    if((obj.key == 'bullet') && (enemy.key == 'red')) {
+    if((obj.key == 'bullet') && (enemy.key == 'turret_base_red')) {
       enemy.kill();
       this.score.score_buffer += 5;
       game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('red_explosion'));
       this.enemy_manager.spawn = true;
     }
-    if((obj.key == 'circle') && (enemy.key == 'blue')) {
+    if((obj.key == 'circle') && (enemy.key == 'turret_base_blue')) {
       enemy.kill();
       game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('blue_explosion'));
       this.score.score_buffer += 5;
