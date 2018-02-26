@@ -1,8 +1,28 @@
 var menu_state = {
   create: function() {
-    var title_text = Utils.create_centered_text('Mega\nMecha\nMarxist\nII', 300, 100, "#FF0000");
+    //var title_text = Utils.create_centered_text('Mega\nMecha\nMarxist\nII', 300, 100, "#FF0000");
+    var title_text = Utils.create_centered_text('Mega', 100, 100, "#FF0000");
+    var title_text_old_x = title_text.x;
+    title_text.x = 0;
+    game.add.tween(title_text).to({ x: title_text_old_x}, 300, "Linear", true);
 
-    var space_to_begin_text = Utils.create_centered_text('Press Space or Click to begin', 850, 35);
+    var title_text1 = Utils.create_centered_text('Mecha', 210, 100, "#FF0000");
+    var title_text1_old_x = title_text1.x;
+    title_text1.x = game.world.width;
+    game.add.tween(title_text1).to({ x: title_text1_old_x}, 300, "Linear", true);
+
+    var title_text2 = Utils.create_centered_text('Marxist', 320, 100, "#FF0000");
+    var title_text2_old = title_text2.x;
+    title_text2.x = 0;
+    game.add.tween(title_text2).to({ x: title_text2_old}, 300, "Linear", true);
+
+    var title_text3 = Utils.create_centered_text('II', 430, 100, "#FF0000");
+    var title_text3_old = title_text3.y;
+    title_text3.y = 0;
+    game.add.tween(title_text3).to({ y: title_text3_old}, 300, Phaser.Easing.Exponential.In, true);
+
+
+    var space_to_begin_text = Utils.create_centered_text('Press Space to begin', 850, 35);
 
     var now_with_text = Utils.create_text('Cool enemy swooshes\nand spacebar!', 1100, 550, 20, "#FFD700");
     var now_with_text2 = Utils.create_text('and less difficulty?\nbecause its level 1', 1100, 600, 10, "#FFD700");
@@ -17,7 +37,7 @@ var menu_state = {
 
     var start_button = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     start_button.onDown.addOnce(this.start, this);
-    game.input.activePointer.leftButton.onDown.addOnce(this.start, this);
+    //game.input.activePointer.leftButton.onDown.addOnce(this.start, this);
 
     var leaderboard_button = game.input.keyboard.addKey(Phaser.Keyboard.L);
     leaderboard_button.onDown.addOnce(function(){ game.state.start('leaderboard') }, this);
