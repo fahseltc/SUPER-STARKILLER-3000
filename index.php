@@ -21,6 +21,8 @@
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="game_timer.js"></script>
     <script type="text/javascript" src="ui/score.js"></script>
+    <script type="text/javascript" src="level.js"></script>
+    <script type="text/javascript" src="level_manager.js"></script>
     <script type="text/javascript" src="ui/health_bar.js"></script>
     <script type="text/javascript" src="shooting_enemy.js"></script>
     <script type="text/javascript" src="enemy_manager.js"></script>

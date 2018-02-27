@@ -8,8 +8,7 @@ class Mecha {
     this.flames = new MechaFlame(this);
 
     // mecha setup
-    this.sprite = game.add.sprite(x, y, 'mecha');
-    //this.sprite.scale.setTo()
+    this.sprite = game.add.sprite(x, y, 'player');
     this.sprite.scale.setTo(0.4, 0.4);
     this.sprite.anchor.setTo(0.5, 0.5);
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
@@ -54,4 +53,9 @@ class Mecha {
     }
   }
 
+  destroy() {
+    this.sprite.destroy();
+    this.circle_weapon.sprite.destroy();
+    this.bullet_weapon.bullets.destroy();
+  }
 };

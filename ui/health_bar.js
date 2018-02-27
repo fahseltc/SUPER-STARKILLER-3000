@@ -11,7 +11,7 @@ class HealthBar {
     this.display_sprites = [];
 
     for(var i = 0; i < this.mecha.sprite.maxHealth; i++) {
-      var sprite = game.add.sprite(550 + 100 * i, 60, 'mecha');
+      var sprite = game.add.sprite(550 + 100 * i, 60, 'player');
       sprite.scale.setTo(0.3, 0.3);
       sprite.anchor.x = 0.5;
       sprite.anchor.y = 0.5;
@@ -27,5 +27,9 @@ class HealthBar {
 
     var hidden_sprites = this.display_sprites.slice(visible_sprites.length, this.display_sprites.length);
     hidden_sprites.forEach(function(element) { element.visible = true; })
+  }
+
+  destroy() {
+    this.display_sprites.forEach(function(element) { element.destroy(); } )
   }
 }

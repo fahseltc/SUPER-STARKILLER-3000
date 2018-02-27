@@ -28,4 +28,8 @@ class Score {
       this.score_buffer--;
     }
   }
+
+  destroy() {
+    this.score_label.destroy();
+  }
 }

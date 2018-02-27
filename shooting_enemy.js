@@ -1,10 +1,10 @@
 // const ENEMY_BULLET_SPEED = 200;
 // const ENEMY_BULLET_DELAY = 700;
-const ENEMY_BULLET_INITIAL_DELAY = 1500;
-const ENEMY_BULLET_LIFESPAN = 6000;
+//const ENEMY_BULLET_INITIAL_DELAY = 1500;
+const ENEMY_BULLET_LIFESPAN = 7000;
 
 
-ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed) {
+ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed, initial_delay) {
   Phaser.Sprite.call(this, game, 1, 1, 'turret_base_' + sprite);
   this.rotation = Math.PI/4;
   this.mecha = mecha;
@@ -15,6 +15,7 @@ ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed) {
   this.addChild(this.turret);
   this.bullet_delay = bullet_delay;
   this.bullet_speed = bullet_speed;
+  this.initial_delay = initial_delay;
   //console.log('delay: ' + bullet_delay + '  speed: ' + bullet_speed)
 
   this.bullets = this.game.add.group();
@@ -26,7 +27,7 @@ ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed) {
   this.bullets.setAll('anchor.y', 0.5);
   this.bullets.setAll('alive', false);
 
-  this.bullet_time = this.game.time.now + ENEMY_BULLET_INITIAL_DELAY;
+  this.bullet_time = this.game.time.now + initial_delay;
 };
 
 ShootingEnemy.prototype = Object.create(Phaser.Sprite.prototype);
@@ -45,4 +46,4 @@ ShootingEnemy.prototype.update = function() {
   }
 };
 
-ShootingEnemy.prototype.get_initial_delay = function() { return ENEMY_BULLET_INITIAL_DELAY };
+ShootingEnemy.prototype.get_initial_delay = function() { return this.initial_delay };

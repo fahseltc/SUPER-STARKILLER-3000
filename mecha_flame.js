@@ -5,7 +5,7 @@ class MechaFlame {
     this.mecha = mecha;
 
     this.flames = game.add.group();
-    this.flames.createMultiple(100, 'pat_flame');
+    this.flames.createMultiple(100, 'flame');
     this.flames.setAll('anchor.x', 0.5);
     this.flames.setAll('anchor.y', 0);
     this.flames.setAll('z',-1);

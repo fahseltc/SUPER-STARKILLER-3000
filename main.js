@@ -5,7 +5,7 @@ var conf = {
   parent: 'game',
   transparent: false,
   antialias: false,
-  scaleMode: Phaser.ScaleManager.NO_SCALE
+  scaleMode: Phaser.ScaleManager.NO_SCALE//RESIZE//SHOW_ALL //NO_SCALE
 };
 
 var temp_env = document.getElementById("environment").innerText;
