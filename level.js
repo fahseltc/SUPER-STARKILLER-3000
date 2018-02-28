@@ -1,15 +1,23 @@
 class Level {
-  constructor(level_data) {
+  constructor(level_data, level_manager) {
     this.level_data = level_data;
+    console.log(this.level_data)
+    this.level_manager = level_manager;
     this.controls = new Controls(game);
-    this.mecha = new Mecha(400, 300, this.controls);
+    this.mecha = new Mecha(game.width / 2, game.height / 2, this.controls);
     this.score = new Score();
     this.health_bar = new HealthBar(this.mecha);
-    //console.log(this.level_data);
-    //console.log('playstate: ' + this.current_level)
     this.enemy_manager = new EnemyManager(game, this.mecha, this.level_data);
-
     game.world.bringToTop(this.mecha.sprite);
+    console.log("level duration: " + this.level_data.DURATION * Phaser.Timer.SECOND)
+
+    this.timer = game.time.events.add(Phaser.Timer.SECOND * this.level_data.DURATION, this.change_level, this);
+    this.timer_display = new TimerDisplay(this.timer);
+    this.timer.timer.start();
+  }
+
+  change_level() {
+    this.level_manager.change_level(this.level_data.INDEX + 1)
   }
 
   update() {
@@ -27,7 +35,9 @@ class Level {
   render() {
     this.mecha.render();
     this.health_bar.render(this.mecha);
+    this.timer_display.render();
     game.debug.text(game.time.fps, 1, 50, "#00ff00");
+    //game.debug.text(this.timer.timer.duration / 1000, 1, 80, "#FFFFF");
   }
 
   handle_collision(obj, enemy) {
@@ -48,10 +58,14 @@ class Level {
 
   handle_player_hit(mecha, bullet) {
     bullet.kill();
-    if(!this.mecha.invuln){ this.mecha.take_damage(); }
+    if(!this.mecha.invuln) {
+      this.mecha.take_damage();
+    }
 
     if(!mecha.alive) {
       console.log("u ded");
+      this.timer.timer.destroy();
+      console.log("timer stopped");
       last_score = this.score.score + this.score.score_buffer;
       mecha.heal();
       game.state.start('post');
@@ -64,6 +78,8 @@ class Level {
     this.score.destroy();
     this.health_bar.destroy();
     this.enemy_manager.destroy();
+    this.timer_display.destroy();
+    this.timer.timer.destroy();
   }
 
 }

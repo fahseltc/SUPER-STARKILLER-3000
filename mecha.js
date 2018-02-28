@@ -33,7 +33,15 @@ class Mecha {
     if(this.controls.space == true) {
       this.sprite.rotation = game.physics.arcade.angleToPointer(this.sprite);
     } else {
-      this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
+      var distance_to_mouse = Phaser.Math.distance(game.input.activePointer.x, game.input.activePointer.y, this.sprite.x, this.sprite.y);
+
+      if(distance_to_mouse > 100) {
+        this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
+      } else {
+        // were close to mouse so rotate but dont move
+        this.sprite.rotation = game.physics.arcade.angleToPointer(this.sprite);
+      }
+
     }
     this.bullet_weapon.update(this.controls);
     this.circle_weapon.update(this.controls);

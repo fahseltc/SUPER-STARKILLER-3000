@@ -1,25 +1,25 @@
 {
   "levels": [
     {
-      "NUMBER": 1,
+      "INDEX": 0,
       "ENEMY_BULLET_DELAY": 1800,
       "ENEMY_BULLET_SPEED": 150,
-      "LEVEL_DURATION": 30,
-      "MAX_ENEMIES": 5,
+      "DURATION": 15,
+      "MAX_ENEMIES": 3,
       "ENEMY_BULLET_INITIAL_DELAY" : 1400,
       "SPAWN_DELAY_MIN": 1800,
       "SPAWN_DELAY_MULTI": 1000,
       "not_used": {
-
+        "NEXT_INDEX": 1
       }
     },
     {
-      "NUMBER": 2,
-      "ENEMY_BULLET_DELAY": 650,
+      "INDEX": 1,
+      "ENEMY_BULLET_DELAY": 950,
       "ENEMY_BULLET_SPEED": 250,
-      "LEVEL_DURATION": 30,
+      "DURATION": 20,
       "MAX_ENEMIES": 5,
-      "ENEMY_BULLET_INITIAL_DELAY" : 1500,
+      "ENEMY_BULLET_INITIAL_DELAY" : 1200,
       "SPAWN_DELAY_MIN": 1000,
       "SPAWN_DELAY_MULTI": 1000,
       "not_used": {
@@ -27,12 +27,25 @@
       }
     },
     {
-      "NUMBER": 3,
+      "INDEX": 2,
+      "ENEMY_BULLET_DELAY": 850,
+      "ENEMY_BULLET_SPEED": 200,
+      "DURATION": 25,
+      "MAX_ENEMIES": 7,
+      "ENEMY_BULLET_INITIAL_DELAY" : 1000,
+      "SPAWN_DELAY_MIN": 1000,
+      "SPAWN_DELAY_MULTI": 500,
+      "not_used": {
+
+      }
+    },
+    {
+      "INDEX": 3,
       "ENEMY_BULLET_DELAY": 150,
-      "ENEMY_BULLET_SPEED": 400,
-      "LEVEL_DURATION": 30,
+      "ENEMY_BULLET_SPEED": 200,
+      "DURATION": 30,
       "MAX_ENEMIES": 15,
-      "ENEMY_BULLET_INITIAL_DELAY" : 100,
+      "ENEMY_BULLET_INITIAL_DELAY" : 800,
       "SPAWN_DELAY_MIN": 200,
       "SPAWN_DELAY_MULTI": 500,
       "not_used": {

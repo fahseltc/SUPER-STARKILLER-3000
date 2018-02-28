@@ -2,15 +2,13 @@
 // const ENEMY_BULLET_DELAY = 700;
 //const ENEMY_BULLET_INITIAL_DELAY = 1500;
 const ENEMY_BULLET_LIFESPAN = 7000;
-
-
 ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed, initial_delay) {
-  Phaser.Sprite.call(this, game, 1, 1, 'turret_base_' + sprite);
+  Phaser.Sprite.call(this, game, 0, 0, 'turret_base_' + sprite);
   this.rotation = Math.PI/4;
   this.mecha = mecha;
   this.game = game;
-  this.turret = game.add.sprite(1, 1, 'turret_top_' + sprite);
-  this.turret.anchor.x = 0.52;
+  this.turret = game.add.sprite(0, 0, 'turret_top_' + sprite);
+  this.turret.anchor.x = 0.5;
   this.turret.anchor.y = 0.3;
   this.addChild(this.turret);
   this.bullet_delay = bullet_delay;

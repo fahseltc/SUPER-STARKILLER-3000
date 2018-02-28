@@ -5,7 +5,8 @@ class Score {
     this.score_label;
     this.score_label_tween;
 
-    this.score = 0;
+    this.previous_score = last_score;
+    this.score = last_score;
     this.score_buffer = 0;
 
     this.score_label = game.add.text(200, 60, "0", {
@@ -13,7 +14,7 @@ class Score {
       fill: "#FFFFFF",
       align: "center"
     });
-    this.score_label.text = 0;
+    this.score_label.text = this.score;
     this.score_label.anchor.setTo(0.5, 0.5);
     this.score_label.align = 'center';
 
@@ -29,7 +30,9 @@ class Score {
     }
   }
 
+
   destroy() {
+    last_score += (this.score + this.score_buffer) - this.previous_score;
     this.score_label.destroy();
   }
 }

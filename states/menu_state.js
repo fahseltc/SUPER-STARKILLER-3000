@@ -82,9 +82,10 @@ var menu_state = {
   },
 
   start: function() {
+    // todo fix music for ready state
     this.music1.stop();
     this.music2.stop();
     this.music4.play();
-    game.state.start('play')
+    game.state.start('ready');
   }
 }

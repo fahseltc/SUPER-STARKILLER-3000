@@ -4,7 +4,7 @@ var load_state = {
 
     //HACK TO PRELOAD A CUSTOM FONT
     var loadingLabel = game.add.text(80, 150, 'loading...', {font:"50px prstart", fill:"#FFFFFF"});
-    console.log('load');
+    console.log('load state');
 
     game.time.advancedTiming = true;
     game.load.image('player', 'assets/images/mecha.png');
@@ -32,6 +32,7 @@ var load_state = {
   },
   create: function() {
     game.state.start('menu');
+    //game.state.start('ready');
     //game.state.start('leaderboard');
     //game.state.start('post');
     //game.state.start('play');

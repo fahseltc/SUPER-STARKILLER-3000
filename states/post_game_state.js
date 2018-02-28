@@ -8,8 +8,11 @@ var post_game_state = {
     this.create_play_again_button();
 
     this.music = sound_manager._sounds.find(item => { return item.name == "music4" });
-    var tween = game.add.tween(this.music).to( { volume: 0 }, 1000).start();
-    tween.onComplete.add(function() { this.music.stop(); sound_manager.destroy(); }, this);
+    //var tween = game.add.tween(this.music).to( { volume: 0 }, 1000).start();
+    //tween.onComplete.add(function() { this.music.stop(); sound_manager.destroy(); }, this);
+
+    this.submit_button;
+    this.submit_button_text;
   },
 
   send_score: function() {
@@ -23,20 +26,22 @@ var post_game_state = {
     request.onload = function () {
       game.state.start('leaderboard');
     };
-    request.onerror = function(){ console.log(request.responseText); }; // failure case
+    request.onerror = function(){
+      console.log(request.responseText);
+    }; // failure case
     request.send(body);
   },
 
   create_submit_score_button: function() {
-    var g = this.add.graphics(0, 0);
-    g.lineStyle(2, 0x0000FF, 0.5);
-    g.beginFill(0x527cc5, 1);
-    g.drawRect(this.world.centerX - 250, this.world.centerY + 110, 500, 150);
-    g.endFill();
+    this.submit_button = this.add.graphics(0, 0);
+    this.submit_button.lineStyle(2, 0x0000FF, 0.5);
+    this.submit_button.beginFill(0x527cc5, 1);
+    this.submit_button.drawRect(this.world.centerX - 250, this.world.centerY + 110, 500, 150);
+    this.submit_button.endFill();
 
-    g.inputEnabled = true;
-    g.events.onInputDown.add(this.send_score, this);
-    Utils.create_centered_text('Push to\nsubmit score', 640, 30);
+    this.submit_button.inputEnabled = true;
+    this.submit_button.events.onInputDown.addOnce(this.send_score, this);
+    this.submit_button_text = Utils.create_centered_text('Push to\nsubmit score', 640, 30);
   },
 
   create_play_again_button: function() {
