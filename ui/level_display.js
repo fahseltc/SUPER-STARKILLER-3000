@@ -7,6 +7,6 @@ class LevelDisplay {
     });
 
     this.level_display.anchor.setTo(0.5, 0.5);
-    this.level_display.text = "Lvl: " + current_level_index;
+    this.level_display.text = "Level " + current_level_index;
   }
 }

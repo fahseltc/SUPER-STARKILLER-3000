@@ -24,8 +24,8 @@ var menu_state = {
 
     var space_to_begin_text = Utils.create_centered_text('Press Space to begin', 850, 35);
 
-    var now_with_text = Utils.create_text('Now with\nTimed Levels!!', 1100, 550, 20, "#FFD700");
-    var now_with_text2 = Utils.create_text('and if ur good enough it crashes!', 1100, 600, 10, "#FFD700");
+    var now_with_text = Utils.create_text('Now with breaks\nbetween levels', 1100, 550, 20, "#FFD700");
+    var now_with_text2 = Utils.create_text('muted by default\nbetter or worse?', 1100, 600, 10, "#FFD700");
     now_with_text.angle = -2;
     game.add.tween(now_with_text).to({ angle: 2 }, 5000, function(k) {
        return Math.sin(Math.PI * 2 * k);
@@ -51,20 +51,21 @@ var menu_state = {
 
     this.music1.onStop.addOnce(function() { this.music2.play(); }, this);
     //this.music3.onStop.addOnce(function() { this.music4.play(); game.state.start('play'); }, this);
-    this.music1.play();
 
     var no_icon = game.add.sprite(100, 700, 'no');
     no_icon.scale.x = 0.3;
     no_icon.scale.y = 0.3;
     no_icon.anchor.set(0.5, 0.5);
-    no_icon.visible = false;
+    no_icon.visible = true;
 
     var sound_icon = game.add.sprite(100, 700, 'sound_white');
     sound_icon.scale.x = 0.2;
     sound_icon.scale.y = 0.2;
     sound_icon.anchor.set(0.5, 0.5);
     sound_icon.inputEnabled = true;
-    if(conf.env == 'dev') { game.sound.mute = true; }
+
+    game.sound.mute = true;
+    //if(conf.env == 'dev') { game.sound.mute = true; }
     sound_icon.events.onInputDown.add(function() {
       if(game.sound.mute == true) {
         console.log('unmuting');
@@ -79,6 +80,8 @@ var menu_state = {
         sound_manager.stopAll();
       }
     }, this);
+
+    this.music1.play();
   },
 
   start: function() {
