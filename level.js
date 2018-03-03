@@ -36,7 +36,7 @@ class Level {
     this.mecha.render();
     this.health_bar.render(this.mecha);
     this.timer_display.render();
-    game.debug.text(game.time.fps, 1, 50, "#00ff00");
+    game.debug.text(game.time.fps, 1, 12, "#FFFFFF");
     //game.debug.text(this.timer.timer.duration / 1000, 1, 80, "#FFFFF");
   }
 

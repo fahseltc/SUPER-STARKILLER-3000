@@ -24,6 +24,7 @@
     <script type="text/javascript" src="ui/timer_display.js"></script>
     <script type="text/javascript" src="ui/health_bar.js"></script>
     <script type="text/javascript" src="ui/score.js"></script>
+    <script type="text/javascript" src="ui/level_display.js"></script>
     <script type="text/javascript" src="level_manager.js"></script>
 
     <script type="text/javascript" src="shooting_enemy.js"></script>

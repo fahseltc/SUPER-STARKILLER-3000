@@ -9,7 +9,6 @@ const ENEMY_PLAYER_SPAWN_DISTANCE = 150;
 
 class EnemyManager {
   constructor(game, mecha, level_data) {
-    console.log(level_data);
     this.game = game;
     this.mecha = mecha;
     this.level_data = level_data;

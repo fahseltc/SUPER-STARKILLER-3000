@@ -1,7 +1,6 @@
 var play_state = {
   preload: function() {
-    this.level_data = game.cache.getJSON('levels');
-    console.log(this.level_data);
+    //console.log(this.level_data);
   },
 
   create: function() {
@@ -16,5 +15,13 @@ var play_state = {
 
   render: function() {
     this.level_manager.render();
+  },
+
+  resumed: function() {
+    console.log("Play state resumed");
+  },
+
+  paused: function() {
+    console.log("Play state paused");
   }
 };

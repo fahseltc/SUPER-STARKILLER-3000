@@ -9,12 +9,11 @@ class Score {
     this.score = last_score;
     this.score_buffer = 0;
 
-    this.score_label = game.add.text(200, 60, "0", {
+    this.score_label = game.add.text(250, 60, this.create_score_label(), {
       font: "40px prstart",
       fill: "#FFFFFF",
       align: "center"
     });
-    this.score_label.text = this.score;
     this.score_label.anchor.setTo(0.5, 0.5);
     this.score_label.align = 'center';
 
@@ -25,9 +24,21 @@ class Score {
     if(this.score_buffer > 0) {
       this.score += 1;
       this.score_label_tween.start();
-      this.score_label.text = this.score;
+      this.score_label.text = this.create_score_label();
       this.score_buffer--;
     }
+  }
+
+  create_score_label() {
+    var score_total_digits = 10;
+    var digits_to_create = score_total_digits - this.score.toString().length;
+
+    var score_label_text = "";
+    for(var i = 0; i < digits_to_create; i++) {
+      score_label_text += "0";
+    }
+    score_label_text += this.score;
+    return score_label_text;
   }
 
 

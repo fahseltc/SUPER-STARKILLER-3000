@@ -31,6 +31,7 @@ var sound_manager = new Phaser.SoundManager(game);
 sound_manager.boot();
 sound_manager.muteOnPause = false;
 var last_score = 0;
+var after_menu_level_index = -1;
 var leaderboard_data;
 
 game.state.add('menu', menu_state);

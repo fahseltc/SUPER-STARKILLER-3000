@@ -32,7 +32,7 @@ class BulletWeapon {
   }
 
   render() {
-    game.debug.text(this.heat, 200, 14, "#00ff00");
+    //game.debug.text(this.heat, 200, 14, "#00ff00");
   }
 
   fire_bullet() {
