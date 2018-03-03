@@ -70,15 +70,18 @@ class EnemyManager {
         distance_to_player = Phaser.Math.distance(temp_x, temp_y, this.mecha.sprite.x, this.mecha.sprite.y);
       }
 
-      random_dead_bad_guy.reset(0, temp_y);
+      if(temp_x < game.width / 2) { // swoosh in from left
+        random_dead_bad_guy.reset(game.width, temp_y);
+      } else { // swoosh from right
+        random_dead_bad_guy.reset(0, temp_y);
+      }
+      game.add.tween(random_dead_bad_guy).to({ x: temp_x }, ENEMY_SPAWN_TWEEN_TIME, Phaser.Easing.Exponential.Out, true);
+
       random_dead_bad_guy.bullet_time = game.time.now + random_dead_bad_guy.get_initial_delay();
       random_dead_bad_guy.visible = true;
       random_dead_bad_guy.revive();
-      game.add.tween(random_dead_bad_guy).to({ x: temp_x }, ENEMY_SPAWN_TWEEN_TIME, Phaser.Easing.Exponential.Out, true);
-      random_dead_bad_guy.scale.x = 2;
-      random_dead_bad_guy.scale.y = 2;
+
       random_dead_bad_guy.alpha = 0.3;
-      game.add.tween(random_dead_bad_guy.scale).to({ x: 1, y:1 } , ENEMY_SPAWN_TWEEN_TIME, Phaser.Easing.Exponential.In, true);
       game.add.tween(random_dead_bad_guy).to({ alpha: 1 } , ENEMY_SPAWN_TWEEN_TIME, Phaser.Easing.Exponential.In, true);
     }
   }

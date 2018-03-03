@@ -24,6 +24,7 @@ var post_game_state = {
     request.open('POST', game.config.backend_url + '/leaderboard', true);
     request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     request.onload = function () {
+      last_score = 0;
       game.state.start('leaderboard');
     };
     request.onerror = function(){
@@ -52,7 +53,10 @@ var post_game_state = {
     g2.endFill();
 
     g2.inputEnabled = true;
-    g2.events.onInputDown.add(function() { game.state.start('menu'); }, this);
+    g2.events.onInputDown.add(function() {
+      last_score = 0;
+      game.state.start('menu');
+    }, this);
     Utils.create_centered_text('Back to Menu', 810, 30);
   }
 };

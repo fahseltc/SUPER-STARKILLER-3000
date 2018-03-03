@@ -14,7 +14,6 @@ ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed, initia
   this.bullet_delay = bullet_delay;
   this.bullet_speed = bullet_speed;
   this.initial_delay = initial_delay;
-  //console.log('delay: ' + bullet_delay + '  speed: ' + bullet_speed)
 
   this.bullets = this.game.add.group();
   this.bullets.enableBodyDebug = true;
@@ -26,6 +25,9 @@ ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed, initia
   this.bullets.setAll('alive', false);
 
   this.bullet_time = this.game.time.now + initial_delay;
+
+  this.graphics = game.add.graphics(this.x, this.y);
+  this.spinner_angle = 0;
 };
 
 ShootingEnemy.prototype = Object.create(Phaser.Sprite.prototype);
@@ -42,6 +44,33 @@ ShootingEnemy.prototype.update = function() {
       this.bullet_time = game.time.now + this.bullet_delay;
     }
   }
-};
+
+    this.graphics.clear();
+  if(this.alive && this.visible) {
+    var ms_till_shot = this.bullet_time - game.time.now;
+    // (range 0 to this.bullet_time) must map to (0 to 360)
+    var degree_multiplier = ms_till_shot / this.bullet_delay;
+    var degrees = degree_multiplier * 360;
+
+    this.graphics.beginFill(0x000000);
+    this.graphics.arc(this.x, this.y, 9, this.turret.rotation + Math.PI / 1.31, this.turret.rotation + game.math.degToRad(degrees) + Math.PI / 1.31 , true);  //
+    this.graphics.endFill();
+}};
+
+// ShootingEnemy.prototype.render = function() {
+//   this.draw_spinner();
+// }
+
+// ShootingEnemy.prototype.draw_spinner = function() {
+
+//   // this.graphics.clear();
+//   // if(this.visible){
+//   //   //console.log(angle2);
+//   //   this.graphics.beginFill(0x000000);
+//   //   this.graphics.arc(this.x, this.y, 9, this.angle_data.min, game.math.degToRad(this.angle_data.max), true);
+//   //   this.graphics.endFill();
+//   // }
+// };
 
 ShootingEnemy.prototype.get_initial_delay = function() { return this.initial_delay };
+ShootingEnemy.prototype.destroy = function() { this.graphics.clear(); this.graphics.destroy(); };
