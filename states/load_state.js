@@ -1,12 +1,16 @@
 var load_state = {
-
   preload: function() {
-
-    //HACK TO PRELOAD A CUSTOM FONT
-    var loadingLabel = game.add.text(80, 150, 'loading...', {font:"50px prstart", fill:"#FFFFFF"});
+    game.time.advancedTiming = true;
     console.log('load state');
 
-    game.time.advancedTiming = true;
+    this.progress_bar = game.add.sprite(game.width/2, game.height/2, 'loading_bar');
+    this.progress_bar.anchor.setTo(0.5, 0.5);
+    this.ready = false;
+    game.load.setPreloadSprite(this.progress_bar);
+
+    //HACK TO PRELOAD A CUSTOM FONT first font will always be funky
+    Utils.create_centered_text("LOADING", game.height/2 , 50, "#FFFFFF");
+
     game.load.image('player', 'assets/images/mecha.png');
     game.load.image('player_bullet', 'assets/images/player_bullet.png');
     game.load.image('flame', 'assets/images/flame.png');
@@ -31,10 +35,18 @@ var load_state = {
     game.load.audio('music4', 'assets/music/the_song.ogg');
   },
   create: function() {
-    game.state.start('menu');
-    //game.state.start('ready');
-    //game.state.start('leaderboard');
-    //game.state.start('post');
-    //game.state.start('play');
+    this.progress_bar.cropEnabled = false;
+  },
+
+  update: function() {
+    if(game.cache.isSoundDecoded('music1') && this.ready == false) {
+      this.ready = true;
+      game.state.start('menu');
+      //game.state.start('ready');
+      //game.state.start('leaderboard');
+      //game.state.start('post');
+      //game.state.start('play');
+    }
   }
+
 };
