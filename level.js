@@ -5,6 +5,8 @@ class Level {
     this.level_manager = level_manager;
     this.controls = new Controls(game);
     this.mecha = new Mecha(game.width / 2, game.height / 2, this.controls);
+
+    var ui_background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'ui_background');
     this.score = new Score();
     this.health_bar = new HealthBar(this.mecha);
     this.enemy_manager = new EnemyManager(game, this.mecha, this.level_data);

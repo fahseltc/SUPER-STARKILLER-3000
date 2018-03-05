@@ -7,9 +7,9 @@ var post_game_state = {
     this.create_submit_score_button();
     this.create_play_again_button();
 
-    this.music = sound_manager._sounds.find(item => { return item.name == "music4" });
-    //var tween = game.add.tween(this.music).to( { volume: 0 }, 1000).start();
-    //tween.onComplete.add(function() { this.music.stop(); sound_manager.destroy(); }, this);
+    this.music = sound_manager._sounds.find(item => { return item.name == "mm_xanadont_song" });
+    var tween = game.add.tween(this.music).to( { volume: 0 }, 1000).start();
+    tween.onComplete.add(function() { this.music.stop(); sound_manager.destroy(); }, this);
 
     this.submit_button;
     this.submit_button_text;
@@ -55,6 +55,7 @@ var post_game_state = {
     g2.inputEnabled = true;
     g2.events.onInputDown.add(function() {
       last_score = 0;
+      after_menu_level_index = -1
       game.state.start('menu');
     }, this);
     Utils.create_centered_text('Back to Menu', 810, 30);

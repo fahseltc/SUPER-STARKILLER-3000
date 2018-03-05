@@ -4,7 +4,7 @@ var play_state = {
   },
 
   create: function() {
-    game.stage.backgroundColor = '#717993';
+    game.add.tileSprite(0, 0, 1400, 900, 'game_background');
 
     this.level_manager = new LevelManager();
   },

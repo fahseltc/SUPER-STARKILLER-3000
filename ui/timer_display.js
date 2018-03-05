@@ -3,7 +3,7 @@ class TimerDisplay {
     this.timer = timer.timer;
     this.timer_label = game.add.text(700, 150, this.timer.duration / 1000, {
       font: "30px prstart",
-      fill: "#FFFF00",
+      fill: "#FFFFFF",
       align: "center"
     });
 
