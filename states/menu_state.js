@@ -91,7 +91,6 @@ var menu_state = {
     }, this);
 
     //this.music1.play();
-    
 
   },
 

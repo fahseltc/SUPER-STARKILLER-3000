@@ -41,5 +41,6 @@ game.state.add('load', load_state);
 game.state.add('post', post_game_state);
 game.state.add('leaderboard', leaderboard_state);
 game.state.add('ready', ready_state);
+game.state.add('travel', travel_state);
 
 game.state.start('boot');

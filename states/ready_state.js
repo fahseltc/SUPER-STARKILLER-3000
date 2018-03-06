@@ -21,7 +21,7 @@ var ready_state = {
     circle_button.drawCircle(game.width / 2, game.height / 2, 100);
 
     circle_button.inputEnabled = true;
-    circle_button.events.onInputDown.addOnce(function() { game.state.start('play') }, this);
+    circle_button.events.onInputDown.addOnce(function() { game.state.start('travel') }, this);
 
   },
 

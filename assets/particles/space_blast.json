@@ -1,0 +1,94 @@
+{
+  "emitters": {
+    "default": {
+      "width": 0,
+      "height": 0,
+      "gravityX": 0,
+      "gravityY": 0,
+      "emitX": 0,
+      "emitY": 0,
+      "maxParticles": "200",
+      "frames": 1,
+      "quantity": 5,
+      "total": -1,
+      "immediate": false,
+      "collide": false,
+      "collideWorldBounds": false,
+      "enableBody": false,
+      "randomScale": false,
+      "minScale": 0.5,
+      "maxScale": 1.5,
+      "scaleFromX": 0,
+      "scaleFromY": 0,
+      "scaleToX": 2,
+      "scaleToY": 2,
+      "scaleRate": 1500,
+      "scaleEase": "Linear",
+      "scaleEaseMode": "None",
+      "scaleYoyo": false,
+      "alphaMin": 0,
+      "alphaMax": 1,
+      "alphaRate": 1500,
+      "alphaEase": "Linear",
+      "alphaEaseMode": "None",
+      "alphaYoyo": false,
+      "particleArguments": {
+        "lifespan": {
+          "min": 1500,
+          "max": 2000
+        },
+        "startRotation": {
+          "min": 50,
+          "max": 300
+        },
+        "color": {
+          "start": {
+            "r": 69,
+            "g": 248,
+            "b": 255,
+            "a": 1,
+            "h": 0,
+            "s": 0,
+            "l": 0,
+            "v": 0,
+            "color": 4585727,
+            "color32": -12191489,
+            "rgba": "rgba(69,248,255,1)"
+          },
+          "end": {
+            "r": 255,
+            "g": 105,
+            "b": 180,
+            "a": 1,
+            "h": 0,
+            "s": 0,
+            "l": 0,
+            "v": 0,
+            "color": 16738740,
+            "color32": -38476,
+            "rgba": null
+          },
+          "ease": "Linear",
+          "easeMode": "None",
+          "delay": 200,
+          "rate": 1540
+        }
+      },
+      "rotationMin": -360,
+      "rotationMax": 360,
+      "bounceX": 0,
+      "bounceY": 0,
+      "angularDrag": 0,
+      "minSpeedX": -200,
+      "minSpeedY": -200,
+      "maxSpeedX": 200,
+      "maxSpeedY": 200,
+      "frequency": 1,
+      "enabled": true,
+      "explode": false,
+      "flow": true,
+      "blendMode": 0,
+      "default": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMjHxIGmVAAAAJElEQVQYV2P4//8/DCMDsBhBSZwAmw44IKgThpEBWAyP5H8GAM/Tsk6S300GAAAAAElFTkSuQmCC"
+    }
+  }
+}

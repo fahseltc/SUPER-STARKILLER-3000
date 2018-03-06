@@ -26,6 +26,7 @@
     <script type="text/javascript" src="ui/score.js"></script>
     <script type="text/javascript" src="ui/level_display.js"></script>
     <script type="text/javascript" src="level_manager.js"></script>
+    <script type="text/javascript" src="blur_filter.js"></script>
 
     <script type="text/javascript" src="shooting_enemy.js"></script>
     <script type="text/javascript" src="enemy_manager.js"></script>
@@ -34,6 +35,7 @@
     <script type="text/javascript" src="circle_weapon.js"></script>
     <script type="text/javascript" src="bullet_weapon.js"></script>
     <script type="text/javascript" src="states/menu_state.js"></script>
+    <script type="text/javascript" src="states/travel_state.js"></script>
     <script type="text/javascript" src="states/play_state.js"></script>
     <script type="text/javascript" src="states/load_state.js"></script>
     <script type="text/javascript" src="states/boot_state.js"></script>

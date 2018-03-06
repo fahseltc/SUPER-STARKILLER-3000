@@ -11,7 +11,7 @@ var load_state = {
     //HACK TO PRELOAD A CUSTOM FONT first font will always be funky
     Utils.create_centered_stroke_text("LOADING", game.height/2 , 50, "#FFFFFF");
 
-    game.load.audio('mm_xanadont_song', 'assets/music/Mystery_Mammal_Xanadont.ogg');
+    //game.load.audio('mm_xanadont_song', 'assets/music/Mystery_Mammal_Xanadont.ogg');
 
     game.load.image('player', 'assets/images/mecha.png');
     game.load.image('player_bullet', 'assets/images/player_bullet.png');
@@ -31,10 +31,15 @@ var load_state = {
     game.load.image('ui_background', 'assets/images/ui_background.png');
     game.load.image('game_background', 'assets/images/game_background.png');
     game.load.image('pat_bg', 'assets/images/pat_bg.png');
+    game.load.image('pink_rect_filled', 'assets/images/pink_rect_filled.png');
+    game.load.image('pink_rect_empty', 'assets/images/pink_rect_empty.png');
 
     game.load.json('red_explosion', 'assets/particles/red_explosion.json');
     game.load.json('blue_explosion', 'assets/particles/blue_explosion.json');
+    game.load.json('space_blast', 'assets/particles/space_blast.json');
     game.load.json('levels', 'assets/levels.json');
+
+
 
     // game.load.audio('music1', 'assets/music/lite_buildup.ogg');
     // game.load.audio('music2', 'assets/music/chillin.ogg');
@@ -47,14 +52,15 @@ var load_state = {
   },
 
   update: function() {
-    if(game.cache.isSoundDecoded('mm_xanadont_song') && this.ready == false) {
-      this.ready = true;
-      game.state.start('menu');
-      //game.state.start('ready');
-      //game.state.start('leaderboard');
-      //game.state.start('post');
-      //game.state.start('play');
-    }
+    // if(game.cache.isSoundDecoded('mm_xanadont_song') && this.ready == false) {
+    //   this.ready = true;
+    game.state.start('menu');
+    //   //game.state.start('ready');
+    //   //game.state.start('leaderboard');
+    //   //game.state.start('post');
+    //   //game.state.start('play');
+      //game.state.start('travel');
+    //}
   }
 
 };
