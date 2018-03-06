@@ -45,7 +45,7 @@ ShootingEnemy.prototype.update = function() {
     }
   }
 
-    this.graphics.clear();
+  this.graphics.clear();
   if(this.alive && this.visible) {
     var ms_till_shot = this.bullet_time - game.time.now;
     // (range 0 to this.bullet_time) must map to (0 to 360)

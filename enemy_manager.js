@@ -4,7 +4,7 @@
 const ENEMY_SPAWN_TWEEN_TIME = 500;
 
 const SCREEN_EDGE_SPAWN_DISTANCE = 50;
-const TOP_SCREEN_EDGE_SPAWN_DISTANCE = 130;
+const TOP_SCREEN_EDGE_SPAWN_DISTANCE = 180;
 const ENEMY_PLAYER_SPAWN_DISTANCE = 150;
 
 class EnemyManager {
@@ -16,6 +16,9 @@ class EnemyManager {
     this.all_bullets = game.add.group();
     this.create_enemies();
     this.next_spawn_time = 0;
+
+    this.enemies_left_to_spawn = this.level_data.ENEMIES_IN_WAVE;
+    this.all_enemies_spawned = false;
   }
 
   create_enemies() {
@@ -43,12 +46,30 @@ class EnemyManager {
 
   update() {
   // console.log("bad guys visible: " + this.bad_guys.count('visible', true));
-    if(game.time.now > this.next_spawn_time
-      && this.bad_guys.count('visible', true) < this.bad_guys.length
-      && this.bad_guys.count('visible', true) < this.level_data.MAX_ENEMIES) {
+    if(this.enemies_left_to_spawn <= 0) { this.all_enemies_spawned = true; }
+    if(this.ready_to_spawn_enemy()) {
+      console.log("enemies to spawn: " + this.enemies_left_to_spawn)
+      this.enemies_left_to_spawn--;
       this.spawn_bad_guy();
       this.next_spawn_time = game.time.now + this.level_data.SPAWN_DELAY_MIN + Math.random() * this.level_data.SPAWN_DELAY_MULTI;
     }
+  }
+
+  ready_to_spawn_enemy() {
+    return (
+      game.time.now > this.next_spawn_time
+      && this.bad_guys.count('visible', true) < this.bad_guys.length
+      && this.bad_guys.count('visible', true) < this.level_data.MAX_ENEMIES
+      && this.enemies_left_to_spawn > 0
+      )
+  }
+
+  are_all_enemies_dead(){
+    //console.log("visible bad guys: " + this.bad_guys.count('visible', true));
+    //console.log("all enemies spawned?: " + this.all_enemies_spawned);
+    var result = (this.bad_guys.count('visible', true) == 0 && this.all_enemies_spawned);
+
+    return result;
   }
 
   debug_render(sprite) {
@@ -76,7 +97,7 @@ class EnemyManager {
       }
       game.add.tween(random_dead_bad_guy).to({ x: temp_x }, ENEMY_SPAWN_TWEEN_TIME, Phaser.Easing.Exponential.Out, true);
 
-      random_dead_bad_guy.bullet_time = game.time.now + random_dead_bad_guy.get_initial_delay();
+      random_dead_bad_guy.bullet_time = game.time.now + random_dead_bad_guy.get_initial_delay() + ENEMY_SPAWN_TWEEN_TIME;
       random_dead_bad_guy.visible = true;
       random_dead_bad_guy.revive();
 

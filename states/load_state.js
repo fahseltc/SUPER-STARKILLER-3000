@@ -26,6 +26,7 @@ var load_state = {
     game.load.image('enemy_bullet', 'assets/images/enemy_bullet.png');
     game.load.image('sound_white', 'assets/images/sound_white.png');
     game.load.image('no', 'assets/images/no.png');
+    game.load.image('powerup_p', 'assets/images/powerup_p.png');
 
     game.load.image('main_menu_background', 'assets/images/main_menu_background.png');
     game.load.image('ui_background', 'assets/images/ui_background.png');

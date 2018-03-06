@@ -2,25 +2,25 @@ var menu_state = {
   create: function() {
     var background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'pat_bg');
     //var title_text = Utils.create_centered_text('Mega\nMecha\nMarxist\nII', 300, 100, "#FF0000");
-    var title_text = Utils.create_centered_stroke_text('Super', 110, 100, "#FF0000");
+    var title_text = Utils.create_centered_stroke_text('SUPER', 110, 100, "#FF0000");
     var title_text_old_x = title_text.x;
     title_text.x = 0;
     title_text.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
     game.add.tween(title_text).to({ x: title_text_old_x}, 300, "Linear", true);
 
-    var title_text1 = Utils.create_centered_stroke_text('Space', 220, 100, "#FF0000");
+    var title_text1 = Utils.create_centered_stroke_text('STARKILLER', 220, 100, "#FF0000");
     var title_text1_old_x = title_text1.x;
     title_text1.x = game.world.width;
     title_text1.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
     game.add.tween(title_text1).to({ x: title_text1_old_x}, 300, "Linear", true);
 
-    var title_text2 = Utils.create_centered_stroke_text('Somethin', 330, 100, "#FF0000");
-    var title_text2_old = title_text2.x;
-    title_text2.x = 0;
-    title_text2.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
-    game.add.tween(title_text2).to({ x: title_text2_old}, 300, "Linear", true);
+    // var title_text2 = Utils.create_centered_stroke_text('', 330, 100, "#FF0000");
+    // var title_text2_old = title_text2.x;
+    // title_text2.x = 0;
+    // title_text2.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
+    // game.add.tween(title_text2).to({ x: title_text2_old}, 300, "Linear", true);
 
-    var title_text3 = Utils.create_centered_stroke_text('VIII', 440, 100, "#FF0000");
+    var title_text3 = Utils.create_centered_stroke_text('3000', 330, 100, "#FF0000");
     var title_text3_old = title_text3.y;
     title_text3.y = 0;
     title_text3.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);

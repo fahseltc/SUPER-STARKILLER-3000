@@ -7,14 +7,14 @@ var ready_state = {
     var level_data = this.level_json = game.cache.getJSON('levels').levels;
 
     if(after_menu_level_index != -1) {
-      Utils.create_centered_text("You beat Level " + (level_data[after_menu_level_index - 2].LEVEL_NUMBER), 220, 50, "#FFFFFF");
+      Utils.create_centered_text("PLANET " + (level_data[after_menu_level_index - 2].LEVEL_NUMBER + " DEFEATED"), 240, 50, "#FFFFFF");
 
       this.create_score_label();
 
     }
-    Utils.create_centered_text('Ready?', 100, 50, "#FF0000");
+    Utils.create_centered_text('ELIMINATE ALL\nDEFENSIVE FORCES', 100, 50, "#FF0000");
 
-    Utils.create_centered_text('Click the circle\nto begin', 700, 50, "#FF0000");
+    Utils.create_centered_text('CLICK TO INITIATE\nWARP', 700, 50, "#FF0000");
 
     var circle_button = game.add.graphics(0, 0);
     circle_button.beginFill(0xFFFFFF, 1);

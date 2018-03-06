@@ -20,7 +20,10 @@ class LevelManager {
   }
 
   render() {
-    this.current_level.render();
+    // this if check covers the case where we change level in the update.
+    if(this.current_level) {
+      this.current_level.render();
+    }
   }
 
   change_level(level_index) {

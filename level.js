@@ -13,13 +13,9 @@ class Level {
     game.world.bringToTop(this.mecha.sprite);
     console.log("level duration: " + this.level_data.DURATION * Phaser.Timer.SECOND)
 
-    this.timer = game.time.events.add(Phaser.Timer.SECOND * this.level_data.DURATION, this.change_level, this);
-    this.timer_display = new TimerDisplay(this.timer);
-    this.timer.timer.start();
-  }
-
-  change_level() {
-    this.level_manager.change_level(this.level_data.INDEX + 1)
+    this.powerup = new Powerup();
+    //game.add.sprite(400,400, "powerup_p");
+    this.destroyed = false
   }
 
   update() {
@@ -32,14 +28,19 @@ class Level {
     this.enemy_manager.update();
     this.mecha.update();
     this.score.update();
+
+    if(this.enemy_manager.are_all_enemies_dead()) {
+      console.log("all enemies defeated");
+      this.level_manager.change_level(this.level_data.INDEX + 1);
+    }
   }
 
   render() {
-    this.mecha.render();
-    this.health_bar.render(this.mecha);
-    this.timer_display.render();
-    game.debug.text(game.time.fps, 1, 12, "#FFFFFF");
-    //game.debug.text(this.timer.timer.duration / 1000, 1, 80, "#FFFFF");
+    if(!this.destroyed) {
+      this.mecha.render();
+      this.health_bar.render(this.mecha);
+      game.debug.text(game.time.fps, 1, 12, "#FFFFFF");
+    }
   }
 
   handle_collision(obj, enemy) {
@@ -66,8 +67,6 @@ class Level {
 
     if(!mecha.alive) {
       console.log("u ded");
-      this.timer.timer.destroy();
-      console.log("timer stopped");
       last_score = this.score.score + this.score.score_buffer;
       mecha.heal();
       game.state.start('post');
@@ -76,12 +75,10 @@ class Level {
   }
 
   destroy() {
+    this.destroyed = true;
     this.mecha.destroy();
     this.score.destroy();
     this.health_bar.destroy();
     this.enemy_manager.destroy();
-    this.timer_display.destroy();
-    this.timer.timer.destroy();
   }
-
 }
