@@ -27,22 +27,9 @@ class Mecha {
     this.sprite.health = PLAYER_MAX_HEALTH;
 
     this.invuln = false;
-
-    // shield
-    this.shield_sprite = game.add.sprite(0,0, 'shield');
-    this.shield_sprite.anchor.set(0.5, 0.5);
-    this.shield_sprite.scale.set(0.5,0.5);
-    game.physics.enable(this.shield_sprite, Phaser.Physics.ARCADE);
-    this.shield_sprite.visible = false;
-    this.shield_sprite.active = false;
-    //this.sprite.addChild(this.shield_sprite);
-    //this.
   }
 
   update() {
-    //this.shield_sprite.reset(this.sprite.x, this.sprite.y);
-    this.shield_sprite.x = this.sprite.x
-    this.shield_sprite.y = this.sprite.y
     if(this.controls.space == true) {
       this.sprite.rotation = game.physics.arcade.angleToPointer(this.sprite);
     } else {
@@ -58,17 +45,6 @@ class Mecha {
     }
     this.bullet_weapon.update(this.controls);
     this.circle_weapon.update(this.controls);
-  }
-
-  activate_shield() {
-    this.shield_sprite.visible = true;
-    this.shield_sprite.active = true;
-    //game.add.tween(this.shield_sprite).to( { } )
-  }
-
-  destroy_shield() {
-    this.shield_sprite.visible = false;
-    this.shield_sprite.active = false;
   }
 
   render() {

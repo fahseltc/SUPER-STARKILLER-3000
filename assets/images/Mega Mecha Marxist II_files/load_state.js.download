@@ -20,7 +20,6 @@ var load_state = {
     game.load.image('turret_base_blue', 'assets/images/turret_base_blue.png');
     game.load.image('turret_top_red', 'assets/images/turret_top_red.png');
     game.load.image('turret_base_red', 'assets/images/turret_base_red.png');
-    game.load.image('shield', 'assets/images/shield.png');
     game.load.image('circle', 'assets/images/circle.png');
     game.load.image('spinner', 'assets/images/spinner.png');
     game.load.image('x', 'assets/images/x.png');

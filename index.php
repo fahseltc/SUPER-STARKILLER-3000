@@ -19,15 +19,17 @@
 
     <script type="text/javascript" src="controls.js"></script>
     <script type="text/javascript" src="utils.js"></script>
-
     <script type="text/javascript" src="level.js"></script>
+
     <script type="text/javascript" src="ui/timer_display.js"></script>
     <script type="text/javascript" src="ui/health_bar.js"></script>
     <script type="text/javascript" src="ui/score.js"></script>
     <script type="text/javascript" src="ui/level_display.js"></script>
+    <script type="text/javascript" src="ui/remaining_enemies_bar.js"></script>
+
     <script type="text/javascript" src="level_manager.js"></script>
     <script type="text/javascript" src="powerup.js"></script>
-
+    <script type="text/javascript" src="powerup_manager.js"></script>
     <script type="text/javascript" src="shooting_enemy.js"></script>
     <script type="text/javascript" src="enemy_manager.js"></script>
     <script type="text/javascript" src="mecha_flame.js"></script>

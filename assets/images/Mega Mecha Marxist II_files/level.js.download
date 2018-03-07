@@ -7,7 +7,7 @@ class Level {
     this.mecha = new Mecha(game.width / 2, game.height / 2, this.controls);
 
     // UI ELEMENTS
-    //var ui_background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'ui_background');
+    var ui_background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'ui_background');
     this.score = new Score();
     this.health_bar = new HealthBar(this.mecha);
     this.remaining_enemies_bar = new RemainingEnemiesBar(this.level_data);
@@ -17,8 +17,7 @@ class Level {
     game.world.bringToTop(this.mecha.sprite);
     console.log("level duration: " + this.level_data.DURATION * Phaser.Timer.SECOND)
 
-    //this.powerup = new Powerup(this.mecha);
-    this.powerup_manager = new PowerupManager(this.mecha);
+    this.powerup = new Powerup();
     this.destroyed = false
   }
 
@@ -28,15 +27,10 @@ class Level {
     var visible_bullets = this.enemy_manager.all_bullets.getAll('alive', true);
     game.physics.arcade.overlap(this.mecha.sprite, visible_bullets, this.handle_player_hit, null, this);
 
-
-    //game.physics.arcade.overlap(this.mecha.sprite.body, this.powerup.sprite.body, this.powerup.collide_player(), null, this);
-
-
     this.controls.update();
     this.enemy_manager.update();
     this.mecha.update();
     this.score.update();
-    this.powerup_manager.update();
 
     if(this.enemy_manager.are_all_enemies_dead()) {
       console.log("all enemies defeated");
@@ -73,11 +67,7 @@ class Level {
   handle_player_hit(mecha, bullet) {
     bullet.kill();
     if(!this.mecha.invuln) {
-      if(this.mecha.shield_sprite.active) {
-        this.mecha.destroy_shield();
-      } else {
-        this.mecha.take_damage();
-      }
+      this.mecha.take_damage();
     }
 
     if(!mecha.alive) {
@@ -95,6 +85,5 @@ class Level {
     this.score.destroy();
     this.health_bar.destroy();
     this.enemy_manager.destroy();
-    this.remaining_enemies_bar.bar.destroy();
   }
 }

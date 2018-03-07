@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://127.0.0.1:8887/index.php -->
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="./Mega Mecha Marxist II_files/font_loader.css">
+    <script src="./Mega Mecha Marxist II_files/phaser.min.js.download"></script><style></style>
+    <script src="./Mega Mecha Marxist II_files/phaser-particle-editor-plugin.js.download"></script>
+    
+    <title>Mega Mecha Marxist II</title>
+  <script type="text/javascript">/**
+* A horizontal blur filter by Mat Groves http://matgroves.com/ @Doormat23
+*/
+Phaser.Filter.BlurX = function (game) {
+
+    Phaser.Filter.call(this, game);
+
+    this.uniforms.blur = { type: '1f', value: 1 / 512 };
+
+    this.fragmentSrc = [
+
+      "precision mediump float;",
+      "varying vec2 vTextureCoord;",
+      "varying vec4 vColor;",
+      "uniform float blur;",
+      "uniform sampler2D uSampler;",
+
+        "void main(void) {",
+
+          "vec4 sum = vec4(0.0);",
+
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x - 4.0*blur, vTextureCoord.y)) * 0.05;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x - 3.0*blur, vTextureCoord.y)) * 0.09;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x - 2.0*blur, vTextureCoord.y)) * 0.12;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x - blur, vTextureCoord.y)) * 0.15;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y)) * 0.16;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x + blur, vTextureCoord.y)) * 0.15;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x + 2.0*blur, vTextureCoord.y)) * 0.12;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x + 3.0*blur, vTextureCoord.y)) * 0.09;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x + 4.0*blur, vTextureCoord.y)) * 0.05;",
+
+          "gl_FragColor = sum;",
+
+        "}"
+    ];
+
+};
+
+Phaser.Filter.BlurX.prototype = Object.create(Phaser.Filter.prototype);
+Phaser.Filter.BlurX.prototype.constructor = Phaser.Filter.BlurX;
+
+Object.defineProperty(Phaser.Filter.BlurX.prototype, 'blur', {
+
+    get: function() {
+        return this.uniforms.blur.value / (1/7000);
+    },
+
+    set: function(value) {
+        this.dirty = true;
+        this.uniforms.blur.value = (1/7000) * value;
+    }
+
+});
+</script><script type="text/javascript">/**
+* A vertical blur filter by Mat Groves http://matgroves.com/ @Doormat23
+*/
+Phaser.Filter.BlurY = function (game) {
+
+    Phaser.Filter.call(this, game);
+
+    this.uniforms.blur = { type: '1f', value: 1 / 512 };
+
+    this.fragmentSrc = [
+
+      "precision mediump float;",
+      "varying vec2 vTextureCoord;",
+      "varying vec4 vColor;",
+      "uniform float blur;",
+      "uniform sampler2D uSampler;",
+
+        "void main(void) {",
+
+          "vec4 sum = vec4(0.0);",
+
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y - 4.0*blur)) * 0.05;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y - 3.0*blur)) * 0.09;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y - 2.0*blur)) * 0.12;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y - blur)) * 0.15;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y)) * 0.16;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y + blur)) * 0.15;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y + 2.0*blur)) * 0.12;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y + 3.0*blur)) * 0.09;",
+          "sum += texture2D(uSampler, vec2(vTextureCoord.x, vTextureCoord.y + 4.0*blur)) * 0.05;",
+
+          "gl_FragColor = sum;",
+
+        "}"
+
+    ];
+
+};
+
+Phaser.Filter.BlurY.prototype = Object.create(Phaser.Filter.prototype);
+Phaser.Filter.BlurY.prototype.constructor = Phaser.Filter.BlurY;
+
+Object.defineProperty(Phaser.Filter.BlurY.prototype, 'blur', {
+
+    get: function() {
+        return this.uniforms.blur.value / (1/7000);
+    },
+
+    set: function(value) {
+        this.dirty = true;
+        this.uniforms.blur.value = (1/7000) * value;
+    }
+
+});
+</script></head>
+  <body>
+    <script type="text/javascript">
+      // the grossest, 'never used php before' hack to get heroku environment variables in a client-side js game.
+      var div = document.createElement('div');
+      div.id = 'environment';
+      div.hidden = true;
+      div.appendChild(document.createTextNode("<?php echo getenv('environment')?>"));
+      document.body.appendChild(div);
+    </script><div id="environment" hidden="">&lt;?php echo getenv('environment')?&gt;</div>
+
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/controls.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/utils.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/level.js.download"></script>
+
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/timer_display.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/health_bar.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/score.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/level_display.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/remaining_enemies_bar.js.download"></script>
+
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/level_manager.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/powerup.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/shooting_enemy.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/enemy_manager.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/mecha_flame.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/mecha.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/circle_weapon.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/bullet_weapon.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/menu_state.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/travel_state.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/play_state.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/load_state.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/boot_state.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/ready_state.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/post_game_state.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/leaderboard_state.js.download"></script>
+    <script type="text/javascript" src="./Mega Mecha Marxist II_files/main.js.download"></script>
+    <div id="game" style="margin:0 auto;"><canvas width="1400" height="900" style="display: block; touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 1400px; height: 900px; margin-left: 70px; margin-right: -85px; margin-top: 0px;"></canvas></div>
+  
+</body></html>
