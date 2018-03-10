@@ -2,17 +2,13 @@ class HealthBar {
   constructor(mecha) {
     this.mecha = mecha;
 
-    var g = game.add.graphics(0, 0);
-    g.lineStyle(2, 0x000000, 0.5);
-    g.beginFill(0x898d93, 1);
-    g.drawRect(game.world.centerX - 200, 10, 400, 100);
-    g.endFill();
-
+    this.background = game.add.sprite(162, 125, "life_bg");
+    this.background.anchor.setTo(0.5, 0.5);
     this.display_sprites = [];
 
     for(var i = 0; i < this.mecha.sprite.maxHealth; i++) {
-      var sprite = game.add.sprite(550 + 100 * i, 60, 'player');
-      sprite.scale.setTo(0.3, 0.3);
+      var sprite = game.add.sprite(90 + 50 * i, 125, 'player');
+      sprite.scale.setTo(0.2, 0.2);
       sprite.anchor.x = 0.5;
       sprite.anchor.y = 0.5;
       sprite.visible = true;
@@ -22,7 +18,7 @@ class HealthBar {
 
   render(mecha) {
 
-    var visible_sprites = this.display_sprites.slice(0,mecha.sprite.maxHealth - mecha.sprite.health);
+    var visible_sprites = this.display_sprites.slice(0, mecha.sprite.maxHealth - mecha.sprite.health);
     visible_sprites.forEach(function(element) { element.visible = false; })
 
     var hidden_sprites = this.display_sprites.slice(visible_sprites.length, this.display_sprites.length);

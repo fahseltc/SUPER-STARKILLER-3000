@@ -9,15 +9,27 @@ class Score {
     this.score = last_score;
     this.score_buffer = 0;
 
+    this.background = game.add.sprite(250, 45, "score_bg");
+    this.background.anchor.setTo(0.5, 0.5);
+
+    this.static_score_text = game.add.text(250, 23, "SCORE", {
+      font: "24px prstart",
+      fill: "#FF0000",
+      align: "center",
+      fontWeight: "bold"
+    });
+    this.static_score_text.anchor.setTo(0.5, 0.5);
+    this.static_score_text.align = 'center';
+
     this.score_label = game.add.text(250, 60, this.create_score_label(), {
-      font: "40px prstart",
+      font: "36px prstart",
       fill: "#FFFFFF",
       align: "center"
     });
     this.score_label.anchor.setTo(0.5, 0.5);
     this.score_label.align = 'center';
 
-    this.score_label_tween = game.add.tween(this.score_label.scale).to({ x: 1.2, y: 1.2 }, 200, Phaser.Easing.Linear.In).to({ x: 1, y: 1}, 200, Phaser.Easing.Linear.In)
+    this.score_label_tween = game.add.tween(this.score_label.scale).to({ x: 1.1, y: 1.1 }, 150, Phaser.Easing.Linear.In).to({ x: 1, y: 1}, 200, Phaser.Easing.Linear.In)
   }
 
   update() {

@@ -31,6 +31,10 @@ var load_state = {
     game.load.image('level_progress', 'assets/images/level_progress.png');
 
     game.load.image('main_menu_background', 'assets/images/main_menu_background.png');
+    game.load.image('score_bg', 'assets/images/score_bg.png');
+    game.load.image('life_bg', 'assets/images/life_bg.png');
+    game.load.image('remaining_enemies_bg', 'assets/images/remaining_enemies_bg.png');
+    game.load.image('pixel_planet', 'assets/images/pixel_planet.jpg');
     game.load.image('ui_background', 'assets/images/ui_background.png');
     game.load.image('game_background', 'assets/images/game_background.png');
     game.load.image('pat_bg', 'assets/images/pat_bg.png');

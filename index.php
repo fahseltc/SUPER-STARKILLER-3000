@@ -5,7 +5,7 @@
     <script src="assets/js/phaser.min.js"></script>
     <script src="assets/js/phaser-particle-editor-plugin.js"></script>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>Mega Mecha Marxist II</title>
+    <title>SUPER STARKILLER 3000</title>
   </head>
   <body>
     <script type="text/javascript">
