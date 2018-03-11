@@ -24,7 +24,12 @@ var ready_state = {
     circle_button.drawCircle(game.width / 2, game.height / 2, 100);
 
     circle_button.inputEnabled = true;
-    circle_button.events.onInputDown.addOnce(function() { game.state.start('travel') }, this);
+    circle_button.events.onInputDown.addOnce(function() {
+      game.camera.fade(0x000000, 100, false);
+      game.camera.onFadeComplete.add(function(){
+        game.state.start("travel");
+      }, this);
+    }, this);
 
   },
 

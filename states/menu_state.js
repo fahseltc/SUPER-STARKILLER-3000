@@ -99,6 +99,9 @@ var menu_state = {
     // this.music1.stop();
     // this.music2.stop();
     // this.music4.play();
-    game.state.start('ready');
+    game.camera.fade(0x000000, 200, false);
+    game.camera.onFadeComplete.add(function(){
+      game.state.start("ready");
+    }, this);
   }
 }

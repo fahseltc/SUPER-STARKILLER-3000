@@ -28,15 +28,13 @@ class Mecha {
 
     this.invuln = false;
 
-    // shield
+    // shield powerup
     this.shield_sprite = game.add.sprite(0,0, 'shield');
     this.shield_sprite.anchor.set(0.5, 0.5);
     this.shield_sprite.scale.set(0.5,0.5);
     game.physics.enable(this.shield_sprite, Phaser.Physics.ARCADE);
     this.shield_sprite.visible = false;
     this.shield_sprite.active = false;
-    //this.sprite.addChild(this.shield_sprite);
-    //this.
   }
 
   update() {

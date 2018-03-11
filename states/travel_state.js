@@ -74,15 +74,27 @@ var travel_state = {
     //game.add.particleEffect(game.width/2, game.height/2, game.cache.getJSON('space_blast'));
     this.spawn_tween.to({time_between_rectangles: 0}, 2000, Phaser.Easing.Linear.None, true);
     this.spawn_tween.onComplete.add(function() {
-      game.state.start("play");
+      game.camera.fade(0x000000, 200, false);
+      game.camera.onFadeComplete.add(function(){
+        game.state.start("play");
+      }, this);
     }, this)
+
+    this.player_clicked = false;
+
   },
 
   update: function() {
-    if(game.input.activePointer.isDown) {
+    if(game.input.activePointer.isDown && !this.player_clicked) {
+      this.player_clicked = true;
       this.spawn_tween.stop();
-      game.state.start("play");
+      game.camera.fade(0x000000, 200, false);
+      game.camera.onFadeComplete.add(function(){
+        game.state.start("play");
+      }, this);
+
     }
+
     if(game.time.now > this.time_till_rectangle) {
       var rect = this.rectangles.getFirstExists(false);
       rect.scale.x = 1;
