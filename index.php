@@ -36,6 +36,7 @@
     <script type="text/javascript" src="mecha.js"></script>
     <script type="text/javascript" src="circle_weapon.js"></script>
     <script type="text/javascript" src="bullet_weapon.js"></script>
+
     <script type="text/javascript" src="states/menu_state.js"></script>
     <script type="text/javascript" src="states/travel_state.js"></script>
     <script type="text/javascript" src="states/play_state.js"></script>
@@ -44,6 +45,8 @@
     <script type="text/javascript" src="states/ready_state.js"></script>
     <script type="text/javascript" src="states/post_game_state.js"></script>
     <script type="text/javascript" src="states/leaderboard_state.js"></script>
+    <script type="text/javascript" src="states/text_state.js"></script>
+
     <script type="text/javascript" src="main.js"></script>
     <div id="game" style="margin:0 auto;"></div>
   </body>

@@ -46,6 +46,11 @@ var load_state = {
     game.load.json('space_blast', 'assets/particles/space_blast.json');
     game.load.json('levels', 'assets/levels.json');
 
+    game.load.script('BlurX', 'BlurX.js');
+    game.load.script('BlurY', 'BlurY.js');
+
+    game.load.audio('ui2', 'assets/sound_effects/ui2.ogg')
+
 
 
     // game.load.audio('music1', 'assets/music/lite_buildup.ogg');
@@ -62,6 +67,7 @@ var load_state = {
     // if(game.cache.isSoundDecoded('mm_xanadont_song') && this.ready == false) {
     //   this.ready = true;
     game.state.start('menu');
+    //game.state.start('text');
     //   //game.state.start('ready');
     //   //game.state.start('leaderboard');
     //   //game.state.start('post');

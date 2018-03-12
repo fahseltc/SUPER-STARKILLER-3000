@@ -1,7 +1,7 @@
 var conf = {
   width: 1400,
   height: 900,
-  renderer: Phaser.CANVAS,
+  renderer: Phaser.WEBGL,
   parent: 'game',
   transparent: false,
   antialias: false,
@@ -30,9 +30,11 @@ var game = new Phaser.Game(conf);
 var sound_manager = new Phaser.SoundManager(game);
 sound_manager.boot();
 sound_manager.muteOnPause = false;
+
 var last_score = 0;
 var after_menu_level_index = -1;
 var leaderboard_data;
+
 
 game.state.add('menu', menu_state);
 game.state.add('play', play_state);
@@ -42,5 +44,6 @@ game.state.add('post', post_game_state);
 game.state.add('leaderboard', leaderboard_state);
 game.state.add('ready', ready_state);
 game.state.add('travel', travel_state);
+game.state.add('text', text_state);
 
 game.state.start('boot');

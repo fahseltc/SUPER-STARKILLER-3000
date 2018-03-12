@@ -1,6 +1,4 @@
-// const ENEMY_BULLET_SPEED = 200;
-// const ENEMY_BULLET_DELAY = 700;
-//const ENEMY_BULLET_INITIAL_DELAY = 1500;
+
 const ENEMY_BULLET_LIFESPAN = 7000;
 ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed, initial_delay) {
   Phaser.Sprite.call(this, game, 0, 0, 'turret_base_' + sprite);

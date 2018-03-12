@@ -11,3 +11,17 @@
   font-weight: 400;
   src: url("../fonts/Beon-Medium.woff");
 }
+
+@font-face {
+  font-family: "Outrun-Future";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Outrun future.otf");
+}
+
+@font-face {
+  font-family: "Outrun-Future-Bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Outrun future Bold.otf");
+}

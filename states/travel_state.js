@@ -60,11 +60,35 @@ var travel_state = {
     this.rect3.scale.x = 3;
     this.rect3.scale.y = 3;
 
+    var fragmentSrc = [
+            "precision mediump float;",
+            // Incoming texture coordinates. 
+            'varying vec2 vTextureCoord;',
+            // Incoming vertex color
+            'varying vec4 vColor;',
+            // Sampler for a) sprite image or b) rendertarget in case of game.world.filter
+            'uniform sampler2D uSampler;',
+
+            "uniform vec2      resolution;",
+            "uniform float     time;",
+            "uniform vec2      mouse;",
+
+            "void main( void ) {",
+            // colorRGBA = (y % 2) * texel(u,v);
+            "gl_FragColor = mod(gl_FragCoord.y,2.0) * texture2D(uSampler, vTextureCoord);",
+            "}"
+        ];
+
+    scanlineFilter = new Phaser.Filter(game, null, fragmentSrc);
+    game.world.filters = [scanlineFilter];
+
+
     this.rectangles = game.add.group();
 
     this.rectangles.createMultiple(100, 'pink_rect_empty');
     this.rectangles.setAll('anchor.x', 0.5);
     this.rectangles.setAll('anchor.y', 0.5);
+    //this.rectangles.setAll('filters', [blurX, blurY]);
     this.time_between_rectangles = 500;
 
     this.time_till_rectangle = game.time.now;
@@ -82,13 +106,15 @@ var travel_state = {
 
     this.player_clicked = false;
 
+    
+
   },
 
   update: function() {
     if(game.input.activePointer.isDown && !this.player_clicked) {
       this.player_clicked = true;
       this.spawn_tween.stop();
-      game.camera.fade(0x000000, 200, false);
+      game.camera.fade(0x000000, 200, true);
       game.camera.onFadeComplete.add(function(){
         game.state.start("play");
       }, this);

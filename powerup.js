@@ -1,7 +1,3 @@
-// const POWERUP_SCREEN_EDGE_SPAWN_DISTANCE = 50;
-// const POWERUP_TOP_SCREEN_EDGE_SPAWN_DISTANCE = 180;
-
-
 class Powerup {
   constructor(mecha) {
     this.mecha = mecha;

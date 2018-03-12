@@ -55,6 +55,8 @@ var menu_state = {
     this.music4 = sound_manager.add('music4');
     this.new_music = sound_manager.add('mm_xanadont_song');
 
+    this.start_sound = sound_manager.add('ui2');
+
     this.music1.onStop.addOnce(function() { this.music2.play(); }, this);
     //this.music3.onStop.addOnce(function() { this.music4.play(); game.state.start('play'); }, this);
 
@@ -99,6 +101,8 @@ var menu_state = {
     // this.music1.stop();
     // this.music2.stop();
     // this.music4.play();
+
+    this.start_sound.play();
     game.camera.fade(0x000000, 200, false);
     game.camera.onFadeComplete.add(function(){
       game.state.start("ready");

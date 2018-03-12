@@ -2,10 +2,13 @@ class LevelManager {
   constructor() {
     this.level_json = game.cache.getJSON('levels').levels;
     console.log(this.level_json);
+
     this.levels = []
     if(after_menu_level_index == -1) {
+      // if this is the first level on a new game, then go to first level
       this.current_level_index = 0;
     } else {
+      // otherwise, this is not the first level.
       this.current_level_index = after_menu_level_index;
       after_menu_level_index = 0;
     }
@@ -39,9 +42,5 @@ class LevelManager {
       after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
       game.state.start('ready');
     }
-  }
-
-  get_current_level_index() {
-    this.current_level_index = 0;
   }
 }
