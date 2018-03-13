@@ -12,4 +12,9 @@ class LevelDisplay {
     this.level_display.anchor.setTo(0.5, 0.5);
     this.level_display.text = "STAR " + current_level_index;
   }
+
+  destroy() {
+    this.background.destroy();
+    this.level_display.destroy();
+  }
 }

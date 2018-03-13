@@ -1,7 +1,6 @@
 var menu_state = {
   create: function() {
     var background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'pat_bg');
-    //var title_text = Utils.create_centered_text('Mega\nMecha\nMarxist\nII', 300, 100, "#FF0000");
     var title_text = Utils.create_centered_stroke_text('SUPER', 110, 100, "#FF0000");
     var title_text_old_x = title_text.x;
     title_text.x = 0;

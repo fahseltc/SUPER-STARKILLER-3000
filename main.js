@@ -1,7 +1,7 @@
 var conf = {
   width: 1400,
   height: 900,
-  renderer: Phaser.WEBGL,
+  renderer: Phaser.CANVAS,
   parent: 'game',
   transparent: false,
   antialias: false,

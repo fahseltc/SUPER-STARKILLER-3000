@@ -1,20 +1,20 @@
 const PLAYER_MAX_HEALTH = 4;
 const INVULN_TIME = 150
 
-class Mecha {
+class PlayerShip {
   constructor(x, y, controls) {
 
     this.controls = controls;
-    this.flames = new MechaFlame(this);
+    this.flames = new PlayerShipFlame(this);
 
-    // mecha setup
+    // player setup
     this.sprite = game.add.sprite(x, y, 'player');
     this.sprite.scale.setTo(0.4, 0.4);
     this.sprite.anchor.setTo(0.5, 0.5);
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
     this.sprite.body.angularDrag = 800;
     this.sprite.body.drag.set(1550);
-    this.sprite.body.maxAngular = 200;
+    this.sprite.body.maxAngular = 200
     this.sprite.body.maxVelocity.set(900);
     this.sprite.body.collideWorldBounds = true;
 
@@ -36,10 +36,15 @@ class Mecha {
     game.physics.enable(this.shield_sprite, Phaser.Physics.ARCADE);
     this.shield_sprite.visible = false;
     this.shield_sprite.active = false;
+
+    //this.sprite.body.setSize(75 / this.sprite.scale.x, 75 / this.sprite.scale.y, -32.5, 32.5)
+    this.sprite.body.setCircle(35 / this.sprite.scale.x, -25, 40);
   }
 
   update() {
     //this.shield_sprite.reset(this.sprite.x, this.sprite.y);
+
+
     this.shield_sprite.x = this.sprite.x
     this.shield_sprite.y = this.sprite.y
     if(this.controls.space == true) {
@@ -73,6 +78,7 @@ class Mecha {
   render() {
     this.flames.render();
     this.bullet_weapon.render();
+    game.debug.body(this.sprite);
   }
 
   take_damage() {

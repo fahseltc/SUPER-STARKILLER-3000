@@ -1,16 +1,18 @@
 class Level {
   constructor(level_data, level_manager) {
     this.level_data = level_data;
-    console.log(this.level_data)
+    console.log(this.level_data);
     this.level_manager = level_manager;
     this.controls = new Controls(game);
-    this.mecha = new Mecha(game.width / 2, game.height / 2, this.controls);
+    this.mecha = new PlayerShip(game.width / 2, game.height / 2, this.controls);
 
     // UI ELEMENTS
     //var ui_background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'ui_background');
-    this.score = new Score();
-    this.health_bar = new HealthBar(this.mecha);
-    this.remaining_enemies_bar = new RemainingEnemiesBar(this.level_data);
+
+    this.UI = new RootUI(this.mecha, this.level_data, this.level_data.LEVEL_NUMBER);
+    // this.score = new Score();
+    // this.health_bar = new HealthBar(this.mecha);
+    // this.remaining_enemies_bar = new RemainingEnemiesBar(this.level_data);
 
 
     this.enemy_manager = new EnemyManager(game, this.mecha, this.level_data);
@@ -35,7 +37,9 @@ class Level {
     this.controls.update();
     this.enemy_manager.update();
     this.mecha.update();
-    this.score.update();
+
+    this.UI.update();
+    //this.score.update();
     this.powerup_manager.update();
 
     if(this.enemy_manager.are_all_enemies_dead()) {
@@ -47,7 +51,7 @@ class Level {
   render() {
     if(!this.destroyed) {
       this.mecha.render();
-      this.health_bar.render(this.mecha);
+      this.UI.render();
       game.debug.text(game.time.fps, 1, 12, "#FFFFFF");
     }
   }
@@ -56,17 +60,17 @@ class Level {
     console.log('hit!');
     if((obj.key == 'player_bullet') && (enemy.key == 'turret_base_red')) {
       enemy.kill();
-      this.score.score_buffer += 5;
+      this.UI.score.score_buffer += 5;
       game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('red_explosion'));
       this.enemy_manager.spawn = true;
-      this.remaining_enemies_bar.enemy_died();
+      this.UI.remaining_enemies_bar.enemy_died();
     }
     if((obj.key == 'circle') && (enemy.key == 'turret_base_blue')) {
       enemy.kill();
       game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('blue_explosion'));
-      this.score.score_buffer += 5;
+      this.UI.score.score_buffer += 5;
       this.enemy_manager.spawn = true;
-      this.remaining_enemies_bar.enemy_died();
+      this.UI.remaining_enemies_bar.enemy_died();
     }
   }
 
@@ -82,7 +86,7 @@ class Level {
 
     if(!mecha.alive) {
       console.log("u ded");
-      last_score = this.score.score + this.score.score_buffer;
+      last_score = this.UI.score.score + this.UI.score.score_buffer;
       mecha.heal();
       game.state.start('post');
     }
@@ -92,9 +96,7 @@ class Level {
   destroy() {
     this.destroyed = true;
     this.mecha.destroy();
-    this.score.destroy();
-    this.health_bar.destroy();
     this.enemy_manager.destroy();
-    this.remaining_enemies_bar.bar.destroy();
+    this.UI.destroy();
   }
 }

@@ -1,5 +1,5 @@
 const SCORE_BASE_POSITION_X = 250;
-const SCORE_BASE_POSITION_Y = 850 ;
+const SCORE_BASE_POSITION_Y = 750 ;
 
 class Score {
   constructor() {
@@ -60,5 +60,7 @@ class Score {
   destroy() {
     last_score += (this.score + this.score_buffer) - this.previous_score;
     this.score_label.destroy();
+    this.static_score_text.destroy();
+    this.background.destroy();
   }
 }

@@ -37,9 +37,12 @@ var load_state = {
     game.load.image('pixel_planet', 'assets/images/pixel_planet.jpg');
     game.load.image('ui_background', 'assets/images/ui_background.png');
     game.load.image('game_background', 'assets/images/game_background.png');
+    game.load.image('remaining_enemies_bar_green', 'assets/images/remaining_enemies_bar_green.png');
+    game.load.image('remaining_enemies_black_bar', 'assets/images/remaining_enemies_black_bar.png');
     game.load.image('pat_bg', 'assets/images/pat_bg.png');
     game.load.image('pink_rect_filled', 'assets/images/pink_rect_filled.png');
     game.load.image('pink_rect_empty', 'assets/images/pink_rect_empty.png');
+    game.load.image('dashboard', 'assets/images/dashboard.png');
 
     game.load.json('red_explosion', 'assets/particles/red_explosion.json');
     game.load.json('blue_explosion', 'assets/particles/blue_explosion.json');

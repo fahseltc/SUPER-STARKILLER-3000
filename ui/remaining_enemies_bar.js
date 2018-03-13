@@ -1,42 +1,40 @@
-const REMAINING_ENEMIES_BASE_POSITION_X = 700;
-const REMAINING_ENEMIES_BASE_POSITION_Y = 845;
+const REMAINING_ENEMIES_BASE_POSITION_X = 355;
+const REMAINING_ENEMIES_BASE_POSITION_Y = 800;
 
 class RemainingEnemiesBar {
   constructor(level_data) {
-    this.background = game.add.sprite(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y, 'remaining_enemies_bg');
-    this.background.anchor.setTo(0.5, 0.5);
-
     this.level_data = level_data;
     this.enemies_to_spawn = level_data.ENEMIES_IN_WAVE;
-    this.bar = game.add.sprite(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y, 'level_progress');
-    this.bar.anchor.set(0.5, 0.5);
+
+    this.bar = game.add.sprite(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y, 'remaining_enemies_bar_green');
     this.enemies_alive = this.enemies_to_spawn;
 
+    this.black_bar = game.add.sprite(REMAINING_ENEMIES_BASE_POSITION_X+ this.bar.width, REMAINING_ENEMIES_BASE_POSITION_Y, 'remaining_enemies_black_bar');
+    this.black_bar.anchor.set(1, 0);
+    this.black_bar_original_width = this.black_bar.width;
+    this.black_bar.width = 0;
 
-    this.defenses_text = game.add.text(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y - 38, "DEFENSES", {
-      font: "18px prstart",
-      fill: "#FF0000",
-      align: "center",
-      fontWeight: "bold"
+    this.foreground = game.add.sprite(REMAINING_ENEMIES_BASE_POSITION_X - 8, REMAINING_ENEMIES_BASE_POSITION_Y - 10, 'remaining_enemies_bg');
+    this.defenses_text = game.add.text(REMAINING_ENEMIES_BASE_POSITION_X + 170, REMAINING_ENEMIES_BASE_POSITION_Y + 15 , 'DEFENSES\nREMAINING', {
+      font: '14px prstart',
+      fill: '#FFFFFF',
+      align: 'center',
+      fontWeight: 'bold'
     });
     this.defenses_text.anchor.setTo(0.5, 0.5);
     this.defenses_text.align = 'center';
-
-    this.remaining_text = game.add.text(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y + 46, "REMAINING", {
-      font: "18px prstart",
-      fill: "#FF0000",
-      align: "center",
-      fontWeight: "bold"
-    });
-    this.remaining_text.anchor.setTo(0.5, 0.5);
-    this.remaining_text.align = 'center';
   }
-
 
    enemy_died() {
     this.enemies_alive--;
     var percentage = this.enemies_alive / this.enemies_to_spawn;
-    console.log(percentage);
-    this.bar.scale.x = percentage;
+    var new_width = this.black_bar_original_width * (1 - percentage);
+    game.add.tween(this.black_bar).to({ width: new_width }, 100, Phaser.Easing.Linear.None, true)
+  }
+
+  destroy() {
+    this.bar.destroy();
+    this.defenses_text.destroy();
+    this.black_bar.destroy();
   }
 }

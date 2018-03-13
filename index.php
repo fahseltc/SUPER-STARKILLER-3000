@@ -22,6 +22,7 @@
     <script type="text/javascript" src="level.js"></script>
 
     <script type="text/javascript" src="ui/timer_display.js"></script>
+    <script type="text/javascript" src="ui/root_ui.js"></script>
     <script type="text/javascript" src="ui/health_bar.js"></script>
     <script type="text/javascript" src="ui/score.js"></script>
     <script type="text/javascript" src="ui/level_display.js"></script>
@@ -32,10 +33,13 @@
     <script type="text/javascript" src="powerup_manager.js"></script>
     <script type="text/javascript" src="shooting_enemy.js"></script>
     <script type="text/javascript" src="enemy_manager.js"></script>
-    <script type="text/javascript" src="mecha_flame.js"></script>
-    <script type="text/javascript" src="mecha.js"></script>
-    <script type="text/javascript" src="circle_weapon.js"></script>
-    <script type="text/javascript" src="bullet_weapon.js"></script>
+
+
+    <!-- Player -->
+    <script type="text/javascript" src="player/player_ship.js"></script>
+    <script type="text/javascript" src="player/circle_weapon.js"></script>
+    <script type="text/javascript" src="player/bullet_weapon.js"></script>
+    <script type="text/javascript" src="player/player_ship_flame.js"></script>
 
     <script type="text/javascript" src="states/menu_state.js"></script>
     <script type="text/javascript" src="states/travel_state.js"></script>
