@@ -16,6 +16,7 @@ class Mecha {
     this.sprite.body.drag.set(1550);
     this.sprite.body.maxAngular = 200;
     this.sprite.body.maxVelocity.set(900);
+    this.sprite.body.collideWorldBounds = true;
 
     // weapons
     this.circle_weapon = new CircleWeapon(this);

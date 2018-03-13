@@ -1,16 +1,19 @@
+const REMAINING_ENEMIES_BASE_POSITION_X = 700;
+const REMAINING_ENEMIES_BASE_POSITION_Y = 845;
+
 class RemainingEnemiesBar {
   constructor(level_data) {
-    this.background = game.add.sprite(game.width / 2, 55, 'remaining_enemies_bg');
+    this.background = game.add.sprite(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y, 'remaining_enemies_bg');
     this.background.anchor.setTo(0.5, 0.5);
 
     this.level_data = level_data;
     this.enemies_to_spawn = level_data.ENEMIES_IN_WAVE;
-    this.bar = game.add.sprite(game.width / 2, 55, 'level_progress');
+    this.bar = game.add.sprite(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y, 'level_progress');
     this.bar.anchor.set(0.5, 0.5);
     this.enemies_alive = this.enemies_to_spawn;
 
 
-    this.defenses_text = game.add.text(game.width / 2, 17, "DEFENSES", {
+    this.defenses_text = game.add.text(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y - 38, "DEFENSES", {
       font: "18px prstart",
       fill: "#FF0000",
       align: "center",
@@ -19,7 +22,7 @@ class RemainingEnemiesBar {
     this.defenses_text.anchor.setTo(0.5, 0.5);
     this.defenses_text.align = 'center';
 
-    this.remaining_text = game.add.text(game.width / 2, 101, "REMAINING", {
+    this.remaining_text = game.add.text(REMAINING_ENEMIES_BASE_POSITION_X, REMAINING_ENEMIES_BASE_POSITION_Y + 46, "REMAINING", {
       font: "18px prstart",
       fill: "#FF0000",
       align: "center",

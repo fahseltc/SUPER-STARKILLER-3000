@@ -1,3 +1,6 @@
+const SCORE_BASE_POSITION_X = 250;
+const SCORE_BASE_POSITION_Y = 850 ;
+
 class Score {
   constructor() {
     this.score;
@@ -9,10 +12,10 @@ class Score {
     this.score = last_score;
     this.score_buffer = 0;
 
-    this.background = game.add.sprite(250, 45, "score_bg");
+    this.background = game.add.sprite(SCORE_BASE_POSITION_X, SCORE_BASE_POSITION_Y, "score_bg");
     this.background.anchor.setTo(0.5, 0.5);
 
-    this.static_score_text = game.add.text(250, 23, "SCORE", {
+    this.static_score_text = game.add.text(SCORE_BASE_POSITION_X, SCORE_BASE_POSITION_Y - 22, "SCORE", {
       font: "24px prstart",
       fill: "#FF0000",
       align: "center",
@@ -21,7 +24,7 @@ class Score {
     this.static_score_text.anchor.setTo(0.5, 0.5);
     this.static_score_text.align = 'center';
 
-    this.score_label = game.add.text(250, 60, this.create_score_label(), {
+    this.score_label = game.add.text(SCORE_BASE_POSITION_X, SCORE_BASE_POSITION_Y + 15, this.create_score_label(), {
       font: "36px prstart",
       fill: "#FFFFFF",
       align: "center"

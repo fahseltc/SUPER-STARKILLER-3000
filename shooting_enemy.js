@@ -21,6 +21,10 @@ ShootingEnemy = function(game, mecha, sprite, bullet_delay, bullet_speed, initia
   this.bullets.setAll('anchor.x', 0.5);
   this.bullets.setAll('anchor.y', 0.5);
   this.bullets.setAll('alive', false);
+  this.bullets.setAll('checkWorldBounds', true);
+  this.bullets.forEach(function(bullet) {
+    bullet.events.onOutOfBounds.add(function(bullet) { bullet.kill(); }, this);
+  }, this);
 
   this.bullet_time = this.game.time.now + initial_delay;
 

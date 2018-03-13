@@ -37,7 +37,7 @@ var post_game_state = {
     this.submit_button = this.add.graphics(0, 0);
     this.submit_button.lineStyle(2, 0x0000FF, 0.5);
     this.submit_button.beginFill(0x527cc5, 1);
-    this.submit_button.drawRect(this.world.centerX - 250, this.world.centerY + 110, 500, 150);
+    this.submit_button.drawRect(game.width/2 - 250, game.height/2 + 110, 500, 150);
     this.submit_button.endFill();
 
     this.submit_button.inputEnabled = true;
@@ -49,7 +49,7 @@ var post_game_state = {
     var g2 = this.add.graphics(0, 0);
     g2.lineStyle(2, 0x0000FF, 0.5);
     g2.beginFill(0x32a532, 1);
-    g2.drawRect(this.world.centerX - 250, this.world.centerY + 300, 500, 120);
+    g2.drawRect(game.width/2 - 250, game.height/2 + 300, 500, 120);
     g2.endFill();
 
     g2.inputEnabled = true;

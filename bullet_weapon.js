@@ -1,10 +1,10 @@
-const BULLET_ADDITIONAL_SPEED = 2000;
+const BULLET_ADDITIONAL_SPEED = 1000;
 const BULLET_LIFESPAN = 1000;
-const BULLET_DELAY = 0;
+const BULLET_DELAY = 100;
 
 const HEAT_GENERATED_PER_SHOT = 2;
 const HEAT_LOST_PER_TICK = 0.1;
-const MAX_HEAT = 20;
+const MAX_HEAT = 10;
 const OVERHEAT_DURATION = Phaser.Timer.SECOND * 0.8;
 
 
@@ -20,7 +20,12 @@ class BulletWeapon {
     this.bullets.createMultiple(100, 'player_bullet');
     this.bullets.setAll('anchor.x', 0.5);
     this.bullets.setAll('anchor.y', 0.5);
+    this.bullets.setAll('checkWorldBounds', true);
     this.bullet_time = 0;
+
+    this.bullets.forEach(function(bullet) {
+      bullet.events.onOutOfBounds.add(function(bullet) { bullet.kill();}, this);
+    }, this);
 
     this.heat = 0;
     this.overheated = false;

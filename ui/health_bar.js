@@ -1,13 +1,17 @@
+const HEALTHBAR_BASE_POSITION_X = 162;
+const HEALTHBAR_BASE_POSITION_Y = 750;
+
+
 class HealthBar {
   constructor(mecha) {
     this.mecha = mecha;
 
-    this.background = game.add.sprite(162, 125, "life_bg");
+    this.background = game.add.sprite(HEALTHBAR_BASE_POSITION_X, HEALTHBAR_BASE_POSITION_Y, "life_bg");
     this.background.anchor.setTo(0.5, 0.5);
     this.display_sprites = [];
 
     for(var i = 0; i < this.mecha.sprite.maxHealth; i++) {
-      var sprite = game.add.sprite(90 + 50 * i, 125, 'player');
+      var sprite = game.add.sprite((HEALTHBAR_BASE_POSITION_X - 72) + 50 * i, HEALTHBAR_BASE_POSITION_Y, 'player');
       sprite.scale.setTo(0.2, 0.2);
       sprite.anchor.x = 0.5;
       sprite.anchor.y = 0.5;

@@ -62,7 +62,7 @@ var travel_state = {
 
     var fragmentSrc = [
             "precision mediump float;",
-            // Incoming texture coordinates. 
+            // Incoming texture coordinates.
             'varying vec2 vTextureCoord;',
             // Incoming vertex color
             'varying vec4 vColor;',

@@ -4,7 +4,6 @@
 const ENEMY_SPAWN_TWEEN_TIME = 500;
 
 const SCREEN_EDGE_SPAWN_DISTANCE = 50;
-const TOP_SCREEN_EDGE_SPAWN_DISTANCE = 180;
 const ENEMY_PLAYER_SPAWN_DISTANCE = 150;
 
 class EnemyManager {
@@ -120,7 +119,7 @@ class EnemyManager {
 
   get_random_y() {
     var temp_y = game.world.randomY;
-    while(temp_y < TOP_SCREEN_EDGE_SPAWN_DISTANCE || temp_y > (game.world.height - SCREEN_EDGE_SPAWN_DISTANCE)) {
+    while(temp_y < SCREEN_EDGE_SPAWN_DISTANCE || temp_y > (game.world.height - SCREEN_EDGE_SPAWN_DISTANCE)) {
       temp_y = game.world.randomY;
     }
     return temp_y;
