@@ -1,17 +1,20 @@
-const HEALTHBAR_BASE_POSITION_X = 162;
+const HEALTHBAR_BASE_POSITION_X = 96;
 const HEALTHBAR_BASE_POSITION_Y = 750;
 
 class HealthBar {
   constructor(player) {
     this.player = player;
-    this.background = game.add.sprite(HEALTHBAR_BASE_POSITION_X, HEALTHBAR_BASE_POSITION_Y, "life_bg");
-    this.background.anchor.setTo(0.5, 0.5);
+
+    this.life_text = game.add.text(HEALTHBAR_BASE_POSITION_X + 50, HEALTHBAR_BASE_POSITION_Y - 43, "LIFE", {
+      font: "16px prstart",
+      fill: "#FFFFFF",
+      align: "center"
+    });
+
     this.display_sprites = [];
 
     for(var i = 0; i < this.player.sprite.maxHealth; i++) {
-      var sprite = game.add.sprite((HEALTHBAR_BASE_POSITION_X - 72) + 50 * i, HEALTHBAR_BASE_POSITION_Y, 'player');
-      sprite.scale.setTo(0.2, 0.2);
-      sprite.anchor.x = 0.5;
+      var sprite = game.add.sprite(HEALTHBAR_BASE_POSITION_X, HEALTHBAR_BASE_POSITION_Y + (36 * i), 'life_bar_single');
       sprite.anchor.y = 0.5;
       sprite.visible = true;
       this.display_sprites.push(sprite);
@@ -28,6 +31,6 @@ class HealthBar {
 
   destroy() {
     this.display_sprites.forEach(function(element) { element.destroy(); } )
-    this.background.destroy();
+    this.life_text.destroy();
   }
 }

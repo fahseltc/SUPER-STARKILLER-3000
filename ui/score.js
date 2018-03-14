@@ -11,7 +11,7 @@ class Score {
 
     this.score_label = game.add.text(SCORE_BASE_POSITION_X, SCORE_BASE_POSITION_Y, this.create_score_label(), {
       font: "42px prstart",
-      fill: "#4CFF00",
+      fill: GREEN_HEX_COLOR,
       align: "center",
       fontWeight: "italic"
     });

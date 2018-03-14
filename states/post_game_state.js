@@ -2,7 +2,7 @@ var post_game_state = {
   create: function() {
     game.stage.backgroundColor = '#000000';
 
-    Utils.create_centered_text('You\nDied', 200, 70, '#FF0000');
+    Utils.create_centered_text('You\nDied', 200, 70, RED_HEX_COLOR);
     Utils.create_centered_text('but you scored ' + last_score + ' points.', 400, 40);
     this.create_submit_score_button();
     this.create_play_again_button();

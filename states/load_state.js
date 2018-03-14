@@ -9,40 +9,42 @@ var load_state = {
     game.load.setPreloadSprite(this.progress_bar);
 
     //HACK TO PRELOAD A CUSTOM FONT first font will always be funky
-    Utils.create_centered_stroke_text("LOADING", game.height/2 , 50, "#FFFFFF");
+    Utils.create_centered_stroke_text("LOADING", game.height/2 , 50);
+
+    var assets_path = '/assets/'
+    var images_path = assets_path + 'images/';
 
     //game.load.audio('mm_xanadont_song', 'assets/music/Mystery_Mammal_Xanadont.ogg');
 
-    game.load.image('player', 'assets/images/mecha.png');
-    game.load.image('player_bullet', 'assets/images/player_bullet.png');
-    game.load.image('flame', 'assets/images/flame.png');
-    game.load.image('turret_top_blue', 'assets/images/turret_top_blue.png');
-    game.load.image('turret_base_blue', 'assets/images/turret_base_blue.png');
-    game.load.image('turret_top_red', 'assets/images/turret_top_red.png');
-    game.load.image('turret_base_red', 'assets/images/turret_base_red.png');
-    game.load.image('shield', 'assets/images/shield.png');
-    game.load.image('circle', 'assets/images/circle.png');
-    game.load.image('spinner', 'assets/images/spinner.png');
-    game.load.image('x', 'assets/images/x.png');
-    game.load.image('enemy_bullet', 'assets/images/enemy_bullet.png');
-    game.load.image('sound_white', 'assets/images/sound_white.png');
-    game.load.image('no', 'assets/images/no.png');
-    game.load.image('powerup_p', 'assets/images/powerup_p.png');
-    game.load.image('level_progress', 'assets/images/level_progress.png');
+    game.load.image('player', images_path + 'mecha.png');
+    game.load.image('player_bullet', assets_path + 'images/player_bullet.png');
+    game.load.image('flame', images_path + 'flame.png');
+    game.load.image('turret_top_blue', images_path + 'turret_top_blue.png');
+    game.load.image('turret_base_blue', images_path + 'turret_base_blue.png');
+    game.load.image('turret_top_red', images_path + 'turret_top_red.png');
+    game.load.image('turret_base_red', images_path + 'turret_base_red.png');
+    game.load.image('shield', images_path + 'shield.png');
+    game.load.image('circle', images_path + 'circle.png');
+    game.load.image('spinner', images_path + 'spinner.png');
+    game.load.image('x', images_path + 'x.png');
+    game.load.image('enemy_bullet', images_path + 'enemy_bullet.png');
+    game.load.image('sound_white', images_path + 'sound_white.png');
+    game.load.image('no', images_path + 'no.png');
+    game.load.image('powerup_p', images_path + 'pat_powerup_2.png');
 
-    game.load.image('main_menu_background', 'assets/images/main_menu_background.png');
-    game.load.image('score_bg', 'assets/images/score_bg.png');
-    game.load.image('life_bg', 'assets/images/life_bg.png');
-    game.load.image('remaining_enemies_bg', 'assets/images/remaining_enemies_bg.png');
-    game.load.image('pixel_planet', 'assets/images/pixel_planet.jpg');
-    game.load.image('ui_background', 'assets/images/ui_background.png');
-    game.load.image('game_background', 'assets/images/game_background.png');
-    game.load.image('remaining_enemies_bar_green', 'assets/images/remaining_enemies_bar_green.png');
-    game.load.image('remaining_enemies_black_bar', 'assets/images/remaining_enemies_black_bar.png');
-    game.load.image('pat_bg', 'assets/images/pat_bg.png');
-    game.load.image('pink_rect_filled', 'assets/images/pink_rect_filled.png');
-    game.load.image('pink_rect_empty', 'assets/images/pink_rect_empty.png');
-    game.load.image('dashboard', 'assets/images/dashboard.png');
+    game.load.image('main_menu_background', images_path + 'main_menu_background.png');
+
+    game.load.image('life_bar_single', images_path + 'life_bar_single.png');
+    game.load.image('remaining_enemies_bg', images_path + 'remaining_enemies_bg.png');
+    game.load.image('pixel_planet', images_path + 'pixel_planet.jpg');
+
+    game.load.image('game_background', images_path + 'game_background.png');
+    game.load.image('remaining_enemies_bar_green', images_path + 'remaining_enemies_bar_green.png');
+    game.load.image('remaining_enemies_black_bar', images_path + 'remaining_enemies_black_bar.png');
+    game.load.image('pat_bg', images_path + 'pat_bg.png');
+    game.load.image('pink_rect_filled', images_path + 'pink_rect_filled.png');
+    game.load.image('pink_rect_empty', images_path + 'pink_rect_empty.png');
+    game.load.image('dashboard', images_path + 'dashboard.png');
 
     game.load.json('red_explosion', 'assets/particles/red_explosion.json');
     game.load.json('blue_explosion', 'assets/particles/blue_explosion.json');

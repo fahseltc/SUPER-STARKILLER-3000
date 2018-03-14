@@ -15,9 +15,9 @@ var ready_state = {
       this.create_score_label();
     }
 
-    Utils.create_centered_stroke_text('ELIMINATE ALL\nDEFENSIVE FORCES', 100, 50, "#FF0000");
+    Utils.create_centered_stroke_text('ELIMINATE ALL\nDEFENSIVE FORCES', 100, 50, RED_HEX_COLOR);
 
-    Utils.create_centered_stroke_text('CLICK TO INITIATE\nWARP', 700, 50, "#FF0000");
+    Utils.create_centered_stroke_text('CLICK TO INITIATE\nWARP', 700, 50, RED_HEX_COLOR);
 
     var circle_button = game.add.graphics(0, 0);
     circle_button.beginFill(0xFFFFFF, 1);
