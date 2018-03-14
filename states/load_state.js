@@ -30,7 +30,7 @@ var load_state = {
     game.load.image('enemy_bullet', images_path + 'enemy_bullet.png');
     game.load.image('sound_white', images_path + 'sound_white.png');
     game.load.image('no', images_path + 'no.png');
-    game.load.image('powerup_p', images_path + 'pat_powerup_2.png');
+    game.load.image('powerup_p', images_path + 'pat_powerup_3.png');
 
     game.load.image('main_menu_background', images_path + 'main_menu_background.png');
 
