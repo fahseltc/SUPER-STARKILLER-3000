@@ -1,9 +1,9 @@
-Mega Mecha Marxist II is a 2D action / bullet hell game made using [Phaser](https://phaser.io/).
+SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](https://phaser.io/).
 
 # Features
 - Fully deployable on heroku free tier.
 - Auto github deploy using heroku.
-- [Staging](https://mega-mecha-marxist-staging.herokuapp.com/) and [Production](https://mega-mecha-marxist.herokuapp.com/) environments using heroku pipelines.
+- [Staging](https://super-starkiller-3000-staging.herokuapp.com/) and [Production](https://super-starkiller-3000.herokuapp.com/) environments using heroku pipelines.
 - [Custom leaderboard](https://github.com/fahseltc/leaderboard-node) in nodejs using heroku postgres.
 
 
@@ -15,5 +15,7 @@ Mega Mecha Marxist II is a 2D action / bullet hell game made using [Phaser](http
 ["Xanadon't"](http://freemusicarchive.org/music/Mystery_Mammal/Latent/Xanadont_1334) by [Mystery Mammal](http://freemusicarchive.org/music/Mystery_Mammal) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 Pat - for the spaceship sprites and other art.
+
+[Chez](https://www.patreon.com/chezdispenser) - for the story/writing.
 
 koreezgames - for the cool particle editor plugin : https://github.com/koreezgames/phaser-particle-editor-plugin
