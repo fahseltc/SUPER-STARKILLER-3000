@@ -67,7 +67,6 @@ class PlayerShip {
   activate_shield() {
     this.shield_sprite.visible = true;
     this.shield_sprite.active = true;
-    //game.add.tween(this.shield_sprite).to( { } )
   }
 
   destroy_shield() {
@@ -78,7 +77,9 @@ class PlayerShip {
   render() {
     this.flames.render();
     this.bullet_weapon.render();
-    game.debug.body(this.sprite);
+    //game.debug.body(this.sprite);
+    //game.debug.body(this.shield_sprite);
+    //game.debug.body(this.circle_weapon.sprite);
   }
 
   take_damage() {

@@ -101,10 +101,10 @@ class EnemyManager {
 
       random_dead_bad_guy.bullet_time = game.time.now + random_dead_bad_guy.get_initial_delay() + ENEMY_SPAWN_TWEEN_TIME;
       random_dead_bad_guy.visible = true;
-      random_dead_bad_guy.revive();
 
       random_dead_bad_guy.alpha = 0.3;
-      game.add.tween(random_dead_bad_guy).to({ alpha: 1 } , ENEMY_SPAWN_TWEEN_TIME, Phaser.Easing.Exponential.In, true);
+      var phase_in_tween = game.add.tween(random_dead_bad_guy).to({ alpha: 1 } , ENEMY_SPAWN_TWEEN_TIME, Phaser.Easing.Exponential.In, true);
+      phase_in_tween.onComplete.add(function(){ random_dead_bad_guy.revive(); }, this)
     }
   }
 

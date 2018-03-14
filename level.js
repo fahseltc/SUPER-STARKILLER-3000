@@ -25,7 +25,10 @@ class Level {
   }
 
   update() {
-    game.physics.arcade.overlap(this.mecha.circle_weapon.sprite,  this.enemy_manager.bad_guys, this.handle_collision, null, this);
+    if(this.mecha.circle_weapon.active) {
+      game.physics.arcade.overlap(this.mecha.circle_weapon.sprite,  this.enemy_manager.bad_guys, this.handle_collision, null, this);
+    }
+
     game.physics.arcade.overlap(this.mecha.bullet_weapon.bullets, this.enemy_manager.bad_guys, this.handle_collision, null, this);
     var visible_bullets = this.enemy_manager.all_bullets.getAll('alive', true);
     game.physics.arcade.overlap(this.mecha.sprite, visible_bullets, this.handle_player_hit, null, this);

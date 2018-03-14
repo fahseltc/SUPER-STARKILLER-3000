@@ -1,4 +1,4 @@
-const CIRCLE_SHOOT_DELAY = 200;
+const CIRCLE_SHOOT_DELAY = 400;
 
 class CircleWeapon {
   constructor(mecha) {
@@ -22,14 +22,14 @@ class CircleWeapon {
 
   update(controls) {
     if(controls.sword && !this.active && game.time.now > this.shoot_time) {
-      this.sprite.visible = true;
+      this.sprite.revive();
       this.active = true;
       var tween = game.add.tween(this.sprite.scale).to( { x:2.5, y:2.5 }, CIRCLE_SHOOT_DELAY, Phaser.Easing.Exponential.Out, true).yoyo(true);
       tween.onComplete.add(function() {
         this.active = false;
+        this.sprite.kill();
         this.sprite.scale.x = 0.1;
         this.sprite.scale.y = 0.1;
-        this.sprite.visible = false;
         this.shoot_time = game.time.now + CIRCLE_SHOOT_DELAY;
       }, this)
     }
