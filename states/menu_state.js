@@ -65,7 +65,7 @@ var menu_state = {
     no_icon.anchor.set(0.5, 0.5);
     no_icon.visible = true;
 
-    var sound_icon = game.add.sprite(60, 570, 'sound_white');
+    var sound_icon = game.add.sprite(60, 570, 'white_speaker_icon');
     sound_icon.scale.x = 0.2;
     sound_icon.scale.y = 0.2;
     sound_icon.anchor.set(0.5, 0.5);

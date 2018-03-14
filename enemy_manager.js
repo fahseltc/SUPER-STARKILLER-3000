@@ -7,9 +7,9 @@ const SCREEN_EDGE_SPAWN_DISTANCE = 50;
 const ENEMY_PLAYER_SPAWN_DISTANCE = 150;
 
 class EnemyManager {
-  constructor(game, mecha, level_data) {
+  constructor(game, player, level_data) {
     this.game = game;
-    this.mecha = mecha;
+    this.player = player;
     this.level_data = level_data;
     this.bad_guys = game.add.group();
     this.all_bullets = game.add.group();
@@ -27,13 +27,13 @@ class EnemyManager {
     var bullet_speed = this.level_data.ENEMY_BULLET_SPEED;
     var initial_delay = this.level_data.ENEMY_BULLET_INITIAL_DELAY
     for(var i = 0; i < 10; i++){
-      var bg1 = new ShootingEnemy(this.game, this.mecha, 'red', bullet_delay, bullet_speed, initial_delay);
+      var bg1 = new ShootingEnemy(this.game, this.player, 'red', bullet_delay, bullet_speed, initial_delay);
       bg1.alive = false;
       this.bad_guys.add(bg1);
       this.all_bullets.add(bg1.bullets);
     }
     for(var i = 0; i < 10; i++){
-      var bg2 = new ShootingEnemy(this.game, this.mecha, 'blue', bullet_delay, bullet_speed, initial_delay);
+      var bg2 = new ShootingEnemy(this.game, this.player, 'blue', bullet_delay, bullet_speed, initial_delay);
       bg2.alive = false;
       this.bad_guys.add(bg2);
       this.all_bullets.add(bg2.bullets);
@@ -84,12 +84,12 @@ class EnemyManager {
       var random_dead_bad_guy = dead_bad_guys[game.rnd.integerInRange(0, dead_bad_guys.length - 1)]
       var temp_x = this.get_random_x();
       var temp_y = this.get_random_y();
-      var distance_to_player = Phaser.Math.distance(temp_x, temp_y, this.mecha.sprite.x, this.mecha.sprite.y);
+      var distance_to_player = Phaser.Math.distance(temp_x, temp_y, this.player.sprite.x, this.player.sprite.y);
 
       while(distance_to_player < ENEMY_PLAYER_SPAWN_DISTANCE) {
         temp_x = this.get_random_x();
         temp_y = this.get_random_y();
-        distance_to_player = Phaser.Math.distance(temp_x, temp_y, this.mecha.sprite.x, this.mecha.sprite.y);
+        distance_to_player = Phaser.Math.distance(temp_x, temp_y, this.player.sprite.x, this.player.sprite.y);
       }
 
       if(temp_x < game.width / 2) { // swoosh in from left

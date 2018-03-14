@@ -10,8 +10,8 @@ const OVERHEAT_DURATION = Phaser.Timer.SECOND * 0.8;
 
 class BulletWeapon {
 
-  constructor(mecha) {
-    this.mecha = mecha;
+  constructor(player) {
+    this.player = player;
      // bullets
     this.bullets = game.add.group();
     this.bullets.enableBodyDebug = true;
@@ -27,7 +27,7 @@ class BulletWeapon {
   }
 
   update(controls) {
-    if(controls.fire)  { this.fire_bullet(); }
+    if(controls.left_click)  { this.fire_bullet(); }
     if (this.heat > 0) { this.heat -= HEAT_LOST_PER_TICK; }
   }
 
@@ -41,9 +41,9 @@ class BulletWeapon {
 
       if (bullet && this.overheated == false) {
         this.heat += HEAT_GENERATED_PER_SHOT;
-        bullet.reset(this.mecha.sprite.body.x + this.mecha.sprite.width/2, this.mecha.sprite.body.y + this.mecha.sprite.height/2);
+        bullet.reset(this.player.sprite.body.x + this.player.sprite.width/2, this.player.sprite.body.y + this.player.sprite.height/2);
         bullet.lifespan = BULLET_LIFESPAN;
-        game.physics.arcade.velocityFromRotation(this.mecha.sprite.rotation, this.mecha.sprite.body.speed + BULLET_ADDITIONAL_SPEED, bullet.body.velocity);
+        game.physics.arcade.velocityFromRotation(this.player.sprite.rotation, this.player.sprite.body.speed + BULLET_ADDITIONAL_SPEED, bullet.body.velocity);
         this.bullet_time = game.time.now + BULLET_DELAY;
       }
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
     <link rel="stylesheet" type = "text/css" href ="assets/css/font_loader.css">
     <script src="assets/js/phaser.min.js"></script>
@@ -17,10 +17,13 @@
       document.body.appendChild(div);
     </script>
 
-    <script type="text/javascript" src="controls.js"></script>
-    <script type="text/javascript" src="utils.js"></script>
-    <script type="text/javascript" src="level.js"></script>
+    <!-- Player -->
+    <script type="text/javascript" src="player/player_ship.js"></script>
+    <script type="text/javascript" src="player/circle_weapon.js"></script>
+    <script type="text/javascript" src="player/bullet_weapon.js"></script>
+    <script type="text/javascript" src="player/player_ship_flame.js"></script>
 
+    <!-- UI -->
     <script type="text/javascript" src="ui/timer_display.js"></script>
     <script type="text/javascript" src="ui/root_ui.js"></script>
     <script type="text/javascript" src="ui/health_bar.js"></script>
@@ -28,6 +31,9 @@
     <script type="text/javascript" src="ui/level_display.js"></script>
     <script type="text/javascript" src="ui/remaining_enemies_bar.js"></script>
 
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="controls.js"></script>
+    <script type="text/javascript" src="level.js"></script>
     <script type="text/javascript" src="level_manager.js"></script>
     <script type="text/javascript" src="powerup.js"></script>
     <script type="text/javascript" src="powerup_manager.js"></script>
@@ -35,12 +41,7 @@
     <script type="text/javascript" src="enemy_manager.js"></script>
 
 
-    <!-- Player -->
-    <script type="text/javascript" src="player/player_ship.js"></script>
-    <script type="text/javascript" src="player/circle_weapon.js"></script>
-    <script type="text/javascript" src="player/bullet_weapon.js"></script>
-    <script type="text/javascript" src="player/player_ship_flame.js"></script>
-
+    <!-- Game States -->
     <script type="text/javascript" src="states/menu_state.js"></script>
     <script type="text/javascript" src="states/travel_state.js"></script>
     <script type="text/javascript" src="states/play_state.js"></script>
@@ -51,7 +52,9 @@
     <script type="text/javascript" src="states/leaderboard_state.js"></script>
     <script type="text/javascript" src="states/text_state.js"></script>
 
+    <!-- Main entry point to game  -->
     <script type="text/javascript" src="main.js"></script>
+
     <div id="game" style="margin:0 auto;"></div>
   </body>
 </html>

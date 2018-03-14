@@ -4,42 +4,42 @@ class Level {
     console.log(this.level_data);
     this.level_manager = level_manager;
     this.controls = new Controls(game);
-    this.mecha = new PlayerShip(game.width / 2, game.height / 2, this.controls);
+    this.player = new PlayerShip(game.width / 2, game.height / 2, this.controls);
 
     // UI ELEMENTS
     //var ui_background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'ui_background');
 
-    this.UI = new RootUI(this.mecha, this.level_data, this.level_data.LEVEL_NUMBER);
+    this.UI = new RootUI(this.player, this.level_data, this.level_data.LEVEL_NUMBER);
     // this.score = new Score();
-    // this.health_bar = new HealthBar(this.mecha);
+    // this.health_bar = new HealthBar(this.player);
     // this.remaining_enemies_bar = new RemainingEnemiesBar(this.level_data);
 
 
-    this.enemy_manager = new EnemyManager(game, this.mecha, this.level_data);
-    game.world.bringToTop(this.mecha.sprite);
+    this.enemy_manager = new EnemyManager(game, this.player, this.level_data);
+    game.world.bringToTop(this.player.sprite);
     console.log("level duration: " + this.level_data.DURATION * Phaser.Timer.SECOND)
 
-    //this.powerup = new Powerup(this.mecha);
-    this.powerup_manager = new PowerupManager(this.mecha);
+    //this.powerup = new Powerup(this.player);
+    this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false
   }
 
   update() {
-    if(this.mecha.circle_weapon.active) {
-      game.physics.arcade.overlap(this.mecha.circle_weapon.sprite,  this.enemy_manager.bad_guys, this.handle_collision, null, this);
+    if(this.player.circle_weapon.active) {
+      game.physics.arcade.overlap(this.player.circle_weapon.sprite,  this.enemy_manager.bad_guys, this.handle_collision, null, this);
     }
 
-    game.physics.arcade.overlap(this.mecha.bullet_weapon.bullets, this.enemy_manager.bad_guys, this.handle_collision, null, this);
+    game.physics.arcade.overlap(this.player.bullet_weapon.bullets, this.enemy_manager.bad_guys, this.handle_collision, null, this);
     var visible_bullets = this.enemy_manager.all_bullets.getAll('alive', true);
-    game.physics.arcade.overlap(this.mecha.sprite, visible_bullets, this.handle_player_hit, null, this);
+    game.physics.arcade.overlap(this.player.sprite, visible_bullets, this.handle_player_hit, null, this);
 
 
-    //game.physics.arcade.overlap(this.mecha.sprite.body, this.powerup.sprite.body, this.powerup.collide_player(), null, this);
+    //game.physics.arcade.overlap(this.player.sprite.body, this.powerup.sprite.body, this.powerup.collide_player(), null, this);
 
 
     this.controls.update();
     this.enemy_manager.update();
-    this.mecha.update();
+    this.player.update();
 
     this.UI.update();
     //this.score.update();
@@ -53,7 +53,7 @@ class Level {
 
   render() {
     if(!this.destroyed) {
-      this.mecha.render();
+      this.player.render();
       this.UI.render();
       game.debug.text(game.time.fps, 1, 12, "#FFFFFF");
     }
@@ -77,20 +77,20 @@ class Level {
     }
   }
 
-  handle_player_hit(mecha, bullet) {
+  handle_player_hit(player, bullet) {
     bullet.kill();
-    if(!this.mecha.invuln) {
-      if(this.mecha.shield_sprite.active) {
-        this.mecha.destroy_shield();
+    if(!this.player.invuln) {
+      if(this.player.shield_sprite.active) {
+        this.player.destroy_shield();
       } else {
-        this.mecha.take_damage();
+        this.player.take_damage();
       }
     }
 
-    if(!mecha.alive) {
+    if(!player.alive) {
       console.log("u ded");
       last_score = this.UI.score.score + this.UI.score.score_buffer;
-      mecha.heal();
+      player.heal();
       game.state.start('post');
     }
     console.log("ouch");
@@ -98,7 +98,7 @@ class Level {
 
   destroy() {
     this.destroyed = true;
-    this.mecha.destroy();
+    this.player.destroy();
     this.enemy_manager.destroy();
     this.UI.destroy();
   }

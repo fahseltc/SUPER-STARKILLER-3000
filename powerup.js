@@ -1,6 +1,6 @@
 class Powerup {
-  constructor(mecha) {
-    this.mecha = mecha;
+  constructor(player) {
+    this.player = player;
     this.sprite = game.add.sprite(this.get_random_x(), this.get_random_y(), "powerup_p");
     this.sprite.enableBody = true;
     this.sprite.physicsBodyType = Phaser.Physics.ARCADE;
@@ -15,11 +15,11 @@ class Powerup {
   }
 
   update() {
-    game.physics.arcade.overlap(this.sprite, this.mecha.sprite, this.collide_player, null, this);
+    game.physics.arcade.overlap(this.sprite, this.player.sprite, this.collide_player, null, this);
   }
 
   collide_player(obj, enemy) {
-    this.mecha.activate_shield();
+    this.player.activate_shield();
     this.sprite.visible = false;
     this.sprite.active = false;
   }
