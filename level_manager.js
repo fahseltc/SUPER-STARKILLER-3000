@@ -41,6 +41,8 @@ class LevelManager {
     } else if(change_level_type == "MENU") {
       after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
       game.state.start('ready');
+    } else if(change_level_type == "BOSS") {
+      this.current_level = new BossLevel(this.level_json[this.current_level_index], this);
     }
   }
 }

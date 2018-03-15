@@ -1,8 +1,9 @@
 
 const ENEMY_BULLET_LIFESPAN = 7000;
+
 ShootingEnemy = function(game, player, sprite, bullet_delay, bullet_speed, initial_delay) {
   Phaser.Sprite.call(this, game, 0, 0, 'turret_base_' + sprite);
-  this.rotation = Math.PI/4;
+  this.rotation = Math.PI / 4;
   this.player = player;
   this.game = game;
   this.turret = game.add.sprite(0, 0, 'turret_top_' + sprite);

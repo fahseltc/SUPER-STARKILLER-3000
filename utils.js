@@ -1,8 +1,9 @@
 const RED_HEX_COLOR = '#FD0006'
 const GREEN_HEX_COLOR = '#0ACF00'
+const WHITE_HEX_COLOR = '#FFFFFF'
 
 class Utils {
-  static create_text(text, x, y, px=20, color="#FFFFFF") {
+  static create_text(text, x, y, px=20, color=WHITE_HEX_COLOR) {
     var label = game.add.text(x, y, text, {
       font: px + "px prstart",
       fill: color,
@@ -12,7 +13,7 @@ class Utils {
     return label;
   }
 
-  static create_centered_text(text, y, px=20, color="#FFFFFF") {
+  static create_centered_text(text, y, px=20, color=WHITE_HEX_COLOR) {
     var label = game.add.text(game.width / 2, y, text, {
       font: px + "px prstart",
       fill: color,
@@ -22,7 +23,7 @@ class Utils {
     return label;
   }
 
-  static create_centered_stroke_text(text, y, px=20, color="#FFFFFF", stroke='') {
+  static create_centered_stroke_text(text, y, px=20, color=WHITE_HEX_COLOR, stroke='') {
     var label = game.add.text(game.width / 2, y, text, {
       font: px + "px prstart",
       fill: color,
@@ -34,7 +35,7 @@ class Utils {
     return label;
   }
 
-    static create_stroke_text(text, x, y, px=20, color="#FFFFFF") {
+    static create_stroke_text(text, x, y, px=20, color=WHITE_HEX_COLOR) {
     var label = game.add.text(x, y, text, {
       font: px + "px prstart",
       fill: color,

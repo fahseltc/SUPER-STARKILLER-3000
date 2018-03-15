@@ -2,10 +2,10 @@ const BULLET_ADDITIONAL_SPEED = 1000;
 const BULLET_LIFESPAN = 1000;
 const BULLET_DELAY = 100;
 
-const HEAT_GENERATED_PER_SHOT = 2;
+const HEAT_GENERATED_PER_SHOT = 4;
 const HEAT_LOST_PER_TICK = 0.1;
 const MAX_HEAT = 10;
-const OVERHEAT_DURATION = Phaser.Timer.SECOND * 0.8;
+const OVERHEAT_DURATION = Phaser.Timer.SECOND * 0.4;
 
 
 class BulletWeapon {
@@ -37,7 +37,7 @@ class BulletWeapon {
   }
 
   render() {
-    //game.debug.text(this.heat, 200, 14, "#00ff00");
+    game.debug.text(this.heat, 200, 14, "#00ff00");
   }
 
   fire_bullet() {

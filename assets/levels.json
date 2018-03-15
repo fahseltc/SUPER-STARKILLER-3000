@@ -1,6 +1,34 @@
 {
   "levels": [
     {
+      "LEVEL_TYPE": "BOSS",
+      "INDEX": 0,
+      "LEVEL_NUMBER": 1,
+      "TURRETS": [
+        {
+          "AIM_AT": "PLAYER",
+          "OFFSET_X": 40,
+          "OFFSET_Y": 45,
+          "BULLET_DELAY": 400,
+          "BULLET_SPEED": 200
+        },
+        {
+          "AIM_AT": "PLAYER",
+          "OFFSET_X": -40,
+          "OFFSET_Y": 45,
+          "BULLET_DELAY": 400,
+          "BULLET_SPEED": 200
+        },
+        {
+          "AIM_AT": "MOUSE",
+          "OFFSET_X": 0,
+          "OFFSET_Y": 70,
+          "BULLET_DELAY": 300,
+          "BULLET_SPEED": 300
+        }
+      ]
+    },
+    {
       "LEVEL_TYPE": "COMBAT",
       "INDEX": 0,
       "LEVEL_NUMBER": 1,

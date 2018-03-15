@@ -24,6 +24,8 @@ var load_state = {
     game.load.image('turret_base_blue', images_path + 'turret_base_blue.png');
     game.load.image('turret_top_red', images_path + 'turret_top_red.png');
     game.load.image('turret_base_red', images_path + 'turret_base_red.png');
+    game.load.image('boss', images_path + 'boss.png');
+    game.load.image('boss_1', images_path + 'boss_1.png');
     game.load.image('shield', images_path + 'shield.png');
     game.load.image('circle', images_path + 'circle.png');
     game.load.image('enemy_bullet', images_path + 'enemy_bullet.png');

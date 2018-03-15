@@ -34,6 +34,9 @@
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="controls.js"></script>
     <script type="text/javascript" src="level.js"></script>
+    <script type="text/javascript" src="boss_level.js"></script>
+    <script type="text/javascript" src="boss_enemy.js"></script>
+    <script type="text/javascript" src="boss_turret.js"></script>
     <script type="text/javascript" src="level_manager.js"></script>
     <script type="text/javascript" src="powerup.js"></script>
     <script type="text/javascript" src="powerup_manager.js"></script>

@@ -33,16 +33,11 @@ class Level {
     var visible_bullets = this.enemy_manager.all_bullets.getAll('alive', true);
     game.physics.arcade.overlap(this.player.sprite, visible_bullets, this.handle_player_hit, null, this);
 
-
-    //game.physics.arcade.overlap(this.player.sprite.body, this.powerup.sprite.body, this.powerup.collide_player(), null, this);
-
-
     this.controls.update();
     this.enemy_manager.update();
     this.player.update();
 
     this.UI.update();
-    //this.score.update();
     this.powerup_manager.update();
 
     if(this.enemy_manager.are_all_enemies_dead()) {
