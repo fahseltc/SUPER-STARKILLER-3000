@@ -34,8 +34,7 @@ class PlayerShip {
     this.shield_sprite.anchor.set(0.5, 0.5);
     this.shield_sprite.scale.set(0.5,0.5);
     game.physics.enable(this.shield_sprite, Phaser.Physics.ARCADE);
-    this.shield_sprite.visible = false;
-    this.shield_sprite.active = false;
+    this.shield_sprite.kill();
 
     //this.sprite.body.setSize(75 / this.sprite.scale.x, 75 / this.sprite.scale.y, -32.5, 32.5)
     this.sprite.body.setCircle(35 / this.sprite.scale.x, -25, 40);
@@ -64,16 +63,6 @@ class PlayerShip {
     this.circle_weapon.update(this.controls);
   }
 
-  activate_shield() {
-    this.shield_sprite.visible = true;
-    this.shield_sprite.active = true;
-  }
-
-  destroy_shield() {
-    this.shield_sprite.visible = false;
-    this.shield_sprite.active = false;
-  }
-
   render() {
     this.flames.render();
     this.bullet_weapon.render();
@@ -82,13 +71,43 @@ class PlayerShip {
     //game.debug.body(this.circle_weapon.sprite);
   }
 
+  process_hit() {
+    // if player is vulnerable
+    console.log("invuln:" + this.invuln)
+    if(!this.invuln) {
+      // check if the shield exists
+      console.log("shield sprite alive?: " + this.shield_sprite.alive);
+      if(this.shield_sprite.alive) {
+        // destroy the shield
+        console.log("shield took damage");
+        this.shield_sprite.kill();
+      } else {
+        // but if it isnt, take the damage
+        this.take_damage();
+      }
+    }
+
+    // return if we died or not from this hit
+    return this.handle_possible_death();
+  }
+
   take_damage() {
+    console.log("player take damage");
     this.sprite.damage(1);
     if(this.sprite.alive) {
       this.invuln = true;
       var tween = game.add.tween(this.sprite).to( { tint: 0x000000 }, INVULN_TIME, "Linear", true).yoyo(true).repeat(3);
       tween.onComplete.add(function() { this.tint = 0xFFFFFF; this.invuln = false; }, this);
     }
+  }
+
+  handle_possible_death() {
+  if(!this.sprite.alive) {
+      console.log("player died");
+      this.flames.flames.kill();
+      return true;
+    }
+    return false;
   }
 
   destroy() {

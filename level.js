@@ -78,22 +78,14 @@ class Level {
   }
 
   handle_player_hit(player, bullet) {
+    console.log("bullet intersected player");
     bullet.kill();
-    if(!this.player.invuln) {
-      if(this.player.shield_sprite.active) {
-        this.player.destroy_shield();
-      } else {
-        this.player.take_damage();
-      }
-    }
+    var player_died = this.player.process_hit();
 
-    if(!player.alive) {
-      console.log("u ded");
+    if(player_died) {
       last_score = this.UI.score.score + this.UI.score.score_buffer;
-      player.heal();
       game.state.start('post');
     }
-    console.log("ouch");
   }
 
   destroy() {

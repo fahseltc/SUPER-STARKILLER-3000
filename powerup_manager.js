@@ -21,15 +21,15 @@ class PowerupManager {
   }
 
   collide_player(obj, enemy) {
-    this.player.activate_shield();
-    this.powerup.sprite.visible = false;
-    this.powerup.sprite.active = false;
+    this.player.shield_sprite.revive();
+    this.powerup.sprite.kill();
     this.powerup_alive = false;
     this.spawn_powerup_at = game.time.now + POWERUP_SPAWN_TIME;
   }
 
   spawn_powerup() {
     this.powerup = new Powerup(this.player);
+    this.powerup.sprite.revive();
     this.powerup_alive = true;
   }
 

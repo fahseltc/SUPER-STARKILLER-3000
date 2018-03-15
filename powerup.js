@@ -19,9 +19,8 @@ class Powerup {
   }
 
   collide_player(obj, enemy) {
-    this.player.activate_shield();
-    this.sprite.visible = false;
-    this.sprite.active = false;
+    this.player.shield_sprite.revive();
+    this.sprite.kill();
   }
 
   get_random_x() {
