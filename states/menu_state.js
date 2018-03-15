@@ -28,8 +28,8 @@ var menu_state = {
 
     var space_to_begin_text = Utils.create_centered_stroke_text('Press Space to begin', 850, 35);
 
-    var now_with_text = Utils.create_stroke_text('Now with more\nbetter art!', 1200, 500, 20, "#FFD700");
-    var now_with_text2 = Utils.create_stroke_text('and a new song!', 1200, 550, 10, "#FFD700");
+    var now_with_text = Utils.create_stroke_text('Now with BOSS', 1200, 500, 20, "#FFD700");
+    var now_with_text2 = Utils.create_stroke_text('and less gameplay!', 1200, 550, 10, "#FFD700");
     now_with_text.angle = -2;
     game.add.tween(now_with_text).to({ angle: 2 }, 5000, function(k) {
        return Math.sin(Math.PI * 2 * k);
