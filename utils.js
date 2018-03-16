@@ -1,6 +1,8 @@
 const RED_HEX_COLOR = '#FD0006'
 const GREEN_HEX_COLOR = '#0ACF00'
 const WHITE_HEX_COLOR = '#FFFFFF'
+const BLUE_HEX_COLOR = '#1B1BB3'
+
 
 class Utils {
   static create_text(text, x, y, px=20, color=WHITE_HEX_COLOR) {

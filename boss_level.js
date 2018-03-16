@@ -7,36 +7,41 @@ class BossLevel {
     this.player = new PlayerShip(game.width / 2, game.height / 2, this.controls);
     this.UI = new RootUI(this.player, this.level_data, this.level_data.LEVEL_NUMBER);
 
-    console.log("Starting BOSS level!")
+    console.log('Starting BOSS level!')
 
     game.world.bringToTop(this.player.sprite);
-    console.log("level duration: " + this.level_data.DURATION * Phaser.Timer.SECOND)
+    console.log('level duration: ' + this.level_data.DURATION * Phaser.Timer.SECOND)
 
     //this.powerup = new Powerup(this.player);
     //this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false;
-    this.boss = new BossEnemy(this.player, this.level_data.TURRETS);
+    this.boss = new BossEnemy(this.player, this.level_data.TURRETS, this);
   }
 
   update() {
     // Check if players weapons overlap the boss
-    if(this.player.circle_weapon.active) {
-      game.physics.arcade.overlap(this.player.circle_weapon.sprite,  this.boss.sprite, this.handle_collision_blue, null, this);
-    }
-    game.physics.arcade.overlap(this.player.bullet_weapon.bullets, this.boss.sprite, this.handle_collision_red, null, this);
+    // if(this.player.circle_weapon.active) {
+    //   game.physics.arcade.overlap(this.player.circle_weapon.sprite,  this.boss.sprite, this.handle_collision_blue, null, this);
+    // }
+
+    // var outermost_shield = this.boss.shield_stack.pop();
+    // game.physics.arcade.overlap(this.player.bullet_weapon.bullets, outermost_shield.sprite, this.handle_collision_red, null, this);
+    // this.boss.shield_stack.push(outermost_shield);
+
 
 
     // var visible_bullets = this.enemy_manager.all_bullets.getAll('alive', true);
     // game.physics.arcade.overlap(this.player.sprite, visible_bullets, this.handle_player_hit, null, this);
-
-    this.controls.update();
-    this.player.update();
-    this.boss.update();
-    this.UI.update();
+    if(!this.destroyed) {
+      this.controls.update();
+      this.player.update();
+      this.boss.update();
+      this.UI.update();
+    }
     //this.powerup_manager.update();
 
     // if(this.enemy_manager.are_all_enemies_dead()) {
-    //   console.log("all enemies defeated");
+    //   console.log('all enemies defeated');
     //   this.level_manager.change_level(this.level_data.INDEX + 1);
     // }
   }
@@ -46,20 +51,21 @@ class BossLevel {
       this.player.render();
       this.boss.render();
       this.UI.render();
-      game.debug.text(game.time.fps, 1, 12, "#FFFFFF");
+      game.debug.text(game.time.fps, 1, 12, '#FFFFFF');
     }
   }
 
-  handle_collision_blue(blue_shield, boss) {
-    blue_shield.kill();
-    console.log("blue collision!")
-    this.boss.process_hit();
+  end_game() {
+    last_score = this.UI.score.score + this.UI.score.score_buffer;
+    game.state.start('post');
   }
 
-  handle_collision_red(boss, red_bullet) {
-    red_bullet.kill();
-    console.log("red collision!")
-    this.boss.process_hit();
+  boss_died() {
+    last_score = this.UI.score.score + this.UI.score.score_buffer;
+    console.log('u beat it!');
+    this.destroyed = true;
+    this.destroy();
+    game.state.start('boss_dead')
   }
 
   destroy() {

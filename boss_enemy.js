@@ -1,5 +1,6 @@
 class BossEnemy {
-  constructor(player, turret_data) {
+  constructor(player, turret_data, level) {
+    this.level = level;
     this.player = player;
     console.log(turret_data);
     this.turret_data = turret_data;
@@ -8,33 +9,107 @@ class BossEnemy {
     this.sprite.anchor.set(0.5, 0.5);
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
 
+    this.all_bullets = game.add.group();
     this.turrets = game.add.group();
-
-
     this.turret_data.forEach(function(turret, index) {
       var turret = new BossTurret(game, this.player, turret_data[index]);
       turret.revive();
       this.turrets.add(turret);
+      this.all_bullets.add(turret.bullets)
     }, this);
     this.sprite.addChild(this.turrets);
+
+    // Circle shields
+    this.shield_stack = [];
+    this.shield_stack.push(new BossShield(this.sprite.position, 0, 'red'));
+    this.shield_stack.push(new BossShield(this.sprite.position, 1, 'blue'));
+    this.shield_stack.push(new BossShield(this.sprite.position, 2, 'red'));
+    this.shield_stack.push(new BossShield(this.sprite.position, 3, 'red'));
+    this.shield_stack.push(new BossShield(this.sprite.position, 4, 'red'));
+    this.shield_stack.push(new BossShield(this.sprite.position, 5, 'blue'));
+
+    // this.shield_stack.forEach(function(shield) {
+    //   this.sprite.addChild(shield.sprite);
+    //  }, this)
+    //this.shield_destroyed_this_loop = false;
   }
 
   update() {
+    this.update_turrets();
+    this.check_shield_collisions();
+    this.check_boss_hits_player();
+  }
+
+  update_turrets() {
     this.turrets.forEach(function(turret) {
       turret.update();
     }, this);
   }
 
-  render() {
+  check_shield_collisions() {
+    // get the outermost shield
+    var outermost_shield = this.shield_stack.pop();
+    // test Red weapon collision
+    if(outermost_shield) {
+      game.physics.arcade.overlap(this.player.bullet_weapon.bullets, outermost_shield.sprite, this.handle_bullet_collision);
+      // test Blue weapon collision
+      if(this.player.circle_weapon.active) {
+        game.physics.arcade.overlap(this.player.circle_weapon.sprite, outermost_shield.sprite, this.handle_circle_weapon_collision, null, this);
+      }
 
+      if(outermost_shield.sprite.alive) {
+        this.shield_stack.push(outermost_shield);
+      }
+
+    } else {
+      console.log("all shields dead, we won?")
+      this.level.boss_died();
+    }
   }
 
-  process_hit() {
-    console.log('boss process hit')
+  check_boss_hits_player() {
+    var visible_bullets = this.all_bullets.getAll('alive', true);
+    game.physics.arcade.overlap(this.player.sprite, visible_bullets, this.handle_player_hit, null, this);
+  }
+
+  handle_circle_weapon_collision(circle_weapon_sprite, boss_shield_sprite) {
+    if(boss_shield_sprite.key == 'boss_shield_blue') {
+      boss_shield_sprite.kill();
+      console.log("Circle weapon collision");
+    }
+  }
+
+  handle_bullet_collision(boss_shield_sprite, bullet_sprite) {
+    if(boss_shield_sprite.key == 'boss_shield_red') {
+      boss_shield_sprite.kill();
+      console.log("Bullet collision");
+    }
+    bullet_sprite.kill();
+  }
+
+  handle_player_hit(player, bullet) {
+    bullet.kill();
+    var player_died = this.player.process_hit();
+    if(player_died) {
+      this.level.end_game();
+    }
+  }
+
+  render() {
+    // this.shield_stack.forEach(function(shield) {
+    //   shield.render();
+    // }, this);
   }
 
   destroy() {
     this.sprite.destroy();
+    this.turrets.forEach(function(boss_turret) {
+      boss_turret.destroy();
+    }, this);
+    this.turrets.destroy();
+    this.shield_stack.forEach(function(boss_shield) {
+      boss_shield.destroy();
+    }, this);
   }
 }
 

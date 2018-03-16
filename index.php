@@ -37,6 +37,7 @@
     <script type="text/javascript" src="boss_level.js"></script>
     <script type="text/javascript" src="boss_enemy.js"></script>
     <script type="text/javascript" src="boss_turret.js"></script>
+    <script type="text/javascript" src="boss_shield.js"></script>
     <script type="text/javascript" src="level_manager.js"></script>
     <script type="text/javascript" src="powerup.js"></script>
     <script type="text/javascript" src="powerup_manager.js"></script>
@@ -54,6 +55,7 @@
     <script type="text/javascript" src="states/post_game_state.js"></script>
     <script type="text/javascript" src="states/leaderboard_state.js"></script>
     <script type="text/javascript" src="states/text_state.js"></script>
+    <script type="text/javascript" src="states/boss_dead_state.js"></script>
 
     <!-- Main entry point to game  -->
     <script type="text/javascript" src="main.js"></script>

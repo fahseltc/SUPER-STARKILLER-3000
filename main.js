@@ -45,5 +45,6 @@ game.state.add('leaderboard', leaderboard_state);
 game.state.add('ready', ready_state);
 game.state.add('travel', travel_state);
 game.state.add('text', text_state);
+game.state.add('boss_dead', boss_dead_state);
 
 game.state.start('boot');

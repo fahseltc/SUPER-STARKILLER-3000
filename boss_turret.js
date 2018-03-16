@@ -42,7 +42,7 @@ BossTurret.prototype.update = function() {
   if(this.aim_at == "PLAYER") {
     this.rotation = game.physics.arcade.angleToXY(this.player.sprite, this.worldPosition.x, this.worldPosition.y) + Math.PI/2;
   } else if (this.aim_at == "MOUSE") {
-    console.log(this.rotation);
+    //console.log(this.rotation);
     this.rotation = game.physics.arcade.angleToPointer(this, game.input.activePointer, true) - Math.PI/2;
   }
 
@@ -88,4 +88,4 @@ BossTurret.prototype.update = function() {
 //   // }
 // };
 
-BossTurret.prototype.destroy = function() { this.sprite.destroy(); };
+BossTurret.prototype.destroy = function() { this.bullets.destroy();};
