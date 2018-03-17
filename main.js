@@ -9,7 +9,7 @@ var conf = {
 };
 
 var temp_env = document.getElementById('environment').innerText;
-if (temp_env == '<?php echo getenv('environment')?>') { temp_env = 'dev' }
+if (temp_env == '<?php echo getenv("environment")?>') { temp_env = 'dev' }
 conf.env = temp_env
 
 console.log('inside JS, env: ' + conf.env);
