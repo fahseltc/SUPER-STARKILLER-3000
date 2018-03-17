@@ -9,7 +9,7 @@ var load_state = {
     game.load.setPreloadSprite(this.progress_bar);
 
     //HACK TO PRELOAD A CUSTOM FONT first font will always be funky
-    Utils.create_centered_stroke_text("LOADING", game.height/2 , 50);
+    Utils.create_centered_stroke_text('LOADING', game.height/2 , 50);
 
     var assets_path = '/assets/'
     var images_path = assets_path + 'images/';

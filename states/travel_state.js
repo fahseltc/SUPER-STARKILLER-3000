@@ -6,14 +6,6 @@ var travel_state = {
   },
 
   create: function() {
-    //this.create_static_line(new Phaser.Line(1, 1, game.width/2, game.height/2)); // top left
-    //this.create_static_line(new Phaser.Line(1, 1, game.width/2, game.height/2)); // top right
-    //this.create_static_line(new Phaser.Line(game.width/2, game.height/2, -game.width/2, -game.height/2)); // top right
-    //this.create_static_line(new Phaser.Line(1, 1, game.width/2, game.height/2)); // top left
-    //this.create_static_line(new Phaser.Line(1, 1, game.width/2, game.height/2)); // top left
-
-    //this.line1 = this.create_static_line(new Phaser.Line(100, 10, 10, 10));
-
     var graphicsLine = game.add.graphics(0, 0);
     graphicsLine.lineStyle(12, 0xff69b4, 1);
     // top left to bottom right
@@ -88,14 +80,12 @@ var travel_state = {
     this.rectangles.createMultiple(100, 'pink_rect_empty');
     this.rectangles.setAll('anchor.x', 0.5);
     this.rectangles.setAll('anchor.y', 0.5);
-    //this.rectangles.setAll('filters', [blurX, blurY]);
     this.time_between_rectangles = 500;
 
     this.time_till_rectangle = game.time.now;
 
     this.spawn_tween = game.add.tween(this);
 
-    //game.add.particleEffect(game.width/2, game.height/2, game.cache.getJSON('space_blast'));
     this.spawn_tween.to({time_between_rectangles: 0}, 2000, Phaser.Easing.Linear.None, true);
     this.spawn_tween.onComplete.add(function() {
       game.camera.fade(0x000000, 200, false);
@@ -106,7 +96,6 @@ var travel_state = {
 
     this.player_clicked = false;
 
-    
 
   },
 

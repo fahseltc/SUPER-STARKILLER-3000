@@ -5,10 +5,10 @@ class HealthBar {
   constructor(player) {
     this.player = player;
 
-    this.life_text = game.add.text(HEALTHBAR_BASE_POSITION_X + 50, HEALTHBAR_BASE_POSITION_Y - 43, "LIFE", {
-      font: "16px prstart",
-      fill: "#FFFFFF",
-      align: "center"
+    this.life_text = game.add.text(HEALTHBAR_BASE_POSITION_X + 50, HEALTHBAR_BASE_POSITION_Y - 43, 'LIFE', {
+      font: '16px prstart',
+      fill: '#FFFFFF',
+      align: 'center'
     });
 
     this.display_sprites = [];

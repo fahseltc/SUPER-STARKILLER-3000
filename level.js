@@ -6,20 +6,11 @@ class Level {
     this.controls = new Controls(game);
     this.player = new PlayerShip(game.width / 2, game.height / 2, this.controls);
 
-    // UI ELEMENTS
-    //var ui_background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'ui_background');
-
     this.UI = new RootUI(this.player, this.level_data, this.level_data.LEVEL_NUMBER);
-    // this.score = new Score();
-    // this.health_bar = new HealthBar(this.player);
-    // this.remaining_enemies_bar = new RemainingEnemiesBar(this.level_data);
-
 
     this.enemy_manager = new EnemyManager(game, this.player, this.level_data);
     game.world.bringToTop(this.player.sprite);
-    console.log("level duration: " + this.level_data.DURATION * Phaser.Timer.SECOND)
 
-    //this.powerup = new Powerup(this.player);
     this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false
   }
@@ -41,7 +32,7 @@ class Level {
     this.powerup_manager.update();
 
     if(this.enemy_manager.are_all_enemies_dead()) {
-      console.log("all enemies defeated");
+      console.log('all enemies defeated');
       this.level_manager.change_level(this.level_data.INDEX + 1);
     }
   }
@@ -50,7 +41,7 @@ class Level {
     if(!this.destroyed) {
       this.player.render();
       this.UI.render();
-      game.debug.text(game.time.fps, 1, 12, "#FFFFFF");
+      game.debug.text(game.time.fps, 1, 12, '#FFFFFF');
     }
   }
 
@@ -73,7 +64,7 @@ class Level {
   }
 
   handle_player_hit(player, bullet) {
-    console.log("bullet intersected player");
+    console.log('bullet intersected player');
     bullet.kill();
     var player_died = this.player.process_hit();
 

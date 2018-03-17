@@ -8,11 +8,11 @@ var conf = {
   scaleMode: Phaser.ScaleManager.NO_SCALE//RESIZE//SHOW_ALL //NO_SCALE
 };
 
-var temp_env = document.getElementById("environment").innerText;
-if (temp_env == "<?php echo getenv('environment')?>") { temp_env = 'dev' }
+var temp_env = document.getElementById('environment').innerText;
+if (temp_env == '<?php echo getenv('environment')?>') { temp_env = 'dev' }
 conf.env = temp_env
 
-console.log("inside JS, env: " + conf.env);
+console.log('inside JS, env: ' + conf.env);
 
 switch(conf.env) {
   case 'production':

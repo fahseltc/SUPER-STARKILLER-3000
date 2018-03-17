@@ -1,4 +1,3 @@
-
 const ENEMY_BULLET_LIFESPAN = 7000;
 
 ShootingEnemy = function(game, player, sprite, bullet_delay, bullet_speed, initial_delay) {
@@ -58,22 +57,8 @@ ShootingEnemy.prototype.update = function() {
     this.graphics.beginFill(0x000000);
     this.graphics.arc(this.x, this.y, 9, this.turret.rotation + Math.PI / 1.31, this.turret.rotation + game.math.degToRad(degrees) + Math.PI / 1.31 , true);  //
     this.graphics.endFill();
-}};
-
-// ShootingEnemy.prototype.render = function() {
-//   this.draw_spinner();
-// }
-
-// ShootingEnemy.prototype.draw_spinner = function() {
-
-//   // this.graphics.clear();
-//   // if(this.visible){
-//   //   //console.log(angle2);
-//   //   this.graphics.beginFill(0x000000);
-//   //   this.graphics.arc(this.x, this.y, 9, this.angle_data.min, game.math.degToRad(this.angle_data.max), true);
-//   //   this.graphics.endFill();
-//   // }
-// };
+  }
+};
 
 ShootingEnemy.prototype.get_initial_delay = function() { return this.initial_delay };
 ShootingEnemy.prototype.destroy = function() { this.graphics.clear(); this.graphics.destroy(); };

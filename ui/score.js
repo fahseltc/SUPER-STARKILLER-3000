@@ -6,14 +6,15 @@ const SCORE_BUFFER_EMPTY_DELAY = 100;
 class Score {
   constructor() {
     this.previous_score = last_score;
-    this.score = last_score;
+    this.score = 0;
+    if(last_score) { this.score = last_score; }
     this.score_buffer = 0;
 
     this.score_label = game.add.text(SCORE_BASE_POSITION_X, SCORE_BASE_POSITION_Y, this.create_score_label(), {
-      font: "42px prstart",
+      font: '42px prstart',
       fill: GREEN_HEX_COLOR,
-      align: "center",
-      fontWeight: "italic"
+      align: 'center',
+      fontWeight: 'italic'
     });
     this.score_label.anchor.setTo(0.5, 0.5);
     this.score_label.align = 'center';
@@ -37,9 +38,9 @@ class Score {
     var score_total_digits = 4;
     var digits_to_create = score_total_digits - this.score.toString().length;
 
-    var score_label_text = "";
+    var score_label_text = '';
     for(var i = 0; i < digits_to_create; i++) {
-      score_label_text += "0";
+      score_label_text += '0';
     }
     score_label_text += this.score;
     return score_label_text;

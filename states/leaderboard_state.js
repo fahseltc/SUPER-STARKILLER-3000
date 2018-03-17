@@ -1,10 +1,10 @@
 var leaderboard_state = {
   create: function() {
     this.get_leaderboard_data();
-    Utils.create_centered_text("Leaderboard", 60, 45, "#FFD700");
+    Utils.create_centered_text('Leaderboard', 60, 45, '#FFD700');
 
-    Utils.create_text("Name", 440, 140, 40);
-    Utils.create_text("Score", 940, 140, 40);
+    Utils.create_text('Name', 440, 140, 40);
+    Utils.create_text('Score', 940, 140, 40);
 
     this.create_menu_button();
     this.create_refresh_button();
@@ -19,7 +19,7 @@ var leaderboard_state = {
 
     g.inputEnabled = true;
     g.events.onInputDown.add(function() { game.state.start('menu'); }, this);
-    Utils.create_text("Back to\nMenu", 200, this.world.centerY + 300);
+    Utils.create_text('Back to\nMenu', 200, this.world.centerY + 300);
   },
 
   create_refresh_button: function() {
@@ -33,7 +33,7 @@ var leaderboard_state = {
     g.events.onInputDown.add(function() {
       this.get_leaderboard_data();
     }, this);
-    Utils.create_text("Refresh\nScores", 200, this.world.centerY + 170);
+    Utils.create_text('Refresh\nScores', 200, this.world.centerY + 170);
   },
 
   get_leaderboard_data: function() {
@@ -44,22 +44,22 @@ var leaderboard_state = {
     spinner.visible = true;
     game.add.tween(spinner).to( { angle: 359 }, 1500, null, true, 0, Infinity);
     var request = new XMLHttpRequest();
-    request.open('GET', game.config.backend_url + "/leaderboard", true);
+    request.open('GET', game.config.backend_url + '/leaderboard', true);
 
     request.onload = function() {
       if(request.status == 200) {
         spinner.visible = false;
-        console.log("Got data");
+        console.log('Got data');
         var resp = request.responseText;
         console.log(resp);
         leaderboard_data = JSON.parse(resp);
         leaderboard_data.sort(function(a, b) {
           return b.score - a.score;
         });
-        console.log("sorted: " + leaderboard_data);
+        console.log('sorted: ' + leaderboard_data);
 
         if(leaderboard_data.length == 0) {
-          Utils.create_centered_text("No data", 400, 40);
+          Utils.create_centered_text('No data', 400, 40);
         } else {
           counter = 0;
           leaderboard_data.slice(0, 21).forEach(function(element) {
@@ -69,7 +69,7 @@ var leaderboard_state = {
           });
         }
       } else {
-        console.log("unable to fetch leaderboard");
+        console.log('unable to fetch leaderboard');
         spinner.visible = false;
         var x = game.add.sprite(700, 450,'x');
         x.scale.x = 3;

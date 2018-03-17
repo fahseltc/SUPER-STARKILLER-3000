@@ -39,10 +39,9 @@ BossTurret.prototype.constructor = constructor;
 
 BossTurret.prototype.update = function() {
 
-  if(this.aim_at == "PLAYER") {
+  if(this.aim_at == 'PLAYER') {
     this.rotation = game.physics.arcade.angleToXY(this.player.sprite, this.worldPosition.x, this.worldPosition.y) + Math.PI/2;
-  } else if (this.aim_at == "MOUSE") {
-    //console.log(this.rotation);
+  } else if (this.aim_at == 'MOUSE') {
     this.rotation = game.physics.arcade.angleToPointer(this, game.input.activePointer, true) - Math.PI/2;
   }
 
@@ -51,41 +50,15 @@ BossTurret.prototype.update = function() {
     if(bullet) {
       bullet.reset(this.worldPosition.x, this.worldPosition.y);
       bullet.lifespan = ENEMY_BULLET_LIFESPAN;
-      if(this.aim_at == "PLAYER") {
+      if(this.aim_at == 'PLAYER') {
         this.game.physics.arcade.moveToXY(bullet, this.player.sprite.x, this.player.sprite.y, this.bullet_speed);
-      } else if (this.aim_at == "MOUSE") {
+      } else if (this.aim_at == 'MOUSE') {
         this.game.physics.arcade.moveToPointer(bullet, this.bullet_speed);
       }
 
       this.bullet_time = game.time.now + this.bullet_delay;
     }
   }
-
-  // this.graphics.clear();
-  // if(this.alive && this.visible) {
-  //   var ms_till_shot = this.bullet_time - game.time.now;
-  //   // (range 0 to this.bullet_time) must map to (0 to 360)
-  //   var degree_multiplier = ms_till_shot / this.bullet_delay;
-  //   var degrees = degree_multiplier * 360;
-
-  //   this.graphics.beginFill(0x000000);
-  //   this.graphics.arc(this.x, this.y, 9, this.turret.rotation + Math.PI / 1.31, this.turret.rotation + game.math.degToRad(degrees) + Math.PI / 1.31 , true);  //
-  //   this.graphics.endFill();
 };
-
-// ShootingEnemy.prototype.render = function() {
-//   this.draw_spinner();
-// }
-
-// ShootingEnemy.prototype.draw_spinner = function() {
-
-//   // this.graphics.clear();
-//   // if(this.visible){
-//   //   //console.log(angle2);
-//   //   this.graphics.beginFill(0x000000);
-//   //   this.graphics.arc(this.x, this.y, 9, this.angle_data.min, game.math.degToRad(this.angle_data.max), true);
-//   //   this.graphics.endFill();
-//   // }
-// };
 
 BossTurret.prototype.destroy = function() { this.bullets.destroy();};

@@ -20,10 +20,10 @@ var play_state = {
   },
 
   resumed: function() {
-    console.log("Play state resumed");
+    console.log('Play state resumed');
   },
 
   paused: function() {
-    console.log("Play state paused");
+    console.log('Play state paused');
   }
 };

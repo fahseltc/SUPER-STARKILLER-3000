@@ -1,6 +1,3 @@
-//const SPAWN_DELAY_MIN = 1000;
-//const SPAWN_DELAY_MULTIPLIER = 1000;
-//const MAX_ENEMIES_SPAWNED = 5;
 const ENEMY_SPAWN_TWEEN_TIME = 500;
 
 const SCREEN_EDGE_SPAWN_DISTANCE = 50;
@@ -18,8 +15,6 @@ class EnemyManager {
 
     this.enemies_left_to_spawn = this.level_data.ENEMIES_IN_WAVE;
     this.all_enemies_spawned = false;
-
-    //this.remaining_enemies_bar = new RemainingEnemiesBar(this.enemies_left_to_spawn);
   }
 
   create_enemies() {
@@ -46,7 +41,6 @@ class EnemyManager {
   }
 
   update() {
-  // console.log("bad guys visible: " + this.bad_guys.count('visible', true));
     if(this.enemies_left_to_spawn <= 0) { this.all_enemies_spawned = true; }
     if(this.ready_to_spawn_enemy()) {
       console.log("enemies to spawn: " + this.enemies_left_to_spawn)
@@ -54,7 +48,6 @@ class EnemyManager {
       this.spawn_bad_guy();
       this.next_spawn_time = game.time.now + this.level_data.SPAWN_DELAY_MIN + Math.random() * this.level_data.SPAWN_DELAY_MULTI;
     }
-    //this.remaining_enemies_bar.update(this.enemies_left_to_spawn);
   }
 
   ready_to_spawn_enemy() {
@@ -67,8 +60,6 @@ class EnemyManager {
   }
 
   are_all_enemies_dead(){
-    //console.log("visible bad guys: " + this.bad_guys.count('visible', true));
-    //console.log("all enemies spawned?: " + this.all_enemies_spawned);
     var result = (this.bad_guys.count('visible', true) == 0 && this.all_enemies_spawned);
 
     return result;

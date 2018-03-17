@@ -5,19 +5,19 @@ var menu_state = {
     var title_text_old_x = title_text.x;
     title_text.x = 0;
     title_text.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
-    game.add.tween(title_text).to({ x: title_text_old_x}, 300, "Linear", true);
+    game.add.tween(title_text).to({ x: title_text_old_x}, 300, 'Linear', true);
 
     var title_text1 = Utils.create_centered_stroke_text('STARKILLER', 220, 100, RED_HEX_COLOR);
     var title_text1_old_x = title_text1.x;
     title_text1.x = game.world.width;
     title_text1.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
-    game.add.tween(title_text1).to({ x: title_text1_old_x}, 300, "Linear", true);
+    game.add.tween(title_text1).to({ x: title_text1_old_x}, 300, 'Linear', true);
 
     // var title_text2 = Utils.create_centered_stroke_text('', 330, 100, RED_HEX_COLOR);
     // var title_text2_old = title_text2.x;
     // title_text2.x = 0;
     // title_text2.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
-    // game.add.tween(title_text2).to({ x: title_text2_old}, 300, "Linear", true);
+    // game.add.tween(title_text2).to({ x: title_text2_old}, 300, 'Linear', true);
 
     var title_text3 = Utils.create_centered_stroke_text('3000', 330, 100, RED_HEX_COLOR);
     var title_text3_old = title_text3.y;
@@ -28,8 +28,8 @@ var menu_state = {
 
     var space_to_begin_text = Utils.create_centered_stroke_text('Press Space to begin', 850, 35);
 
-    var now_with_text = Utils.create_stroke_text('Now with BOSS', 1200, 500, 20, "#FFD700");
-    var now_with_text2 = Utils.create_stroke_text('and less gameplay!', 1200, 550, 10, "#FFD700");
+    var now_with_text = Utils.create_stroke_text('Now with BOSS', 1200, 500, 20, '#FFD700');
+    var now_with_text2 = Utils.create_stroke_text('and less gameplay!', 1200, 550, 10, '#FFD700');
     now_with_text.angle = -2;
     game.add.tween(now_with_text).to({ angle: 2 }, 5000, function(k) {
        return Math.sin(Math.PI * 2 * k);
@@ -104,7 +104,7 @@ var menu_state = {
     this.start_sound.play();
     game.camera.fade(0x000000, 200, false);
     game.camera.onFadeComplete.add(function(){
-      game.state.start("ready");
+      game.state.start('ready');
     }, this);
   }
 }
