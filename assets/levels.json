@@ -3,7 +3,7 @@
     {
       "LEVEL_TYPE": "BOSS",
       "INDEX": 0,
-      "LEVEL_NUMBER": 1,
+      "LEVEL_NUMBER": 0,
       "TURRETS": [
         {
           "AIM_AT": "PLAYER",
@@ -29,8 +29,13 @@
       ]
     },
     {
+      "LEVEL_TYPE": "BOSS_DEAD",
+      "INDEX": 1,
+      "NEXT_LEVEL_INDEX": 2
+    },
+    {
       "LEVEL_TYPE": "COMBAT",
-      "INDEX": 0,
+      "INDEX": 2,
       "LEVEL_NUMBER": 1,
       "ENEMY_BULLET_DELAY": 1800,
       "ENEMY_BULLET_SPEED": 150,
@@ -44,12 +49,12 @@
     },
     {
       "LEVEL_TYPE": "MENU",
-      "INDEX": 1,
+      "INDEX": 3,
       "NEXT_LEVEL_INDEX": 2
     },
     {
       "LEVEL_TYPE": "COMBAT",
-      "INDEX": 2,
+      "INDEX": 4,
       "LEVEL_NUMBER": 2,
       "ENEMY_BULLET_DELAY": 1350,
       "ENEMY_BULLET_SPEED": 200,
@@ -63,12 +68,12 @@
     },
     {
       "LEVEL_TYPE": "MENU",
-      "INDEX": 3,
+      "INDEX": 5,
       "NEXT_LEVEL_INDEX": 4
     },
     {
       "LEVEL_TYPE": "COMBAT",
-      "INDEX": 4,
+      "INDEX": 6,
       "LEVEL_NUMBER": 3,
       "ENEMY_BULLET_DELAY": 1150,
       "ENEMY_BULLET_SPEED": 200,
@@ -82,12 +87,12 @@
     },
     {
       "LEVEL_TYPE": "MENU",
-      "INDEX": 5,
+      "INDEX": 7,
       "NEXT_LEVEL_INDEX": 6
     },
     {
       "LEVEL_TYPE": "COMBAT",
-      "INDEX": 6,
+      "INDEX": 8,
       "LEVEL_NUMBER": 4,
       "ENEMY_BULLET_DELAY": 1000,
       "ENEMY_BULLET_SPEED": 150,
@@ -101,12 +106,12 @@
     },
     {
       "LEVEL_TYPE": "MENU",
-      "INDEX": 7,
+      "INDEX": 9,
       "NEXT_LEVEL_INDEX": 8
     },
     {
       "LEVEL_TYPE": "COMBAT",
-      "INDEX": 8,
+      "INDEX": 10,
       "LEVEL_NUMBER": 5,
       "ENEMY_BULLET_DELAY": 150,
       "ENEMY_BULLET_SPEED": 300,

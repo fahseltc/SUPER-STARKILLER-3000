@@ -14,6 +14,7 @@ var ready_state = {
 
       this.create_score_label();
     }
+    this.create_score_label();
 
     Utils.create_centered_stroke_text('ELIMINATE ALL\nDEFENSIVE FORCES', 100, 50, RED_HEX_COLOR);
 

@@ -10,10 +10,13 @@ class BossLevel {
     this.UI = new RootUI(this.player, this.level_data, this.level_data.LEVEL_NUMBER);
 
     game.world.bringToTop(this.player.sprite);
+
     //this.powerup = new Powerup(this.player);
     //this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false;
     this.boss = new BossEnemy(this.player, this.level_data.TURRETS, this);
+
+    //game.physics.enable([ this.player.sprite, this.boss.shield_stack.map((shield) => { shield.sprite; }) ], Phaser.Physics.ARCADE);
   }
 
   update() {
@@ -22,6 +25,7 @@ class BossLevel {
       this.player.update();
       this.boss.update();
       this.UI.update();
+
     }
     //this.powerup_manager.update();
   }
@@ -47,8 +51,11 @@ class BossLevel {
     last_score = this.UI.score.score + this.UI.score.score_buffer;
     console.log('boss died');
     this.destroyed = true;
-    this.destroy();
-    game.state.start('boss_dead');
+    this.level_manager.change_level(this.level_data.INDEX + 1);
+  }
+
+  add_score(amount) {
+    this.UI.score.score_buffer += amount;
   }
 
   destroy() {

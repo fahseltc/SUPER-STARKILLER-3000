@@ -14,7 +14,8 @@ SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](http
 
 ["Xanadon't"](http://freemusicarchive.org/music/Mystery_Mammal/Latent/Xanadont_1334) by [Mystery Mammal](http://freemusicarchive.org/music/Mystery_Mammal) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-Pat - for the spaceship sprites and other art.
+
+Patrick "GG WP Pat" McDonough - for the spaceship sprites and other art.
 
 [Chez](https://www.patreon.com/chezdispenser) - for the story/writing.
 

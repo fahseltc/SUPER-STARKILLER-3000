@@ -48,7 +48,7 @@ class Score {
 
 
   destroy() {
-    last_score += (this.score + this.score_buffer) - this.previous_score;
+    last_score = (this.score + this.score_buffer) - this.previous_score;
     this.score_label.destroy();
   }
 }

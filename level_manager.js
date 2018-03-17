@@ -36,13 +36,30 @@ class LevelManager {
     if(this.current_level) { this.current_level.destroy(); }
     this.current_level_index = level_index;
 
-    if(change_level_type == "COMBAT") {
-      this.current_level = new Level(this.level_json[this.current_level_index], this);
-    } else if(change_level_type == "MENU") {
-      after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
-      game.state.start('ready');
-    } else if(change_level_type == "BOSS") {
-      this.current_level = new BossLevel(this.level_json[this.current_level_index], this);
+    switch(change_level_type) {
+      case 'COMBAT':
+        this.current_level = new Level(this.level_json[this.current_level_index], this);
+        break;
+      case 'MENU':
+        after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
+        game.state.start('ready');
+        break;
+      case 'BOSS':
+        this.current_level = new BossLevel(this.level_json[this.current_level_index], this);
+        break;
+      case 'BOSS_DEAD':
+        after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
+        game.state.start('boss_dead');
+        break;
     }
+
+    // if(change_level_type == "COMBAT") {
+    //   this.current_level = new Level(this.level_json[this.current_level_index], this);
+    // } else if(change_level_type == "MENU") {
+    //   after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
+    //   game.state.start('ready');
+    // } else if(change_level_type == "BOSS") {
+    //   this.current_level = new BossLevel(this.level_json[this.current_level_index], this);
+    // }
   }
 }

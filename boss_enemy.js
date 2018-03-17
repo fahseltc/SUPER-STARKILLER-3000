@@ -31,12 +31,15 @@ class BossEnemy {
     this.shield_stack.push(new BossShield(this.sprite.position, 5, 'blue'));
 
     this.invuln = false;
+    this.dead = false;
   }
 
   update() {
     this.update_turrets();
     this.check_shield_collisions();
     this.check_boss_hits_player();
+    //console.log(this.shield_stack[0].sprite);
+    //game.physics.arcade.collide(this.player.sprite.body, this.shield_stack[0].sprite.body);
   }
 
   update_turrets() {
@@ -60,7 +63,7 @@ class BossEnemy {
         if(outermost_shield.sprite.alive) {
           this.shield_stack.push(outermost_shield);
         }
-      } else {
+      } else if(this.dead == false) {
         console.log('all shields dead');
         if(this.player.circle_weapon.active) {
           game.physics.arcade.overlap(this.player.circle_weapon.sprite, this.sprite, this.died, null, this.level);
@@ -68,8 +71,6 @@ class BossEnemy {
         game.physics.arcade.overlap(this.player.bullet_weapon.bullets, this.sprite, this.died, null, this.level);
       }
     }
-
-    console.log('how many shields: ' + this.shield_stack.length);
   }
 
   check_boss_hits_player() {
@@ -81,7 +82,7 @@ class BossEnemy {
   handle_circle_weapon_collision(circle_weapon_sprite, boss_shield_sprite) {
     if(boss_shield_sprite.key == 'boss_shield_blue') {
       console.log('Circle weapon collision');
-      this.level.UI.score.score_buffer += 10;
+      this.level.add_score(10);
       this.invuln = true;
       this.set_blinky_death(boss_shield_sprite);
     }
@@ -91,7 +92,7 @@ class BossEnemy {
   handle_bullet_collision(boss_shield_sprite, bullet_sprite) {
     if(boss_shield_sprite.key == 'boss_shield_red') {
       console.log('Bullet collision');
-      this.level.UI.score.score_buffer += 10;
+      this.level.add_score(10);
       this.invuln = true;
       this.set_blinky_death(boss_shield_sprite);
     }
@@ -105,11 +106,13 @@ class BossEnemy {
   }
 
   died() {
-    this.UI.score.score_buffer += 25;
+    this.dead = true;
+    console.log("boss died");
     this.boss.turrets.forEach(function(turret) {
-
+      turret.bullets.forEach(function(bullet){ bullet.kill(); }, this);
       turret.kill();
     }, this);
+
     var tween = this.boss.set_blinky_death(this.boss.sprite);
     tween.onComplete.add(function() { this.boss_died(); }, this);
   }
