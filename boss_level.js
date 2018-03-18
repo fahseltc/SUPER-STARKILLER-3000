@@ -44,6 +44,7 @@ class BossLevel {
     console.log('player died');
     this.destroyed = true;
     this.destroy();
+    CURRENT_LEVEL_INDEX = 0;
     game.state.start('post');
   }
 
@@ -51,7 +52,8 @@ class BossLevel {
     last_score = this.UI.score.score + this.UI.score.score_buffer;
     console.log('boss died');
     this.destroyed = true;
-    this.level_manager.change_level(this.level_data.INDEX + 1);
+    CURRENT_LEVEL_INDEX++;
+    this.level_manager.change_level(CURRENT_LEVEL_INDEX);
   }
 
   add_score(amount) {

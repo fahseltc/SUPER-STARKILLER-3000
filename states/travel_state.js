@@ -87,9 +87,10 @@ var travel_state = {
     this.spawn_tween = game.add.tween(this);
 
     this.spawn_tween.to({time_between_rectangles: 0}, 2000, Phaser.Easing.Linear.None, true);
-    this.spawn_tween.onComplete.add(function() {
+    this.spawn_tween.onComplete.addOnce(function() {
       game.camera.fade(0x000000, 200, false);
-      game.camera.onFadeComplete.add(function(){
+      game.camera.onFadeComplete.addOnce(function() {
+        CURRENT_LEVEL_INDEX++;
         game.state.start("play");
       }, this);
     }, this)
@@ -104,7 +105,8 @@ var travel_state = {
       this.player_clicked = true;
       this.spawn_tween.stop();
       game.camera.fade(0x000000, 200, true);
-      game.camera.onFadeComplete.add(function(){
+      game.camera.onFadeComplete.addOnce(function(){
+        CURRENT_LEVEL_INDEX++;
         game.state.start("play");
       }, this);
 

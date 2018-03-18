@@ -33,7 +33,8 @@ class Level {
 
     if(this.enemy_manager.are_all_enemies_dead()) {
       console.log('all enemies defeated');
-      this.level_manager.change_level(this.level_data.INDEX + 1);
+      CURRENT_LEVEL_INDEX++;
+      this.level_manager.change_level(CURRENT_LEVEL_INDEX);
     }
   }
 
@@ -75,6 +76,7 @@ class Level {
 
     if(player_died) {
       last_score = this.UI.score.score + this.UI.score.score_buffer;
+      CURRENT_LEVEL_INDEX = 0;
       game.state.start('post');
     }
   }

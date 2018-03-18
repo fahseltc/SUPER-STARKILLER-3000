@@ -29,6 +29,7 @@ var story_state = {
     this.player_clicked = false;
     this.all_text_displayed = false;
     this.timerEvent = null;
+    this.ending = false;
 
     this.counter = 1;
     this.displayLetterByLetterText(function() {
@@ -55,10 +56,16 @@ var story_state = {
 
   update: function() {
     if(game.input.activePointer.isDown) {
-      if(this.all_text_displayed) {
+      if(this.all_text_displayed && !this.ending) {
+        this.ending = true;
+        console.log("making fade")
         game.camera.fade(0x000000, 200, true);
-        game.camera.onFadeComplete.add(function(){
-          game.state.start('ready');
+        game.camera.onFadeComplete.addOnce(function(){
+          CURRENT_LEVEL_INDEX++;
+          console.log("increase level index");
+
+          //game.state.start('ready');
+          game.state.start('play');
         }, this);
       }
       if(!this.player_clicked) {
@@ -72,7 +79,7 @@ var story_state = {
   show_all_text: function() {
     this.timerEvent.timer.stop();
     this.message_label.text = this.message;
-    var event = game.time.events.add(250, function() { this.all_text_displayed = true; }, this);
+    var event = game.time.events.add(100, function() { this.all_text_displayed = true; }, this);
     event.timer.start();
   },
 

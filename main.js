@@ -33,6 +33,7 @@ sound_manager.muteOnPause = false;
 
 var last_score = 0;
 var after_menu_level_index = -1;
+var CURRENT_LEVEL_INDEX = 0;
 var CURRENT_STORY_INDEX = 0;
 var leaderboard_data;
 
