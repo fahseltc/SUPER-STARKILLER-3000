@@ -68,7 +68,7 @@ class PlayerShip {
     this.bullet_weapon.render();
     //game.debug.body(this.sprite);
     //game.debug.body(this.shield_sprite);
-    //game.debug.body(this.circle_weapon.sprite);
+    //sgame.debug.body(this.circle_weapon.sprite);
   }
 
   process_hit() {

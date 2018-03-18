@@ -1,41 +1,13 @@
 {
   "levels": [
     {
-      "LEVEL_TYPE": "BOSS",
+      "LEVEL_TYPE": "STORY",
       "INDEX": 0,
-      "LEVEL_NUMBER": 0,
-      "TURRETS": [
-        {
-          "AIM_AT": "PLAYER",
-          "OFFSET_X": 40,
-          "OFFSET_Y": 45,
-          "BULLET_DELAY": 400,
-          "BULLET_SPEED": 200
-        },
-        {
-          "AIM_AT": "PLAYER",
-          "OFFSET_X": -40,
-          "OFFSET_Y": 45,
-          "BULLET_DELAY": 400,
-          "BULLET_SPEED": 200
-        },
-        {
-          "AIM_AT": "MOUSE",
-          "OFFSET_X": 0,
-          "OFFSET_Y": 70,
-          "BULLET_DELAY": 300,
-          "BULLET_SPEED": 300
-        }
-      ]
-    },
-    {
-      "LEVEL_TYPE": "BOSS_DEAD",
-      "INDEX": 1,
-      "NEXT_LEVEL_INDEX": 2
+      "STORY_INDEX": 0
     },
     {
       "LEVEL_TYPE": "COMBAT",
-      "INDEX": 2,
+      "INDEX": 1,
       "LEVEL_NUMBER": 1,
       "ENEMY_BULLET_DELAY": 1800,
       "ENEMY_BULLET_SPEED": 150,
@@ -46,6 +18,11 @@
       "SPAWN_DELAY_MIN": 1800,
       "SPAWN_DELAY_MULTI": 1000,
       "not_used": {}
+    },
+    {
+      "LEVEL_TYPE": "STORY",
+      "INDEX": 2,
+      "STORY_INDEX": 1
     },
     {
       "LEVEL_TYPE": "MENU",
@@ -91,8 +68,41 @@
       "NEXT_LEVEL_INDEX": 6
     },
     {
-      "LEVEL_TYPE": "COMBAT",
+      "LEVEL_TYPE": "BOSS",
       "INDEX": 8,
+      "LEVEL_NUMBER": 0,
+      "TURRETS": [
+        {
+          "AIM_AT": "PLAYER",
+          "OFFSET_X": 40,
+          "OFFSET_Y": 45,
+          "BULLET_DELAY": 400,
+          "BULLET_SPEED": 200
+        },
+        {
+          "AIM_AT": "PLAYER",
+          "OFFSET_X": -40,
+          "OFFSET_Y": 45,
+          "BULLET_DELAY": 400,
+          "BULLET_SPEED": 200
+        },
+        {
+          "AIM_AT": "MOUSE",
+          "OFFSET_X": 0,
+          "OFFSET_Y": 70,
+          "BULLET_DELAY": 300,
+          "BULLET_SPEED": 300
+        }
+      ]
+    },
+    {
+      "LEVEL_TYPE": "BOSS_DEAD",
+      "INDEX": 9,
+      "NEXT_LEVEL_INDEX": 2
+    },
+    {
+      "LEVEL_TYPE": "COMBAT",
+      "INDEX": 10,
       "LEVEL_NUMBER": 4,
       "ENEMY_BULLET_DELAY": 1000,
       "ENEMY_BULLET_SPEED": 150,
@@ -106,12 +116,12 @@
     },
     {
       "LEVEL_TYPE": "MENU",
-      "INDEX": 9,
+      "INDEX": 11,
       "NEXT_LEVEL_INDEX": 8
     },
     {
       "LEVEL_TYPE": "COMBAT",
-      "INDEX": 10,
+      "INDEX": 12,
       "LEVEL_NUMBER": 5,
       "ENEMY_BULLET_DELAY": 150,
       "ENEMY_BULLET_SPEED": 300,

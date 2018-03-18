@@ -3,7 +3,9 @@ const CIRCLE_SHOOT_DELAY = 400;
 class CircleWeapon {
   constructor(player) {
     this.player = player;
-    this.sprite = game.add.sprite(1, 1, 'circle');
+    this.sprite = game.add.sprite(1, 1, 'circle_weapon_sheet', 0);
+     //this.sprite.frame = 0;
+    this.anim = this.sprite.animations.add('lightning');
 
     game.physics.arcade.enable(this.sprite);
     this.sprite.anchor.setTo(0.5, 0.5);
@@ -22,6 +24,7 @@ class CircleWeapon {
 
   update(controls) {
     if(controls.right_click && !this.active && game.time.now > this.shoot_time) {
+      this.anim.play(10), true;
       this.sprite.revive();
       this.active = true;
       var tween = game.add.tween(this.sprite.scale).to( { x:2.5, y:2.5 }, CIRCLE_SHOOT_DELAY, Phaser.Easing.Exponential.Out, true).yoyo(true);

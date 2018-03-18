@@ -17,10 +17,10 @@ class Level {
 
   update() {
     if(this.player.circle_weapon.active) {
-      game.physics.arcade.overlap(this.player.circle_weapon.sprite,  this.enemy_manager.bad_guys, this.handle_collision, null, this);
+      game.physics.arcade.overlap(this.player.circle_weapon.sprite,  this.enemy_manager.bad_guys, this.handle_circle_weapon_collision, null, this);
     }
 
-    game.physics.arcade.overlap(this.player.bullet_weapon.bullets, this.enemy_manager.bad_guys, this.handle_collision, null, this);
+    game.physics.arcade.overlap(this.player.bullet_weapon.bullets, this.enemy_manager.bad_guys, this.handle_bullet_collision, null, this);
     var visible_bullets = this.enemy_manager.all_bullets.getAll('alive', true);
     game.physics.arcade.overlap(this.player.sprite, visible_bullets, this.handle_player_hit, null, this);
 
@@ -45,19 +45,24 @@ class Level {
     }
   }
 
-  handle_collision(obj, enemy) {
-    console.log('hit!');
-    if((obj.key == 'player_bullet') && (enemy.key == 'turret_base_red')) {
-      enemy.kill();
+  handle_circle_weapon_collision(circle_weapon_sprite, turret) {
+    if(turret.key == 'turret_base_blue') {
+      console.log('circle hit!');
+      turret.kill();
+      game.add.particleEffect(turret.position.x, turret.position.y, game.cache.getJSON('blue_explosion'));
       this.UI.score.score_buffer += 5;
-      game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('red_explosion'));
       this.enemy_manager.spawn = true;
       this.UI.remaining_enemies_bar.enemy_died();
     }
-    if((obj.key == 'circle') && (enemy.key == 'turret_base_blue')) {
-      enemy.kill();
-      game.add.particleEffect(enemy.position.x, enemy.position.y, game.cache.getJSON('blue_explosion'));
+  }
+
+  handle_bullet_collision(bullet_sprite, turret) {
+    if(turret.key == 'turret_base_red') {
+      console.log('bullet hit!');
+      turret.kill();
+      bullet_sprite.kill();
       this.UI.score.score_buffer += 5;
+      game.add.particleEffect(turret.position.x, turret.position.y, game.cache.getJSON('red_explosion'));
       this.enemy_manager.spawn = true;
       this.UI.remaining_enemies_bar.enemy_died();
     }

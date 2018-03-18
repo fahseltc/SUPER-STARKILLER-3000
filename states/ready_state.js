@@ -10,7 +10,7 @@ var ready_state = {
       background_sprite.anchor.x = 0.5;
       background_sprite.anchor.y = 0.5;
       background_sprite.position.set(game.width/2, game.height/2);
-      Utils.create_centered_stroke_text("STAR " + (level_data[after_menu_level_index - 2].LEVEL_NUMBER + " DESTROYED"), 240, 50, "#FFFFFF");
+      Utils.create_centered_stroke_text("STAR # DESTROYED", 240, 50, "#FFFFFF");
 
       this.create_score_label();
     }

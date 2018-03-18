@@ -8,7 +8,7 @@ var story_state = {
     this.printer_sound_long_1 = sound_manager.add('dot_matrix_long_1');
     this.printer_sound_newline = sound_manager.add('dot_matrix_line_break');
     //this.message = "Testing a\nlong sentence thingy\nso that maybe\nwe can type this out";
-    this.message = this.story_json[STORY_INDEX].TEXT;
+    this.message = this.story_json[CURRENT_STORY_INDEX].TEXT;
 
     this.message_label = game.add.text(game.width / 2, 400, "", {
       font: '35px prstart',
@@ -58,7 +58,6 @@ var story_state = {
       if(this.all_text_displayed) {
         game.camera.fade(0x000000, 200, true);
         game.camera.onFadeComplete.add(function(){
-          STORY_INDEX++;
           game.state.start('ready');
         }, this);
       }

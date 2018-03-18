@@ -19,7 +19,9 @@ class LevelManager {
   }
 
   update() {
-    this.current_level.update();
+    if(this.current_level) {
+      this.current_level.update();
+    }
   }
 
   render() {
@@ -41,16 +43,20 @@ class LevelManager {
         this.current_level = new Level(this.level_json[this.current_level_index], this);
         break;
       case 'MENU':
-        after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
+        after_menu_level_index = level_index + 1;
         game.state.start('ready');
         break;
       case 'BOSS':
         this.current_level = new BossLevel(this.level_json[this.current_level_index], this);
         break;
       case 'BOSS_DEAD':
-        after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
+        after_menu_level_index = level_index + 1;
         game.state.start('boss_dead');
         break;
+      case 'STORY':
+        CURRENT_STORY_INDEX = this.level_json[level_index].STORY_INDEX;
+        after_menu_level_index = level_index + 1;
+        game.state.start('story');
     }
 
     // if(change_level_type == "COMBAT") {

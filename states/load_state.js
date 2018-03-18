@@ -74,6 +74,10 @@ var load_state = {
 
 
 
+    game.load.spritesheet('circle_weapon_sheet', 'assets/images/circle_weapon/circle_weapon.png', 512, 512, 7);
+
+
+
     // game.load.audio('music1', 'assets/music/lite_buildup.ogg');
     // game.load.audio('music2', 'assets/music/chillin.ogg');
     // game.load.audio('music3', 'assets/music/buildup.ogg');
