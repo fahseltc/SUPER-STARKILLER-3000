@@ -63,7 +63,7 @@ var menu_state = {
     no_icon.scale.x = 0.3;
     no_icon.scale.y = 0.3;
     no_icon.anchor.set(0.5, 0.5);
-    no_icon.visible = true;
+    no_icon.visible = false;
 
     var sound_icon = game.add.sprite(60, 570, 'white_speaker_icon');
     sound_icon.scale.x = 0.2;
@@ -71,7 +71,7 @@ var menu_state = {
     sound_icon.anchor.set(0.5, 0.5);
     sound_icon.inputEnabled = true;
 
-    game.sound.mute = true;
+    game.sound.mute = false;
     //if(conf.env == 'dev') { game.sound.mute = true; }
     sound_icon.events.onInputDown.add(function() {
       if(game.sound.mute == true) {
@@ -82,7 +82,6 @@ var menu_state = {
         //this.music2.play();
 
         this.new_music.play();
-        this.new_music.volume = 0.5;
       } else {
         console.log('muting');
         game.sound.mute = true;
@@ -101,10 +100,10 @@ var menu_state = {
     // this.music2.stop();
     // this.music4.play();
 
-    this.start_sound.play();
+    this.start_sound.play("", 0, 0.05, false, false);
     game.camera.fade(0x000000, 200, false);
     game.camera.onFadeComplete.add(function(){
-      game.state.start('ready');
+      game.state.start('story');
     }, this);
   }
 }

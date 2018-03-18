@@ -60,11 +60,17 @@ var load_state = {
     game.load.json('blue_explosion', 'assets/particles/blue_explosion.json');
     game.load.json('space_blast', 'assets/particles/space_blast.json');
     game.load.json('levels', 'assets/levels.json');
+    game.load.json('story', 'assets/story.json');
 
     game.load.script('BlurX', 'BlurX.js');
     game.load.script('BlurY', 'BlurY.js');
 
-    game.load.audio('ui2', 'assets/sound_effects/ui2.ogg')
+    game.load.audio('ui2', 'assets/sound_effects/ui2.ogg');
+
+
+    game.load.audio('dot_matrix_short', 'assets/sound_effects/dot_matrix_short.wav');
+    game.load.audio('dot_matrix_long_1', 'assets/sound_effects/dot_matrix_long_1.wav');
+    game.load.audio('dot_matrix_line_break', 'assets/sound_effects/dot_matrix_line_break.wav');
 
 
 

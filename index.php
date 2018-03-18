@@ -54,7 +54,7 @@
     <script type="text/javascript" src="states/ready_state.js"></script>
     <script type="text/javascript" src="states/post_game_state.js"></script>
     <script type="text/javascript" src="states/leaderboard_state.js"></script>
-    <script type="text/javascript" src="states/text_state.js"></script>
+    <script type="text/javascript" src="states/story_state.js"></script>
     <script type="text/javascript" src="states/boss_dead_state.js"></script>
 
     <!-- Main entry point to game  -->

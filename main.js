@@ -9,7 +9,7 @@ var conf = {
 };
 
 var temp_env = document.getElementById('environment').innerText;
-if (temp_env == '<?php echo getenv("environment")?>') { temp_env = 'dev' }
+if (temp_env == "<?php echo getenv('environment')?>") { temp_env = 'dev' }
 conf.env = temp_env
 
 console.log('inside JS, env: ' + conf.env);
@@ -33,6 +33,7 @@ sound_manager.muteOnPause = false;
 
 var last_score = 0;
 var after_menu_level_index = -1;
+var STORY_INDEX = 0;
 var leaderboard_data;
 
 
@@ -44,7 +45,7 @@ game.state.add('post', post_game_state);
 game.state.add('leaderboard', leaderboard_state);
 game.state.add('ready', ready_state);
 game.state.add('travel', travel_state);
-game.state.add('text', text_state);
+game.state.add('story', story_state);
 game.state.add('boss_dead', boss_dead_state);
 
 game.state.start('boot');
