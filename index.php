@@ -7,7 +7,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>SUPER STARKILLER 3000</title>
   </head>
-  <body>
+  <body bgcolor="#000000">
     <script type="text/javascript">
       // the grossest, 'never used php before' hack to get heroku environment variables in a client-side js game.
       var div = document.createElement('div');
