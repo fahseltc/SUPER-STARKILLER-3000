@@ -19,8 +19,7 @@ class BulletWeapon {
     this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
     this.bullets.createMultiple(100, 'player_bullet_sprite_sheet', 0);
 
-    this.bullets.callAll('animations.add', 'animations', 'blinky', [0,1,2,3], 20, true);
-    //this.anim = this.bullets.animations.add('blinky');
+    this.bullets.callAll('animations.add', 'animations', 'blinky', [0,1,2,3], 10, true); // 4 is frames per second
     this.bullets.setAll('anchor.x', 0.5);
     this.bullets.setAll('anchor.y', 0.5);
     this.bullets.setAll('checkWorldBounds', true);
