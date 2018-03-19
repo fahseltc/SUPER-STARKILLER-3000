@@ -5,7 +5,6 @@ const SCORE_BUFFER_EMPTY_DELAY = 100;
 
 class Score {
   constructor() {
-    this.previous_score = last_score;
     this.score = 0;
     if(last_score) { this.score = last_score; }
     this.score_buffer = 0;
@@ -48,7 +47,9 @@ class Score {
 
 
   destroy() {
-    last_score = (this.score + this.score_buffer) - this.previous_score;
+    console.log("before SCORE DESTROY: last_score = " + last_score);
+    last_score = (this.score + this.score_buffer);
+    console.log("after SCORE DESTROY: last_score = " + last_score);
     this.score_label.destroy();
   }
 }

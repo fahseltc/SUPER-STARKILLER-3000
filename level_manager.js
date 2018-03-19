@@ -36,8 +36,13 @@ class LevelManager {
     var change_level_type = this.level_json[level_index].LEVEL_TYPE;
     console.log("changing level to: " + level_index + "  Type: " + change_level_type);
 
-    if(this.current_level) { this.current_level.destroy(); }
-    //this.current_level_index = level_index;
+    if(this.current_level) {
+      console.log("Previous last_score: " + last_score)
+      console.log("Current UI score: " +  this.current_level.UI.score.score + " Buffer: " + this.current_level.UI.score.score_buffer);
+      last_score = this.current_level.UI.score.score + this.current_level.UI.score.score_buffer;
+      console.log("new last_score: " + last_score);
+      this.current_level.destroy();
+    }
 
     switch(change_level_type) {
       case 'COMBAT':

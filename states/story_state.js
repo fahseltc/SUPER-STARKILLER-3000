@@ -58,28 +58,24 @@ var story_state = {
     if(game.input.activePointer.isDown) {
       if(this.all_text_displayed && !this.ending) {
         this.ending = true;
-        console.log("making fade")
+        //game.camera.resetFX();
         game.camera.fade(0x000000, 200, true);
         game.camera.onFadeComplete.addOnce(function(){
           CURRENT_LEVEL_INDEX++;
-          console.log("increase level index");
-
-          //game.state.start('ready');
           game.state.start('play');
         }, this);
       }
       if(!this.player_clicked) {
         this.player_clicked = true;
-        //this.spawn_tween.stop();
         this.show_all_text();
       }
     }
   },
 
   show_all_text: function() {
-    this.timerEvent.timer.stop();
     this.message_label.text = this.message;
-    var event = game.time.events.add(100, function() { this.all_text_displayed = true; }, this);
+    game.time.events.remove(this.timerEvent);
+    var event = game.time.events.add(500, function() { this.all_text_displayed = true; }, this);
     event.timer.start();
   },
 

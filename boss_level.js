@@ -49,7 +49,6 @@ class BossLevel {
   }
 
   boss_died() {
-    last_score = this.UI.score.score + this.UI.score.score_buffer;
     console.log('boss died');
     this.destroyed = true;
     CURRENT_LEVEL_INDEX++;
