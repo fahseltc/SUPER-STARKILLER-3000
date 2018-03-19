@@ -18,7 +18,8 @@ var load_state = {
     //game.load.audio('mm_xanadont_song', 'assets/music/Mystery_Mammal_Xanadont.ogg');
 
     game.load.image('player', images_path + 'player_ship.png');
-    game.load.image('player_bullet', assets_path + 'images/player_bullet.png');
+    //game.load.image('player_bullet', assets_path + 'images/player_bullet.png');
+    game.load.spritesheet('player_bullet_sprite_sheet', images_path + 'player_bullet/player_bullet.png', 16, 16, 4);
     game.load.image('flame', images_path + 'flame.png');
     game.load.image('turret_top_blue', images_path + 'turret_top_blue.png');
     game.load.image('turret_base_blue', images_path + 'turret_base_blue.png');
@@ -62,12 +63,8 @@ var load_state = {
     game.load.json('levels', 'assets/levels.json');
     game.load.json('story', 'assets/story.json');
 
-    game.load.script('BlurX', 'BlurX.js');
-    game.load.script('BlurY', 'BlurY.js');
 
     game.load.audio('ui2', 'assets/sound_effects/ui2.ogg');
-
-
     game.load.audio('dot_matrix_short', 'assets/sound_effects/dot_matrix_short.wav');
     game.load.audio('dot_matrix_long_1', 'assets/sound_effects/dot_matrix_long_1.wav');
     game.load.audio('dot_matrix_line_break', 'assets/sound_effects/dot_matrix_line_break.wav');

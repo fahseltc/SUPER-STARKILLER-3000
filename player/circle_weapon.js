@@ -24,7 +24,7 @@ class CircleWeapon {
 
   update(controls) {
     if(controls.right_click && !this.active && game.time.now > this.shoot_time) {
-      this.anim.play(10), true;
+      this.anim.play(10);
       this.sprite.revive();
       this.active = true;
       var tween = game.add.tween(this.sprite.scale).to( { x:2.5, y:2.5 }, CIRCLE_SHOOT_DELAY, Phaser.Easing.Exponential.Out, true).yoyo(true);

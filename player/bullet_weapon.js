@@ -17,7 +17,10 @@ class BulletWeapon {
     this.bullets.enableBodyDebug = true;
     this.bullets.enableBody = true;
     this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
-    this.bullets.createMultiple(100, 'player_bullet');
+    this.bullets.createMultiple(100, 'player_bullet_sprite_sheet', 0);
+
+    this.bullets.callAll('animations.add', 'animations', 'blinky', [0,1,2,3], 20, true);
+    //this.anim = this.bullets.animations.add('blinky');
     this.bullets.setAll('anchor.x', 0.5);
     this.bullets.setAll('anchor.y', 0.5);
     this.bullets.setAll('checkWorldBounds', true);
@@ -45,6 +48,8 @@ class BulletWeapon {
       var bullet = this.bullets.getFirstExists(false);
 
       if (bullet && this.overheated == false) {
+        this.bullets.callAll('play', null, 'blinky');
+
         this.heat += HEAT_GENERATED_PER_SHOT;
         bullet.reset(this.player.sprite.body.x + this.player.sprite.body.width/2, this.player.sprite.body.y + this.player.sprite.body.height/2);
         bullet.lifespan = BULLET_LIFESPAN;

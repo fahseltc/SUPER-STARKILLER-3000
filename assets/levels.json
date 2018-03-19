@@ -7,51 +7,54 @@
     {
       "LEVEL_TYPE": "COMBAT",
       "LEVEL_NUMBER": 1,
-      "ENEMY_BULLET_DELAY": 1800,
-      "ENEMY_BULLET_SPEED": 150,
-      "MAX_ENEMIES": 2,
-      "ENEMIES_IN_WAVE": 10,
-      "ENEMY_BULLET_INITIAL_DELAY" : 1400,
-      "SPAWN_DELAY_MIN": 1800,
-      "SPAWN_DELAY_MULTI": 1000,
-      "not_used": {}
+      "ENEMY_DATA": {
+        "ENEMY_BULLET_DELAY": 1800,
+        "ENEMY_BULLET_SPEED": 150,
+        "MAX_ENEMIES": 2,
+        "ENEMIES_IN_WAVE": 10,
+        "ENEMY_BULLET_INITIAL_DELAY" : 1400,
+        "SPAWN_DELAY_MIN": 1800,
+        "SPAWN_DELAY_MULTI": 1000
+      }
     },
     {
       "LEVEL_TYPE": "STORY",
       "STORY_INDEX": 1
     },
     {
-      "LEVEL_TYPE": "MENU"
+      "LEVEL_TYPE": "READY"
     },
     {
       "LEVEL_TYPE": "COMBAT",
       "LEVEL_NUMBER": 2,
-      "ENEMY_BULLET_DELAY": 1350,
-      "ENEMY_BULLET_SPEED": 200,
-      "MAX_ENEMIES": 2,
-      "ENEMIES_IN_WAVE": 14,
-      "ENEMY_BULLET_INITIAL_DELAY" : 1200,
-      "SPAWN_DELAY_MIN": 1200,
-      "SPAWN_DELAY_MULTI": 500,
-      "not_used": {}
+      "ENEMY_DATA": {
+        "ENEMY_BULLET_DELAY": 1350,
+        "ENEMY_BULLET_SPEED": 200,
+        "MAX_ENEMIES": 2,
+        "ENEMIES_IN_WAVE": 14,
+        "ENEMY_BULLET_INITIAL_DELAY" : 1200,
+        "SPAWN_DELAY_MIN": 1200,
+        "SPAWN_DELAY_MULTI": 500
+      }
     },
     {
-      "LEVEL_TYPE": "MENU"
+      "LEVEL_TYPE": "READY"
     },
     {
       "LEVEL_TYPE": "COMBAT",
       "LEVEL_NUMBER": 3,
-      "ENEMY_BULLET_DELAY": 1150,
-      "ENEMY_BULLET_SPEED": 200,
-      "MAX_ENEMIES": 3,
-      "ENEMIES_IN_WAVE": 16,
-      "ENEMY_BULLET_INITIAL_DELAY" : 1000,
-      "SPAWN_DELAY_MIN": 1100,
-      "SPAWN_DELAY_MULTI": 400,
-      "not_used": {}
+      "ENEMY_DATA": {
+        "ENEMY_BULLET_DELAY": 1150,
+        "ENEMY_BULLET_SPEED": 200,
+        "MAX_ENEMIES": 3,
+        "ENEMIES_IN_WAVE": 16,
+        "ENEMY_BULLET_INITIAL_DELAY" : 1000,
+        "SPAWN_DELAY_MIN": 1100,
+        "SPAWN_DELAY_MULTI": 400
+      }
     },
     {
-      "LEVEL_TYPE": "MENU"
+      "LEVEL_TYPE": "READY"
     },
     {
       "LEVEL_TYPE": "BOSS",
@@ -86,29 +89,31 @@
     {
       "LEVEL_TYPE": "COMBAT",
       "LEVEL_NUMBER": 4,
-      "ENEMY_BULLET_DELAY": 1000,
-      "ENEMY_BULLET_SPEED": 150,
-      "MAX_ENEMIES": 4,
-      "ENEMIES_IN_WAVE": 20,
-      "ENEMY_BULLET_INITIAL_DELAY" : 900,
-      "SPAWN_DELAY_MIN": 900,
-      "SPAWN_DELAY_MULTI": 350,
-      "not_used": {}
+      "ENEMY_DATA": {
+        "ENEMY_BULLET_DELAY": 1000,
+        "ENEMY_BULLET_SPEED": 150,
+        "MAX_ENEMIES": 4,
+        "ENEMIES_IN_WAVE": 20,
+        "ENEMY_BULLET_INITIAL_DELAY" : 900,
+        "SPAWN_DELAY_MIN": 900,
+        "SPAWN_DELAY_MULTI": 350
+      }
     },
     {
-      "LEVEL_TYPE": "MENU"
+      "LEVEL_TYPE": "READY"
     },
     {
       "LEVEL_TYPE": "COMBAT",
       "LEVEL_NUMBER": 5,
-      "ENEMY_BULLET_DELAY": 150,
-      "ENEMY_BULLET_SPEED": 300,
-      "MAX_ENEMIES": 15,
-      "ENEMIES_IN_WAVE": 10,
-      "ENEMY_BULLET_INITIAL_DELAY" : 800,
-      "SPAWN_DELAY_MIN": 200,
-      "SPAWN_DELAY_MULTI": 500,
-      "not_used": {}
+      "ENEMY_DATA": {
+        "ENEMY_BULLET_DELAY": 150,
+        "ENEMY_BULLET_SPEED": 300,
+        "MAX_ENEMIES": 15,
+        "ENEMIES_IN_WAVE": 10,
+        "ENEMY_BULLET_INITIAL_DELAY" : 800,
+        "SPAWN_DELAY_MIN": 200,
+        "SPAWN_DELAY_MULTI": 500
+      }
     }
   ]
 }

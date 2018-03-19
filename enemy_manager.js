@@ -7,7 +7,7 @@ class EnemyManager {
   constructor(game, player, level_data) {
     this.game = game;
     this.player = player;
-    this.level_data = level_data;
+    this.level_data = level_data.ENEMY_DATA;
     this.bad_guys = game.add.group();
     this.all_bullets = game.add.group();
     this.create_enemies();
