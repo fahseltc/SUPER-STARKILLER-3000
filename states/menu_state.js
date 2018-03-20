@@ -1,17 +1,17 @@
 var menu_state = {
   create: function() {
-    var background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'pat_bg');
-    var title_text = Utils.create_centered_stroke_text('SUPER', 110, 100, RED_HEX_COLOR);
-    var title_text_old_x = title_text.x;
-    title_text.x = 0;
-    title_text.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
-    game.add.tween(title_text).to({ x: title_text_old_x}, 300, 'Linear', true);
+    var background_sprite = game.add.tileSprite(0, 0, 1400, 900, 'title_screen_background');
+    // var title_text = Utils.create_centered_stroke_text('SUPER', 110, 100, RED_HEX_COLOR);
+    // var title_text_old_x = title_text.x;
+    // title_text.x = 0;
+    // title_text.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
+    // game.add.tween(title_text).to({ x: title_text_old_x}, 300, 'Linear', true);
 
-    var title_text1 = Utils.create_centered_stroke_text('STARKILLER', 220, 100, RED_HEX_COLOR);
-    var title_text1_old_x = title_text1.x;
-    title_text1.x = game.world.width;
-    title_text1.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
-    game.add.tween(title_text1).to({ x: title_text1_old_x}, 300, 'Linear', true);
+    // var title_text1 = Utils.create_centered_stroke_text('STARKILLER', 220, 100, RED_HEX_COLOR);
+    // var title_text1_old_x = title_text1.x;
+    // title_text1.x = game.world.width;
+    // title_text1.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
+    // game.add.tween(title_text1).to({ x: title_text1_old_x}, 300, 'Linear', true);
 
     // var title_text2 = Utils.create_centered_stroke_text('', 330, 100, RED_HEX_COLOR);
     // var title_text2_old = title_text2.x;
@@ -19,11 +19,11 @@ var menu_state = {
     // title_text2.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
     // game.add.tween(title_text2).to({ x: title_text2_old}, 300, 'Linear', true);
 
-    var title_text3 = Utils.create_centered_stroke_text('3000', 330, 100, RED_HEX_COLOR);
-    var title_text3_old = title_text3.y;
-    title_text3.y = 0;
-    title_text3.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
-    game.add.tween(title_text3).to({ y: title_text3_old}, 300, Phaser.Easing.Exponential.In, true);
+    // var title_text3 = Utils.create_centered_stroke_text('3000', 330, 100, RED_HEX_COLOR);
+    // var title_text3_old = title_text3.y;
+    // title_text3.y = 0;
+    // title_text3.setShadow(-5, 5, 'rgba(0,0,0,0.5)', 0);
+    // game.add.tween(title_text3).to({ y: title_text3_old}, 300, Phaser.Easing.Exponential.In, true);
 
 
     var space_to_begin_text = Utils.create_centered_stroke_text('Press Space to begin', 850, 35);
@@ -39,12 +39,17 @@ var menu_state = {
        return Math.sin(Math.PI * 2 * k);
      }, true, 0, -1);
 
+
+    // Buttons
     var start_button = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     start_button.onDown.addOnce(this.start, this);
-    //game.input.activePointer.leftButton.onDown.addOnce(this.start, this);
 
     var leaderboard_button = game.input.keyboard.addKey(Phaser.Keyboard.L);
     leaderboard_button.onDown.addOnce(function(){ game.state.start('leaderboard') }, this);
+
+    var debug_button = game.input.keyboard.addKey(Phaser.Keyboard.BACKWARD_SLASH);
+    debug_button.onDown.addOnce(function(){ game.state.start('debug') }, this);
+
 
     // sounds
     this.music1 = sound_manager.add('music1');

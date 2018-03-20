@@ -31,7 +31,7 @@ Unit 9, if you send us one more action movie reference we will disable outgoing 
 MISSION #7
 --INCOMING TRANSMISSION--
 You are closing in on the core turret, Unit 9. Ignore any incoming transmissions.
---END TRANSMISSION-- 
+--END TRANSMISSION--
 
 MISSION #8
 --INCOMING TRANSMISSION--

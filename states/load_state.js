@@ -36,7 +36,13 @@ var load_state = {
     game.load.image('circle', images_path + 'circle.png');
     game.load.image('enemy_bullet', images_path + 'enemy_bullet.png');
     game.load.image('powerup_p', images_path + 'pat_powerup_4.png');
-    game.load.image('main_menu_background', images_path + 'main_menu_background.png');
+
+
+    //game.load.image('pat_bg', images_path + 'pat_bg.png');
+    game.load.image('title_screen_background', images_path + 'title_screen.png');
+    game.load.image('game_background', images_path + 'game_background.png');
+    game.load.image('debug_button', images_path + 'debug_button.png');
+
 
     // UI loading
     game.load.image('life_bar_single', ui_images_path + 'life_bar_single.png');
@@ -49,11 +55,12 @@ var load_state = {
     game.load.image('spinner', ui_images_path + 'spinner.png');
     game.load.image('x', ui_images_path + 'x.png');
 
+
     game.load.image('pixel_planet', images_path + 'pixel_planet.jpg');
 
-    game.load.image('game_background', images_path + 'game_background.png');
 
-    game.load.image('pat_bg', images_path + 'pat_bg.png');
+
+ 
     game.load.image('pink_rect_filled', images_path + 'pink_rect_filled.png');
     game.load.image('pink_rect_empty', images_path + 'pink_rect_empty.png');
 
@@ -89,6 +96,7 @@ var load_state = {
     // if(game.cache.isSoundDecoded('mm_xanadont_song') && this.ready == false) {
     //   this.ready = true;
     game.state.start('menu');
+    //game.state.start('debug');
     //game.state.start('text');
     //   //game.state.start('ready');
     //   //game.state.start('leaderboard');

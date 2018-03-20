@@ -35,6 +35,7 @@ var last_score = 0;
 var after_menu_level_index = -1;
 var CURRENT_LEVEL_INDEX = 0;
 var CURRENT_STORY_INDEX = 0;
+var DEBUG_MODE = false;
 var leaderboard_data;
 
 
@@ -48,5 +49,6 @@ game.state.add('ready', ready_state);
 game.state.add('travel', travel_state);
 game.state.add('story', story_state);
 game.state.add('boss_dead', boss_dead_state);
+game.state.add('debug', debug_state);
 
 game.state.start('boot');

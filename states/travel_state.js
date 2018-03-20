@@ -1,10 +1,4 @@
 var travel_state = {
-
-  preload: function() {
-    game.load.script('BlurX', 'https://cdn.rawgit.com/photonstorm/phaser-ce/dc45d827/filters/BlurX.js');
-    game.load.script('BlurY', 'https://cdn.rawgit.com/photonstorm/phaser-ce/dc45d827/filters/BlurY.js');
-  },
-
   create: function() {
     var graphicsLine = game.add.graphics(0, 0);
     graphicsLine.lineStyle(12, 0xff69b4, 1);

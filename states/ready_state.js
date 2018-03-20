@@ -35,7 +35,7 @@ var ready_state = {
   },
 
   create_score_label: function() {
-    var score_total_digits = 10;
+    var score_total_digits = 4;
     var digits_to_create = score_total_digits - last_score.toString().length;
 
     var score_label_text = "";

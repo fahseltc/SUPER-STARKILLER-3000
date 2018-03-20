@@ -7,13 +7,14 @@ var story_state = {
     this.printer_sound_1 = sound_manager.add('dot_matrix_short');
     this.printer_sound_long_1 = sound_manager.add('dot_matrix_long_1');
     this.printer_sound_newline = sound_manager.add('dot_matrix_line_break');
-    //this.message = "Testing a\nlong sentence thingy\nso that maybe\nwe can type this out";
     this.message = this.story_json[CURRENT_STORY_INDEX].TEXT;
 
     this.message_label = game.add.text(game.width / 2, 400, "", {
       font: '35px prstart',
       fill: WHITE_HEX_COLOR,
-      align: 'center'
+      align: 'center',
+      wordWrap: true,
+      wordWrapWidth: 1200
     });
     this.message_label.anchor.set(0.5);
 
@@ -30,6 +31,7 @@ var story_state = {
     this.all_text_displayed = false;
     this.timerEvent = null;
     this.ending = false;
+    this.displaying_red = false;
 
     this.counter = 1;
     this.displayLetterByLetterText(function() {
@@ -40,18 +42,28 @@ var story_state = {
 
   displayNextLetter: function() {
     var new_text = this.message.substr(0, this.counter);
-    this.message_label.text = new_text;
     this.counter += 1;
-    var num = game.rnd.integerInRange(0, 3);
-    if(this.line_breaks.indexOf(this.counter) > -1) {
-      this.printer_sound_newline.play("", 0, this.volume, false, false);
-    } else if(num == 3) {
-      var num2 = game.rnd.integerInRange(0,3);
-      if(num2 == 0) { this.printer_sound_long_1.play("", 0, this.volume, false, false); } else {
-        this.printer_sound_1.play("", 0, this.volume, false, false);
+    if(new_text.slice(-1) == "~" && this.displaying_red == false) {
+      this.displaying_red = true;
+      this.message_label.addColor(RED_HEX_COLOR, this.counter - 2);
+      this.message = this.message.replace('~', '');
+    } else if(new_text.slice(-1) == "~" && this.displaying_red == true) {
+      this.displaying_red = false;
+      this.message_label.addColor(WHITE_HEX_COLOR, this.counter - 1);
+      this.message = this.message.replace('~', '');
+    } else {
+      // we skip the ~ characters
+      this.message_label.text = new_text;
+      var num = game.rnd.integerInRange(0, 3);
+      if(this.line_breaks.indexOf(this.counter) > -1) {
+        this.printer_sound_newline.play("", 0, this.volume, false, false);
+      } else if(num == 3) {
+        var num2 = game.rnd.integerInRange(0,3);
+        if(num2 == 0) { this.printer_sound_long_1.play("", 0, this.volume, false, false); } else {
+          this.printer_sound_1.play("", 0, this.volume, false, false);
+        }
       }
     }
-
   },
 
   update: function() {

@@ -3,7 +3,7 @@ class RootUI {
     this.ui_background = game.add.sprite(0, 700, 'dashboard');
     this.health_bar = new HealthBar(player);
     this.level_display = new LevelDisplay(current_level_index);
-    this.remaining_enemies_bar = new RemainingEnemiesBar(level_data.ENEMY_DATA);
+    this.remaining_enemies_bar = new RemainingEnemiesBar(level_data);
     this.score = new Score();
   }
 

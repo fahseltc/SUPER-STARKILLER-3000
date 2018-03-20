@@ -1,7 +1,7 @@
 const POWERUP_SCREEN_EDGE_SPAWN_DISTANCE = 50;
 const POWERUP_TOP_SCREEN_EDGE_SPAWN_DISTANCE = 180;
 
-const POWERUP_SPAWN_TIME = 4000;
+const POWERUP_SPAWN_TIME = 7000;
 
 class PowerupManager {
   constructor(player) {
