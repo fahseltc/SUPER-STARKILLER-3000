@@ -1,6 +1,6 @@
 class RootUI {
   constructor(player, level_data, current_level_index) {
-    this.ui_background = game.add.sprite(0, 700, 'dashboard');
+    this.ui_background = game.add.sprite(0, 700, "dashboard");
     this.health_bar = new HealthBar(player);
     this.level_display = new LevelDisplay(current_level_index);
     this.remaining_enemies_bar = new RemainingEnemiesBar(level_data);
@@ -16,7 +16,7 @@ class RootUI {
   }
 
   destroy() {
-    console.log('rootUI destroy');
+    console.log("rootUI destroy");
     this.ui_background.destroy();
     this.health_bar.destroy();
     this.level_display.destroy();

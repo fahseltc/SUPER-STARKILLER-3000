@@ -1,119 +1,151 @@
-{
-  "levels": [
-    {
-      "LEVEL_TYPE": "STORY",
-      "STORY_INDEX": 0
-    },
-    {
-      "LEVEL_TYPE": "COMBAT",
-      "LEVEL_NUMBER": 1,
-      "ENEMY_DATA": {
-        "ENEMY_BULLET_DELAY": 1800,
-        "ENEMY_BULLET_SPEED": 150,
-        "MAX_ENEMIES": 2,
-        "ENEMIES_IN_WAVE": 10,
-        "ENEMY_BULLET_INITIAL_DELAY" : 1400,
-        "SPAWN_DELAY_MIN": 1800,
-        "SPAWN_DELAY_MULTI": 1000
-      }
-    },
-    {
-      "LEVEL_TYPE": "STORY",
-      "STORY_INDEX": 1
-    },
-    {
-      "LEVEL_TYPE": "READY"
-    },
-    {
-      "LEVEL_TYPE": "COMBAT",
-      "LEVEL_NUMBER": 2,
-      "ENEMY_DATA": {
-        "ENEMY_BULLET_DELAY": 1350,
-        "ENEMY_BULLET_SPEED": 200,
-        "MAX_ENEMIES": 2,
-        "ENEMIES_IN_WAVE": 14,
-        "ENEMY_BULLET_INITIAL_DELAY" : 1200,
-        "SPAWN_DELAY_MIN": 1200,
-        "SPAWN_DELAY_MULTI": 500
-      }
-    },
-    {
-      "LEVEL_TYPE": "READY"
-    },
-    {
-      "LEVEL_TYPE": "COMBAT",
-      "LEVEL_NUMBER": 3,
-      "ENEMY_DATA": {
-        "ENEMY_BULLET_DELAY": 1150,
-        "ENEMY_BULLET_SPEED": 200,
-        "MAX_ENEMIES": 3,
-        "ENEMIES_IN_WAVE": 16,
-        "ENEMY_BULLET_INITIAL_DELAY" : 1000,
-        "SPAWN_DELAY_MIN": 1100,
-        "SPAWN_DELAY_MULTI": 400
-      }
-    },
-    {
-      "LEVEL_TYPE": "READY"
-    },
-    {
-      "LEVEL_TYPE": "BOSS",
-      "LEVEL_NUMBER": 0,
-      "TURRETS": [
-        {
-          "AIM_AT": "PLAYER",
-          "OFFSET_X": 40,
-          "OFFSET_Y": 45,
-          "BULLET_DELAY": 400,
-          "BULLET_SPEED": 200
-        },
-        {
-          "AIM_AT": "PLAYER",
-          "OFFSET_X": -40,
-          "OFFSET_Y": 45,
-          "BULLET_DELAY": 400,
-          "BULLET_SPEED": 200
-        },
-        {
-          "AIM_AT": "MOUSE",
-          "OFFSET_X": 0,
-          "OFFSET_Y": 70,
-          "BULLET_DELAY": 300,
-          "BULLET_SPEED": 300
-        }
-      ]
-    },
-    {
-      "LEVEL_TYPE": "BOSS_DEAD"
-    },
-    {
-      "LEVEL_TYPE": "COMBAT",
-      "LEVEL_NUMBER": 4,
-      "ENEMY_DATA": {
-        "ENEMY_BULLET_DELAY": 1000,
-        "ENEMY_BULLET_SPEED": 150,
-        "MAX_ENEMIES": 4,
-        "ENEMIES_IN_WAVE": 20,
-        "ENEMY_BULLET_INITIAL_DELAY" : 900,
-        "SPAWN_DELAY_MIN": 900,
-        "SPAWN_DELAY_MULTI": 350
-      }
-    },
-    {
-      "LEVEL_TYPE": "READY"
-    },
-    {
-      "LEVEL_TYPE": "COMBAT",
-      "LEVEL_NUMBER": 5,
-      "ENEMY_DATA": {
-        "ENEMY_BULLET_DELAY": 150,
-        "ENEMY_BULLET_SPEED": 300,
-        "MAX_ENEMIES": 15,
-        "ENEMIES_IN_WAVE": 10,
-        "ENEMY_BULLET_INITIAL_DELAY" : 800,
-        "SPAWN_DELAY_MIN": 200,
-        "SPAWN_DELAY_MULTI": 500
-      }
+[
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 0
+  },
+  {
+    "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "COMBAT",
+    "LEVEL_NUMBER": 1,
+    "ENEMY_DATA": {
+      "ENEMY_BULLET_DELAY": 1800,
+      "ENEMY_BULLET_SPEED": 150,
+      "MAX_ENEMIES": 2,
+      "ENEMIES_IN_WAVE": 7,
+      "ENEMY_BULLET_INITIAL_DELAY": 1400,
+      "SPAWN_DELAY_MIN": 1800,
+      "SPAWN_DELAY_MULTI": 1000
     }
-  ]
-}
+  },
+  {
+    "LEVEL_TYPE": "READY"
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 1
+  },
+  {
+    "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "COMBAT",
+    "LEVEL_NUMBER": 2,
+    "ENEMY_DATA": {
+      "ENEMY_BULLET_DELAY": 1350,
+      "ENEMY_BULLET_SPEED": 200,
+      "MAX_ENEMIES": 2,
+      "ENEMIES_IN_WAVE": 12,
+      "ENEMY_BULLET_INITIAL_DELAY": 1200,
+      "SPAWN_DELAY_MIN": 1200,
+      "SPAWN_DELAY_MULTI": 500
+    }
+  },
+  {
+    "LEVEL_TYPE": "READY"
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 2
+  },
+  {
+    "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "COMBAT",
+    "LEVEL_NUMBER": 3,
+    "ENEMY_DATA": {
+      "ENEMY_BULLET_DELAY": 1150,
+      "ENEMY_BULLET_SPEED": 200,
+      "MAX_ENEMIES": 3,
+      "ENEMIES_IN_WAVE": 16,
+      "ENEMY_BULLET_INITIAL_DELAY": 1000,
+      "SPAWN_DELAY_MIN": 1100,
+      "SPAWN_DELAY_MULTI": 400
+    }
+  },
+  {
+    "LEVEL_TYPE": "READY"
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 3
+  },
+  {
+    "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "BOSS",
+    "LEVEL_NUMBER": 4,
+    "TURRETS": [{
+        "AIM_AT": "PLAYER",
+        "OFFSET_X": 40,
+        "OFFSET_Y": 45,
+        "BULLET_DELAY": 400,
+        "BULLET_SPEED": 200
+      },
+      {
+        "AIM_AT": "PLAYER",
+        "OFFSET_X": -40,
+        "OFFSET_Y": 45,
+        "BULLET_DELAY": 400,
+        "BULLET_SPEED": 200
+      },
+      {
+        "AIM_AT": "MOUSE",
+        "OFFSET_X": 0,
+        "OFFSET_Y": 70,
+        "BULLET_DELAY": 300,
+        "BULLET_SPEED": 300
+      }
+    ],
+    "SHIELDS": ["red", "blue", "red", "red", "red", "blue"]
+  },
+  {
+    "LEVEL_TYPE": "BOSS_DEAD"
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 4
+  },
+  {
+    "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "COMBAT",
+    "LEVEL_NUMBER": 5,
+    "ENEMY_DATA": {
+      "ENEMY_BULLET_DELAY": 1000,
+      "ENEMY_BULLET_SPEED": 150,
+      "MAX_ENEMIES": 4,
+      "ENEMIES_IN_WAVE": 20,
+      "ENEMY_BULLET_INITIAL_DELAY": 900,
+      "SPAWN_DELAY_MIN": 900,
+      "SPAWN_DELAY_MULTI": 350
+    }
+  },
+  {
+    "LEVEL_TYPE": "READY"
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 5
+  },
+  {
+    "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "COMBAT",
+    "LEVEL_NUMBER": 6,
+    "ENEMY_DATA": {
+      "ENEMY_BULLET_DELAY": 150,
+      "ENEMY_BULLET_SPEED": 300,
+      "MAX_ENEMIES": 15,
+      "ENEMIES_IN_WAVE": 10,
+      "ENEMY_BULLET_INITIAL_DELAY": 800,
+      "SPAWN_DELAY_MIN": 200,
+      "SPAWN_DELAY_MULTI": 500
+    }
+  }
+]

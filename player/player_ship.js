@@ -1,20 +1,19 @@
 const PLAYER_MAX_HEALTH = 4;
-const INVULN_TIME = 150
+const INVULN_TIME = 150;
 
 class PlayerShip {
   constructor(x, y, controls) {
-
     this.controls = controls;
     this.flames = new PlayerShipFlame(this);
 
     // player setup
-    this.sprite = game.add.sprite(x, y, 'player');
+    this.sprite = game.add.sprite(x, y, "player");
     this.sprite.scale.setTo(0.4, 0.4);
     this.sprite.anchor.setTo(0.5, 0.5);
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
     this.sprite.body.angularDrag = 800;
     this.sprite.body.drag.set(1550);
-    this.sprite.body.maxAngular = 200
+    this.sprite.body.maxAngular = 200;
     this.sprite.body.maxVelocity.set(900);
     this.sprite.body.collideWorldBounds = true;
 
@@ -30,9 +29,9 @@ class PlayerShip {
     this.invuln = false;
 
     // shield powerup
-    this.shield_sprite = game.add.sprite(0,0, 'shield');
+    this.shield_sprite = game.add.sprite(0, 0, "shield");
     this.shield_sprite.anchor.set(0.5, 0.5);
-    this.shield_sprite.scale.set(0.5,0.5);
+    this.shield_sprite.scale.set(0.5, 0.5);
     game.physics.enable(this.shield_sprite, Phaser.Physics.ARCADE);
     this.shield_sprite.kill();
 
@@ -43,21 +42,29 @@ class PlayerShip {
   update() {
     //this.shield_sprite.reset(this.sprite.x, this.sprite.y);
 
-
-    this.shield_sprite.x = this.sprite.x
-    this.shield_sprite.y = this.sprite.y
-    if(this.controls.space == true) {
+    this.shield_sprite.x = this.sprite.x;
+    this.shield_sprite.y = this.sprite.y;
+    if (this.controls.space == true) {
       this.sprite.rotation = game.physics.arcade.angleToPointer(this.sprite);
     } else {
-      var distance_to_mouse = Phaser.Math.distance(game.input.activePointer.x, game.input.activePointer.y, this.sprite.x, this.sprite.y);
+      var distance_to_mouse = Phaser.Math.distance(
+        game.input.activePointer.x,
+        game.input.activePointer.y,
+        this.sprite.x,
+        this.sprite.y
+      );
 
-      if(distance_to_mouse > 100) {
-        this.sprite.rotation = game.physics.arcade.moveToPointer(this.sprite, 60, game.input.activePointer, 300);
+      if (distance_to_mouse > 100) {
+        this.sprite.rotation = game.physics.arcade.moveToPointer(
+          this.sprite,
+          60,
+          game.input.activePointer,
+          300
+        );
       } else {
         // were close to mouse so rotate but dont move
         this.sprite.rotation = game.physics.arcade.angleToPointer(this.sprite);
       }
-
     }
     this.bullet_weapon.update(this.controls);
     this.circle_weapon.update(this.controls);
@@ -73,11 +80,11 @@ class PlayerShip {
 
   process_hit() {
     // if player is vulnerable
-    console.log("invuln:" + this.invuln)
-    if(!this.invuln) {
+    console.log("invuln:" + this.invuln);
+    if (!this.invuln) {
       // check if the shield exists
       console.log("shield sprite alive?: " + this.shield_sprite.alive);
-      if(this.shield_sprite.alive) {
+      if (this.shield_sprite.alive) {
         // destroy the shield
         console.log("shield took damage");
         this.shield_sprite.kill();
@@ -94,15 +101,22 @@ class PlayerShip {
   take_damage() {
     console.log("player take damage");
     this.sprite.damage(1);
-    if(this.sprite.alive) {
+    if (this.sprite.alive) {
       this.invuln = true;
-      var tween = game.add.tween(this.sprite).to( { tint: 0x000000 }, INVULN_TIME, "Linear", true).yoyo(true).repeat(3);
-      tween.onComplete.add(function() { this.tint = 0xFFFFFF; this.invuln = false; }, this);
+      var tween = game.add
+        .tween(this.sprite)
+        .to({ tint: 0x000000 }, INVULN_TIME, "Linear", true)
+        .yoyo(true)
+        .repeat(3);
+      tween.onComplete.add(function() {
+        this.tint = 0xffffff;
+        this.invuln = false;
+      }, this);
     }
   }
 
   handle_possible_death() {
-  if(!this.sprite.alive) {
+    if (!this.sprite.alive) {
       console.log("player died");
       this.flames.flames.kill();
       return true;
@@ -115,4 +129,4 @@ class PlayerShip {
     this.circle_weapon.sprite.destroy();
     this.bullet_weapon.bullets.destroy();
   }
-};
+}
