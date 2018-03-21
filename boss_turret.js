@@ -16,7 +16,7 @@ BossTurret = function(game, player, turret_data) {
 
   this.bullet_delay = this.turret_data.BULLET_DELAY;
   this.bullet_speed = this.turret_data.BULLET_SPEED;
-  this.initial_delay = 1000;
+  this.initial_delay = 500;
   this.aim_at = this.turret_data.AIM_AT;
 
   this.bullets = this.game.add.group();
@@ -84,3 +84,5 @@ BossTurret.prototype.update = function() {
 BossTurret.prototype.destroy = function() {
   this.bullets.destroy();
 };
+
+BossTurret.prototype.damaged = function() {}

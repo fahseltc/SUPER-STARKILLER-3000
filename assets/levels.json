@@ -78,26 +78,23 @@
   {
     "LEVEL_TYPE": "BOSS",
     "LEVEL_NUMBER": 4,
-    "TURRETS": [{
+    "TURRETS": [
+      {
+        "TYPE": "NORMAL",
         "AIM_AT": "PLAYER",
         "OFFSET_X": 40,
         "OFFSET_Y": 45,
-        "BULLET_DELAY": 400,
-        "BULLET_SPEED": 200
+        "BULLET_DELAY": 200,
+        "BULLET_SPEED": 250
       },
       {
-        "AIM_AT": "PLAYER",
+        "TYPE": "REACTIONARY",
+        "BULLET_COUNT": "15",
+        "BULLET_SPREAD": "100",
         "OFFSET_X": -40,
         "OFFSET_Y": 45,
-        "BULLET_DELAY": 400,
-        "BULLET_SPEED": 200
-      },
-      {
-        "AIM_AT": "MOUSE",
-        "OFFSET_X": 0,
-        "OFFSET_Y": 70,
-        "BULLET_DELAY": 300,
-        "BULLET_SPEED": 300
+        "BULLET_DELAY": 1000,
+        "BULLET_SPEED": 500
       }
     ],
     "SHIELDS": ["red", "blue", "red", "red", "red", "blue"]

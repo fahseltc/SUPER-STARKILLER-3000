@@ -37,6 +37,7 @@
     <script type="text/javascript" src="boss_level.js"></script>
     <script type="text/javascript" src="boss_enemy.js"></script>
     <script type="text/javascript" src="boss_turret.js"></script>
+    <script type="text/javascript" src="boss_reactionary_turret.js"></script>
     <script type="text/javascript" src="boss_shield.js"></script>
     <script type="text/javascript" src="level_manager.js"></script>
     <script type="text/javascript" src="powerup.js"></script>

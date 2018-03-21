@@ -15,7 +15,14 @@ class BossEnemy {
     this.all_bullets = game.add.group();
     this.turrets = game.add.group();
     this.turret_data.forEach(function(turret, index) {
-      var turret = new BossTurret(game, this.player, this.turret_data[index]);
+      switch(this.turret_data[index].TYPE) {
+        case "NORMAL":
+          var turret = new BossTurret(game, this.player, this.turret_data[index]);
+          break;
+        case "REACTIONARY":
+          var turret = new BossReactionaryTurret(game, this.player, this.turret_data[index]);
+          break;
+      }
       turret.revive();
       this.turrets.add(turret);
       this.all_bullets.add(turret.bullets);
@@ -32,6 +39,8 @@ class BossEnemy {
 
     this.invuln = false;
     this.dead = false;
+
+    // 
   }
 
   update() {
@@ -112,9 +121,7 @@ class BossEnemy {
   handle_circle_weapon_collision(circle_weapon_sprite, boss_shield_sprite) {
     if (boss_shield_sprite.key == "boss_shield_blue") {
       console.log("Circle weapon collision");
-      this.level.add_score(10);
-      this.invuln = true;
-      this.set_blinky_death(boss_shield_sprite);
+      this.handle_boss_hit(boss_shield_sprite);
     }
   }
 
@@ -122,11 +129,19 @@ class BossEnemy {
   handle_bullet_collision(boss_shield_sprite, bullet_sprite) {
     if (boss_shield_sprite.key == "boss_shield_red") {
       console.log("Bullet collision");
-      this.level.add_score(10);
-      this.invuln = true;
-      this.set_blinky_death(boss_shield_sprite);
+      this.handle_boss_hit(boss_shield_sprite);
     }
     bullet_sprite.kill();
+  }
+
+  handle_boss_hit(sprite){
+    this.level.add_score(10);
+    this.invuln = true;
+    this.set_blinky_death(sprite);
+    this.turrets.forEach(function(turret) {
+      console.log("trying to call damaged on all turrets")
+      turret.damaged();
+    }, this);
   }
 
   set_blinky_death(sprite) {
