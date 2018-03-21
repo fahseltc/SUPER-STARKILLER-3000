@@ -15,7 +15,7 @@ var boss_dead_state = {
 
     circle_button.inputEnabled = true;
     circle_button.events.onInputDown.addOnce(function() {
-      game.camera.fade(0x000000, 100, false);
+      game.camera.fade(0x000000, 100, true);
       game.camera.onFadeComplete.add(function() {
         CURRENT_LEVEL_INDEX++;
         game.state.start("play");

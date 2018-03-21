@@ -77,10 +77,27 @@ var debug_state = {
       }
     }
 
+    // Text to explain what colors mean
     Utils.create_centered_text("PINK=TRAVEL", 200, 20, PINK_HEX_COLOR);
     Utils.create_centered_text("GREY=STORY", 225, 20, GREY_HEX_COLOR);
     Utils.create_centered_text("RED=BOSS", 250, 20, RED_HEX_COLOR);
     Utils.create_centered_text("YELLOW=COMBAT", 275, 20, YELLOW_HEX_COLOR);
+
+
+    // button for credits screen
+    var credits_button = game.add.button(700, 700, "debug_button", function() { game.state.start('credits'); }, this);
+
+    var credits_text = Utils.create_stroke_text(
+      "CREDITS",
+      730,
+      680,
+      30,
+      GREY_HEX_COLOR
+    );
+
+    this.button_array.push(credits_button);
+    this.text_array.push(credits_text);
+
   },
 
   create_button_level: function(x, y, index, value) {

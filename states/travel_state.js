@@ -98,7 +98,7 @@ var travel_state = {
       true
     );
     this.spawn_tween.onComplete.addOnce(function() {
-      game.camera.fade(0x000000, 200, false);
+      game.camera.fade(0x000000, 200, true);
       game.camera.onFadeComplete.addOnce(function() {
         CURRENT_LEVEL_INDEX++;
         game.state.start("play");

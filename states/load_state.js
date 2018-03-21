@@ -87,6 +87,7 @@ var load_state = {
     game.load.json("space_blast", "assets/particles/space_blast.json");
     game.load.json("levels", "assets/levels.json");
     game.load.json("story", "assets/story.json");
+    game.load.json("credits", "assets/credits.json");
 
     game.load.audio("ui2", "assets/sound_effects/ui2.ogg");
     game.load.audio(
@@ -120,9 +121,23 @@ var load_state = {
     } catch (error) {
       alert("levels json is not valid");
     }
+
+    try {
+      game.cache.getJSON("story")[0];
+    } catch (error) {
+      alert("levels json is not valid");
+    }
+
+    try {
+      game.cache.getJSON("credits")[0];
+    } catch (error) {
+      alert("levels json is not valid");
+    }
     // if(game.cache.isSoundDecoded('mm_xanadont_song') && this.ready == false) {
     //   this.ready = true;
-    game.state.start("menu");
+    console.log("starting state");
+    game.state.start("splash");
+    //game.state.start("menu");
     //game.state.start('debug');
     //game.state.start('text');
     //   //game.state.start('ready');

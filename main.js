@@ -51,5 +51,7 @@ game.state.add("travel", travel_state);
 game.state.add("story", story_state);
 game.state.add("boss_dead", boss_dead_state);
 game.state.add("debug", debug_state);
+game.state.add("splash", splash_state);
+game.state.add("credits", credits_state);
 
 game.state.start("boot");

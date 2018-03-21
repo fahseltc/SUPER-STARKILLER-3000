@@ -58,6 +58,8 @@
     <script type="text/javascript" src="states/story_state.js"></script>
     <script type="text/javascript" src="states/boss_dead_state.js"></script>
     <script type="text/javascript" src="states/debug_state.js"></script>
+    <script type="text/javascript" src="states/splash_state.js"></script>
+    <script type="text/javascript" src="states/credits_state.js"></script>
 
     <!-- Main entry point to game  -->
     <script type="text/javascript" src="main.js"></script>
