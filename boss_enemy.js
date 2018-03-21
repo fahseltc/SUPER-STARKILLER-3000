@@ -40,7 +40,6 @@ class BossEnemy {
     this.invuln = false;
     this.dead = false;
 
-    // 
   }
 
   update() {
@@ -134,7 +133,7 @@ class BossEnemy {
     bullet_sprite.kill();
   }
 
-  handle_boss_hit(sprite){
+  handle_boss_hit(sprite) {
     this.level.add_score(10);
     this.invuln = true;
     this.set_blinky_death(sprite);
@@ -149,7 +148,7 @@ class BossEnemy {
       .tween(sprite)
       .to({ tint: 0x000000 }, BOSS_INVULN_TIME, "Linear", true)
       .yoyo(true)
-      .repeat(3);
+      .repeat(10);
     tween.onComplete.add(function() {
       sprite.kill();
       this.invuln = false;

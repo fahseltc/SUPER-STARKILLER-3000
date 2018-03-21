@@ -84,12 +84,13 @@
         "AIM_AT": "PLAYER",
         "OFFSET_X": 40,
         "OFFSET_Y": 45,
-        "BULLET_DELAY": 200,
-        "BULLET_SPEED": 250
+        "BULLET_DELAY": 300,
+        "BULLET_SPEED": 200
       },
       {
         "TYPE": "REACTIONARY",
-        "BULLET_COUNT": "15",
+        "AIM_AT": "PLAYER",
+        "BULLET_COUNT": 15,
         "BULLET_SPREAD": "100",
         "OFFSET_X": -40,
         "OFFSET_Y": 45,
@@ -131,6 +132,110 @@
   },
   {
     "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "COMBAT",
+    "LEVEL_NUMBER": 6,
+    "ENEMY_DATA": {
+      "ENEMY_BULLET_DELAY": 1000,
+      "ENEMY_BULLET_SPEED": 300,
+      "MAX_ENEMIES": 5,
+      "ENEMIES_IN_WAVE": 22,
+      "ENEMY_BULLET_INITIAL_DELAY": 900,
+      "SPAWN_DELAY_MIN": 600,
+      "SPAWN_DELAY_MULTI": 350
+    }
+  },
+  {
+    "LEVEL_TYPE": "READY"
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 6
+  },
+  {
+    "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "COMBAT",
+    "LEVEL_NUMBER": 7,
+    "ENEMY_DATA": {
+      "ENEMY_BULLET_DELAY": 800,
+      "ENEMY_BULLET_SPEED": 250,
+      "MAX_ENEMIES": 5,
+      "ENEMIES_IN_WAVE": 25,
+      "ENEMY_BULLET_INITIAL_DELAY": 900,
+      "SPAWN_DELAY_MIN": 500,
+      "SPAWN_DELAY_MULTI": 350
+    }
+  },
+  {
+    "LEVEL_TYPE": "READY"
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 7
+  },
+  {
+    "LEVEL_TYPE": "TRAVEL"
+  },
+  {
+    "LEVEL_TYPE": "BOSS",
+    "LEVEL_NUMBER": 8,
+    "TURRETS": [
+      {
+        "TYPE": "REACTIONARY",
+        "AIM_AT": "PLAYER",
+        "BULLET_COUNT": 12,
+        "BULLET_SPREAD": 100,
+        "OFFSET_X": -40,
+        "OFFSET_Y": 45,
+        "BULLET_DELAY": 1000,
+        "BULLET_SPEED": 400
+      },
+      {
+        "TYPE": "REACTIONARY",
+        "AIM_AT": "MOUSE",
+        "BULLET_COUNT": 12,
+        "BULLET_SPREAD": 100,
+        "OFFSET_X": 40,
+        "OFFSET_Y": 45,
+        "BULLET_DELAY": 1000,
+        "BULLET_SPEED": 500
+      }
+    ],
+    "SHIELDS": ["blue", "blue", "blue", "blue", "blue", "red"]
+  },
+   {
+    "LEVEL_TYPE": "BOSS",
+    "LEVEL_NUMBER": 7,
+    "TURRETS": [
+      {
+        "TYPE": "NORMAL",
+        "AIM_AT": "PLAYER",
+        "OFFSET_X": 40,
+        "OFFSET_Y": 45,
+        "BULLET_DELAY": 400,
+        "BULLET_SPEED": 200
+      },
+      {
+        "TYPE": "NORMAL",
+        "AIM_AT": "PLAYER",
+        "OFFSET_X": -40,
+        "OFFSET_Y": 45,
+        "BULLET_DELAY": 400,
+        "BULLET_SPEED": 200
+      },
+      {
+        "TYPE": "NORMAL",
+        "AIM_AT": "MOUSE",
+        "OFFSET_X": 0,
+        "OFFSET_Y": 70,
+        "BULLET_DELAY": 300,
+        "BULLET_SPEED": 300
+      }
+    ],
+    "SHIELDS": ["red", "blue", "red", "red", "red", "blue"]
   },
   {
     "LEVEL_TYPE": "COMBAT",

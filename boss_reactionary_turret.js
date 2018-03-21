@@ -51,12 +51,25 @@ BossReactionaryTurret.prototype.damaged = function() {
   bullets.forEach(function(bullet, index) {
     bullet.reset(this.worldPosition.x, this.worldPosition.y);
     bullet.lifespan = ENEMY_BULLET_LIFESPAN;
-    game.physics.arcade.moveToXY(
-      bullet,
-      this.player.sprite.x + (index * this.turret_data.BULLET_SPREAD) - (0.5 * this.bullets.length * this.turret_data.BULLET_SPREAD),
-      this.player.sprite.y,
-      this.bullet_speed
-    );
+    if (this.aim_at == "PLAYER") {
+      this.game.physics.arcade.moveToXY(
+        bullet,
+        this.player.sprite.x +
+          index * this.turret_data.BULLET_SPREAD -
+          0.5 * this.bullets.length * this.turret_data.BULLET_SPREAD,
+        this.player.sprite.y,
+        this.bullet_speed
+      );
+    } else if (this.aim_at == "MOUSE") {
+      game.physics.arcade.moveToXY(
+        bullet,
+        game.input.activePointer.x +
+          index * this.turret_data.BULLET_SPREAD -
+          0.5 * this.bullets.length * this.turret_data.BULLET_SPREAD,
+        game.input.activePointer.y,
+        this.bullet_speed
+      );
+    }
   }, this);
 };
 

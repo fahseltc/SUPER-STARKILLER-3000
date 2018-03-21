@@ -46,19 +46,6 @@ BossTurret.prototype = Object.create(Phaser.Sprite.prototype);
 BossTurret.prototype.constructor = constructor;
 
 BossTurret.prototype.update = function() {
-  if (this.aim_at == "PLAYER") {
-    this.rotation =
-      game.physics.arcade.angleToXY(
-        this.player.sprite,
-        this.worldPosition.x,
-        this.worldPosition.y
-      ) +
-      Math.PI / 2;
-  } else if (this.aim_at == "MOUSE") {
-    this.rotation =
-      game.physics.arcade.angleToPointer(this, game.input.activePointer, true) -
-      Math.PI / 2;
-  }
 
   if (this.alive && this.visible && this.game.time.now > this.bullet_time) {
     var bullet = this.bullets.getFirstExists(false);

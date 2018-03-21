@@ -59,7 +59,7 @@ var debug_state = {
     this.text_array.push(levels_text);
 
     var levels_columns = 4;
-    var levels_rows = 7;
+    var levels_rows = 10;
     var counter = 0;
     var level_count = game.cache.getJSON("levels").length;
 

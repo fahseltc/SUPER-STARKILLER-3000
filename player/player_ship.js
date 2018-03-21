@@ -127,6 +127,7 @@ class PlayerShip {
   destroy() {
     this.sprite.destroy();
     this.circle_weapon.sprite.destroy();
+    this.shield_sprite.destroy();
     this.bullet_weapon.bullets.destroy();
   }
 }
