@@ -38,14 +38,14 @@ var menu_state = {
     );
 
     var now_with_text = Utils.create_stroke_text(
-      "Now with MOAR PLOT!",
+      "Now with CREDITS!",
       1200,
       500,
       20,
       "#FFD700"
     );
     var now_with_text2 = Utils.create_stroke_text(
-      "and a decent level progression",
+      "and a splash screen too!",
       1200,
       550,
       10,
