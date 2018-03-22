@@ -2,6 +2,18 @@ var boss_dead_state = {
   preload: function() {
     console.log("boss dead state");
     game.stage.backgroundColor = BLACK_HEX_COLOR;
+
+    var background_sprite = game.add.tileSprite(
+      game.width / 2,
+      game.height / 2,
+      768,
+      780,
+      "after_boss_bg"
+    );
+    background_sprite.anchor.set(0.5, 0.5);
+    background_sprite.alpha = 0.5;
+
+
     Utils.create_centered_stroke_text(
       "STAR\nDEFENSES\nERADICATED",
       280,
@@ -22,5 +34,7 @@ var boss_dead_state = {
         game.state.start("play");
       }, this);
     }, this);
+
+
   }
 };

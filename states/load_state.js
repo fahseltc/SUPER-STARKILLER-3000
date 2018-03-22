@@ -52,6 +52,7 @@ var load_state = {
       images_path + "title_screen.png"
     );
     game.load.image("game_background", images_path + "game_background.png");
+    game.load.image("after_boss_bg", images_path + "after_boss_bg.png");
     game.load.image("debug_button", images_path + "debug_button.png");
 
     // UI loading
@@ -104,6 +105,11 @@ var load_state = {
     );
     game.load.audio(
       "dot_matrix_line_break",
+      "assets/sound_effects/dot_matrix_line_break.wav"
+    );
+
+    game.load.audio(
+      "after_boss_bg",
       "assets/sound_effects/dot_matrix_line_break.wav"
     );
 
