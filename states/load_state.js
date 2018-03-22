@@ -19,10 +19,7 @@ var load_state = {
     var images_path = assets_path + "images/";
     var ui_images_path = images_path + "UI/";
 
-    //game.load.audio('mm_xanadont_song', 'assets/music/Mystery_Mammal_Xanadont.ogg');
-
     game.load.image("player", images_path + "player_ship.png");
-    //game.load.image('player_bullet', assets_path + 'images/player_bullet.png');
     game.load.spritesheet(
       "player_bullet_sprite_sheet",
       images_path + "player_bullet/player_bullet.png",
@@ -30,28 +27,33 @@ var load_state = {
       16,
       4
     );
+
     game.load.image("flame", images_path + "flame.png");
     game.load.image("turret_top_blue", images_path + "turret_top_blue.png");
     game.load.image("turret_base_blue", images_path + "turret_base_blue.png");
     game.load.image("turret_top_red", images_path + "turret_top_red.png");
     game.load.image("turret_base_red", images_path + "turret_base_red.png");
 
-    game.load.image("boss", images_path + "boss.png");
+
     game.load.image("boss_1", images_path + "boss_1.png");
+    game.load.image("boss_2", images_path + "boss_2.png");
     game.load.image("boss_shield_red", images_path + "boss_shield_red.png");
     game.load.image("boss_shield_blue", images_path + "boss_shield_blue.png");
 
     game.load.image("shield", images_path + "shield.png");
-    game.load.image("circle", images_path + "circle.png");
     game.load.image("enemy_bullet", images_path + "enemy_bullet.png");
     game.load.image("powerup_p", images_path + "pat_powerup_4.png");
 
-    //game.load.image('pat_bg', images_path + 'pat_bg.png');
     game.load.image(
       "title_screen_background",
       images_path + "title_screen.png"
     );
+    game.load.image(
+      "title_screen_no_text",
+      images_path + "title_screen_no_text.png"
+    );
     game.load.image("game_background", images_path + "game_background.png");
+    game.load.image("game_background_clean", images_path + "game_background_clean.png");
     game.load.image("after_boss_bg", images_path + "after_boss_bg.png");
     game.load.image("debug_button", images_path + "debug_button.png");
 
@@ -81,8 +83,6 @@ var load_state = {
     );
     game.load.image("spinner", ui_images_path + "spinner.png");
     game.load.image("x", ui_images_path + "x.png");
-
-    game.load.image("pixel_planet", images_path + "pixel_planet.jpg");
 
     game.load.image("pink_rect_filled", images_path + "pink_rect_filled.png");
     game.load.image("pink_rect_empty", images_path + "pink_rect_empty.png");

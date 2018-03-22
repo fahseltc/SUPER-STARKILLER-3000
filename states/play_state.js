@@ -4,8 +4,6 @@ var play_state = {
   },
 
   create: function() {
-    game.add.tileSprite(0, 0, 1400, 700, "game_background");
-
     this.level_manager = new LevelManager();
   },
 

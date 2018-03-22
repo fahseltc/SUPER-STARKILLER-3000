@@ -8,7 +8,7 @@ class BossEnemy {
     this.turret_data = level_data.TURRETS;
     this.shield_data = level_data.SHIELDS;
 
-    this.sprite = game.add.sprite(game.world.width / 2, 0, "boss_1");
+    this.sprite = game.add.sprite(game.world.width / 2, 0, "boss_" + level_data.BOSS_NUMBER);
     this.sprite.anchor.set(0.5, 0.5);
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
 

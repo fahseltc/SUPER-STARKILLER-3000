@@ -3,6 +3,14 @@ var credits_state = {
     this.credit_count = 0;
     this.credits = game.cache.getJSON("credits");
 
+    var background_sprite = game.add.tileSprite(
+      0,
+      0,
+      1400,
+      900,
+      "title_screen_no_text"
+    );
+
     this.credits.forEach(function(credit) {
       this.add_credit(credit.TITLE, credit.NAME);
     }, this);

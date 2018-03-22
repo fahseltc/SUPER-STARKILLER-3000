@@ -11,6 +11,10 @@ class BossLevel {
       game.height / 2,
       this.controls
     );
+
+    this.bg_sprite = game.add.tileSprite(0, 0, 1400, 700, "game_background_clean");
+    this.bg_sprite.sendToBack();
+
     this.UI = new RootUI(
       this.player,
       this.level_data,
@@ -70,5 +74,6 @@ class BossLevel {
     this.player.destroy();
     this.boss.destroy();
     this.UI.destroy();
+    this.bg_sprite.destroy();
   }
 }

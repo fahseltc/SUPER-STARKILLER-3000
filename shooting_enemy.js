@@ -10,6 +10,7 @@ ShootingEnemy = function(
 ) {
   Phaser.Sprite.call(this, game, 0, 0, "turret_base_" + sprite);
   this.rotation = Math.PI / 4;
+  this.sprite_name = sprite;
   this.player = player;
   this.game = game;
   this.turret = game.add.sprite(0, 0, "turret_top_" + sprite);
@@ -22,6 +23,11 @@ ShootingEnemy = function(
 
   this.events.onKilled.add(function() {
       this.death_sound.play("", 0, GLOBAL_VOLUME, false, true);
+      game.add.particleEffect(
+        this.position.x,
+        this.position.y,
+        game.cache.getJSON(this.sprite_name + "_explosion")
+      );
     }, this);
 
   this.death_sound = sound_manager.add("turret_death");

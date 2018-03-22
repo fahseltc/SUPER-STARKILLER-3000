@@ -15,7 +15,7 @@ var boss_dead_state = {
 
 
     Utils.create_centered_stroke_text(
-      "STAR\nDEFENSES\nERADICATED",
+      "STAR\nDESTROYED",
       280,
       50,
       WHITE_HEX_COLOR

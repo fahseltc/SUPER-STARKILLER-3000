@@ -10,6 +10,10 @@ class Level {
       this.controls
     );
 
+    this.bg_sprite = game.add.tileSprite(0, 0, 1400, 700, "game_background_clean");
+
+    this.bg_sprite.sendToBack();
+
     this.UI = new RootUI(
       this.player,
       this.level_data,
@@ -100,33 +104,22 @@ class Level {
 
   handle_circle_weapon_collision(circle_weapon_sprite, turret) {
     if (turret.key == "turret_base_blue" && turret.alive) {
-      turret = turret.kill();
       console.log("circle hit!");
-      console.log(turret);
-      game.add.particleEffect(
-        turret.position.x,
-        turret.position.y,
-        game.cache.getJSON("blue_explosion")
-      );
+      turret = turret.kill(); // does lots of things
       this.UI.score.score_buffer += 5;
-      this.enemy_manager.spawn = true;
       this.UI.remaining_enemies_bar.enemy_died();
+      this.enemy_manager.spawn = true;
     }
   }
 
   handle_bullet_collision(bullet_sprite, turret) {
     if (turret.key == "turret_base_red" && turret.alive) {
       console.log("bullet hit!");
-      turret = turret.kill();
+      turret = turret.kill(); // does a bunch of stuff!
       bullet_sprite.kill();
       this.UI.score.score_buffer += 5;
-      game.add.particleEffect(
-        turret.position.x,
-        turret.position.y,
-        game.cache.getJSON("red_explosion")
-      );
-      this.enemy_manager.spawn = true;
       this.UI.remaining_enemies_bar.enemy_died();
+      this.enemy_manager.spawn = true;
     }
   }
 
@@ -147,5 +140,6 @@ class Level {
     this.player.destroy();
     this.enemy_manager.destroy();
     this.UI.destroy();
+    this.bg_sprite.destroy();
   }
 }
