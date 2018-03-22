@@ -30,6 +30,8 @@
     <script type="text/javascript" src="ui/score.js"></script>
     <script type="text/javascript" src="ui/level_display.js"></script>
     <script type="text/javascript" src="ui/remaining_enemies_bar.js"></script>
+    <script type="text/javascript" src="ui/bullet_weapon_display.js"></script>
+    <script type="text/javascript" src="ui/shield_weapon_display.js"></script>
 
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="controls.js"></script>

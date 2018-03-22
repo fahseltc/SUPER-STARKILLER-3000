@@ -1,5 +1,5 @@
 const BULLET_ADDITIONAL_SPEED = 1000;
-const BULLET_LIFESPAN = 1000;
+const BULLET_LIFESPAN = 2000;
 const BULLET_DELAY = 100;
 
 const HEAT_GENERATED_PER_SHOT = 4;
@@ -50,7 +50,7 @@ class BulletWeapon {
   }
 
   render() {
-    game.debug.text(this.heat, 200, 14, "#00ff00");
+    //game.debug.text(this.heat, 200, 14, "#00ff00");
   }
 
   fire_bullet() {

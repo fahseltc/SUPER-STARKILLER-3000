@@ -136,6 +136,30 @@ var menu_state = {
       }
     }, this);
 
+    // credits button
+
+    this.credits_button = game.add.button(
+      150,
+      850,
+      "debug_button",
+      function() {
+        game.state.start("credits");
+      },
+      this
+    );
+    this.credits_button.width = this.credits_button.width * 4;
+    this.credits_button.anchor.set(0.5, 0.5);
+
+    // 30, 80
+    this.credits_text = Utils.create_text(
+      "CREDITS",
+      150,
+      856,
+      30,
+      BLACK_HEX_COLOR
+    );
+    this.credits_text.anchor.set(0.5, 0.5);
+
     //this.music1.play();
   },
 
@@ -150,5 +174,15 @@ var menu_state = {
     game.camera.onFadeComplete.add(function() {
       game.state.start("play");
     }, this);
+  },
+  destroy: function() {
+    this.credits_button.destroy();
+    this.credits_text.destroy();
+    this.music1.destroy();
+    this.music2.destroy();
+    this.music3.destroy();
+    this.music4.destroy();
+    this.new_music.destroy();
+    this.start_sound.destroy();
   }
 };

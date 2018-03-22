@@ -74,6 +74,10 @@ var load_state = {
       "remaining_enemies_black_bar",
       ui_images_path + "remaining_enemies_black_bar.png"
     );
+    game.load.image(
+      "green_bar",
+      ui_images_path + "green_bar.png"
+    );
     game.load.image("spinner", ui_images_path + "spinner.png");
     game.load.image("x", ui_images_path + "x.png");
 
