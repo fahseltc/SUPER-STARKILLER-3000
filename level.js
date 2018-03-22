@@ -21,6 +21,26 @@ class Level {
 
     this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false;
+
+
+    this.player_damaged_sound = sound_manager.add("player_damaged");
+
+
+    // this.level_end_explosion = sound_manager.add("level_end_explosion");
+    // this.level_end_explosion.loop = true;
+    // this.current_loop = 0;
+
+    // this.level_end_explosion.onLoop.add(function(sound) {
+    //   this.current_loop++;
+    //   console.log("onLoop: " + this.current_loop);
+    //   if(this.current_loop == 3) { sound.stop(); }
+    // }, this);
+    // this.level_end_explosion.onStop.addOnce(function() {
+    //   console.log("onStop");
+    //   CURRENT_LEVEL_INDEX++;
+    //   this.level_manager.change_level(CURRENT_LEVEL_INDEX);
+    // }, this);
+     this.ending = false;
   }
 
   update() {
@@ -57,11 +77,16 @@ class Level {
     this.UI.update();
     this.powerup_manager.update();
 
-    if (this.enemy_manager.are_all_enemies_dead()) {
+    if (this.enemy_manager.are_all_enemies_dead() && !this.ending) {
+      this.ending = true;
       console.log("all enemies defeated");
-      console.log("increasing lvl index");
-      CURRENT_LEVEL_INDEX++;
-      this.level_manager.change_level(CURRENT_LEVEL_INDEX);
+
+      game.camera.fade(0x000000, 1500, true);
+      game.camera.onFadeComplete.addOnce(function() {
+        console.log("increasing lvl index");
+        CURRENT_LEVEL_INDEX++;
+        this.level_manager.change_level(CURRENT_LEVEL_INDEX);
+      }, this);
     }
   }
 
@@ -109,7 +134,7 @@ class Level {
     console.log("bullet intersected player");
     bullet.kill();
     var player_died = this.player.process_hit();
-
+    this.player_damaged_sound.play("", 0, GLOBAL_VOLUME, false, true);
     if (player_died) {
       last_score = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;

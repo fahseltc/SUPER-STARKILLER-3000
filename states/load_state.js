@@ -128,6 +128,17 @@ var load_state = {
       "assets/sound_effects/blue_weapon_shoot.wav"
     );
 
+    game.load.audio(
+      "level_end_explosion",
+      "assets/sound_effects/level_end_explosion.wav"
+    );
+
+    game.load.audio(
+      "player_damaged",
+      "assets/sound_effects/player_damaged.wav"
+    );
+
+
 
     game.load.spritesheet(
       "circle_weapon_sheet",
