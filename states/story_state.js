@@ -1,7 +1,6 @@
 var story_state = {
   create: function() {
     this.story_json = game.cache.getJSON("story");
-    console.log(this.story_json);
     this.volume = 0.05;
 
     this.printer_sound_1 = sound_manager.add("dot_matrix_short");
@@ -36,7 +35,7 @@ var story_state = {
     this.counter = 1;
     this.displayLetterByLetterText(function() {
       this.all_text_displayed = true;
-      console.log("done!");
+      console.log("All text displayed!");
     });
   },
 
@@ -72,8 +71,8 @@ var story_state = {
     if (game.input.activePointer.isDown) {
       if (this.all_text_displayed && !this.ending) {
         this.ending = true;
-        //game.camera.resetFX();
-        game.camera.fade(0x000000, 200, true);
+        game.camera.resetFX();
+        game.camera.fade(0x000000, 250, true);
         game.camera.onFadeComplete.addOnce(function() {
           console.log("increasing lvl index");
           CURRENT_LEVEL_INDEX++;

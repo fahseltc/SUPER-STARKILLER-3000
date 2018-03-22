@@ -56,8 +56,7 @@ class RemainingEnemiesBar {
   enemy_died() {
     this.enemies_alive--;
     var percentage = this.enemies_alive / this.enemies_to_spawn;
-    console.log(this.enemies_alive);
-    console.log(this.enemies_to_spawn);
+    console.log(this.enemies_alive + " / " + this.enemies_to_spawn);
     var new_width = this.black_bar_original_width * (1 - percentage);
     game.add
       .tween(this.black_bar)

@@ -74,9 +74,10 @@ class Level {
   }
 
   handle_circle_weapon_collision(circle_weapon_sprite, turret) {
-    if (turret.key == "turret_base_blue") {
+    if (turret.key == "turret_base_blue" && turret.alive) {
+      turret = turret.kill();
       console.log("circle hit!");
-      turret.kill();
+      console.log(turret);
       game.add.particleEffect(
         turret.position.x,
         turret.position.y,
@@ -89,9 +90,9 @@ class Level {
   }
 
   handle_bullet_collision(bullet_sprite, turret) {
-    if (turret.key == "turret_base_red") {
+    if (turret.key == "turret_base_red" && turret.alive) {
       console.log("bullet hit!");
-      turret.kill();
+      turret = turret.kill();
       bullet_sprite.kill();
       this.UI.score.score_buffer += 5;
       game.add.particleEffect(

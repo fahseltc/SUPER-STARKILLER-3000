@@ -1,8 +1,6 @@
 var play_state = {
   preload: function() {
-    //console.log(this.level_data);
     game.world.setBounds(0, 0, 1400, 700);
-    game.camera.setSize(1400, 200);
   },
 
   create: function() {
