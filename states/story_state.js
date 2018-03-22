@@ -75,6 +75,7 @@ var story_state = {
         //game.camera.resetFX();
         game.camera.fade(0x000000, 200, true);
         game.camera.onFadeComplete.addOnce(function() {
+          console.log("increasing lvl index");
           CURRENT_LEVEL_INDEX++;
           game.state.start("play");
         }, this);

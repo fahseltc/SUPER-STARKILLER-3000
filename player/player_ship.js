@@ -108,7 +108,7 @@ class PlayerShip {
         .to({ tint: 0x000000 }, INVULN_TIME, "Linear", true)
         .yoyo(true)
         .repeat(3);
-      tween.onComplete.add(function() {
+      tween.onComplete.addOnce(function() {
         this.tint = 0xffffff;
         this.invuln = false;
       }, this);

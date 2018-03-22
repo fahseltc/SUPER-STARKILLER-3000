@@ -18,7 +18,7 @@ var post_game_state = {
       .tween(this.music)
       .to({ volume: 0 }, 1000)
       .start();
-    tween.onComplete.add(function() {
+    tween.onComplete.addOnce(function() {
       this.music.stop();
       sound_manager.destroy();
     }, this);

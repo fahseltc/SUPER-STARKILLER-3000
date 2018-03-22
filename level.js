@@ -59,6 +59,7 @@ class Level {
 
     if (this.enemy_manager.are_all_enemies_dead()) {
       console.log("all enemies defeated");
+      console.log("increasing lvl index");
       CURRENT_LEVEL_INDEX++;
       this.level_manager.change_level(CURRENT_LEVEL_INDEX);
     }

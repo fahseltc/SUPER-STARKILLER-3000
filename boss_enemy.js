@@ -149,7 +149,7 @@ class BossEnemy {
       .to({ tint: 0x000000 }, BOSS_INVULN_TIME, "Linear", true)
       .yoyo(true)
       .repeat(10);
-    tween.onComplete.add(function() {
+    tween.onComplete.addOnce(function() {
       sprite.kill();
       this.invuln = false;
     }, this);

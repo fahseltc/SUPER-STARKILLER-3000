@@ -171,7 +171,7 @@ var menu_state = {
 
     this.start_sound.play("", 0, 0.05, false, false);
     game.camera.fade(0x000000, 200, true);
-    game.camera.onFadeComplete.add(function() {
+    game.camera.onFadeComplete.addOnce(function() {
       game.state.start("play");
     }, this);
   },

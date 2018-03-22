@@ -55,6 +55,7 @@ class BossLevel {
   boss_died() {
     console.log("boss died");
     this.destroyed = true;
+    console.log("increasing lvl index");
     CURRENT_LEVEL_INDEX++;
     this.level_manager.change_level(CURRENT_LEVEL_INDEX);
   }

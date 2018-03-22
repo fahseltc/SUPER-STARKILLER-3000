@@ -1,6 +1,6 @@
 var boss_dead_state = {
   preload: function() {
-    console.log("ready state");
+    console.log("boss dead state");
     game.stage.backgroundColor = BLACK_HEX_COLOR;
     Utils.create_centered_stroke_text(
       "STAR\nDEFENSES\nERADICATED",
@@ -16,7 +16,8 @@ var boss_dead_state = {
     circle_button.inputEnabled = true;
     circle_button.events.onInputDown.addOnce(function() {
       game.camera.fade(0x000000, 100, true);
-      game.camera.onFadeComplete.add(function() {
+      game.camera.onFadeComplete.addOnce(function() {
+        console.log("increasing lvl index");
         CURRENT_LEVEL_INDEX++;
         game.state.start("play");
       }, this);

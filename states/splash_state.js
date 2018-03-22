@@ -22,7 +22,7 @@ var splash_state = {
       function() {
         game.camera.fade(0x000000, 100, true);
         console.log("go to menu from splash");
-        game.camera.onFadeComplete.add(function() {
+        game.camera.onFadeComplete.addOnce(function() {
           game.state.start("menu");
         }, this);
       },

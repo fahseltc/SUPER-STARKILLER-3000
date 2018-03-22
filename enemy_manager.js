@@ -147,7 +147,7 @@ class EnemyManager {
           Phaser.Easing.Exponential.In,
           true
         );
-      phase_in_tween.onComplete.add(function() {
+      phase_in_tween.onComplete.addOnce(function() {
         random_dead_bad_guy.revive();
       }, this);
     }

@@ -42,7 +42,7 @@ class CircleWeapon {
           true
         )
         .yoyo(true);
-      tween.onComplete.add(function() {
+      tween.onComplete.addOnce(function() {
         this.active = false;
         this.sprite.kill();
         this.sprite.scale.x = 0.1;
