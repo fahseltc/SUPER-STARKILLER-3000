@@ -20,6 +20,12 @@ ShootingEnemy = function(
   this.bullet_speed = bullet_speed;
   this.initial_delay = initial_delay;
 
+  this.events.onKilled.add(function() {
+      this.death_sound.play("", 0, GLOBAL_VOLUME, false, true);
+    }, this);
+
+  this.death_sound = sound_manager.add("turret_death");
+
   this.bullets = this.game.add.group();
   this.bullets.enableBodyDebug = true;
   this.bullets.enableBody = true;

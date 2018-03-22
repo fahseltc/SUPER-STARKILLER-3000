@@ -109,9 +109,25 @@ var load_state = {
     );
 
     game.load.audio(
-      "after_boss_bg",
-      "assets/sound_effects/dot_matrix_line_break.wav"
+      "red_bullet_shoot",
+      "assets/sound_effects/red_bullet_shoot.wav"
     );
+
+    game.load.audio(
+      "turret_death",
+      "assets/sound_effects/turret_death.wav"
+    );
+
+    game.load.audio(
+      "powerup_get",
+      "assets/sound_effects/powerup_get.wav"
+    );
+
+    game.load.audio(
+      "blue_weapon_shoot",
+      "assets/sound_effects/blue_weapon_shoot.wav"
+    );
+
 
     game.load.spritesheet(
       "circle_weapon_sheet",

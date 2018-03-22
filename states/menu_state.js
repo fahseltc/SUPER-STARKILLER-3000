@@ -169,7 +169,7 @@ var menu_state = {
     // this.music2.stop();
     // this.music4.play();
 
-    this.start_sound.play("", 0, 0.05, false, false);
+    this.start_sound.play("", 0, GLOBAL_VOLUME, false, false);
     game.camera.fade(0x000000, 200, true);
     game.camera.onFadeComplete.addOnce(function() {
       game.state.start("play");

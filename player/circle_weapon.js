@@ -22,6 +22,8 @@ class CircleWeapon {
     this.active = false;
 
     this.shoot_time = 0;
+
+    this.shoot_sound = sound_manager.add("blue_weapon_shoot");
   }
 
   update(controls) {
@@ -30,6 +32,7 @@ class CircleWeapon {
       !this.active &&
       game.time.now > this.shoot_time
     ) {
+      this.shoot_sound.play("", 0, GLOBAL_VOLUME, false, true);
       this.anim.play(10);
       this.sprite.revive();
       this.active = true;
