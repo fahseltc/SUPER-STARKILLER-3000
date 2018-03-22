@@ -16,6 +16,7 @@ BossReactionaryTurret = function(game, player, turret_data) {
 
   this.bullet_delay = this.turret_data.BULLET_DELAY;
   this.bullet_speed = this.turret_data.BULLET_SPEED;
+  this.bullet_spread = this.turret_data.BULLET_SPREAD;
   this.initial_delay = 1000;
   this.aim_at = this.turret_data.AIM_AT;
 
@@ -51,22 +52,23 @@ BossReactionaryTurret.prototype.damaged = function() {
   bullets.forEach(function(bullet, index) {
     bullet.reset(this.worldPosition.x, this.worldPosition.y);
     bullet.lifespan = ENEMY_BULLET_LIFESPAN;
+
+    var player_pos = this.player.sprite.position.clone();
+    Phaser.Point.rotate(player_pos, this.worldPosition.x, this.worldPosition.y, ((index * this.bullet_spread) - (this.bullets.length * this.bullet_spread / 2)), true);
+    console.log("spread: " + ((index * this.bullet_spread) - (this.bullets.length * this.bullet_spread / 2)));
+
     if (this.aim_at == "PLAYER") {
       this.game.physics.arcade.moveToXY(
         bullet,
-        this.player.sprite.x +
-          index * this.turret_data.BULLET_SPREAD -
-          0.5 * this.bullets.length * this.turret_data.BULLET_SPREAD,
-        this.player.sprite.y,
+        player_pos.x,
+        player_pos.y,
         this.bullet_speed
       );
     } else if (this.aim_at == "MOUSE") {
       game.physics.arcade.moveToXY(
         bullet,
-        game.input.activePointer.x +
-          index * this.turret_data.BULLET_SPREAD -
-          0.5 * this.bullets.length * this.turret_data.BULLET_SPREAD,
-        game.input.activePointer.y,
+        player_pos.x,
+        player_pos.y,
         this.bullet_speed
       );
     }
