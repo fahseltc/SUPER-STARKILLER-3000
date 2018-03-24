@@ -12,7 +12,13 @@ class BossLevel {
       this.controls
     );
 
-    this.bg_sprite = game.add.tileSprite(0, 0, 1400, 700, "game_background_clean");
+    this.bg_sprite = game.add.tileSprite(
+      0,
+      0,
+      1400,
+      700,
+      "game_background_clean"
+    );
     this.bg_sprite.sendToBack();
 
     this.UI = new RootUI(
@@ -26,6 +32,18 @@ class BossLevel {
     this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false;
     this.boss = new BossEnemy(this.player, this.level_data, this);
+
+    this.spike_enemies = [];
+    this.spike_enemie_sprites = game.add.group();
+    if (this.level_data.SPIKE_ENEMIES != undefined) {
+      this.level_data.SPIKE_ENEMIES.forEach(function(data) {
+        var spikey = new SpikeEnemy(data.X, data.Y, data.VELOCITY);
+        this.spike_enemies.push(spikey);
+        this.spike_enemie_sprites.add(spikey.sprite);
+      }, this);
+    }
+
+    this.player_damaged_sound = sound_manager.add("player_damaged");
   }
 
   update() {
@@ -35,6 +53,7 @@ class BossLevel {
       this.boss.update();
       this.UI.update();
       this.powerup_manager.update();
+      this.check_spike_collisions();
     }
   }
 
@@ -54,6 +73,28 @@ class BossLevel {
     this.destroy();
     CURRENT_LEVEL_INDEX = 0;
     game.state.start("post");
+  }
+
+  check_spike_collisions() {
+    game.physics.arcade.overlap(
+      this.player.sprite,
+      this.spike_enemie_sprites,
+      this.handle_player_hit_spikes,
+      null,
+      this
+    );
+  }
+
+  handle_player_hit_spikes(player, bullet) {
+    console.log("bullet intersected player");
+    bullet.kill();
+    var player_died = this.player.process_hit();
+    this.player_damaged_sound.play("", 0, GLOBAL_VOLUME, false, true);
+    if (player_died) {
+      last_score = this.UI.score.score + this.UI.score.score_buffer;
+      CURRENT_LEVEL_INDEX = 0;
+      game.state.start("post");
+    }
   }
 
   boss_died() {

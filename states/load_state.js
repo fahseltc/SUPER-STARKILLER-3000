@@ -33,6 +33,7 @@ var load_state = {
     game.load.image("turret_base_blue", images_path + "turret_base_blue.png");
     game.load.image("turret_top_red", images_path + "turret_top_red.png");
     game.load.image("turret_base_red", images_path + "turret_base_red.png");
+    game.load.image("spike_enemy", images_path + "spike_enemy.png");
 
 
     game.load.image("boss_1", images_path + "boss_1.png");
@@ -138,6 +139,10 @@ var load_state = {
       "assets/sound_effects/player_damaged.wav"
     );
 
+     game.load.audio(
+      "travel_whoosh",
+      "assets/sound_effects/travel_whoosh.wav"
+    );
 
 
     game.load.spritesheet(

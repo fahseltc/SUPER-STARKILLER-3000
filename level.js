@@ -10,17 +10,17 @@ class Level {
       this.controls
     );
 
-    this.bg_sprite = game.add.tileSprite(0, 0, 1400, 700, "game_background_clean");
+    this.bg_sprite = game.add.tileSprite(0, 0, 1400, 700, "game_background");
 
     this.bg_sprite.sendToBack();
 
     this.UI = new RootUI(
       this.player,
       this.level_data,
-      this.level_data.LEVEL_NUMBER
+      this.level_data.LEVEL_NUMBER,
     );
 
-    this.enemy_manager = new EnemyManager(game, this.player, this.level_data);
+    this.enemy_manager = new EnemyManager(game, this.player, this.level_data, this.UI);
     game.world.bringToTop(this.player.sprite);
 
     this.powerup_manager = new PowerupManager(this.player);
@@ -48,6 +48,8 @@ class Level {
   }
 
   update() {
+
+    // player circle weapon overlaps bad guys
     if (this.player.circle_weapon.active) {
       game.physics.arcade.overlap(
         this.player.circle_weapon.sprite,
@@ -57,7 +59,7 @@ class Level {
         this
       );
     }
-
+    // player bullet weapon overlaps bad guys
     game.physics.arcade.overlap(
       this.player.bullet_weapon.bullets,
       this.enemy_manager.bad_guys,
@@ -65,10 +67,21 @@ class Level {
       null,
       this
     );
+
+    // enemy bullets hitting player
     var visible_bullets = this.enemy_manager.all_bullets.getAll("alive", true);
     game.physics.arcade.overlap(
       this.player.sprite,
       visible_bullets,
+      this.handle_player_hit,
+      null,
+      this
+    );
+
+    // spike enemies hitting player
+    game.physics.arcade.overlap(
+      this.player.sprite,
+      this.enemy_manager.spike_enemie_sprites,
       this.handle_player_hit,
       null,
       this
@@ -106,8 +119,8 @@ class Level {
     if (turret.key == "turret_base_blue" && turret.alive) {
       console.log("circle hit!");
       turret = turret.kill(); // does lots of things
-      this.UI.score.score_buffer += 5;
-      this.UI.remaining_enemies_bar.enemy_died();
+      //this.UI.score.score_buffer += 5;
+      //this.UI.remaining_enemies_bar.enemy_died();
       this.enemy_manager.spawn = true;
     }
   }
@@ -117,8 +130,8 @@ class Level {
       console.log("bullet hit!");
       turret = turret.kill(); // does a bunch of stuff!
       bullet_sprite.kill();
-      this.UI.score.score_buffer += 5;
-      this.UI.remaining_enemies_bar.enemy_died();
+      //this.UI.score.score_buffer += 5;
+      //this.UI.remaining_enemies_bar.enemy_died();
       this.enemy_manager.spawn = true;
     }
   }
@@ -134,6 +147,11 @@ class Level {
       game.state.start("post");
     }
   }
+
+  // handle_player_hit_spikes(player, spike) {
+  //   console.log("player hit spike");
+
+  // }
 
   destroy() {
     this.destroyed = true;

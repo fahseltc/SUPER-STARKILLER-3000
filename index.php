@@ -45,6 +45,7 @@
     <script type="text/javascript" src="powerup.js"></script>
     <script type="text/javascript" src="powerup_manager.js"></script>
     <script type="text/javascript" src="shooting_enemy.js"></script>
+    <script type="text/javascript" src="spike_enemy.js"></script>
     <script type="text/javascript" src="enemy_manager.js"></script>
 
 

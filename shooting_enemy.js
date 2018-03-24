@@ -6,13 +6,16 @@ ShootingEnemy = function(
   sprite,
   bullet_delay,
   bullet_speed,
-  initial_delay
+  initial_delay,
+  ui
 ) {
   Phaser.Sprite.call(this, game, 0, 0, "turret_base_" + sprite);
+  this.UI = ui;
   this.rotation = Math.PI / 4;
   this.sprite_name = sprite;
   this.player = player;
   this.game = game;
+  this.alive = false;
   this.turret = game.add.sprite(0, 0, "turret_top_" + sprite);
   this.turret.anchor.x = 0.5;
   this.turret.anchor.y = 0.3;
@@ -28,6 +31,8 @@ ShootingEnemy = function(
         this.position.y,
         game.cache.getJSON(this.sprite_name + "_explosion")
       );
+      this.UI.score.score_buffer += 5;
+      this.UI.remaining_enemies_bar.enemy_died();
     }, this);
 
   this.death_sound = sound_manager.add("turret_death");

@@ -4,10 +4,11 @@ const SCREEN_EDGE_SPAWN_DISTANCE = 50;
 const ENEMY_PLAYER_SPAWN_DISTANCE = 150;
 
 class EnemyManager {
-  constructor(game, player, level_data) {
+  constructor(game, player, level_data, ui) {
     this.game = game;
     this.player = player;
     this.level_data = level_data.ENEMY_DATA;
+    this.UI = ui;
     this.bad_guys = game.add.group();
     this.all_bullets = game.add.group();
     this.create_enemies();
@@ -15,6 +16,17 @@ class EnemyManager {
 
     this.enemies_left_to_spawn = this.level_data.ENEMIES_IN_WAVE;
     this.all_enemies_spawned = false;
+
+    // spike enemies
+    this.spike_enemies = [];
+    this.spike_enemie_sprites = game.add.group();
+    if(this.level_data.SPIKE_ENEMIES != undefined) {
+      this.level_data.SPIKE_ENEMIES.forEach(function(data) {
+        var spikey = new SpikeEnemy(data.X, data.Y, data.VELOCITY);
+        this.spike_enemies.push(spikey);
+        this.spike_enemie_sprites.add(spikey.sprite);
+      }, this);
+    }
   }
 
   create_enemies() {
@@ -28,7 +40,8 @@ class EnemyManager {
         "red",
         bullet_delay,
         bullet_speed,
-        initial_delay
+        initial_delay,
+        this.UI
       );
       bg1.alive = false;
       this.bad_guys.add(bg1);
@@ -41,7 +54,8 @@ class EnemyManager {
         "blue",
         bullet_delay,
         bullet_speed,
-        initial_delay
+        initial_delay,
+        this.UI
       );
       bg2.alive = false;
       this.bad_guys.add(bg2);
@@ -123,6 +137,7 @@ class EnemyManager {
         // swoosh from right
         random_dead_bad_guy.reset(0, temp_y);
       }
+      random_dead_bad_guy.revive();
       game.add
         .tween(random_dead_bad_guy)
         .to(
@@ -147,9 +162,8 @@ class EnemyManager {
           Phaser.Easing.Exponential.In,
           true
         );
-      phase_in_tween.onComplete.addOnce(function() {
-        random_dead_bad_guy.revive();
-      }, this);
+      // phase_in_tween.onComplete.addOnce(function() {
+      // }, this);
     }
   }
 
@@ -178,5 +192,8 @@ class EnemyManager {
   destroy() {
     this.bad_guys.destroy();
     this.all_bullets.destroy();
+    this.spike_enemies.forEach(function(elem) {
+      elem.destroy();
+    });
   }
 }

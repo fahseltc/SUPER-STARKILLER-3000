@@ -39,7 +39,14 @@
       "ENEMIES_IN_WAVE": 12,
       "ENEMY_BULLET_INITIAL_DELAY": 1200,
       "SPAWN_DELAY_MIN": 1200,
-      "SPAWN_DELAY_MULTI": 500
+      "SPAWN_DELAY_MULTI": 500,
+      "SPIKE_ENEMIES": [
+        {
+          "X": 100,
+          "Y": 400,
+          "VELOCITY": { "X": 400, "Y": 0 }
+        }
+      ]
     }
   },
   {
@@ -56,13 +63,30 @@
     "LEVEL_TYPE": "COMBAT",
     "LEVEL_NUMBER": 3,
     "ENEMY_DATA": {
-      "ENEMY_BULLET_DELAY": 1150,
+      "ENEMY_BULLET_DELAY": 1250,
       "ENEMY_BULLET_SPEED": 200,
       "MAX_ENEMIES": 3,
-      "ENEMIES_IN_WAVE": 16,
-      "ENEMY_BULLET_INITIAL_DELAY": 1000,
-      "SPAWN_DELAY_MIN": 1100,
-      "SPAWN_DELAY_MULTI": 400
+      "ENEMIES_IN_WAVE": 14,
+      "ENEMY_BULLET_INITIAL_DELAY": 1100,
+      "SPAWN_DELAY_MIN": 1200,
+      "SPAWN_DELAY_MULTI": 500,
+      "SPIKE_ENEMIES": [
+        {
+          "X": 100,
+          "Y": 100,
+          "VELOCITY": { "X": 400, "Y": 0 }
+        },
+        {
+          "X": 100,
+          "Y": 350,
+          "VELOCITY": { "X": 400, "Y": 0 }
+        },
+        {
+          "X": 100,
+          "Y": 600,
+          "VELOCITY": { "X": 400, "Y": 0 }
+        }
+      ]
     }
   },
   {
@@ -99,7 +123,19 @@
         "BULLET_SPEED": 500
       }
     ],
-    "SHIELDS": ["red", "blue", "red", "red", "red", "blue"]
+    "SHIELDS": ["red", "blue", "red", "red", "red", "blue"],
+    "SPIKE_ENEMIES": [
+      {
+        "X": 200,
+        "Y": 50,
+        "VELOCITY": { "X": 0, "Y": 400 }
+      },
+      {
+        "X": 1200,
+        "Y": 650,
+        "VELOCITY": { "X": 0, "Y": -400 }
+      }
+    ]
   },
   {
     "LEVEL_TYPE": "BOSS_DEAD"
@@ -208,7 +244,7 @@
     ],
     "SHIELDS": ["blue", "blue", "blue", "blue", "blue", "red"]
   },
-   {
+  {
     "LEVEL_TYPE": "BOSS",
     "BOSS_NUMBER": 2,
     "LEVEL_NUMBER": 7,

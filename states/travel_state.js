@@ -1,4 +1,8 @@
 var travel_state = {
+  preload: function() {
+    this.travel_sound = sound_manager.add("travel_whoosh");
+  },
+
   create: function() {
     var graphicsLine = game.add.graphics(0, 0);
     graphicsLine.lineStyle(12, 0xff69b4, 1);
@@ -58,6 +62,7 @@ var travel_state = {
     this.rect3.scale.x = 3;
     this.rect3.scale.y = 3;
 
+
     var fragmentSrc = [
       "precision mediump float;",
       // Incoming texture coordinates.
@@ -91,6 +96,7 @@ var travel_state = {
 
     this.spawn_tween = game.add.tween(this);
 
+    //this.travel_sound.play("", 0, GLOBAL_VOLUME, false, true);
     this.spawn_tween.to(
       { time_between_rectangles: 0 },
       2000,
