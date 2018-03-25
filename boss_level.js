@@ -42,8 +42,6 @@ class BossLevel {
         this.spike_enemie_sprites.add(spikey.sprite);
       }, this);
     }
-
-    this.player_damaged_sound = sound_manager.add("player_damaged");
   }
 
   update() {
@@ -89,7 +87,7 @@ class BossLevel {
     console.log("bullet intersected player");
     bullet.kill();
     var player_died = this.player.process_hit();
-    this.player_damaged_sound.play("", 0, GLOBAL_VOLUME, false, true);
+    sound_manager.play("player_damaged", GLOBAL_VOLUME);
     if (player_died) {
       last_score = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;

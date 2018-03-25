@@ -98,6 +98,21 @@ var debug_state = {
     this.button_array.push(credits_button);
     this.text_array.push(credits_text);
 
+
+    // tutorial buttons
+    var tutorial_button = game.add.button(700, 600, "debug_button", function() { game.state.start('tutorial'); }, this);
+
+    var tutorial_text = Utils.create_stroke_text(
+      "TUTORIAL",
+      730,
+      580,
+      30,
+      GREY_HEX_COLOR
+    );
+
+    this.button_array.push(tutorial_button);
+    this.text_array.push(tutorial_text);
+
   },
 
   create_button_level: function(x, y, index, value) {

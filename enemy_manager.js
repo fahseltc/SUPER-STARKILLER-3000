@@ -11,15 +11,19 @@ class EnemyManager {
     this.UI = ui;
     this.bad_guys = game.add.group();
     this.all_bullets = game.add.group();
-    this.create_enemies();
+    this.create_turret_enemies();
     this.next_spawn_time = 0;
 
     this.enemies_left_to_spawn = this.level_data.ENEMIES_IN_WAVE;
     this.all_enemies_spawned = false;
 
-    // spike enemies
+
     this.spike_enemies = [];
     this.spike_enemie_sprites = game.add.group();
+    this.create_spike_enemies();
+  }
+
+  create_spike_enemies() {
     if(this.level_data.SPIKE_ENEMIES != undefined) {
       this.level_data.SPIKE_ENEMIES.forEach(function(data) {
         var spikey = new SpikeEnemy(data.X, data.Y, data.VELOCITY);
@@ -29,13 +33,12 @@ class EnemyManager {
     }
   }
 
-  create_enemies() {
+  create_turret_enemies() {
     var bullet_delay = this.level_data.ENEMY_BULLET_DELAY;
     var bullet_speed = this.level_data.ENEMY_BULLET_SPEED;
     var initial_delay = this.level_data.ENEMY_BULLET_INITIAL_DELAY;
     for (var i = 0; i < 10; i++) {
       var bg1 = new ShootingEnemy(
-        this.game,
         this.player,
         "red",
         bullet_delay,
@@ -49,7 +52,6 @@ class EnemyManager {
     }
     for (var i = 0; i < 10; i++) {
       var bg2 = new ShootingEnemy(
-        this.game,
         this.player,
         "blue",
         bullet_delay,

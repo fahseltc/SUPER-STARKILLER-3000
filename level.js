@@ -17,18 +17,21 @@ class Level {
     this.UI = new RootUI(
       this.player,
       this.level_data,
-      this.level_data.LEVEL_NUMBER,
+      this.level_data.LEVEL_NUMBER
     );
 
-    this.enemy_manager = new EnemyManager(game, this.player, this.level_data, this.UI);
+    this.enemy_manager = new EnemyManager(
+      game,
+      this.player,
+      this.level_data,
+      this.UI
+    );
     game.world.bringToTop(this.player.sprite);
 
     this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false;
 
-
-    this.player_damaged_sound = sound_manager.add("player_damaged");
-
+    // this.player_damaged_sound = sound_manager.add("player_damaged");
 
     // this.level_end_explosion = sound_manager.add("level_end_explosion");
     // this.level_end_explosion.loop = true;
@@ -44,11 +47,10 @@ class Level {
     //   CURRENT_LEVEL_INDEX++;
     //   this.level_manager.change_level(CURRENT_LEVEL_INDEX);
     // }, this);
-     this.ending = false;
+    this.ending = false;
   }
 
   update() {
-
     // player circle weapon overlaps bad guys
     if (this.player.circle_weapon.active) {
       game.physics.arcade.overlap(
@@ -140,7 +142,7 @@ class Level {
     console.log("bullet intersected player");
     bullet.kill();
     var player_died = this.player.process_hit();
-    this.player_damaged_sound.play("", 0, GLOBAL_VOLUME, false, true);
+    sound_manager.play("player_damaged", GLOBAL_VOLUME);
     if (player_died) {
       last_score = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;

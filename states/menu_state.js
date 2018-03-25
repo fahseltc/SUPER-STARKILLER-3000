@@ -91,18 +91,16 @@ var menu_state = {
     }, this);
 
     // sounds
-    this.music1 = sound_manager.add("music1");
-    this.music2 = sound_manager.add("music2");
-    this.music2.loop = true;
-    this.music3 = sound_manager.add("music3");
-    this.music4 = sound_manager.add("music4");
-    this.new_music = sound_manager.add("mm_xanadont_song");
+    //this.music1 = sound_manager.add("music1");
+    //this.music2 = sound_manager.add("music2");
+    //this.music2.loop = true;
+    //this.music3 = sound_manager.add("music3");
+    //this.music4 = sound_manager.add("music4");
+    //this.new_music = sound_manager.add("mm_xanadont_song");
 
-    this.start_sound = sound_manager.add("ui2");
-
-    this.music1.onStop.addOnce(function() {
-      this.music2.play();
-    }, this);
+    // this.music1.onStop.addOnce(function() {
+    //   this.music2.play();
+    // }, this);
     //this.music3.onStop.addOnce(function() { this.music4.play(); game.state.start('play'); }, this);
 
     var no_icon = game.add.sprite(60, 570, "no");
@@ -169,7 +167,7 @@ var menu_state = {
     // this.music2.stop();
     // this.music4.play();
 
-    this.start_sound.play("", 0, GLOBAL_VOLUME, false, false);
+    sound_manager.play("ui2", GLOBAL_VOLUME);
     game.camera.fade(0x000000, 200, true);
     game.camera.onFadeComplete.addOnce(function() {
       game.state.start("play");
@@ -183,6 +181,5 @@ var menu_state = {
     this.music3.destroy();
     this.music4.destroy();
     this.new_music.destroy();
-    this.start_sound.destroy();
   }
 };

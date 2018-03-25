@@ -1,7 +1,6 @@
 const ENEMY_BULLET_LIFESPAN = 7000;
 
 ShootingEnemy = function(
-  game,
   player,
   sprite,
   bullet_delay,
@@ -14,7 +13,6 @@ ShootingEnemy = function(
   this.rotation = Math.PI / 4;
   this.sprite_name = sprite;
   this.player = player;
-  this.game = game;
   this.alive = false;
   this.turret = game.add.sprite(0, 0, "turret_top_" + sprite);
   this.turret.anchor.x = 0.5;
@@ -25,7 +23,7 @@ ShootingEnemy = function(
   this.initial_delay = initial_delay;
 
   this.events.onKilled.add(function() {
-      this.death_sound.play("", 0, GLOBAL_VOLUME, false, true);
+    sound_manager.play("turret_death", GLOBAL_VOLUME);
       game.add.particleEffect(
         this.position.x,
         this.position.y,
@@ -35,9 +33,7 @@ ShootingEnemy = function(
       this.UI.remaining_enemies_bar.enemy_died();
     }, this);
 
-  this.death_sound = sound_manager.add("turret_death");
-
-  this.bullets = this.game.add.group();
+  this.bullets = game.add.group();
   this.bullets.enableBodyDebug = true;
   this.bullets.enableBody = true;
   this.bullets.physicsBodyType = Phaser.Physics.ARCADE;
@@ -52,7 +48,7 @@ ShootingEnemy = function(
     }, this);
   }, this);
 
-  this.bullet_time = this.game.time.now + initial_delay;
+  this.bullet_time = game.time.now + initial_delay;
 
   this.graphics = game.add.graphics(this.x, this.y);
   this.spinner_angle = 0;
@@ -65,7 +61,7 @@ ShootingEnemy.prototype.update = function() {
   this.turret.rotation =
     game.physics.arcade.angleToXY(this.player.sprite, this.x, this.y) +
     Math.PI / 4;
-  if (this.alive && this.visible && this.game.time.now > this.bullet_time) {
+  if (this.alive && this.visible && game.time.now > this.bullet_time) {
     var bullet = this.bullets.getFirstExists(false);
     if (bullet) {
       bullet.reset(this.x, this.y);

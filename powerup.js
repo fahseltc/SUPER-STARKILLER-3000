@@ -16,10 +16,8 @@ class Powerup {
     this.sprite.body.velocity.x = game.rnd.sign() * 500;
     this.sprite.body.velocity.y = game.rnd.sign() * 500;
 
-    this.collect_sound = sound_manager.add("powerup_get");
-
     this.sprite.events.onKilled.add(function() {
-      this.collect_sound.play("", 0, GLOBAL_VOLUME, false, true);
+      sound_manager.play("powerup_get", GLOBAL_VOLUME);
     }, this)
   }
 

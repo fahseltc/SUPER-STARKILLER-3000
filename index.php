@@ -36,6 +36,7 @@
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="controls.js"></script>
     <script type="text/javascript" src="level.js"></script>
+    <script type="text/javascript" src="tutorial_level.js"></script>
     <script type="text/javascript" src="boss_level.js"></script>
     <script type="text/javascript" src="boss_enemy.js"></script>
     <script type="text/javascript" src="boss_turret.js"></script>
@@ -46,6 +47,7 @@
     <script type="text/javascript" src="powerup_manager.js"></script>
     <script type="text/javascript" src="shooting_enemy.js"></script>
     <script type="text/javascript" src="spike_enemy.js"></script>
+    <script type="text/javascript" src="tutorial_enemy.js"></script>
     <script type="text/javascript" src="enemy_manager.js"></script>
 
 
@@ -63,6 +65,7 @@
     <script type="text/javascript" src="states/debug_state.js"></script>
     <script type="text/javascript" src="states/splash_state.js"></script>
     <script type="text/javascript" src="states/credits_state.js"></script>
+    <script type="text/javascript" src="states/tutorial_state.js"></script>
 
     <!-- Main entry point to game  -->
     <script type="text/javascript" src="main.js"></script>

@@ -35,7 +35,6 @@ var load_state = {
     game.load.image("turret_base_red", images_path + "turret_base_red.png");
     game.load.image("spike_enemy", images_path + "spike_enemy.png");
 
-
     game.load.image("boss_1", images_path + "boss_1.png");
     game.load.image("boss_2", images_path + "boss_2.png");
     game.load.image("boss_shield_red", images_path + "boss_shield_red.png");
@@ -54,7 +53,10 @@ var load_state = {
       images_path + "title_screen_no_text.png"
     );
     game.load.image("game_background", images_path + "game_background.png");
-    game.load.image("game_background_clean", images_path + "game_background_clean.png");
+    game.load.image(
+      "game_background_clean",
+      images_path + "game_background_clean.png"
+    );
     game.load.image("after_boss_bg", images_path + "after_boss_bg.png");
     game.load.image("debug_button", images_path + "debug_button.png");
 
@@ -78,12 +80,12 @@ var load_state = {
       "remaining_enemies_black_bar",
       ui_images_path + "remaining_enemies_black_bar.png"
     );
-    game.load.image(
-      "green_bar",
-      ui_images_path + "green_bar.png"
-    );
+    game.load.image("green_bar", ui_images_path + "green_bar.png");
     game.load.image("spinner", ui_images_path + "spinner.png");
     game.load.image("x", ui_images_path + "x.png");
+    game.load.image("space_bar", ui_images_path + "space_bar.png");
+    game.load.image("left_click", ui_images_path + "left_click.png");
+    game.load.image("right_click", ui_images_path + "right_click.png");
 
     game.load.image("pink_rect_filled", images_path + "pink_rect_filled.png");
     game.load.image("pink_rect_empty", images_path + "pink_rect_empty.png");
@@ -95,6 +97,7 @@ var load_state = {
     game.load.json("story", "assets/story.json");
     game.load.json("credits", "assets/credits.json");
 
+    // AUDIO
     game.load.audio("ui2", "assets/sound_effects/ui2.ogg");
     game.load.audio(
       "dot_matrix_short",
@@ -114,15 +117,9 @@ var load_state = {
       "assets/sound_effects/red_bullet_shoot.wav"
     );
 
-    game.load.audio(
-      "turret_death",
-      "assets/sound_effects/turret_death.wav"
-    );
+    game.load.audio("turret_death", "assets/sound_effects/turret_death.wav");
 
-    game.load.audio(
-      "powerup_get",
-      "assets/sound_effects/powerup_get.wav"
-    );
+    game.load.audio("powerup_get", "assets/sound_effects/powerup_get.wav");
 
     game.load.audio(
       "blue_weapon_shoot",
@@ -139,11 +136,15 @@ var load_state = {
       "assets/sound_effects/player_damaged.wav"
     );
 
-     game.load.audio(
-      "travel_whoosh",
-      "assets/sound_effects/travel_whoosh.wav"
-    );
+    game.load.audio("travel_whoosh", "assets/sound_effects/travel_whoosh.wav");
 
+    // Add sounds to sound manager
+    sound_manager.add("player_damaged");
+    sound_manager.add("blue_weapon_shoot");
+    sound_manager.add("powerup_get");
+    sound_manager.add("turret_death");
+    sound_manager.add("red_bullet_shoot");
+    sound_manager.add("ui2");
 
     game.load.spritesheet(
       "circle_weapon_sheet",
@@ -177,8 +178,18 @@ var load_state = {
     }
     // if(game.cache.isSoundDecoded('mm_xanadont_song') && this.ready == false) {
     //   this.ready = true;
-    console.log("starting state");
-    game.state.start("splash");
+
+    if(conf.env == "dev") {
+      //console.log("DEV starting tutorial");
+      //game.state.start("tutorial")
+      game.state.start("splash");
+    } else {
+      console.log("starting splash");
+      game.state.start("splash");
+    }
+
+   
+
     //game.state.start("menu");
     //game.state.start('debug');
     //game.state.start('text');
