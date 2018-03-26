@@ -58,8 +58,8 @@ class Utils {
     return label;
   }
 
-  static create_button(x, y, text, callback, width = 4) {
-    var button = game.add.button(x, y, "debug_button", callback, this);
+  static create_button(x, y, text, callback, width = 1) {
+    var button = game.add.button(x, y, "menu_button", callback, this);
     button.width = button.width * width;
     button.anchor.set(0.5, 0.5);
 

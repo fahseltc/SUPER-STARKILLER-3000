@@ -59,6 +59,7 @@ var load_state = {
     );
     game.load.image("after_boss_bg", images_path + "after_boss_bg.png");
     game.load.image("debug_button", images_path + "debug_button.png");
+    game.load.image("menu_button", images_path + "menu_button.png");
 
     // UI loading
     game.load.image("life_bar_single", ui_images_path + "life_bar_single.png");
