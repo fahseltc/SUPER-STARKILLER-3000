@@ -55,7 +55,7 @@ class TutorialEnemy {
 
     this.bullet_time = game.time.now + 1000;
 
-    this.graphics = game.add.graphics(this.x, this.y);
+    this.graphics = game.add.graphics(this.sprite.x, this.sprite.y);
     this.spinner_angle = 0;
   }
 
@@ -84,16 +84,17 @@ class TutorialEnemy {
     }
 
     this.graphics.clear();
-    if (this.alive && this.visible) {
+    if (this.sprite.alive) {
       var ms_till_shot = this.bullet_time - game.time.now;
       // (range 0 to this.bullet_time) must map to (0 to 360)
       var degree_multiplier = ms_till_shot / this.bullet_delay;
       var degrees = degree_multiplier * 360;
 
+      console.log("we drawin? ms: " + ms_till_shot)
       this.graphics.beginFill(0x000000);
       this.graphics.arc(
-        this.x,
-        this.y,
+        this.sprite.x,
+        this.sprite.y,
         9,
         this.turret.rotation + Math.PI / 1.31,
         this.turret.rotation + game.math.degToRad(degrees) + Math.PI / 1.31,
