@@ -90,7 +90,6 @@ class TutorialEnemy {
       var degree_multiplier = ms_till_shot / this.bullet_delay;
       var degrees = degree_multiplier * 360;
 
-      console.log("we drawin? ms: " + ms_till_shot)
       this.graphics.beginFill(0x000000);
       this.graphics.arc(
         this.sprite.x,

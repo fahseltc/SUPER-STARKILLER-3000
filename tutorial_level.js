@@ -220,7 +220,6 @@ class TutorialLevel {
     console.log("bullet intersected player");
     spike.kill();
     this.player.process_hit();
-    sound_manager.play("player_damaged", GLOBAL_VOLUME);
     this.spikes.forEach(function(spike) {
       spike.destroy();
     }, this);

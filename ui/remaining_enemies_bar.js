@@ -4,16 +4,14 @@ const REMAINING_ENEMIES_BASE_POSITION_Y = 800;
 class RemainingEnemiesBar {
   constructor(level_data) {
     console.log(level_data);
-    // this.level_data = level_data;
-    // this.enemies_to_spawn = 1;
-
-    //if(level_data.hasOwnProperty("ENEMY_DATA")) { // if this is not a boss level, fill in all the things
 
     if (level_data == undefined) {
       this.enemies_to_spawn = 1;
     } else {
       this.level_data = level_data.ENEMY_DATA;
-      this.enemies_to_spawn = level_data.ENEMY_DATA.ENEMIES_IN_WAVE;
+      if(this.level_data != undefined) {
+        this.enemies_to_spawn = level_data.ENEMY_DATA.ENEMIES_IN_WAVE;
+      }
     }
     this.enemies_alive = this.enemies_to_spawn;
     console.log("after: level data:");

@@ -90,6 +90,7 @@ class PlayerShip {
         this.shield_sprite.kill();
       } else {
         // but if it isnt, take the damage
+        sound_manager.play("player_damaged", GLOBAL_VOLUME);
         this.take_damage();
       }
     }

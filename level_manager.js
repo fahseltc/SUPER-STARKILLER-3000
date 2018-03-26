@@ -57,14 +57,5 @@ class LevelManager {
         game.state.start("travel");
         break;
     }
-
-    // if(change_level_type == "COMBAT") {
-    //   this.current_level = new Level(this.level_json[this.current_level_index], this);
-    // } else if(change_level_type == "MENU") {
-    //   after_menu_level_index = this.level_json[level_index].NEXT_LEVEL_INDEX;
-    //   game.state.start('ready');
-    // } else if(change_level_type == "BOSS") {
-    //   this.current_level = new BossLevel(this.level_json[this.current_level_index], this);
-    // }
   }
 }

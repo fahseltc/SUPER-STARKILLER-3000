@@ -2,35 +2,37 @@ var post_game_state = {
   create: function() {
     game.stage.backgroundColor = BLACK_HEX_COLOR;
 
-    Utils.create_centered_text("You\nDied", 200, 70, RED_HEX_COLOR);
     Utils.create_centered_text(
-      "but you scored " + last_score + " points.",
-      400,
-      40
+      "SYSTEM MALFUNCTION\n\nSIGNAL LOST",
+      200,
+      70,
+      RED_HEX_COLOR
     );
-    this.create_submit_score_button();
-    this.create_play_again_button();
-
-    // this.music = sound_manager._sounds.find(item => {
-    //   return item.name == "mm_xanadont_song";
-    // });
-    // var tween = game.add
-    //   .tween(this.music)
-    //   .to({ volume: 0 }, 1000)
-    //   .start();
-    // tween.onComplete.addOnce(function() {
-    //   this.music.stop();
-    //   sound_manager.destroy();
-    // }, this);
-
-    this.submit_button;
-    this.submit_button_text;
+    Utils.create_centered_text("SCORE: " + last_score, 500, 50);
+    var submit_score_button = Utils.create_button(
+      game.width / 2,
+      765,
+      "SUBMIT SCORE",
+      this.send_score,
+      6
+    );
+    var play_again_button = Utils.create_button(
+      game.width / 2,
+      850,
+      "PLAY AGAIN",
+      function() {
+        last_score = 0;
+        after_menu_level_index = -1;
+        game.state.start("menu");
+      },
+      5
+    );
   },
 
   send_score: function() {
-    var player = prompt("Please enter your name", "");
+    var player = prompt("Enter your name", "");
     if (!player) {
-      alert("You gotta enter a name");
+      alert("Enter a name");
       return;
     }
 
@@ -49,42 +51,5 @@ var post_game_state = {
       console.log(request.responseText);
     }; // failure case
     request.send(body);
-  },
-
-  create_submit_score_button: function() {
-    this.submit_button = this.add.graphics(0, 0);
-    this.submit_button.lineStyle(2, 0x0000ff, 0.5);
-    this.submit_button.beginFill(0x527cc5, 1);
-    this.submit_button.drawRect(
-      game.width / 2 - 250,
-      game.height / 2 + 110,
-      500,
-      150
-    );
-    this.submit_button.endFill();
-
-    this.submit_button.inputEnabled = true;
-    this.submit_button.events.onInputDown.addOnce(this.send_score, this);
-    this.submit_button_text = Utils.create_centered_text(
-      "Push to\nsubmit score",
-      640,
-      30
-    );
-  },
-
-  create_play_again_button: function() {
-    var g2 = this.add.graphics(0, 0);
-    g2.lineStyle(2, 0x0000ff, 0.5);
-    g2.beginFill(0x32a532, 1);
-    g2.drawRect(game.width / 2 - 250, game.height / 2 + 300, 500, 120);
-    g2.endFill();
-
-    g2.inputEnabled = true;
-    g2.events.onInputDown.add(function() {
-      last_score = 0;
-      after_menu_level_index = -1;
-      game.state.start("menu");
-    }, this);
-    Utils.create_centered_text("Back to Menu", 810, 30);
   }
 };

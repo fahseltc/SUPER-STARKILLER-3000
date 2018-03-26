@@ -15,7 +15,9 @@ var credits_state = {
       this.add_credit(credit.TITLE, credit.NAME);
     }, this);
 
-    this.back_button = Utils.create_button(150, 850, "BACK", function() { game.state.start("menu"); })
+    this.back_button = Utils.create_button(150, 850, "BACK", function() {
+      game.state.start("menu");
+    });
   },
 
   add_credit: function(title, name) {

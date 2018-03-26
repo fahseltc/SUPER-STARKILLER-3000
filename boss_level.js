@@ -12,13 +12,7 @@ class BossLevel {
       this.controls
     );
 
-    this.bg_sprite = game.add.tileSprite(
-      0,
-      0,
-      1400,
-      700,
-      "game_background_clean"
-    );
+    this.bg_sprite = game.add.tileSprite(0, 0, 1400, 700, "game_background");
     this.bg_sprite.sendToBack();
 
     this.UI = new RootUI(
@@ -87,7 +81,6 @@ class BossLevel {
     console.log("bullet intersected player");
     bullet.kill();
     var player_died = this.player.process_hit();
-    sound_manager.play("player_damaged", GLOBAL_VOLUME);
     if (player_died) {
       last_score = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;

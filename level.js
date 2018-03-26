@@ -121,8 +121,6 @@ class Level {
     if (turret.key == "turret_base_blue" && turret.alive) {
       console.log("circle hit!");
       turret = turret.kill(); // does lots of things
-      //this.UI.score.score_buffer += 5;
-      //this.UI.remaining_enemies_bar.enemy_died();
       this.enemy_manager.spawn = true;
     }
   }
@@ -132,28 +130,20 @@ class Level {
       console.log("bullet hit!");
       turret = turret.kill(); // does a bunch of stuff!
       bullet_sprite.kill();
-      //this.UI.score.score_buffer += 5;
-      //this.UI.remaining_enemies_bar.enemy_died();
       this.enemy_manager.spawn = true;
     }
   }
 
   handle_player_hit(player, bullet) {
-    console.log("bullet intersected player");
+    console.log("something intersected player");
     bullet.kill();
     var player_died = this.player.process_hit();
-    sound_manager.play("player_damaged", GLOBAL_VOLUME);
     if (player_died) {
       last_score = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;
       game.state.start("post");
     }
   }
-
-  // handle_player_hit_spikes(player, spike) {
-  //   console.log("player hit spike");
-
-  // }
 
   destroy() {
     this.destroyed = true;

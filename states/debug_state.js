@@ -83,9 +83,16 @@ var debug_state = {
     Utils.create_centered_text("RED=BOSS", 250, 20, RED_HEX_COLOR);
     Utils.create_centered_text("YELLOW=COMBAT", 275, 20, YELLOW_HEX_COLOR);
 
-
     // button for credits screen
-    var credits_button = game.add.button(700, 700, "debug_button", function() { game.state.start('credits'); }, this);
+    var credits_button = game.add.button(
+      700,
+      700,
+      "debug_button",
+      function() {
+        game.state.start("credits");
+      },
+      this
+    );
 
     var credits_text = Utils.create_stroke_text(
       "CREDITS",
@@ -98,9 +105,16 @@ var debug_state = {
     this.button_array.push(credits_button);
     this.text_array.push(credits_text);
 
-
     // tutorial buttons
-    var tutorial_button = game.add.button(700, 600, "debug_button", function() { game.state.start('tutorial'); }, this);
+    var tutorial_button = game.add.button(
+      700,
+      600,
+      "debug_button",
+      function() {
+        game.state.start("tutorial");
+      },
+      this
+    );
 
     var tutorial_text = Utils.create_stroke_text(
       "TUTORIAL",
@@ -113,10 +127,30 @@ var debug_state = {
     this.button_array.push(tutorial_button);
     this.text_array.push(tutorial_text);
 
+    // post_game buttons
+    var post_game_button = game.add.button(
+      700,
+      500,
+      "debug_button",
+      function() {
+        game.state.start("post");
+      },
+      this
+    );
+
+    var post_game_text = Utils.create_stroke_text(
+      "POST",
+      730,
+      480,
+      30,
+      GREY_HEX_COLOR
+    );
+
+    this.button_array.push(post_game_button);
+    this.text_array.push(post_game_text);
   },
 
   create_button_level: function(x, y, index, value) {
-    // new Button( [, x] [, y] [, key] [, callback] [, callbackContext] [, overFrame] [, outFrame] [, downFrame] [, upFrame])
     var temp_button = game.add.button(x, y, "debug_button", this.go_to_state, {
       index: index,
       value: value
