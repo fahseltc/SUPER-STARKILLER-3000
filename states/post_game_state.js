@@ -11,17 +11,17 @@ var post_game_state = {
     this.create_submit_score_button();
     this.create_play_again_button();
 
-    this.music = sound_manager._sounds.find(item => {
-      return item.name == "mm_xanadont_song";
-    });
-    var tween = game.add
-      .tween(this.music)
-      .to({ volume: 0 }, 1000)
-      .start();
-    tween.onComplete.addOnce(function() {
-      this.music.stop();
-      sound_manager.destroy();
-    }, this);
+    // this.music = sound_manager._sounds.find(item => {
+    //   return item.name == "mm_xanadont_song";
+    // });
+    // var tween = game.add
+    //   .tween(this.music)
+    //   .to({ volume: 0 }, 1000)
+    //   .start();
+    // tween.onComplete.addOnce(function() {
+    //   this.music.stop();
+    //   sound_manager.destroy();
+    // }, this);
 
     this.submit_button;
     this.submit_button_text;
