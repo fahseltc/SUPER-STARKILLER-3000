@@ -15,26 +15,7 @@ var credits_state = {
       this.add_credit(credit.TITLE, credit.NAME);
     }, this);
 
-    this.credits_button = game.add.button(
-      150,
-      850,
-      "debug_button",
-      function() {
-        game.state.start("menu");
-      },
-      this
-    );
-    this.credits_button.width = this.credits_button.width * 2.5;
-    this.credits_button.anchor.set(0.5, 0.5);
-    this.credits_button_text = Utils.create_text(
-      "BACK",
-      150,
-      856,
-      30,
-      BLACK_HEX_COLOR
-    );
-    this.credits_button_text.anchor.setTo(0.5, 0.5);
-    //this.credits_button.addChild(this.credits_button_text);
+    this.back_button = Utils.create_button(150, 850, "BACK", function() { game.state.start("menu"); })
   },
 
   add_credit: function(title, name) {

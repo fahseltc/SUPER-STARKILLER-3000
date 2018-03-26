@@ -26,6 +26,7 @@ class TutorialLevel {
     //this.powerup_manager = new PowerupManager(this.player);
 
     this.enemies = [];
+    this.spikes = [];
     //this.all_sprites.add(this.bg_sprite);
     this.tutorial_1();
   }
@@ -82,12 +83,7 @@ class TutorialLevel {
   // show player how to shoot shield right click
   tutorial_3() {
     this.blue_group = game.add.group();
-    this.blue_circle = game.add.sprite(
-      350,
-      350,
-      "circle_weapon_sheet",
-      0
-    );
+    this.blue_circle = game.add.sprite(350, 350, "circle_weapon_sheet", 0);
     this.blue_circle.animations.add("lightning", [0, 1, 2, 3, 4], 10, true);
     this.blue_circle.animations.play("lightning");
     this.blue_circle.anchor.set(0.5, 0.5);
@@ -106,32 +102,62 @@ class TutorialLevel {
         .to({ alpha: 0 }, TUTORAL_FADE_TIME, Phaser.Easing.None, true);
       this.tutorial_4();
     }, this);
-    //this.all_sprites.add(this.blue_group);
   }
 
   // spawn one of each enemy
   tutorial_4() {
     console.log("tut 4");
-    this.red_enemy = new TutorialEnemy(this.player, 'blue', this.UI);
+    this.red_enemy = new TutorialEnemy(this.player, "red", this.UI);
     this.red_enemy.sprite.reset(200, 200);
     this.enemies.push(this.red_enemy);
 
-    this.blue_enemy = new TutorialEnemy(this.player, 'red', this.UI);
+    this.blue_enemy = new TutorialEnemy(this.player, "blue", this.UI);
     this.blue_enemy.sprite.reset(1200, 200);
     this.enemies.push(this.blue_enemy);
+
+    this.red_enemy.sprite.events.onKilled.addOnce(function() {
+      if (!this.blue_enemy.sprite.alive) {
+        this.tutorial_5();
+      }
+    }, this);
+
+    this.blue_enemy.sprite.events.onKilled.addOnce(function() {
+      if (!this.red_enemy.sprite.alive) {
+        this.tutorial_5();
+      }
+    }, this);
   }
 
-  // tutorial_3() {
-  //   this.red_group = game.add.group();
-  //   this.red_enemy = game.add.sprite(1250, 150, 'turret_base_red');
-  //   this.red_enemy.anchor.set(0.5, 0.5);
-  //   this.red_group.add(this.red_enemy);
+  // spawn a powerup
+  tutorial_5() {
+    this.powerup = new Powerup(this.player);
+    this.powerup.sprite.events.onKilled.addOnce(function() {
+      this.tutorial_6();
+    }, this);
+  }
 
-  //   this.blue_mouse_icon = game.add.sprite(1250, 200, 'left_click');
-  //   this.blue_mouse_icon.scale.set(0.5, 0.5);
-  //   this.blue_mouse_icon.anchor.set(0.5, 0.5);
-  //   this.red_group.add(this.blue_mouse_icon);
-  // }
+  // spawn spikes to show that shield absorbs a hit
+  tutorial_6() {
+    for (var i = 0; i < 10; i++) {
+      var spike = new SpikeEnemy(100, 100 * i, { X: 300, Y: 0 });
+      this.spikes.push(spike);
+    }
+  }
+
+  tutorial_7() {
+    var text = Utils.create_centered_text("TUTORIAL\nCOMPLETED", 150, 50);
+    this.tutorial_end = game.time.events.add(
+      1500,
+      function() {
+        game.camera.fade(0x000000, 2000, true);
+        console.log("go to menu from tutorial");
+        game.camera.onFadeComplete.addOnce(function() {
+          game.state.start("menu");
+        }, this);
+      },
+      this
+    );
+  }
 
   update() {
     this.controls.update();
@@ -139,12 +165,69 @@ class TutorialLevel {
 
     this.UI.update();
 
-    this.enemies.forEach(function(enemy) { enemy.update(); }, this)
+    if (this.powerup != undefined) {
+      this.powerup.update();
+    }
+
+    this.enemies.forEach(function(enemy) {
+      enemy.update();
+
+      if (enemy.sprite_name == "red") {
+        game.physics.arcade.overlap(
+          this.player.bullet_weapon.bullets,
+          enemy.sprite,
+          this.red_enemy_hit,
+          null,
+          this
+        );
+      } else {
+        // blue
+        if (this.player.circle_weapon.active) {
+          game.physics.arcade.overlap(
+            this.player.circle_weapon.sprite,
+            enemy.sprite,
+            this.blue_enemy_hit,
+            null,
+            this
+          );
+        }
+      }
+    }, this);
+
+    // spike enemies hitting player
+    this.spikes.forEach(function(spike) {
+      game.physics.arcade.overlap(
+        this.player.sprite,
+        spike.sprite,
+        this.handle_player_hit_spike,
+        null,
+        this
+      );
+    }, this);
   }
 
-  render() {
-
+  red_enemy_hit(enemy, weapon) {
+    console.log("red enemy hit");
+    enemy.kill();
   }
+
+  blue_enemy_hit(weapon, enemy) {
+    console.log("blue enemy hit");
+    enemy.kill();
+  }
+
+  handle_player_hit_spike(player, spike) {
+    console.log("bullet intersected player");
+    spike.kill();
+    this.player.process_hit();
+    sound_manager.play("player_damaged", GLOBAL_VOLUME);
+    this.spikes.forEach(function(spike) {
+      spike.destroy();
+    }, this);
+    this.tutorial_7();
+  }
+
+  render() {}
 
   destroy() {
     this.all_sprites.destroy();

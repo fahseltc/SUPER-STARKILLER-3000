@@ -32,20 +32,20 @@ var menu_state = {
     // game.add.tween(title_text3).to({ y: title_text3_old}, 300, Phaser.Easing.Exponential.In, true);
 
     var space_to_begin_text = Utils.create_centered_stroke_text(
-      "Press Space to begin",
+      "Press Space to Start",
       850,
       35
     );
 
     var now_with_text = Utils.create_stroke_text(
-      "Now with CREDITS!",
+      "Now with More Buttons!",
       1200,
       500,
       20,
       "#FFD700"
     );
     var now_with_text2 = Utils.create_stroke_text(
-      "and a splash screen too!",
+      "and a tutorial!!",
       1200,
       550,
       10,
@@ -78,30 +78,12 @@ var menu_state = {
     var start_button = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     start_button.onDown.addOnce(this.start, this);
 
-    var leaderboard_button = game.input.keyboard.addKey(Phaser.Keyboard.L);
-    leaderboard_button.onDown.addOnce(function() {
-      game.state.start("leaderboard");
-    }, this);
-
     var debug_button = game.input.keyboard.addKey(
       Phaser.Keyboard.BACKWARD_SLASH
     );
     debug_button.onDown.addOnce(function() {
       game.state.start("debug");
     }, this);
-
-    // sounds
-    //this.music1 = sound_manager.add("music1");
-    //this.music2 = sound_manager.add("music2");
-    //this.music2.loop = true;
-    //this.music3 = sound_manager.add("music3");
-    //this.music4 = sound_manager.add("music4");
-    //this.new_music = sound_manager.add("mm_xanadont_song");
-
-    // this.music1.onStop.addOnce(function() {
-    //   this.music2.play();
-    // }, this);
-    //this.music3.onStop.addOnce(function() { this.music4.play(); game.state.start('play'); }, this);
 
     var no_icon = game.add.sprite(60, 570, "no");
     no_icon.scale.x = 0.3;
@@ -136,50 +118,35 @@ var menu_state = {
 
     // credits button
 
-    this.credits_button = game.add.button(
-      150,
-      850,
-      "debug_button",
+    this.credits_button = Utils.create_button(150, 850, "CREDITS", function() {
+      game.state.start("credits");
+    });
+    this.tutorial_button = Utils.create_button(
+      1250,
+      765,
+      "TUTORIAL",
       function() {
-        game.state.start("credits");
-      },
-      this
+        game.state.start("tutorial");
+      }
     );
-    this.credits_button.width = this.credits_button.width * 4;
-    this.credits_button.anchor.set(0.5, 0.5);
-
-    // 30, 80
-    this.credits_text = Utils.create_text(
-      "CREDITS",
-      150,
-      856,
-      30,
-      BLACK_HEX_COLOR
+    this.leaderboard_button = Utils.create_button(
+      1250,
+      850,
+      "HISCORES",
+      function() {
+        game.state.start("leaderboard");
+      }
     );
-    this.credits_text.anchor.set(0.5, 0.5);
-
-    //this.music1.play();
   },
 
   start: function() {
-    // todo fix music for ready state
-    // this.music1.stop();
-    // this.music2.stop();
-    // this.music4.play();
-
     sound_manager.play("ui2", GLOBAL_VOLUME);
     game.camera.fade(0x000000, 200, true);
     game.camera.onFadeComplete.addOnce(function() {
       game.state.start("play");
     }, this);
   },
+
   destroy: function() {
-    this.credits_button.destroy();
-    this.credits_text.destroy();
-    this.music1.destroy();
-    this.music2.destroy();
-    this.music3.destroy();
-    this.music4.destroy();
-    this.new_music.destroy();
   }
 };

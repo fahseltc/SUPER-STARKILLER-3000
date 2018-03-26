@@ -57,4 +57,13 @@ class Utils {
     label.anchor.set(0.5);
     return label;
   }
+
+  static create_button(x, y, text, callback) {
+    var button = game.add.button(x, y, "debug_button", callback, this);
+    button.width = button.width * 4;
+    button.anchor.set(0.5, 0.5);
+
+    var text = Utils.create_text(text, x, y + 6, 30, BLACK_HEX_COLOR);
+    text.anchor.set(0.5, 0.5);
+  }
 }
