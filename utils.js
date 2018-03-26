@@ -63,7 +63,7 @@ class Utils {
     button.width = button.width * width;
     button.anchor.set(0.5, 0.5);
 
-    var text = Utils.create_text(text, x, y + 6, 30, BLACK_HEX_COLOR);
+    var text = Utils.create_text(text, x, y + 6, 30, WHITE_HEX_COLOR);
     text.anchor.set(0.5, 0.5);
   }
 }

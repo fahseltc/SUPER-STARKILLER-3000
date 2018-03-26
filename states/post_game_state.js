@@ -14,18 +14,18 @@ var post_game_state = {
       765,
       "SUBMIT SCORE",
       this.send_score,
-      6
+      1.5
     );
     var play_again_button = Utils.create_button(
       game.width / 2,
       850,
-      "PLAY AGAIN",
+      "MAIN MENU",
       function() {
         last_score = 0;
         after_menu_level_index = -1;
         game.state.start("menu");
       },
-      5
+      1.5
     );
   },
 
