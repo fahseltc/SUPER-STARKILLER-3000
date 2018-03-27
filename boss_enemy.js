@@ -164,6 +164,7 @@ class BossEnemy {
         bullet.kill();
       }, this);
       turret.kill();
+      this.spike_enemies.forEach(function(spikey) { spikey.destroy(); })
     }, this);
 
     var tween = this.boss.set_blinky_death(this.boss.sprite);

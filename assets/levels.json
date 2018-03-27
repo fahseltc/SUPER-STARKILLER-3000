@@ -151,13 +151,35 @@
     "LEVEL_TYPE": "COMBAT",
     "LEVEL_NUMBER": 5,
     "ENEMY_DATA": {
-      "ENEMY_BULLET_DELAY": 1000,
+      "ENEMY_BULLET_DELAY": 1100,
       "ENEMY_BULLET_SPEED": 150,
-      "MAX_ENEMIES": 4,
+      "MAX_ENEMIES": 3,
       "ENEMIES_IN_WAVE": 20,
       "ENEMY_BULLET_INITIAL_DELAY": 900,
       "SPAWN_DELAY_MIN": 900,
-      "SPAWN_DELAY_MULTI": 350
+      "SPAWN_DELAY_MULTI": 550,
+      "SPIKE_ENEMIES": [
+        {
+          "X": 100,
+          "Y": 170,
+          "VELOCITY": { "X": 400, "Y": 0 }
+        },
+        {
+          "X": 100,
+          "Y": 530,
+          "VELOCITY": { "X": 400, "Y": 0 }
+        },
+        {
+          "X": 1300,
+          "Y": 170,
+          "VELOCITY": { "X": -400, "Y": 0 }
+        },
+        {
+          "X": 1300,
+          "Y": 530,
+          "VELOCITY": { "X": -400, "Y": 0 }
+        }
+      ]
     }
   },
   {
@@ -175,12 +197,34 @@
     "LEVEL_NUMBER": 6,
     "ENEMY_DATA": {
       "ENEMY_BULLET_DELAY": 1000,
-      "ENEMY_BULLET_SPEED": 300,
-      "MAX_ENEMIES": 5,
+      "ENEMY_BULLET_SPEED": 200,
+      "MAX_ENEMIES": 4,
       "ENEMIES_IN_WAVE": 22,
-      "ENEMY_BULLET_INITIAL_DELAY": 900,
+      "ENEMY_BULLET_INITIAL_DELAY": 1200,
       "SPAWN_DELAY_MIN": 600,
-      "SPAWN_DELAY_MULTI": 350
+      "SPAWN_DELAY_MULTI": 650,
+      "SPIKE_ENEMIES": [
+        {
+          "X": 250,
+          "Y": 170,
+          "VELOCITY": { "X": 0, "Y": 300 }
+        },
+        {
+          "X": 250,
+          "Y": 530,
+          "VELOCITY": { "X": 0, "Y": -300 }
+        },
+        {
+          "X": 1150,
+          "Y": 170,
+          "VELOCITY": { "X": 0, "Y": 300 }
+        },
+        {
+          "X": 1150,
+          "Y": 530,
+          "VELOCITY": { "X": 0, "Y": -300 }
+        }
+      ]
     }
   },
   {
@@ -197,13 +241,55 @@
     "LEVEL_TYPE": "COMBAT",
     "LEVEL_NUMBER": 7,
     "ENEMY_DATA": {
-      "ENEMY_BULLET_DELAY": 800,
-      "ENEMY_BULLET_SPEED": 250,
-      "MAX_ENEMIES": 5,
-      "ENEMIES_IN_WAVE": 25,
-      "ENEMY_BULLET_INITIAL_DELAY": 900,
+      "ENEMY_BULLET_DELAY": 1250,
+      "ENEMY_BULLET_SPEED": 200,
+      "MAX_ENEMIES": 4,
+      "ENEMIES_IN_WAVE": 20,
+      "ENEMY_BULLET_INITIAL_DELAY": 1500,
       "SPAWN_DELAY_MIN": 500,
-      "SPAWN_DELAY_MULTI": 350
+      "SPAWN_DELAY_MULTI": 850,
+      "SPIKE_ENEMIES": [
+        {
+          "X": 100,
+          "Y": 170,
+          "VELOCITY": { "X": 200, "Y": 0 }
+        },
+        {
+          "X": 100,
+          "Y": 530,
+          "VELOCITY": { "X": 200, "Y": 0 }
+        },
+        {
+          "X": 1300,
+          "Y": 170,
+          "VELOCITY": { "X": -200, "Y": 0 }
+        },
+        {
+          "X": 1300,
+          "Y": 530,
+          "VELOCITY": { "X": -200, "Y": 0 }
+        },
+        {
+          "X": 250,
+          "Y": 170,
+          "VELOCITY": { "X": 0, "Y": 100 }
+        },
+        {
+          "X": 250,
+          "Y": 530,
+          "VELOCITY": { "X": 0, "Y": -100 }
+        },
+        {
+          "X": 1150,
+          "Y": 170,
+          "VELOCITY": { "X": 0, "Y": 100 }
+        },
+        {
+          "X": 1150,
+          "Y": 530,
+          "VELOCITY": { "X": 0, "Y": -100 }
+        }
+      ]
     }
   },
   {
@@ -242,7 +328,39 @@
         "BULLET_SPEED": 500
       }
     ],
-    "SHIELDS": ["blue", "blue", "blue", "blue", "blue", "red"]
+    "SHIELDS": ["blue", "blue", "blue", "blue", "blue", "red"],
+    "SPIKE_ENEMIES": [
+      {
+        "X": 100,
+        "Y": 150,
+        "VELOCITY": { "X": 300, "Y": 0 }
+      },
+      {
+        "X": 100,
+        "Y": 350,
+        "VELOCITY": { "X": 300, "Y": 0 }
+      },
+      {
+        "X": 100,
+        "Y": 550,
+        "VELOCITY": { "X": 300, "Y": 0 }
+      },
+      {
+        "X": 1300,
+        "Y": 250,
+        "VELOCITY": { "X": -300, "Y": 0 }
+      },
+      {
+        "X": 1300,
+        "Y": 450,
+        "VELOCITY": { "X": -300, "Y": 0 }
+      },
+      {
+        "X": 1300,
+        "Y": 750,
+        "VELOCITY": { "X": -300, "Y": 0 }
+      }
+    ]
   },
   {
     "LEVEL_TYPE": "BOSS",

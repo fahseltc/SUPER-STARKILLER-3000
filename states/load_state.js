@@ -18,6 +18,7 @@ var load_state = {
     var assets_path = "/assets/";
     var images_path = assets_path + "images/";
     var ui_images_path = images_path + "UI/";
+    var bosses_path = images_path + "bosses/";
 
     game.load.image("player", images_path + "player_ship.png");
     game.load.spritesheet(
@@ -35,10 +36,11 @@ var load_state = {
     game.load.image("turret_base_red", images_path + "turret_base_red.png");
     game.load.image("spike_enemy", images_path + "spike_enemy.png");
 
-    game.load.image("boss_1", images_path + "boss_1.png");
-    game.load.image("boss_2", images_path + "boss_2.png");
-    game.load.image("boss_shield_red", images_path + "boss_shield_red.png");
-    game.load.image("boss_shield_blue", images_path + "boss_shield_blue.png");
+    game.load.image("boss_1", bosses_path + "boss_1.png");
+    game.load.image("boss_2", bosses_path + "boss_2.png");
+
+    game.load.image("boss_shield_red", bosses_path + "boss_shield_red.png");
+    game.load.image("boss_shield_blue", bosses_path + "boss_shield_blue.png");
 
     game.load.image("shield", images_path + "shield.png");
     game.load.image("enemy_bullet", images_path + "enemy_bullet.png");

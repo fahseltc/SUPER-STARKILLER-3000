@@ -30,23 +30,6 @@ class Level {
 
     this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false;
-
-    // this.player_damaged_sound = sound_manager.add("player_damaged");
-
-    // this.level_end_explosion = sound_manager.add("level_end_explosion");
-    // this.level_end_explosion.loop = true;
-    // this.current_loop = 0;
-
-    // this.level_end_explosion.onLoop.add(function(sound) {
-    //   this.current_loop++;
-    //   console.log("onLoop: " + this.current_loop);
-    //   if(this.current_loop == 3) { sound.stop(); }
-    // }, this);
-    // this.level_end_explosion.onStop.addOnce(function() {
-    //   console.log("onStop");
-    //   CURRENT_LEVEL_INDEX++;
-    //   this.level_manager.change_level(CURRENT_LEVEL_INDEX);
-    // }, this);
     this.ending = false;
   }
 
