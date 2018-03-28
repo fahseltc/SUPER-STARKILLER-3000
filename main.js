@@ -28,6 +28,18 @@ switch (conf.env) {
     conf.backend_url = "";
 }
 
+// estup google analytics
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
+if (conf.env == "staging") {
+  dataLayer.push("config", "UA-116549101-1");
+} else if (conf.env == "production") {
+  dataLayer.push("config", "UA-116549101-2");
+}
+
 var game = new Phaser.Game(conf);
 var sound_manager = new Phaser.SoundManager(game);
 sound_manager.boot();
