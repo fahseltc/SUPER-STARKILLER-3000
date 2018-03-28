@@ -59,6 +59,7 @@ var menu_state = {
       Phaser.Keyboard.BACKWARD_SLASH
     );
     debug_button.onDown.addOnce(function() {
+      this.music.stop();
       game.state.start("debug");
     }, this);
 
@@ -83,7 +84,7 @@ var menu_state = {
         sound_manager.stopAll();
         no_icon.visible = false;
 
-        this.new_music.play();
+        this.music.play();
       } else {
         console.log("muting");
         game.sound.mute = true;
@@ -102,6 +103,7 @@ var menu_state = {
       765,
       "TUTORIAL",
       function() {
+        this.music.stop();
         game.state.start("tutorial");
       }
     );
@@ -113,12 +115,16 @@ var menu_state = {
         game.state.start("leaderboard");
       }
     );
+
+    this.music = sound_manager.play("title_song", GLOBAL_VOLUME / 2, true);
   },
 
   start: function() {
     sound_manager.play("ui2", GLOBAL_VOLUME);
+    this.music.fadeOut(200);
     game.camera.fade(0x000000, 200, true);
     game.camera.onFadeComplete.addOnce(function() {
+      this.music.stop();
       game.state.start("play");
     }, this);
   },

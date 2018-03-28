@@ -39,6 +39,7 @@ class BossEnemy {
 
     this.invuln = false;
     this.dead = false;
+    this.ending = false;
 
   }
 
@@ -134,6 +135,7 @@ class BossEnemy {
   }
 
   handle_boss_hit(sprite) {
+    sound_manager.play("boss_shield_damaged", GLOBAL_VOLUME);
     this.level.add_score(10);
     this.invuln = true;
     this.set_blinky_death(sprite);
@@ -157,7 +159,11 @@ class BossEnemy {
   }
 
   died() {
-    this.dead = true;
+    if(this.death_sound == undefined) {
+      console.log("make dead sound");
+      this.death_sound = sound_manager.play("boss_destroyed", GLOBAL_VOLUME, true);
+      this.death_sound.fadeTo(BOSS_INVULN_TIME * 25, 0);
+    }
     console.log("boss died");
     this.boss.turrets.forEach(function(turret) {
       turret.bullets.forEach(function(bullet) {
@@ -167,10 +173,15 @@ class BossEnemy {
       this.spike_enemies.forEach(function(spikey) { spikey.destroy(); })
     }, this);
 
-    var tween = this.boss.set_blinky_death(this.boss.sprite);
-    tween.onComplete.add(function() {
-      this.boss_died();
-    }, this);
+    if(!this.dead) {
+      console.log("make death tween once!")
+      var tween = this.boss.set_blinky_death(this.boss.sprite);
+      tween.onComplete.addOnce(function() {
+        this.boss_died();
+        this.death_sound.stop();
+      }, this);
+    }
+    this.dead = true;
   }
 
   handle_player_hit(player, bullet) {

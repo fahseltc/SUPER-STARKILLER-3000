@@ -140,6 +140,16 @@ var load_state = {
     );
 
     game.load.audio("travel_whoosh", "assets/sound_effects/travel_whoosh.wav");
+    game.load.audio("boss_shield_damaged", "assets/sound_effects/boss_shield_damaged.wav");
+    game.load.audio("boss_destroyed", "assets/sound_effects/boss_destroyed.wav");
+
+    // GAME SONGS
+    game.load.audio("song_1", "assets/music/level_1.ogg");
+    game.load.audio("song_2", "assets/music/level_2.ogg");
+    //game.load.audio("song_3", "assets/music/level_3.ogg");
+    game.load.audio("title_song", "assets/music/title_theme.ogg");
+    game.load.audio("boss_intro", "assets/music/boss_intro.ogg");
+    game.load.audio("boss_main", "assets/music/boss_main.ogg");
 
     // Add sounds to sound manager
     sound_manager.add("player_damaged");
@@ -148,6 +158,12 @@ var load_state = {
     sound_manager.add("turret_death");
     sound_manager.add("red_bullet_shoot");
     sound_manager.add("ui2");
+    sound_manager.add("song_1");
+    sound_manager.add("title_song");
+    sound_manager.add("boss_intro");
+    sound_manager.add("boss_main");
+    sound_manager.add("boss_destroyed");
+    sound_manager.add("boss_shield_damaged");
 
     game.load.spritesheet(
       "circle_weapon_sheet",

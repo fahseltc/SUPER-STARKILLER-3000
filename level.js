@@ -31,6 +31,14 @@ class Level {
     this.powerup_manager = new PowerupManager(this.player);
     this.destroyed = false;
     this.ending = false;
+
+    if(CURRENT_LEVEL_INDEX <= 17) {
+      console.log("playing song 1");
+      this.music = sound_manager.play("song_1", GLOBAL_VOLUME / 2, true);
+    } else if(CURRENT_LEVEL_INDEX >= 18) {
+      console.log("playing song 2");
+      this.music = sound_manager.play("song_2", GLOBAL_VOLUME / 2, true);
+    }
   }
 
   update() {
@@ -83,8 +91,11 @@ class Level {
       this.ending = true;
       console.log("all enemies defeated");
 
+      this.music.fadeOut(1500);
+
       game.camera.fade(0x000000, 1500, true);
       game.camera.onFadeComplete.addOnce(function() {
+        this.music.stop();
         console.log("increasing lvl index");
         CURRENT_LEVEL_INDEX++;
         this.level_manager.change_level(CURRENT_LEVEL_INDEX);

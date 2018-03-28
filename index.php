@@ -3,8 +3,6 @@
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116549101-1"></script>
-
-
     <link rel="stylesheet" type = "text/css" href ="assets/css/font_loader.css">
     <script src="assets/js/phaser.min.js"></script>
     <script src="assets/js/phaser-particle-editor-plugin.js"></script>
@@ -20,7 +18,6 @@
       div.appendChild(document.createTextNode("<?php echo getenv('environment')?>"));
       document.body.appendChild(div);
     </script>
-
     <!-- Player -->
     <script type="text/javascript" src="player/player_ship.js"></script>
     <script type="text/javascript" src="player/circle_weapon.js"></script>
@@ -36,6 +33,7 @@
     <script type="text/javascript" src="ui/remaining_enemies_bar.js"></script>
     <script type="text/javascript" src="ui/bullet_weapon_display.js"></script>
     <script type="text/javascript" src="ui/shield_weapon_display.js"></script>
+    <script type="text/javascript" src="ui/pause_menu.js"></script>
 
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="controls.js"></script>

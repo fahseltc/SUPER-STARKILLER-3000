@@ -102,6 +102,7 @@ class PlayerShip {
   take_damage() {
     console.log("player take damage");
     this.sprite.damage(1);
+    game.camera.shake(0.005, 250);
     if (this.sprite.alive) {
       this.invuln = true;
       var tween = game.add

@@ -36,6 +36,12 @@ class BossLevel {
         this.spike_enemie_sprites.add(spikey.sprite);
       }, this);
     }
+
+    this.intro_sound = sound_manager.play("boss_intro", GLOBAL_VOLUME / 2);
+    this.intro_sound.onStop.addOnce(function(){
+      console.log("boss intro over");
+      this.boss_music = sound_manager.play("boss_main", GLOBAL_VOLUME / 2, true);
+    }, this);
   }
 
   update() {
@@ -64,6 +70,7 @@ class BossLevel {
     this.destroyed = true;
     this.destroy();
     CURRENT_LEVEL_INDEX = 0;
+    this.boss_music.stop();
     game.state.start("post");
   }
 
@@ -91,9 +98,14 @@ class BossLevel {
   boss_died() {
     console.log("boss died");
     this.destroyed = true;
-    console.log("increasing lvl index");
-    CURRENT_LEVEL_INDEX++;
-    this.level_manager.change_level(CURRENT_LEVEL_INDEX);
+    this.boss_music.fadeOut(1500);
+    game.camera.fade(0x000000, 1500, true);
+    game.camera.onFadeComplete.addOnce(function() {
+      this.boss_music.stop();
+      console.log("increasing lvl index");
+      CURRENT_LEVEL_INDEX++;
+      this.level_manager.change_level(CURRENT_LEVEL_INDEX);
+    }, this);
   }
 
   add_score(amount) {
