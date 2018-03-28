@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116549101-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116549101-1');
+    </script>
+
     <link rel="stylesheet" type = "text/css" href ="assets/css/font_loader.css">
     <script src="assets/js/phaser.min.js"></script>
     <script src="assets/js/phaser-particle-editor-plugin.js"></script>
