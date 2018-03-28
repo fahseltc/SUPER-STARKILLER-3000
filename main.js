@@ -35,9 +35,9 @@ function gtag() {
 }
 gtag("js", new Date());
 if (conf.env == "staging") {
-  dataLayer.push("config", "UA-116549101-1");
+  gtag("config", "UA-116549101-1");
 } else if (conf.env == "production") {
-  dataLayer.push("config", "UA-116549101-2");
+  gtag("config", "UA-116549101-2");
 }
 
 var game = new Phaser.Game(conf);
