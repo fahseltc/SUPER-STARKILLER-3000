@@ -74,5 +74,13 @@
     <script type="text/javascript" src="main.js"></script>
 
     <div id="game" style="margin:0 auto;"></div>
+   <!--  <div style="padding-top: 15px; padding-left:45px"><a href='https://ko-fi.com/V7V4BDH7' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a></div> -->
+    <div style="padding: 25px 25px 0px 0px; display: inline-block;">
+      <a href='https://ko-fi.com/V7V4BDH7' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+      <a class="github-button" href="https://github.com/fahseltc/SUPER-STARKILLER-3000" data-size="large" aria-label="Follow @fahseltc on GitHub">GitHub</a>
+    </div>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
   </body>
 </html>
