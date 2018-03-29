@@ -15,17 +15,17 @@ var menu_state = {
     );
 
     var now_with_text = Utils.create_stroke_text(
-      "Now with More Buttons!",
+      "Now with Volume sliders!",
       1200,
       500,
       20,
       "#FFD700"
     );
     var now_with_text2 = Utils.create_stroke_text(
-      "and a tutorial!!",
+      "and lots of songs!!",
       1200,
       550,
-      10,
+      18,
       "#FFD700"
     );
     now_with_text.angle = -2;
@@ -59,51 +59,23 @@ var menu_state = {
       Phaser.Keyboard.BACKWARD_SLASH
     );
     debug_button.onDown.addOnce(function() {
-      this.music.stop();
+      sound_manager.stopAll();
       game.state.start("debug");
-    }, this);
-
-    var no_icon = game.add.sprite(60, 570, "no");
-    no_icon.scale.x = 0.3;
-    no_icon.scale.y = 0.3;
-    no_icon.anchor.set(0.5, 0.5);
-    no_icon.visible = false;
-
-    var sound_icon = game.add.sprite(60, 570, "white_speaker_icon");
-    sound_icon.scale.x = 0.2;
-    sound_icon.scale.y = 0.2;
-    sound_icon.anchor.set(0.5, 0.5);
-    sound_icon.inputEnabled = true;
-
-    game.sound.mute = false;
-    //if(conf.env == 'dev') { game.sound.mute = true; }
-    sound_icon.events.onInputDown.add(function() {
-      if (game.sound.mute == true) {
-        console.log("unmuting");
-        game.sound.mute = false;
-        sound_manager.stopAll();
-        no_icon.visible = false;
-
-        this.music.play();
-      } else {
-        console.log("muting");
-        game.sound.mute = true;
-        no_icon.visible = true;
-        sound_manager.stopAll();
-      }
     }, this);
 
     // credits button
 
     this.credits_button = Utils.create_button(150, 850, "CREDITS", function() {
+      sound_manager.stopAll();
       game.state.start("credits");
     });
+
     this.tutorial_button = Utils.create_button(
       1250,
       765,
       "TUTORIAL",
       function() {
-        this.music.stop();
+        sound_manager.stopAll();
         game.state.start("tutorial");
       }
     );
@@ -112,19 +84,42 @@ var menu_state = {
       850,
       "HISCORES",
       function() {
+        sound_manager.stopAll();
         game.state.start("leaderboard");
       }
     );
 
-    this.music = sound_manager.play("title_song", GLOBAL_VOLUME / 2, true);
+    this.music = sound_manager.play("title_song", GLOBAL_MUSIC_VOLUME, true);
+
+
+    this.music_icon = game.add.sprite(50, 600, 'white_music_icon');
+    this.music_icon.anchor.set(0.5, 0.5);
+    this.music_icon.scale.set(0.2, 0.2);
+    this.music_slider = new Slider(90, 570, GLOBAL_MUSIC_VOLUME);
+
+    this.sound_icon = game.add.sprite(50, 675, 'white_speaker_icon');
+    this.sound_icon.anchor.set(0.5, 0.5);
+    this.sound_icon.scale.set(0.2, 0.2);
+    this.sound_slider = new Slider(90, 645, GLOBAL_SFX_VOLUME);
+    this.sound_slider.slider.events.onDragStart.add(function() { sound_manager.play("red_bullet_shoot", GLOBAL_SFX_VOLUME); }, this);
+  },
+
+  update: function() {
+    this.music_slider.update();
+    GLOBAL_MUSIC_VOLUME = this.music_slider.value;
+    this.music.volume = GLOBAL_MUSIC_VOLUME;
+
+    this.sound_slider.update();
+    GLOBAL_SFX_VOLUME = this.sound_slider.value;
+
   },
 
   start: function() {
-    sound_manager.play("ui2", GLOBAL_VOLUME);
+    sound_manager.play("ui2", GLOBAL_SFX_VOLUME);
     this.music.fadeOut(200);
     game.camera.fade(0x000000, 200, true);
     game.camera.onFadeComplete.addOnce(function() {
-      this.music.stop();
+      sound_manager.stopAll();
       game.state.start("play");
     }, this);
   },

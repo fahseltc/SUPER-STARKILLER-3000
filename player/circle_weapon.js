@@ -30,7 +30,7 @@ class CircleWeapon {
       !this.active &&
       game.time.now > this.shoot_time
     ) {
-      sound_manager.play("blue_weapon_shoot", GLOBAL_VOLUME);
+      sound_manager.play("blue_weapon_shoot", GLOBAL_SFX_VOLUME);
       this.anim.play(10);
       this.sprite.revive();
       this.active = true;

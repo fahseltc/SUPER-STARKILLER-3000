@@ -59,7 +59,7 @@ class BulletWeapon {
       var bullet = this.bullets.getFirstExists(false);
 
       if (bullet && this.overheated == false) {
-        sound_manager.play("red_bullet_shoot", GLOBAL_VOLUME);
+        sound_manager.play("red_bullet_shoot", GLOBAL_SFX_VOLUME);
         this.bullets.callAll("play", null, "blinky");
 
         this.heat += HEAT_GENERATED_PER_SHOT;

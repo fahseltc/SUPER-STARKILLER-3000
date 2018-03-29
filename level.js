@@ -34,10 +34,10 @@ class Level {
 
     if(CURRENT_LEVEL_INDEX <= 17) {
       console.log("playing song 1");
-      this.music = sound_manager.play("song_1", GLOBAL_VOLUME / 2, true);
+      this.music = sound_manager.play("song_1", GLOBAL_MUSIC_VOLUME, true);
     } else if(CURRENT_LEVEL_INDEX >= 18) {
       console.log("playing song 2");
-      this.music = sound_manager.play("song_2", GLOBAL_VOLUME / 2, true);
+      this.music = sound_manager.play("song_2", GLOBAL_MUSIC_VOLUME, true);
     }
   }
 

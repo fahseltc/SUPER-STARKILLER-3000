@@ -71,6 +71,11 @@ var load_state = {
       "white_speaker_icon",
       ui_images_path + "white_speaker_icon.png"
     );
+
+    game.load.image(
+      "white_music_icon",
+      ui_images_path + "white_music_icon.png"
+    );
     game.load.image(
       "remaining_enemies_bg",
       ui_images_path + "remaining_enemies_bg.png"

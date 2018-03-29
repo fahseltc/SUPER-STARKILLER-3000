@@ -54,13 +54,13 @@ var story_state = {
       this.message_label.text = new_text;
       var num = game.rnd.integerInRange(0, 3);
       if (this.line_breaks.indexOf(this.counter) > -1) {
-        this.printer_sound_newline.play("", 0, GLOBAL_VOLUME, false, false);
+        this.printer_sound_newline.play("", 0, GLOBAL_SFX_VOLUME, false, false);
       } else if (num == 3) {
         var num2 = game.rnd.integerInRange(0, 3);
         if (num2 == 0) {
-          this.printer_sound_long_1.play("", 0, GLOBAL_VOLUME, false, false);
+          this.printer_sound_long_1.play("", 0, GLOBAL_SFX_VOLUME, false, false);
         } else {
-          this.printer_sound_1.play("", 0, GLOBAL_VOLUME, false, false);
+          this.printer_sound_1.play("", 0, GLOBAL_SFX_VOLUME, false, false);
         }
       }
     }

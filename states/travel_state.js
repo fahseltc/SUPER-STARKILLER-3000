@@ -96,7 +96,7 @@ var travel_state = {
 
     this.spawn_tween = game.add.tween(this);
 
-    //this.travel_sound.play("", 0, GLOBAL_VOLUME, false, true);
+    //this.travel_sound.play("", 0, GLOBAL_SFX_VOLUME, false, true);
     this.spawn_tween.to(
       { time_between_rectangles: 0 },
       2000,

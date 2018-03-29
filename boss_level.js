@@ -37,10 +37,11 @@ class BossLevel {
       }, this);
     }
 
-    this.intro_sound = sound_manager.play("boss_intro", GLOBAL_VOLUME / 2);
+    this.boss_music = sound_manager.add("boss_main");
+    this.intro_sound = sound_manager.play("boss_intro", GLOBAL_MUSIC_VOLUME);
     this.intro_sound.onStop.addOnce(function(){
       console.log("boss intro over");
-      this.boss_music = sound_manager.play("boss_main", GLOBAL_VOLUME / 2, true);
+      this.boss_music.play("", 0, GLOBAL_MUSIC_VOLUME, true);
     }, this);
   }
 

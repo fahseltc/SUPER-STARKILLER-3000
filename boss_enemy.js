@@ -135,7 +135,7 @@ class BossEnemy {
   }
 
   handle_boss_hit(sprite) {
-    sound_manager.play("boss_shield_damaged", GLOBAL_VOLUME);
+    sound_manager.play("boss_shield_damaged", GLOBAL_SFX_VOLUME);
     this.level.add_score(10);
     this.invuln = true;
     this.set_blinky_death(sprite);
@@ -161,7 +161,7 @@ class BossEnemy {
   died() {
     if(this.death_sound == undefined) {
       console.log("make dead sound");
-      this.death_sound = sound_manager.play("boss_destroyed", GLOBAL_VOLUME, true);
+      this.death_sound = sound_manager.play("boss_destroyed", GLOBAL_SFX_VOLUME, true);
       this.death_sound.fadeTo(BOSS_INVULN_TIME * 25, 0);
     }
     console.log("boss died");

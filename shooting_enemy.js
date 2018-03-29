@@ -23,7 +23,7 @@ ShootingEnemy = function(
   this.initial_delay = initial_delay;
 
   this.events.onKilled.add(function() {
-    sound_manager.play("turret_death", GLOBAL_VOLUME);
+    sound_manager.play("turret_death", GLOBAL_SFX_VOLUME);
       game.add.particleEffect(
         this.position.x,
         this.position.y,

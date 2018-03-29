@@ -13,7 +13,7 @@ class TutorialEnemy {
     this.sprite.addChild(this.turret);
 
     this.sprite.events.onKilled.add(function() {
-      sound_manager.play("turret_death", GLOBAL_VOLUME);
+      sound_manager.play("turret_death", GLOBAL_SFX_VOLUME);
       game.add.particleEffect(
         this.sprite.position.x,
         this.sprite.position.y,
