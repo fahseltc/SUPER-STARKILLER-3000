@@ -31,6 +31,7 @@ ShootingEnemy = function(
       );
       this.UI.score.score_buffer += 5;
       this.UI.remaining_enemies_bar.enemy_died();
+
     }, this);
 
   this.bullets = game.add.group();

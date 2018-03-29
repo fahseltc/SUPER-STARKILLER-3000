@@ -91,17 +91,18 @@ var menu_state = {
 
     this.music = sound_manager.play("title_song", GLOBAL_MUSIC_VOLUME, true);
 
-
-    this.music_icon = game.add.sprite(50, 600, 'white_music_icon');
+    this.music_icon = game.add.sprite(50, 600, "white_music_icon");
     this.music_icon.anchor.set(0.5, 0.5);
     this.music_icon.scale.set(0.2, 0.2);
     this.music_slider = new Slider(90, 570, GLOBAL_MUSIC_VOLUME);
 
-    this.sound_icon = game.add.sprite(50, 675, 'white_speaker_icon');
+    this.sound_icon = game.add.sprite(50, 675, "white_speaker_icon");
     this.sound_icon.anchor.set(0.5, 0.5);
     this.sound_icon.scale.set(0.2, 0.2);
     this.sound_slider = new Slider(90, 645, GLOBAL_SFX_VOLUME);
-    this.sound_slider.slider.events.onDragStart.add(function() { sound_manager.play("red_bullet_shoot", GLOBAL_SFX_VOLUME); }, this);
+    this.sound_slider.slider.events.onDragStart.add(function() {
+      sound_manager.play("red_bullet_shoot", GLOBAL_SFX_VOLUME);
+    }, this);
   },
 
   update: function() {
@@ -111,7 +112,6 @@ var menu_state = {
 
     this.sound_slider.update();
     GLOBAL_SFX_VOLUME = this.sound_slider.value;
-
   },
 
   start: function() {

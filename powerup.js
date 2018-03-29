@@ -1,24 +1,28 @@
 class Powerup {
-  constructor(player) {
+  constructor(player, x, y) {
     this.player = player;
     this.sprite = game.add.sprite(
-      this.get_random_x(),
-      this.get_random_y(),
+      x, //this.get_random_x(),
+      y, //this.get_random_y(),
       "powerup_p"
     );
     this.sprite.enableBody = true;
+    this.sprite.anchor.set(0.5, 0.5);
     this.sprite.physicsBodyType = Phaser.Physics.ARCADE;
     game.physics.arcade.enable(this.sprite);
     this.sprite.body.collideWorldBounds = true;
     this.sprite.body.bounce.set(1);
-    this.sprite.reset(this.get_random_x(), this.get_random_y());
+    //this.sprite.reset(this.get_random_x(), this.get_random_y());
 
-    this.sprite.body.velocity.x = game.rnd.sign() * 500;
-    this.sprite.body.velocity.y = game.rnd.sign() * 500;
+    //this.sprite.body.velocity.x = game.rnd.sign() * 500;
+    //this.sprite.body.velocity.y = game.rnd.sign() * 500;
 
     this.sprite.events.onKilled.add(function() {
       sound_manager.play("powerup_get", GLOBAL_SFX_VOLUME);
     }, this)
+
+    this.sprite.scale.set(0.75, 0.75);
+    game.add.tween(this.sprite.scale).to({x:1.1, y:1.1}, 750, Phaser.Easing.Circular.InOut, true, 0, -1, true);
   }
 
   update() {

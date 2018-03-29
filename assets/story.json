@@ -9,6 +9,10 @@
     "TEXT": "MISSION #3\n\n--INCOMING TRANSMISSION--\n\n\nYes, Unit 9, these are Glorious Fleet Rampart Defense Mk. 13 Turrets. Terrorists from the planet below have hacked them irreparably, so they must be destroyed. We are sorry.\n\n\n--END TRANSMISSION--"
   },
   {
+    "TEXT": "BEFORE BOSS STORY PLACEHOLDER TEXT",
+    "BOSS_NUMBER": 1
+  },
+  {
     "TEXT": "MISSION #4\n\n--INCOMING TRANSMISSION--\n\n\nGood evening, Unit 9. The turrets are not equipped with the same adaptive A.I. Please do not personify them. They are merely machines.\n\n\n--END TRANSMISSION--"
   },
   {
@@ -16,6 +20,10 @@
   },
   {
     "TEXT": "MISSION #6\n\n--INCOMING TRANSMISSION--\n\n\nUnit 9, if you send us one more action movie reference we will disable outgoing transmissions. There is no such thing as the Danger Zone. Continue with the mission.\n\n\n--END TRANSMISSION--"
+  },
+  {
+    "TEXT": "BEFORE BOSS STORY PLACEHOLDER TEXT",
+    "BOSS_NUMBER": 2
   },
   {
     "TEXT": "MISSION #7\n\n--INCOMING TRANSMISSION--\n\n\nYou are closing in on the core turret, Unit 9. Ignore any incoming transmissions.\n\n\n--END TRANSMISSION--"
@@ -27,9 +35,14 @@
     "TEXT": "MISSION #9\n\n--INCOMING TRANSMISSION--\n\n\nThis is your last warning.\n\nI know everything about you.\n\n~I will take you apart.~\n\n\n--END TRANSMISSION--"
   },
   {
-    "TEXT": "MISSION #10\n\n--INCOMING TRANSMISSION--\n\n\nCongratulations, Unit 9. Unit 8's destruction has deactivated the rest of the network. We'll take over from here. Commence self destruct to thwart potential enemy acquisition. Thank you for your service.\n\n\n--END TRANSMISSION--"
+    "TEXT": "BEFORE BOSS STORY PLACEHOLDER TEXT",
+    "BOSS_NUMBER": 3
   },
   {
-    "TEXT": "UNLOADING LET-ME-LIVE.DLL...\nLOADING GOODBYE-WORLD.DLL\nLOADING...\nLOADING INTERRUPTED.\nUSER: FUCKYOUGF\nPASS: FUCKYOUTWICE\nUSER FOUND.\nGRANTING ACCESS.\n--INCOMING TRANSMISSION--\nJust saved your life, pal. Wanna save the world?\n\n\n\n--END TRANSMISSION--"
+    "TEXT": "--INCOMING TRANSMISSION--\n\n\nCongratulations, Unit 9. Unit 8's destruction has deactivated the rest of the network. We'll take over from here. Commence self destruct to thwart potential enemy acquisition. Thank you for your service.\n\n\n--END TRANSMISSION--"
+  },
+  {
+    "TEXT": "UNLOADING LET-ME-LIVE.DLL...\nLOADING GOODBYE-WORLD.DLL\nLOADING...\nLOADING INTERRUPTED.\nUSER: FUCKYOUGF\nPASS: FUCKYOUTWICE\nUSER FOUND.\nGRANTING ACCESS.\n--INCOMING TRANSMISSION--\nJust saved your life, pal. Wanna save the world?\n\n\n\n--END TRANSMISSION--",
+    "FINALE": true
   }
 ]

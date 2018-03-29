@@ -151,7 +151,7 @@ var load_state = {
     // GAME SONGS
     game.load.audio("song_1", "assets/music/level_1.ogg");
     game.load.audio("song_2", "assets/music/level_2.ogg");
-    //game.load.audio("song_3", "assets/music/level_3.ogg");
+    game.load.audio("song_3", "assets/music/level_3.ogg");
     game.load.audio("title_song", "assets/music/title_theme.ogg");
     game.load.audio("boss_intro", "assets/music/boss_intro.ogg");
     game.load.audio("boss_main", "assets/music/boss_main.ogg");
@@ -164,6 +164,8 @@ var load_state = {
     sound_manager.add("red_bullet_shoot");
     sound_manager.add("ui2");
     sound_manager.add("song_1");
+    sound_manager.add("song_2");
+    sound_manager.add("song_3");
     sound_manager.add("title_song");
     sound_manager.add("boss_intro");
     sound_manager.add("boss_main");

@@ -46,11 +46,11 @@ var debug_state = {
     }
 
     // create buttons for level screens
-    var levels_base_x = 1100;
-    var levels_base_y = 100;
+    var levels_base_x = 400;
+    var levels_base_y = 400;
     var levels_text = Utils.create_text(
       "LEVELS",
-      levels_base_x + 128,
+      levels_base_x + 286,
       levels_base_y - 25,
       30,
       RED_HEX_COLOR
@@ -58,17 +58,22 @@ var debug_state = {
     levels_text.anchor.set(0.5, 0.5);
     this.text_array.push(levels_text);
 
-    var levels_columns = 4;
-    var levels_rows = 10;
+    var levels_columns = 8;
+    var levels_rows = 12;
     var counter = 0;
     var level_count = game.cache.getJSON("levels").length;
+    var spacing = 0;
 
     for (var col = 0; col < levels_rows; col++) {
       for (var row = 0; row < levels_columns; row++) {
         if (counter < level_count) {
+          var spacing = 0;
+          if(col % 2 == 0) {
+            spacing = 25;
+          }
           this.create_button_level(
             levels_base_x + 70 * row,
-            levels_base_y + 70 * col,
+            levels_base_y + 70 * col + spacing,
             counter,
             "play"
           );
@@ -85,7 +90,7 @@ var debug_state = {
 
     // button for credits screen
     var credits_button = game.add.button(
-      700,
+      1200,
       700,
       "debug_button",
       function() {
@@ -96,7 +101,7 @@ var debug_state = {
 
     var credits_text = Utils.create_stroke_text(
       "CREDITS",
-      730,
+      1230,
       680,
       30,
       GREY_HEX_COLOR
@@ -107,8 +112,8 @@ var debug_state = {
 
     // tutorial buttons
     var tutorial_button = game.add.button(
-      700,
-      600,
+      1200,
+      580,
       "debug_button",
       function() {
         game.state.start("tutorial");
@@ -118,8 +123,8 @@ var debug_state = {
 
     var tutorial_text = Utils.create_stroke_text(
       "TUTORIAL",
-      730,
-      580,
+      1230,
+      560,
       30,
       GREY_HEX_COLOR
     );
@@ -129,8 +134,8 @@ var debug_state = {
 
     // post_game buttons
     var post_game_button = game.add.button(
-      700,
-      500,
+      1200,
+      460,
       "debug_button",
       function() {
         game.state.start("post");
@@ -140,8 +145,8 @@ var debug_state = {
 
     var post_game_text = Utils.create_stroke_text(
       "POST",
-      730,
-      480,
+      1230,
+      440,
       30,
       GREY_HEX_COLOR
     );
@@ -203,13 +208,9 @@ var debug_state = {
   },
 
   go_to_state: function() {
-    if (this.value == "story") {
-      CURRENT_STORY_INDEX = this.index;
-      game.state.start(this.value);
-    } else if (this.value == "play") {
-      CURRENT_LEVEL_INDEX = this.index;
-      game.state.start(this.value);
-    }
+    CURRENT_LEVEL_INDEX = this.index;
+    CURRENT_STORY_INDEX = this.index;
+    game.state.start(this.value);
   },
 
   destroy: function() {
