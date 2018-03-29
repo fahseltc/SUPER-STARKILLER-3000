@@ -1,6 +1,5 @@
 class Slider {
   constructor(x, y, initial_value=0) {
-    console.log("slider x: "+ x +". y: "+ y);
     this.slider_bg = game.add.sprite(x, y, "menu_button");
     this.slider = game.add.sprite(x, y, "debug_button");
     this.slider_text = Utils.create_text("", 32, 38, 20, BLACK_HEX_COLOR);

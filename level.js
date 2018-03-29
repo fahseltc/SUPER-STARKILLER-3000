@@ -138,10 +138,15 @@ class Level {
     bullet.kill();
     var player_died = this.player.process_hit();
     if (player_died) {
-      this.music.fadeOut();
+      //console.log("music " + this.music);
+      this.music.fadeOut(1500);
       last_score = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;
-      game.state.start("post");
+      game.camera.fade(0x000000, 1500, true);
+      game.camera.onFadeComplete.addOnce(function() {
+        this.music.stop();
+        game.state.start("post");
+      }, this);
     }
   }
 

@@ -22,7 +22,6 @@ var post_game_state = {
       "MAIN MENU",
       function() {
         last_score = 0;
-        after_menu_level_index = -1;
         game.state.start("menu");
       },
       1.5

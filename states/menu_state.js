@@ -120,8 +120,14 @@ var menu_state = {
     game.camera.fade(0x000000, 200, true);
     game.camera.onFadeComplete.addOnce(function() {
       sound_manager.stopAll();
+      this.set_volume_cookies();
       game.state.start("play");
     }, this);
+  },
+
+  set_volume_cookies: function() {
+    Utils.set_cookie("GLOBAL_MUSIC_VOLUME", GLOBAL_MUSIC_VOLUME, 90);
+    Utils.set_cookie("GLOBAL_SFX_VOLUME", GLOBAL_SFX_VOLUME, 90);
   },
 
   destroy: function() {}

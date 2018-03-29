@@ -46,9 +46,9 @@ sound_manager.boot();
 sound_manager.muteOnPause = false;
 
 var last_score = 0;
-var after_menu_level_index = -1;
-var GLOBAL_SFX_VOLUME = 0.5;
-var GLOBAL_MUSIC_VOLUME = 0.25;
+
+var GLOBAL_MUSIC_VOLUME = Utils.get_cookie("GLOBAL_MUSIC_VOLUME") || 0.25;
+var GLOBAL_SFX_VOLUME = Utils.get_cookie("GLOBAL_SFX_VOLUME") || 0.5;
 var CURRENT_LEVEL_INDEX = 0;
 var CURRENT_STORY_INDEX = 0;
 var DEBUG_MODE = false;

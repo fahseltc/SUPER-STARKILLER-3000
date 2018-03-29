@@ -4,16 +4,6 @@ var ready_state = {
     game.stage.backgroundColor = BLACK_HEX_COLOR;
     var level_data = (this.level_json = game.cache.getJSON("levels"));
 
-    // // if this is not the first level
-    // if(after_menu_level_index != -1) {
-    //   var background_sprite = game.add.sprite(1400, 900, 'pixel_planet');
-    //   background_sprite.anchor.x = 0.5;
-    //   background_sprite.anchor.y = 0.5;
-    //   background_sprite.position.set(game.width/2, game.height/2);
-    //   Utils.create_centered_stroke_text("STAR # DESTROYED", 240, 50, "#FFFFFF");
-
-    //   this.create_score_label();
-    // }
     this.create_score_label();
 
     Utils.create_centered_stroke_text(
