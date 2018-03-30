@@ -3,7 +3,7 @@
     "Phaser": true,
     "game": true,
     "Utils": true,
-    "last_score": true
+    "GLOBAL_SCORE": true
   },
   "env": {
     "browser": true

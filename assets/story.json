@@ -39,10 +39,15 @@
     "BOSS_NUMBER": 3
   },
   {
-    "TEXT": "--INCOMING TRANSMISSION--\n\n\nCongratulations, Unit 9. Unit 8's destruction has deactivated the rest of the network. We'll take over from here. Commence self destruct to thwart potential enemy acquisition. Thank you for your service.\n\n\n--END TRANSMISSION--"
+    "TEXT": "--INCOMING TRANSMISSION--\n\n\nCongratulations, Unit 9. Unit 8's destruction has deactivated the rest of the network. We'll take over from here. Commence self destruct to thwart potential enemy acquisition. Thank you for your service.\n\n\n--END TRANSMISSION--",
+    "ENDING": 1
   },
   {
-    "TEXT": "UNLOADING LET-ME-LIVE.DLL...\nLOADING GOODBYE-WORLD.DLL\nLOADING...\nLOADING INTERRUPTED.\nUSER: FUCKYOUGF\nPASS: FUCKYOUTWICE\nUSER FOUND.\nGRANTING ACCESS.\n--INCOMING TRANSMISSION--\nJust saved your life, pal. Wanna save the world?\n\n\n\n--END TRANSMISSION--",
-    "FINALE": true
+    "TEXT": "...UNLOADING LET-ME-LIVE.DLL...\n\n...LOADING GOODBYE-WORLD.DLL...\n\n...LOADING...\n\n",
+    "ENDING": 2
+  },
+  {
+    "TEXT": "LOADING INTERRUPTED\n\nUSER: FUCKYOUGF\nPASS: FUCKYOUTWICE\n\nUSER FOUND\n...GRANTING ACCESS...\n\n\n\n--INCOMING TRANSMISSION--\n\n\nJust saved your life, pal.\nWanna save the world?\n\n\n--END TRANSMISSION--",
+    "ENDING": 2
   }
 ]

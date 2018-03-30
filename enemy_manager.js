@@ -17,14 +17,18 @@ class EnemyManager {
     this.enemies_left_to_spawn = this.level_data.ENEMIES_IN_WAVE;
     this.all_enemies_spawned = false;
 
-
     this.spike_enemies = [];
     this.spike_enemie_sprites = game.add.group();
     this.create_spike_enemies();
   }
 
+  kill_all_bullets() {
+    this.all_bullets.callAll("kill");
+    this.spike_enemie_sprites.callAll("kill");
+  }
+
   create_spike_enemies() {
-    if(this.level_data.SPIKE_ENEMIES != undefined) {
+    if (this.level_data.SPIKE_ENEMIES != undefined) {
       this.level_data.SPIKE_ENEMIES.forEach(function(data) {
         var spikey = new SpikeEnemy(data.X, data.Y, data.VELOCITY);
         this.spike_enemies.push(spikey);

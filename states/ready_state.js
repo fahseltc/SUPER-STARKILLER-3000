@@ -37,13 +37,13 @@ var ready_state = {
 
   create_score_label: function() {
     var score_total_digits = 4;
-    var digits_to_create = score_total_digits - last_score.toString().length;
+    var digits_to_create = score_total_digits - GLOBAL_SCORE.toString().length;
 
     var score_label_text = "";
     for (var i = 0; i < digits_to_create; i++) {
       score_label_text += "0";
     }
-    score_label_text += last_score;
+    score_label_text += GLOBAL_SCORE;
 
     Utils.create_centered_stroke_text(
       score_label_text,

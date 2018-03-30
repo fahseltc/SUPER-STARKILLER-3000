@@ -24,15 +24,14 @@ ShootingEnemy = function(
 
   this.events.onKilled.add(function() {
     sound_manager.play("turret_death", GLOBAL_SFX_VOLUME);
-      game.add.particleEffect(
-        this.position.x,
-        this.position.y,
-        game.cache.getJSON(this.sprite_name + "_explosion")
-      );
-      this.UI.score.score_buffer += 5;
-      this.UI.remaining_enemies_bar.enemy_died();
-
-    }, this);
+    game.add.particleEffect(
+      this.position.x,
+      this.position.y,
+      game.cache.getJSON(this.sprite_name + "_explosion")
+    );
+    this.UI.score.score_buffer += 5;
+    this.UI.remaining_enemies_bar.enemy_died();
+  }, this);
 
   this.bullets = game.add.group();
   this.bullets.enableBodyDebug = true;

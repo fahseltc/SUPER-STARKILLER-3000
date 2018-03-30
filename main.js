@@ -24,6 +24,8 @@ switch (conf.env) {
     conf.backend_url = "https://mecha-leaderboard-staging.herokuapp.com";
     break;
   case "dev":
+    conf.backend_url = "https://mecha-leaderboard-staging.herokuapp.com";
+    break;
   default:
     conf.backend_url = "";
 }
@@ -45,13 +47,12 @@ var sound_manager = new Phaser.SoundManager(game);
 sound_manager.boot();
 sound_manager.muteOnPause = false;
 
-var last_score = 0;
+var GLOBAL_SCORE = 0;
 
 var GLOBAL_MUSIC_VOLUME = Utils.get_cookie("GLOBAL_MUSIC_VOLUME") || 0.25;
 var GLOBAL_SFX_VOLUME = Utils.get_cookie("GLOBAL_SFX_VOLUME") || 0.5;
 var CURRENT_LEVEL_INDEX = 0;
 var CURRENT_STORY_INDEX = 0;
-var DEBUG_MODE = false;
 var leaderboard_data;
 
 game.state.add("menu", menu_state);
@@ -68,5 +69,6 @@ game.state.add("debug", debug_state);
 game.state.add("splash", splash_state);
 game.state.add("credits", credits_state);
 game.state.add("tutorial", tutorial_state);
+game.state.add("game_end", game_end_state);
 
 game.state.start("boot");

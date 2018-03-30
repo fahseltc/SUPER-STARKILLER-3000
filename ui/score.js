@@ -6,8 +6,8 @@ const SCORE_BUFFER_EMPTY_DELAY = 100;
 class Score {
   constructor() {
     this.score = 0;
-    if (last_score) {
-      this.score = last_score;
+    if (GLOBAL_SCORE) {
+      this.score = GLOBAL_SCORE;
     }
     this.score_buffer = 0;
 
@@ -60,9 +60,9 @@ class Score {
   }
 
   destroy() {
-    console.log("before SCORE DESTROY: last_score = " + last_score);
-    last_score = this.score + this.score_buffer;
-    console.log("after SCORE DESTROY: last_score = " + last_score);
+    console.log("before SCORE DESTROY: GLOBAL_SCORE = " + GLOBAL_SCORE);
+    GLOBAL_SCORE = this.score + this.score_buffer;
+    console.log("after SCORE DESTROY: GLOBAL_SCORE = " + GLOBAL_SCORE);
     this.score_label.destroy();
   }
 }

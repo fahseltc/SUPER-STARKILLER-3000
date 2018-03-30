@@ -69,6 +69,7 @@
     <script type="text/javascript" src="states/splash_state.js"></script>
     <script type="text/javascript" src="states/credits_state.js"></script>
     <script type="text/javascript" src="states/tutorial_state.js"></script>
+    <script type="text/javascript" src="states/game_end_state.js"></script>
 
     <!-- Main entry point to game  -->
     <script type="text/javascript" src="main.js"></script>

@@ -1,22 +1,32 @@
 SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](https://phaser.io/).
 
-# Features
+# Game Features
+- 9 Levels
+- 3 Bosses
+- Scifi story by [Chez](https://www.patreon.com/chezdispenser)
+- Intense Bullet-Dodging Action!
+
+
+# Technical Features
 - Fully deployable on heroku free tier.
 - Auto github deploy using heroku.
 - [Staging](https://super-starkiller-3000-staging.herokuapp.com/) and [Production](https://super-starkiller-3000.herokuapp.com/) environments using heroku pipelines.
 - [Custom leaderboard](https://github.com/fahseltc/leaderboard-node) in nodejs using heroku postgres.
+- Uses cookies to save user volume settings.
+- Uses PHP to detect host system environment variables (dev/staging/production).
+
 
 
 
 
 # Credits
-<!-- [Home](https://soundcloud.com/home-2001) for the song called ["If I'm Wrong"](https://www.youtube.com/watch?v=HBynMB054zw). Song spliced up, but otherwise unmodified. [License: Creative Commons Attribution-ShareAlike 3.0](https://creativecommons.org/licenses/by-sa/3.0/) -->
-
-<!-- ["Xanadon't"](http://freemusicarchive.org/music/Mystery_Mammal/Latent/Xanadont_1334) by [Mystery Mammal](http://freemusicarchive.org/music/Mystery_Mammal) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
- -->
 
 Patrick "GG WP Pat" McDonough - for the spaceship sprites and other art.
 
 [Chez](https://www.patreon.com/chezdispenser) - for the story/writing.
 
 koreezgames - for the cool particle editor plugin : https://github.com/koreezgames/phaser-particle-editor-plugin
+
+[juhani.junkala](juhani.junkala@musician.org) - Chiptune Music (Levels 1, 2, 3, title screen and ending)
+
+[sketchylogic](https://opengameart.org/users/sketchylogic) - Chiptune Music (Boss theme) https://opengameart.org/content/nes-shooter-music-5-tracks-3-jingles

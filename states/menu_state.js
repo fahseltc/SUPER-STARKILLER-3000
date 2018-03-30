@@ -15,14 +15,14 @@ var menu_state = {
     );
 
     var now_with_text = Utils.create_stroke_text(
-      "Now with Volume sliders!",
+      "Now it remembers\nyour volume!",
       1200,
       500,
       20,
       "#FFD700"
     );
     var now_with_text2 = Utils.create_stroke_text(
-      "and lots of songs!!",
+      "\n\nand you can actually\nbeat it now!",
       1200,
       550,
       18,
@@ -66,7 +66,6 @@ var menu_state = {
     // credits button
 
     this.credits_button = Utils.create_button(150, 850, "CREDITS", function() {
-      sound_manager.stopAll();
       game.state.start("credits");
     });
 
@@ -84,7 +83,6 @@ var menu_state = {
       850,
       "HISCORES",
       function() {
-        sound_manager.stopAll();
         game.state.start("leaderboard");
       }
     );
@@ -96,12 +94,20 @@ var menu_state = {
     this.music_icon.scale.set(0.2, 0.2);
     this.music_slider = new Slider(90, 570, GLOBAL_MUSIC_VOLUME);
 
+    this.music_slider.slider.events.onDragStop.add(function() {
+      Utils.set_cookie("GLOBAL_MUSIC_VOLUME", GLOBAL_MUSIC_VOLUME, 90);
+    }, this);
+
     this.sound_icon = game.add.sprite(50, 675, "white_speaker_icon");
     this.sound_icon.anchor.set(0.5, 0.5);
     this.sound_icon.scale.set(0.2, 0.2);
     this.sound_slider = new Slider(90, 645, GLOBAL_SFX_VOLUME);
     this.sound_slider.slider.events.onDragStart.add(function() {
       sound_manager.play("red_bullet_shoot", GLOBAL_SFX_VOLUME);
+    }, this);
+
+    this.sound_slider.slider.events.onDragStop.add(function() {
+      Utils.set_cookie("GLOBAL_SFX_VOLUME", GLOBAL_SFX_VOLUME, 90);
     }, this);
   },
 
@@ -120,14 +126,8 @@ var menu_state = {
     game.camera.fade(0x000000, 200, true);
     game.camera.onFadeComplete.addOnce(function() {
       sound_manager.stopAll();
-      this.set_volume_cookies();
       game.state.start("play");
     }, this);
-  },
-
-  set_volume_cookies: function() {
-    Utils.set_cookie("GLOBAL_MUSIC_VOLUME", GLOBAL_MUSIC_VOLUME, 90);
-    Utils.set_cookie("GLOBAL_SFX_VOLUME", GLOBAL_SFX_VOLUME, 90);
   },
 
   destroy: function() {}

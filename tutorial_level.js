@@ -22,12 +22,11 @@ class TutorialLevel {
       "TUT" // level number
     );
 
-    //this.enemy_manager = new EnemyManager(game, this.player, this.level_data, this.UI);
-    //this.powerup_manager = new PowerupManager(this.player);
-
     this.enemies = [];
     this.spikes = [];
-    //this.all_sprites.add(this.bg_sprite);
+
+    console.log("playing song 1");
+    this.music = sound_manager.play("song_1", GLOBAL_MUSIC_VOLUME, true);
     this.tutorial_1();
   }
 
@@ -48,7 +47,6 @@ class TutorialLevel {
         .to({ alpha: 0 }, TUTORAL_FADE_TIME, Phaser.Easing.None, true);
       this.tutorial_2();
     }, this);
-    //this.all_sprites.add(this.space_group);
   }
 
   // show player how to shoot a bullet left click

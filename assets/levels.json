@@ -377,32 +377,32 @@
     "LEVEL_NUMBER": 9,
     "ENEMY_DATA": {
       "ENEMY_BULLET_DELAY": 1100,
-      "ENEMY_BULLET_SPEED": 150,
+      "ENEMY_BULLET_SPEED": 200,
       "MAX_ENEMIES": 3,
       "ENEMIES_IN_WAVE": 20,
-      "ENEMY_BULLET_INITIAL_DELAY": 900,
-      "SPAWN_DELAY_MIN": 900,
+      "ENEMY_BULLET_INITIAL_DELAY": 1200,
+      "SPAWN_DELAY_MIN": 1300,
       "SPAWN_DELAY_MULTI": 550,
       "SPIKE_ENEMIES": [
         {
           "X": 100,
           "Y": 170,
-          "VELOCITY": { "X": 400, "Y": 0 }
+          "VELOCITY": { "X": 400, "Y": 200 }
         },
         {
           "X": 100,
           "Y": 530,
-          "VELOCITY": { "X": 400, "Y": 0 }
+          "VELOCITY": { "X": 400, "Y": 200 }
         },
         {
           "X": 1300,
           "Y": 170,
-          "VELOCITY": { "X": -400, "Y": 0 }
+          "VELOCITY": { "X": -400, "Y": -200 }
         },
         {
           "X": 1300,
           "Y": 530,
-          "VELOCITY": { "X": -400, "Y": 0 }
+          "VELOCITY": { "X": -400, "Y": -200 }
         }
       ]
     }
@@ -421,33 +421,53 @@
     "LEVEL_TYPE": "COMBAT",
     "LEVEL_NUMBER": 10,
     "ENEMY_DATA": {
-      "ENEMY_BULLET_DELAY": 1000,
-      "ENEMY_BULLET_SPEED": 200,
-      "MAX_ENEMIES": 4,
+      "ENEMY_BULLET_DELAY": 1400,
+      "ENEMY_BULLET_SPEED": 300,
+      "MAX_ENEMIES": 1,
       "ENEMIES_IN_WAVE": 22,
-      "ENEMY_BULLET_INITIAL_DELAY": 1200,
-      "SPAWN_DELAY_MIN": 600,
+      "ENEMY_BULLET_INITIAL_DELAY": 1400,
+      "SPAWN_DELAY_MIN": 1200,
       "SPAWN_DELAY_MULTI": 650,
       "SPIKE_ENEMIES": [
         {
-          "X": 250,
+          "X": 100,
           "Y": 170,
-          "VELOCITY": { "X": 0, "Y": 300 }
+          "VELOCITY": { "X": 300, "Y": 200 }
         },
         {
-          "X": 250,
+          "X": 100,
           "Y": 530,
-          "VELOCITY": { "X": 0, "Y": -300 }
+          "VELOCITY": { "X": 300, "Y": 200 }
         },
         {
-          "X": 1150,
+          "X": 1300,
           "Y": 170,
-          "VELOCITY": { "X": 0, "Y": 300 }
+          "VELOCITY": { "X": -300, "Y": -200 }
         },
         {
-          "X": 1150,
+          "X": 1300,
           "Y": 530,
-          "VELOCITY": { "X": 0, "Y": -300 }
+          "VELOCITY": { "X": -300, "Y": -200 }
+        },
+        {
+          "X": 100,
+          "Y": 170,
+          "VELOCITY": { "X": 200, "Y": 300 }
+        },
+        {
+          "X": 100,
+          "Y": 530,
+          "VELOCITY": { "X": 200, "Y": 300 }
+        },
+        {
+          "X": 1300,
+          "Y": 170,
+          "VELOCITY": { "X": -200, "Y": -300 }
+        },
+        {
+          "X": 1300,
+          "Y": 530,
+          "VELOCITY": { "X": -200, "Y": -300 }
         }
       ]
     }
@@ -475,44 +495,75 @@
       "SPAWN_DELAY_MULTI": 850,
       "SPIKE_ENEMIES": [
         {
-          "X": 100,
-          "Y": 170,
-          "VELOCITY": { "X": 200, "Y": 0 }
+          "X": 32,
+          "Y": 32,
+          "VELOCITY": { "X": 400, "Y": 900 }
         },
         {
-          "X": 100,
-          "Y": 530,
-          "VELOCITY": { "X": 200, "Y": 0 }
+          "X": 64,
+          "Y": 64,
+          "VELOCITY": { "X": 400, "Y": 900 }
+        },
+        {
+          "X": 96,
+          "Y": 96,
+          "VELOCITY": { "X": 400, "Y": 900 }
+        },
+        {
+          "X": 128,
+          "Y": 128,
+          "VELOCITY": { "X": 400, "Y": 900 }
+        },
+        {
+          "X": 160,
+          "Y": 160,
+          "VELOCITY": { "X": 400, "Y": 900 }
+        },
+        {
+          "X": 192,
+          "Y": 192,
+          "VELOCITY": { "X": 400, "Y": 900 }
+        },
+
+        {
+          "X": 332,
+          "Y": 32,
+          "VELOCITY": { "X": -400, "Y": -900 }
+        },
+        {
+          "X": 364,
+          "Y": 64,
+          "VELOCITY": { "X": -400, "Y": -900 }
+        },
+        {
+          "X": 396,
+          "Y": 96,
+          "VELOCITY": { "X": -400, "Y": -900 }
+        },
+        {
+          "X": 428,
+          "Y": 128,
+          "VELOCITY": { "X": -400, "Y": -900 }
+        },
+        {
+          "X": 460,
+          "Y": 160,
+          "VELOCITY": { "X": -400, "Y": -900 }
+        },
+        {
+          "X": 492,
+          "Y": 192,
+          "VELOCITY": { "X": -400, "Y": -900 }
         },
         {
           "X": 1300,
           "Y": 170,
-          "VELOCITY": { "X": -200, "Y": 0 }
+          "VELOCITY": { "X": -200, "Y": -300 }
         },
         {
-          "X": 1300,
-          "Y": 530,
-          "VELOCITY": { "X": -200, "Y": 0 }
-        },
-        {
-          "X": 250,
+          "X": 100,
           "Y": 170,
-          "VELOCITY": { "X": 0, "Y": 100 }
-        },
-        {
-          "X": 250,
-          "Y": 530,
-          "VELOCITY": { "X": 0, "Y": -100 }
-        },
-        {
-          "X": 1150,
-          "Y": 170,
-          "VELOCITY": { "X": 0, "Y": 100 }
-        },
-        {
-          "X": 1150,
-          "Y": 530,
-          "VELOCITY": { "X": 0, "Y": -100 }
+          "VELOCITY": { "X": -200, "Y": -300 }
         }
       ]
     }
@@ -558,5 +609,20 @@
       }
     ],
     "SHIELDS": ["red", "blue", "red", "red", "red", "blue"]
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 12
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 13
+  },
+  {
+    "LEVEL_TYPE": "STORY",
+    "STORY_INDEX": 14
+  },
+  {
+    "LEVEL_TYPE": "GAME_END"
   }
 ]

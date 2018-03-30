@@ -16,7 +16,6 @@ class Slider {
     this.value = initial_value;
     this.slider.position.set(x + ((this.slider_bg.width - this.slider.width) * this.value), this.slider.position.y)
     this.slider_text.text = Math.round(Number(this.value * 100));
-
   }
 
   update() {

@@ -32,13 +32,13 @@ class Level {
     this.destroyed = false;
     this.ending = false;
 
-    if(CURRENT_LEVEL_INDEX <= 17) {
+    if (CURRENT_LEVEL_INDEX <= 17) {
       console.log("playing song 1");
       this.music = sound_manager.play("song_1", GLOBAL_MUSIC_VOLUME, true);
-    } else if(CURRENT_LEVEL_INDEX >= 18 && CURRENT_LEVEL_INDEX < 34) {
+    } else if (CURRENT_LEVEL_INDEX >= 18 && CURRENT_LEVEL_INDEX < 34) {
       console.log("playing song 2");
       this.music = sound_manager.play("song_2", GLOBAL_MUSIC_VOLUME, true);
-    } else if(CURRENT_LEVEL_INDEX >= 34) {
+    } else if (CURRENT_LEVEL_INDEX >= 34) {
       console.log("playing song 3");
       this.music = sound_manager.play("song_3", GLOBAL_MUSIC_VOLUME, true);
     }
@@ -92,8 +92,9 @@ class Level {
 
     if (this.enemy_manager.are_all_enemies_dead() && !this.ending) {
       this.ending = true;
-      console.log("all enemies defeated");
 
+      // kill all bullets + enemies
+      this.enemy_manager.kill_all_bullets();
       this.music.fadeOut(1500);
 
       game.camera.fade(0x000000, 1500, true);
@@ -138,9 +139,8 @@ class Level {
     bullet.kill();
     var player_died = this.player.process_hit();
     if (player_died) {
-      //console.log("music " + this.music);
       this.music.fadeOut(1500);
-      last_score = this.UI.score.score + this.UI.score.score_buffer;
+      GLOBAL_SCORE = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;
       game.camera.fade(0x000000, 1500, true);
       game.camera.onFadeComplete.addOnce(function() {

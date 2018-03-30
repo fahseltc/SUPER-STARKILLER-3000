@@ -1,12 +1,12 @@
-var post_game_state = {
+var game_end_state = {
   create: function() {
     game.stage.backgroundColor = BLACK_HEX_COLOR;
 
     Utils.create_centered_text(
-      "SYSTEM MALFUNCTION\n\nSIGNAL LOST",
+      "GAME OVER",
       200,
-      70,
-      RED_HEX_COLOR
+      120,
+      WHITE_HEX_COLOR
     );
     Utils.create_centered_text("SCORE: " + GLOBAL_SCORE, 500, 50);
     var submit_score_button = Utils.create_button(
@@ -22,10 +22,13 @@ var post_game_state = {
       "MAIN MENU",
       function() {
         GLOBAL_SCORE = 0;
+        sound_manager.stopAll();
         game.state.start("menu");
       },
       1.5
     );
+
+    this.music = sound_manager.play("ending", GLOBAL_MUSIC_VOLUME, true);
   },
 
   send_score: function() {

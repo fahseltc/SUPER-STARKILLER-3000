@@ -16,6 +16,7 @@ var credits_state = {
     }, this);
 
     this.back_button = Utils.create_button(150, 850, "BACK", function() {
+      sound_manager.stopAll();
       game.state.start("menu");
     });
   },

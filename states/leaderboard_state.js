@@ -14,8 +14,16 @@ var leaderboard_state = {
     Utils.create_stroke_text("NAME", 440, 140, 40);
     Utils.create_stroke_text("SCORE", 940, 140, 40);
 
-    this.refresh_button = Utils.create_button(1250, 765, "RERESH", this.get_leaderboard_data);
-    this.back_button = Utils.create_button(1250, 850, "BACK", function() { game.state.start("menu"); });
+    this.refresh_button = Utils.create_button(
+      1250,
+      765,
+      "RERESH",
+      this.get_leaderboard_data
+    );
+    this.back_button = Utils.create_button(1250, 850, "BACK", function() {
+      sound_manager.stopAll();
+      game.state.start("menu");
+    });
   },
 
   get_leaderboard_data: function() {

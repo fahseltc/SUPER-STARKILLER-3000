@@ -1,7 +1,4 @@
 var debug_state = {
-  preload: function() {
-    DEBUG_MODE = true;
-  },
   create: function() {
     var title_text = Utils.create_centered_stroke_text(
       "DEBUG MENU",
@@ -31,13 +28,15 @@ var debug_state = {
     var counter = 0;
     var story_count = game.cache.getJSON("story").length;
 
+    var story_indexes = [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 47, 48, 49];
+
     for (var col = 0; col < story_rows; col++) {
       for (var row = 0; row < story_columns; row++) {
         if (counter < story_count) {
           this.create_button_story(
             story_base_x + 70 * row,
             story_base_y + 70 * col,
-            counter,
+            story_indexes[counter],
             "story"
           );
           counter++;
@@ -68,7 +67,7 @@ var debug_state = {
       for (var row = 0; row < levels_columns; row++) {
         if (counter < level_count) {
           var spacing = 0;
-          if(col % 2 == 0) {
+          if (col % 2 == 0) {
             spacing = 25;
           }
           this.create_button_level(
@@ -188,11 +187,19 @@ var debug_state = {
   },
 
   create_button_story: function(x, y, index, value) {
+    console.log("create button: " + index)
     // new Button( [, x] [, y] [, key] [, callback] [, callbackContext] [, overFrame] [, outFrame] [, downFrame] [, upFrame])
-    var temp_button = game.add.button(x, y, "debug_button", this.go_to_state, {
-      index: index,
-      value: value
-    });
+    var temp_button = game.add.button(
+      x,
+      y,
+      "debug_button",
+      this.go_to_state_story,
+      {
+        index: index,
+        value: value,
+        this: this
+      }
+    );
 
     var text_color = GREY_HEX_COLOR;
     var temp_text = Utils.create_stroke_text(
@@ -205,6 +212,12 @@ var debug_state = {
 
     this.button_array.push(temp_button);
     this.text_array.push(temp_text);
+  },
+
+  go_to_state_story: function() {
+    CURRENT_STORY_INDEX = game.cache.getJSON("levels")[this.index].STORY_INDEX;
+    CURRENT_LEVEL_INDEX = this.index;
+    game.state.start(this.value);
   },
 
   go_to_state: function() {

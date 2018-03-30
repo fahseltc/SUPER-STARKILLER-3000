@@ -30,7 +30,7 @@ class LevelManager {
     );
 
     if (this.current_level) {
-      last_score =
+      GLOBAL_SCORE =
         this.current_level.UI.score.score +
         this.current_level.UI.score.score_buffer;
       this.current_level.destroy();
@@ -55,6 +55,9 @@ class LevelManager {
         break;
       case "TRAVEL":
         game.state.start("travel");
+        break;
+      case "GAME_END":
+        game.state.start("game_end");
         break;
     }
   }

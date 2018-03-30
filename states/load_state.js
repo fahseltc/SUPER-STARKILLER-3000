@@ -60,13 +60,12 @@ var load_state = {
       images_path + "game_background_clean.png"
     );
     game.load.image("after_boss_bg", images_path + "after_boss_bg.png");
-    game.load.image("debug_button", images_path + "debug_button.png");
-    game.load.image("menu_button", images_path + "menu_button.png");
 
     // UI loading
+    game.load.image("debug_button", ui_images_path + "debug_button.png");
+    game.load.image("menu_button", ui_images_path + "menu_button.png");
     game.load.image("life_bar_single", ui_images_path + "life_bar_single.png");
     game.load.image("dashboard", ui_images_path + "dashboard.png");
-    game.load.image("no", ui_images_path + "no.png");
     game.load.image(
       "white_speaker_icon",
       ui_images_path + "white_speaker_icon.png"
@@ -155,6 +154,7 @@ var load_state = {
     game.load.audio("title_song", "assets/music/title_theme.ogg");
     game.load.audio("boss_intro", "assets/music/boss_intro.ogg");
     game.load.audio("boss_main", "assets/music/boss_main.ogg");
+    game.load.audio("ending", "assets/music/ending.ogg");
 
     // Add sounds to sound manager
     sound_manager.add("player_damaged");

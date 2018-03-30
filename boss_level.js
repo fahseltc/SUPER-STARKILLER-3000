@@ -66,7 +66,7 @@ class BossLevel {
   }
 
   player_died() {
-    last_score = this.UI.score.score + this.UI.score.score_buffer;
+    GLOBAL_SCORE = this.UI.score.score + this.UI.score.score_buffer;
     console.log("player died");
     this.destroyed = true;
     this.destroy();
@@ -90,7 +90,7 @@ class BossLevel {
     bullet.kill();
     var player_died = this.player.process_hit();
     if (player_died) {
-      last_score = this.UI.score.score + this.UI.score.score_buffer;
+      GLOBAL_SCORE = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;
       game.state.start("post");
     }
