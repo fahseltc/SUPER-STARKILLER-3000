@@ -2,6 +2,9 @@
 
 I made a 2D arcade shooter game with [Phaser](https://github.com/photonstorm/phaser-ce) in about 2 months and decided to write up some of the things I learned along the way. This is not my first game, but its probably my most finished one so far, and it was my first time trying to build a small application with Javascript.
 
+
+[[https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/title.PNG|alt=octocat]]
+
 [You can play the game SUPER STARKILLER 3000 here](https://super-starkiller-3000.herokuapp.com/)
 
 #### Goals
