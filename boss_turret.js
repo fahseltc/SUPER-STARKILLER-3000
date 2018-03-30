@@ -8,7 +8,6 @@ BossTurret = function(game, player, turret_data) {
     "turret_top_red"
   );
   this.scale.set(0.6, 0.6);
-  this.rotation = Math.PI / 4;
   this.anchor.x = 0.5;
   this.anchor.y = 0.3;
   this.player = player;
@@ -37,16 +36,19 @@ BossTurret = function(game, player, turret_data) {
   }, this);
 
   this.bullet_time = this.game.time.now + this.initial_delay;
-
-  // this.graphics = game.add.graphics(this.x, this.y);
-  // this.spinner_angle = 0;
 };
 
 BossTurret.prototype = Object.create(Phaser.Sprite.prototype);
 BossTurret.prototype.constructor = constructor;
 
 BossTurret.prototype.update = function() {
-
+  this.rotation =
+    game.physics.arcade.angleToXY(
+      this.player.sprite,
+      this.worldPosition.x,
+      this.worldPosition.y
+    ) +
+    Math.PI / 2;
   if (this.alive && this.visible && this.game.time.now > this.bullet_time) {
     var bullet = this.bullets.getFirstExists(false);
     if (bullet) {
@@ -72,4 +74,4 @@ BossTurret.prototype.destroy = function() {
   this.bullets.destroy();
 };
 
-BossTurret.prototype.damaged = function() {}
+BossTurret.prototype.damaged = function() {};

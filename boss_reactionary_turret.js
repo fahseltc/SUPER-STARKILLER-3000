@@ -45,7 +45,15 @@ BossReactionaryTurret = function(game, player, turret_data) {
 BossReactionaryTurret.prototype = Object.create(Phaser.Sprite.prototype);
 BossReactionaryTurret.prototype.constructor = constructor;
 
-BossReactionaryTurret.prototype.update = function() {};
+BossReactionaryTurret.prototype.update = function() {
+  this.rotation =
+    game.physics.arcade.angleToXY(
+      this.player.sprite,
+      this.worldPosition.x,
+      this.worldPosition.y
+    ) +
+    Math.PI / 2;
+};
 
 BossReactionaryTurret.prototype.damaged = function() {
   var bullets = this.bullets.getAll();
