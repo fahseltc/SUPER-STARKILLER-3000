@@ -48,7 +48,6 @@ class BossEnemy {
     this.check_shield_collisions();
     this.check_boss_hits_player();
     //console.log(this.shield_stack[0].sprite);
-    //game.physics.arcade.collide(this.player.sprite.body, this.shield_stack[0].sprite.body);
   }
 
   update_turrets() {
