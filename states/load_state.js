@@ -206,24 +206,11 @@ var load_state = {
     //   this.ready = true;
 
     if(conf.env == "dev") {
-      //console.log("DEV starting tutorial");
-      //game.state.start("tutorial")
       game.state.start("splash");
     } else {
       console.log("starting splash");
       game.state.start("splash");
     }
 
-   
-
-    //game.state.start("menu");
-    //game.state.start('debug');
-    //game.state.start('text');
-    //   //game.state.start('ready');
-    //   //game.state.start('leaderboard');
-    //   //game.state.start('post');
-    //   //game.state.start('play');
-    //game.state.start('travel');
-    //}
   }
 };
