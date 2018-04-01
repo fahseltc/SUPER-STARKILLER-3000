@@ -89,7 +89,7 @@ var debug_state = {
 
     // button for credits screen
     var credits_button = game.add.button(
-      1200,
+      200,
       700,
       "debug_button",
       function() {
@@ -100,8 +100,8 @@ var debug_state = {
 
     var credits_text = Utils.create_stroke_text(
       "CREDITS",
-      1230,
-      680,
+      230,
+      740,
       30,
       GREY_HEX_COLOR
     );
@@ -111,7 +111,7 @@ var debug_state = {
 
     // tutorial buttons
     var tutorial_button = game.add.button(
-      1200,
+      200,
       580,
       "debug_button",
       function() {
@@ -122,8 +122,8 @@ var debug_state = {
 
     var tutorial_text = Utils.create_stroke_text(
       "TUTORIAL",
-      1230,
-      560,
+      230,
+      620,
       30,
       GREY_HEX_COLOR
     );
@@ -131,27 +131,119 @@ var debug_state = {
     this.button_array.push(tutorial_button);
     this.text_array.push(tutorial_text);
 
-    // post_game buttons
-    var post_game_button = game.add.button(
-      1200,
+    // game over buttons
+    var game_over_button = game.add.button(
+      200,
       460,
       "debug_button",
       function() {
-        game.state.start("post");
+        game.state.start("game_over");
       },
       this
     );
 
-    var post_game_text = Utils.create_stroke_text(
-      "POST",
-      1230,
-      440,
+    var game_over_text = Utils.create_stroke_text(
+      "GAMEOVER",
+      230,
+      500,
       30,
       GREY_HEX_COLOR
     );
 
-    this.button_array.push(post_game_button);
-    this.text_array.push(post_game_text);
+    this.button_array.push(game_over_button);
+    this.text_array.push(game_over_text);
+
+    // ending 1
+
+    var ending_1_button = game.add.button(
+      1200,
+      160,
+      "debug_button",
+      function() {
+        game.state.start("ending_1");
+      },
+      this
+    );
+
+    var ending_1_text = Utils.create_stroke_text(
+      "END1",
+      1230,
+      200,
+      30,
+      GREY_HEX_COLOR
+    );
+
+    this.button_array.push(ending_1_button);
+    this.text_array.push(ending_1_text);
+
+    // ending 2
+
+    var ending_2_button = game.add.button(
+      1200,
+      260,
+      "debug_button",
+      function() {
+        game.state.start("ending_2");
+      },
+      this
+    );
+
+    var ending_2_text = Utils.create_stroke_text(
+      "END2",
+      1230,
+      300,
+      30,
+      GREY_HEX_COLOR
+    );
+
+    this.button_array.push(ending_2_button);
+    this.text_array.push(ending_2_text);
+
+    // ending 3
+
+    var ending_3_button = game.add.button(
+      1200,
+      360,
+      "debug_button",
+      function() {
+        game.state.start("ending_3");
+      },
+      this
+    );
+
+    var ending_3_text = Utils.create_stroke_text(
+      "END3",
+      1230,
+      400,
+      30,
+      GREY_HEX_COLOR
+    );
+
+    this.button_array.push(ending_3_button);
+    this.text_array.push(ending_3_text);
+
+    // end_state
+
+    var ending_3_button = game.add.button(
+      1200,
+      460,
+      "debug_button",
+      function() {
+        game.state.start("game_end");
+      },
+      this
+    );
+
+    var ending_3_text = Utils.create_stroke_text(
+      "END FINAL",
+      1230,
+      500,
+      30,
+      GREY_HEX_COLOR
+    );
+
+    this.button_array.push(ending_3_button);
+    this.text_array.push(ending_3_text);
   },
 
   create_button_level: function(x, y, index, value) {

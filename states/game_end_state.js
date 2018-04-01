@@ -3,9 +3,16 @@ var game_end_state = {
     game.stage.backgroundColor = BLACK_HEX_COLOR;
 
     Utils.create_centered_text(
-      "GAME OVER",
+      "CONGRATULATION",
       200,
-      120,
+      80,
+      WHITE_HEX_COLOR
+    );
+
+    Utils.create_centered_text(
+      "YOU WON",
+      320,
+      60,
       WHITE_HEX_COLOR
     );
     Utils.create_centered_text("SCORE: " + GLOBAL_SCORE, 500, 50);
@@ -28,7 +35,7 @@ var game_end_state = {
       1.5
     );
 
-    this.music = sound_manager.play("ending", GLOBAL_MUSIC_VOLUME, true);
+    //this.music = sound_manager.play("ending", GLOBAL_MUSIC_VOLUME, true);
   },
 
   send_score: function() {

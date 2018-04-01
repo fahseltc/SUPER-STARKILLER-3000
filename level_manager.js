@@ -56,9 +56,19 @@ class LevelManager {
       case "TRAVEL":
         game.state.start("travel");
         break;
-      case "GAME_END":
+      case "GAME_ENDING_1":
+        game.state.start("ending_1");
+        break;
+      case "GAME_ENDING_2":
+        game.state.start("ending_2");
+        break;
+      case "GAME_ENDING_3":
+        game.state.start("ending_3");
+        break;
+      case "GAME_END_FINAL":
         game.state.start("game_end");
         break;
+
     }
   }
 }

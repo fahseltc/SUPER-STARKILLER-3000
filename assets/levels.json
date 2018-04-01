@@ -611,18 +611,18 @@
     "SHIELDS": ["red", "blue", "red", "red", "red", "blue"]
   },
   {
-    "LEVEL_TYPE": "STORY",
+    "LEVEL_TYPE": "GAME_ENDING_1",
     "STORY_INDEX": 12
   },
   {
-    "LEVEL_TYPE": "STORY",
+    "LEVEL_TYPE": "GAME_ENDING_2",
     "STORY_INDEX": 13
   },
   {
-    "LEVEL_TYPE": "STORY",
+    "LEVEL_TYPE": "GAME_ENDING_3",
     "STORY_INDEX": 14
   },
   {
-    "LEVEL_TYPE": "GAME_END"
+    "LEVEL_TYPE": "GAME_END_FINAL"
   }
 ]

@@ -65,7 +65,7 @@
     <script type="text/javascript" src="states/load_state.js"></script>
     <script type="text/javascript" src="states/boot_state.js"></script>
     <script type="text/javascript" src="states/ready_state.js"></script>
-    <script type="text/javascript" src="states/post_game_state.js"></script>
+    <script type="text/javascript" src="states/game_over_state.js"></script>
     <script type="text/javascript" src="states/leaderboard_state.js"></script>
     <script type="text/javascript" src="states/story_state.js"></script>
     <script type="text/javascript" src="states/boss_dead_state.js"></script>
@@ -74,6 +74,9 @@
     <script type="text/javascript" src="states/credits_state.js"></script>
     <script type="text/javascript" src="states/tutorial_state.js"></script>
     <script type="text/javascript" src="states/game_end_state.js"></script>
+    <script type="text/javascript" src="states/ending_state_1.js"></script>
+    <script type="text/javascript" src="states/ending_state_2.js"></script>
+    <script type="text/javascript" src="states/ending_state_3.js"></script>
 
     <!-- Main entry point to game  -->
     <script type="text/javascript" src="main.js"></script>

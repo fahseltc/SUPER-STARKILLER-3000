@@ -59,7 +59,7 @@ game.state.add("menu", menu_state);
 game.state.add("play", play_state);
 game.state.add("boot", boot_state);
 game.state.add("load", load_state);
-game.state.add("post", post_game_state);
+game.state.add("game_over", game_over_state);
 game.state.add("leaderboard", leaderboard_state);
 game.state.add("ready", ready_state);
 game.state.add("travel", travel_state);
@@ -70,5 +70,8 @@ game.state.add("splash", splash_state);
 game.state.add("credits", credits_state);
 game.state.add("tutorial", tutorial_state);
 game.state.add("game_end", game_end_state);
+game.state.add("ending_1", ending_state_1);
+game.state.add("ending_2", ending_state_2);
+game.state.add("ending_3", ending_state_3);
 
 game.state.start("boot");

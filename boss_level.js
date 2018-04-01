@@ -72,7 +72,7 @@ class BossLevel {
     this.destroy();
     CURRENT_LEVEL_INDEX = 0;
     this.boss_music.stop();
-    game.state.start("post");
+    game.state.start("game_over");
   }
 
   check_spike_collisions() {
@@ -92,7 +92,7 @@ class BossLevel {
     if (player_died) {
       GLOBAL_SCORE = this.UI.score.score + this.UI.score.score_buffer;
       CURRENT_LEVEL_INDEX = 0;
-      game.state.start("post");
+      game.state.start("game_over");
     }
   }
 

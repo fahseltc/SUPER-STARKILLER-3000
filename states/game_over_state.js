@@ -1,4 +1,4 @@
-var post_game_state = {
+var game_over_state = {
   create: function() {
     game.stage.backgroundColor = BLACK_HEX_COLOR;
 

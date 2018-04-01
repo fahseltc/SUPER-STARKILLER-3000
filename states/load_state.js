@@ -106,6 +106,8 @@ var load_state = {
 
     // AUDIO
     game.load.audio("ui2", "assets/sound_effects/ui2.ogg");
+    game.load.audio("shutdown_sound", "assets/sound_effects/shutdown_sound.ogg");
+    game.load.audio("shutdown_sound_reversed", "assets/sound_effects/shutdown_sound_reversed.ogg");
     game.load.audio(
       "dot_matrix_short",
       "assets/sound_effects/dot_matrix_short.wav"
@@ -155,6 +157,7 @@ var load_state = {
     game.load.audio("boss_intro", "assets/music/boss_intro.ogg");
     game.load.audio("boss_main", "assets/music/boss_main.ogg");
     game.load.audio("ending", "assets/music/ending.ogg");
+    game.load.audio("game_complete", "assets/music/game_complete.ogg");
 
     // Add sounds to sound manager
     sound_manager.add("player_damaged");

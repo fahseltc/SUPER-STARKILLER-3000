@@ -145,7 +145,7 @@ class Level {
       game.camera.fade(0x000000, 1500, true);
       game.camera.onFadeComplete.addOnce(function() {
         this.music.stop();
-        game.state.start("post");
+        game.state.start("game_over");
       }, this);
     }
   }
