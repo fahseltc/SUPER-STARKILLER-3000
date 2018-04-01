@@ -27,6 +27,7 @@ Patrick "GG WP Pat" McDonough - for the spaceship sprites and other art.
 
 koreezgames - for the cool particle editor plugin : https://github.com/koreezgames/phaser-particle-editor-plugin
 
-[juhani.junkala](juhani.junkala@musician.org) - Chiptune Music (Levels 1, 2, 3, title screen and ending)
+[juhani.junkala](juhani.junkala@musician.org) - Chiptune Music (Levels 1, 2, 3, title screen and ending). [Open Game Art](https://opengameart.org/content/5-chiptunes-action)
+[Home](https://soundcloud.com/home-2001) - Ending song ["If I'm Wrong"](https://www.youtube.com/watch?v=HBynMB054zw)[License: Creative Commons Attribution-ShareAlike 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
 
-[sketchylogic](https://opengameart.org/users/sketchylogic) - Chiptune Music (Boss theme) https://opengameart.org/content/nes-shooter-music-5-tracks-3-jingles
+[sketchylogic](https://opengameart.org/users/sketchylogic) - Chiptune Music (Boss theme) [Open Game Art](https://opengameart.org/content/nes-shooter-music-5-tracks-3-jingles)

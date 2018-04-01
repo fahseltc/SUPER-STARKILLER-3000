@@ -37,11 +37,15 @@ var ending_state_3 = {
       GLOBAL_SFX_VOLUME
     );
     startup_sound.onStop.addOnce(function() {
-      console.log("play song n fade");
-      var song = sound_manager.play("game_complete", 0);
-
-      //song.fadeTo(0, 0);
-      song.fadeTo(10000, GLOBAL_MUSIC_VOLUME);
+      console.log("delay play song n fade");
+      var event = game.time.events.add(
+        9000,
+        function() {
+          var song = sound_manager.play("game_complete", 0);
+          song.fadeTo(10000, GLOBAL_MUSIC_VOLUME);
+        },
+        this
+      );
     });
     game.camera.fade(0x000000, 0); // set to all black
     game.camera.flash(0x000000, 5500, true);
@@ -111,6 +115,8 @@ var ending_state_3 = {
       this.displayNextLetter,
       this
     );
-    this.timerEvent.timer.onComplete.addOnce(function() { this.all_text_displayed = true; }, this);
+    this.timerEvent.timer.onComplete.addOnce(function() {
+      this.all_text_displayed = true;
+    }, this);
   }
 };

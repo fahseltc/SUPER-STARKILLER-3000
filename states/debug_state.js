@@ -28,7 +28,23 @@ var debug_state = {
     var counter = 0;
     var story_count = game.cache.getJSON("story").length;
 
-    var story_indexes = [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 47, 48, 49];
+    var story_indexes = [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      32,
+      36,
+      40,
+      44,
+      47,
+      48,
+      49
+    ];
 
     for (var col = 0; col < story_rows; col++) {
       for (var row = 0; row < story_columns; row++) {
@@ -279,8 +295,6 @@ var debug_state = {
   },
 
   create_button_story: function(x, y, index, value) {
-    console.log("create button: " + index)
-    // new Button( [, x] [, y] [, key] [, callback] [, callbackContext] [, overFrame] [, outFrame] [, downFrame] [, upFrame])
     var temp_button = game.add.button(
       x,
       y,
