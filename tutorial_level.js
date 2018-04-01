@@ -128,7 +128,7 @@ class TutorialLevel {
 
   // spawn a powerup
   tutorial_5() {
-    this.powerup = new Powerup(this.player);
+    this.powerup = new Powerup(this.player, 400, 400);
     this.powerup.sprite.events.onKilled.addOnce(function() {
       this.tutorial_6();
     }, this);
@@ -147,9 +147,11 @@ class TutorialLevel {
     this.tutorial_end = game.time.events.add(
       1500,
       function() {
+        this.music.fadeOut(2000);
         game.camera.fade(0x000000, 2000, true);
         console.log("go to menu from tutorial");
         game.camera.onFadeComplete.addOnce(function() {
+          this.music.stop();
           game.state.start("menu");
         }, this);
       },
