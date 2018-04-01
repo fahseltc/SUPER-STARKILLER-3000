@@ -24,7 +24,6 @@ class PowerupManager {
 
   collide_player(obj, powerup) {
     powerup.kill();
-    console.log("powerup hit player")
     this.player.shield_sprite.revive();
   }
 

@@ -63,7 +63,6 @@ BossReactionaryTurret.prototype.damaged = function() {
 
     var player_pos = this.player.sprite.position.clone();
     Phaser.Point.rotate(player_pos, this.worldPosition.x, this.worldPosition.y, ((index * this.bullet_spread) - (this.bullets.length * this.bullet_spread / 2)), true);
-    //console.log("spread: " + ((index * this.bullet_spread) - (this.bullets.length * this.bullet_spread / 2)));
 
     if (this.aim_at == "PLAYER") {
       this.game.physics.arcade.moveToXY(

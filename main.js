@@ -14,8 +14,6 @@ if (temp_env == "<?php echo getenv('environment')?>") {
 }
 conf.env = temp_env;
 
-console.log("inside JS, env: " + conf.env);
-
 switch (conf.env) {
   case "production":
     conf.backend_url = "https://mecha-leaderboard.herokuapp.com";

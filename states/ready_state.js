@@ -1,6 +1,5 @@
 var ready_state = {
   preload: function() {
-    console.log("ready state");
     game.stage.backgroundColor = BLACK_HEX_COLOR;
     var level_data = (this.level_json = game.cache.getJSON("levels"));
 
@@ -28,7 +27,6 @@ var ready_state = {
     circle_button.events.onInputDown.addOnce(function() {
       game.camera.fade(0x000000, 100, false);
       game.camera.onFadeComplete.addOnce(function() {
-        console.log("increasing lvl index");
         CURRENT_LEVEL_INDEX++;
         game.state.start("play");
       }, this);

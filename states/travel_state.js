@@ -106,7 +106,6 @@ var travel_state = {
     this.spawn_tween.onComplete.addOnce(function() {
       game.camera.fade(0x000000, 200, true);
       game.camera.onFadeComplete.addOnce(function() {
-        console.log("increasing lvl index");
         CURRENT_LEVEL_INDEX++;
         game.state.start("play");
       }, this);
@@ -121,7 +120,6 @@ var travel_state = {
       this.spawn_tween.stop();
       game.camera.fade(0x000000, 200, true);
       game.camera.onFadeComplete.addOnce(function() {
-        console.log("increasing lvl index");
         CURRENT_LEVEL_INDEX++;
         game.state.start("play");
       }, this);

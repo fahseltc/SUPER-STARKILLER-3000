@@ -1,7 +1,6 @@
 class LevelManager {
   constructor() {
     this.level_json = game.cache.getJSON("levels");
-    console.log(this.level_json);
 
     this.levels = [];
     this.current_level;
@@ -25,9 +24,6 @@ class LevelManager {
 
   change_level(level_index) {
     var change_level_type = this.level_json[level_index].LEVEL_TYPE;
-    console.log(
-      "changing level to: " + level_index + "  Type: " + change_level_type
-    );
 
     if (this.current_level) {
       GLOBAL_SCORE =
@@ -68,7 +64,6 @@ class LevelManager {
       case "GAME_END_FINAL":
         game.state.start("game_end");
         break;
-
     }
   }
 }

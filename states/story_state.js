@@ -34,7 +34,6 @@ var story_state = {
     this.counter = 1;
     this.displayLetterByLetterText(function() {
       this.all_text_displayed = true;
-      console.log("All text displayed!");
     });
   },
 
@@ -58,7 +57,13 @@ var story_state = {
       } else if (num == 3) {
         var num2 = game.rnd.integerInRange(0, 3);
         if (num2 == 0) {
-          this.printer_sound_long_1.play("", 0, GLOBAL_SFX_VOLUME, false, false);
+          this.printer_sound_long_1.play(
+            "",
+            0,
+            GLOBAL_SFX_VOLUME,
+            false,
+            false
+          );
         } else {
           this.printer_sound_1.play("", 0, GLOBAL_SFX_VOLUME, false, false);
         }
@@ -73,7 +78,6 @@ var story_state = {
         game.camera.resetFX();
         game.camera.fade(0x000000, 250, true);
         game.camera.onFadeComplete.addOnce(function() {
-          console.log("increasing lvl index");
           CURRENT_LEVEL_INDEX++;
           game.state.start("play");
         }, this);

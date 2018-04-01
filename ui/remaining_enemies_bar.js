@@ -3,19 +3,16 @@ const REMAINING_ENEMIES_BASE_POSITION_Y = 800;
 
 class RemainingEnemiesBar {
   constructor(level_data) {
-    console.log(level_data);
 
     if (level_data == undefined) {
       this.enemies_to_spawn = 1;
     } else {
       this.level_data = level_data.ENEMY_DATA;
-      if(this.level_data != undefined) {
+      if (this.level_data != undefined) {
         this.enemies_to_spawn = level_data.ENEMY_DATA.ENEMIES_IN_WAVE;
       }
     }
     this.enemies_alive = this.enemies_to_spawn;
-    console.log("after: level data:");
-    //console.log(this.level_data);
 
     this.bar = game.add.sprite(
       REMAINING_ENEMIES_BASE_POSITION_X,
@@ -55,7 +52,6 @@ class RemainingEnemiesBar {
   enemy_died() {
     this.enemies_alive--;
     var percentage = this.enemies_alive / this.enemies_to_spawn;
-    console.log(this.enemies_alive + " / " + this.enemies_to_spawn);
     var new_width = this.black_bar_original_width * (1 - percentage);
     game.add
       .tween(this.black_bar)

@@ -1,6 +1,5 @@
 var ending_state_1 = {
   create: function() {
-    console.log("end 1");
     this.story_json = game.cache.getJSON("story");
 
     this.printer_sound_1 = sound_manager.add("dot_matrix_short");
@@ -34,7 +33,6 @@ var ending_state_1 = {
     this.counter = 1;
     this.displayLetterByLetterText(function() {
       this.all_text_displayed = true;
-      console.log("All text displayed!");
     });
   },
 
@@ -62,16 +60,6 @@ var ending_state_1 = {
   },
 
   update: function() {
-    // if (this.all_text_displayed && !this.ending) {
-    //   this.ending = true;
-    //   game.camera.resetFX();
-    //   game.camera.fade(0x000000, 4000, true);
-    //   game.camera.onFadeComplete.addOnce(function() {
-    //     console.log("increasing lvl index");
-    //     game.state.start("ending_2");
-    //   }, this);
-    // }
-
     if (game.input.activePointer.isDown) {
       if (this.all_text_displayed && !this.ending) {
         this.ending = true;

@@ -79,7 +79,6 @@ class EnemyManager {
       this.all_enemies_spawned = true;
     }
     if (this.ready_to_spawn_enemy()) {
-      console.log("enemies to spawn: " + this.enemies_left_to_spawn);
       this.enemies_left_to_spawn--;
       this.spawn_bad_guy();
       this.next_spawn_time =

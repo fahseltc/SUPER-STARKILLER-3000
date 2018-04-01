@@ -1,6 +1,5 @@
 var ending_state_2 = {
   create: function() {
-    console.log("end 2");
     this.story_json = game.cache.getJSON("story");
 
     this.printer_sound_1 = sound_manager.add("dot_matrix_short");
@@ -34,7 +33,6 @@ var ending_state_2 = {
     this.counter = 1;
     this.displayLetterByLetterText(function() {
       this.all_text_displayed = true;
-      console.log("All text displayed!");
     });
   },
 

@@ -1,7 +1,6 @@
 var load_state = {
   preload: function() {
     game.time.advancedTiming = true;
-    console.log("load state");
 
     this.progress_bar = game.add.sprite(
       game.width / 2,
@@ -106,8 +105,14 @@ var load_state = {
 
     // AUDIO
     game.load.audio("ui2", "assets/sound_effects/ui2.ogg");
-    game.load.audio("shutdown_sound", "assets/sound_effects/shutdown_sound.ogg");
-    game.load.audio("shutdown_sound_reversed", "assets/sound_effects/shutdown_sound_reversed.ogg");
+    game.load.audio(
+      "shutdown_sound",
+      "assets/sound_effects/shutdown_sound.ogg"
+    );
+    game.load.audio(
+      "shutdown_sound_reversed",
+      "assets/sound_effects/shutdown_sound_reversed.ogg"
+    );
     game.load.audio(
       "dot_matrix_short",
       "assets/sound_effects/dot_matrix_short.wav"
@@ -146,8 +151,14 @@ var load_state = {
     );
 
     game.load.audio("travel_whoosh", "assets/sound_effects/travel_whoosh.wav");
-    game.load.audio("boss_shield_damaged", "assets/sound_effects/boss_shield_damaged.wav");
-    game.load.audio("boss_destroyed", "assets/sound_effects/boss_destroyed.wav");
+    game.load.audio(
+      "boss_shield_damaged",
+      "assets/sound_effects/boss_shield_damaged.wav"
+    );
+    game.load.audio(
+      "boss_destroyed",
+      "assets/sound_effects/boss_destroyed.wav"
+    );
 
     // GAME SONGS
     game.load.audio("song_1", "assets/music/level_1.ogg");
@@ -205,15 +216,7 @@ var load_state = {
     } catch (error) {
       alert("levels json is not valid");
     }
-    // if(game.cache.isSoundDecoded('mm_xanadont_song') && this.ready == false) {
-    //   this.ready = true;
 
-    if(conf.env == "dev") {
-      game.state.start("splash");
-    } else {
-      console.log("starting splash");
-      game.state.start("splash");
-    }
-
+    game.state.start("splash");
   }
 };

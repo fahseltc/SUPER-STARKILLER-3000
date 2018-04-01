@@ -60,9 +60,7 @@ class Score {
   }
 
   destroy() {
-    console.log("before SCORE DESTROY: GLOBAL_SCORE = " + GLOBAL_SCORE);
     GLOBAL_SCORE = this.score + this.score_buffer;
-    console.log("after SCORE DESTROY: GLOBAL_SCORE = " + GLOBAL_SCORE);
     this.score_label.destroy();
   }
 }

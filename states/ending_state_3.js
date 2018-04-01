@@ -1,6 +1,5 @@
 var ending_state_3 = {
   create: function() {
-    console.log("end 3");
     this.story_json = game.cache.getJSON("story");
 
     this.printer_sound_1 = sound_manager.add("dot_matrix_short");
@@ -37,7 +36,6 @@ var ending_state_3 = {
       GLOBAL_SFX_VOLUME
     );
     startup_sound.onStop.addOnce(function() {
-      console.log("delay play song n fade");
       var event = game.time.events.add(
         9000,
         function() {
@@ -75,16 +73,6 @@ var ending_state_3 = {
   },
 
   update: function() {
-    // if (this.all_text_displayed && !this.ending) {
-    //   this.ending = true;
-    //   game.camera.resetFX();
-    //   game.camera.fade(0x000000, 4000, true);
-    //   game.camera.onFadeComplete.addOnce(function() {
-    //     console.log("increasing lvl index");
-    //     game.state.start("ending_2");
-    //   }, this);
-    // }
-
     if (this.all_text_displayed && !this.ending) {
       this.ending = true;
       game.camera.resetFX();

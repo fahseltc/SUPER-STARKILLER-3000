@@ -18,7 +18,6 @@ class PauseMenu {
   }
 
   paused() {
-    console.log("Play state paused");
     this.sprite.visible = true;
     this.sprite.bringToTop();
     this.text.visible = true;
@@ -27,7 +26,6 @@ class PauseMenu {
   }
 
   resumed() {
-    console.log("Play state resumed");
     this.sprite.visible = false;
     this.text.visible = false;
     this.current_pause = 0;

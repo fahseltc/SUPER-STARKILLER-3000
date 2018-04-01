@@ -25,7 +25,6 @@ class TutorialLevel {
     this.enemies = [];
     this.spikes = [];
 
-    console.log("playing song 1");
     this.music = sound_manager.play("song_1", GLOBAL_MUSIC_VOLUME, true);
     this.tutorial_1();
   }
@@ -41,7 +40,6 @@ class TutorialLevel {
     this.space_group.add(this.space_text);
     var start_button = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
     start_button.onDown.addOnce(function() {
-      console.log("space once");
       game.add
         .tween(this.space_group)
         .to({ alpha: 0 }, TUTORAL_FADE_TIME, Phaser.Easing.None, true);
@@ -69,13 +67,11 @@ class TutorialLevel {
     this.red_group.add(this.blue_mouse_icon);
 
     game.input.mousePointer.leftButton.onDown.addOnce(function() {
-      console.log("lcikc once");
       game.add
         .tween(this.red_group)
         .to({ alpha: 0 }, TUTORAL_FADE_TIME, Phaser.Easing.None, true);
       this.tutorial_3();
     }, this);
-    //this.all_sprites.add(this.red_group);
   }
 
   // show player how to shoot shield right click
@@ -94,7 +90,6 @@ class TutorialLevel {
     this.blue_group.add(this.blue_mouse_icon);
 
     game.input.mousePointer.rightButton.onDown.addOnce(function() {
-      console.log("click 2nd time once");
       game.add
         .tween(this.blue_group)
         .to({ alpha: 0 }, TUTORAL_FADE_TIME, Phaser.Easing.None, true);
@@ -104,7 +99,6 @@ class TutorialLevel {
 
   // spawn one of each enemy
   tutorial_4() {
-    console.log("tut 4");
     this.red_enemy = new TutorialEnemy(this.player, "red", this.UI);
     this.red_enemy.sprite.reset(200, 200);
     this.enemies.push(this.red_enemy);
@@ -149,7 +143,6 @@ class TutorialLevel {
       function() {
         this.music.fadeOut(2000);
         game.camera.fade(0x000000, 2000, true);
-        console.log("go to menu from tutorial");
         game.camera.onFadeComplete.addOnce(function() {
           this.music.stop();
           game.state.start("menu");
@@ -207,17 +200,14 @@ class TutorialLevel {
   }
 
   red_enemy_hit(enemy, weapon) {
-    console.log("red enemy hit");
     enemy.kill();
   }
 
   blue_enemy_hit(weapon, enemy) {
-    console.log("blue enemy hit");
     enemy.kill();
   }
 
   handle_player_hit_spike(player, spike) {
-    console.log("bullet intersected player");
     spike.kill();
     this.player.process_hit();
     this.spikes.forEach(function(spike) {

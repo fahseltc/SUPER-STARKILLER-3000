@@ -20,7 +20,6 @@ class RootUI {
   }
 
   destroy() {
-    console.log("rootUI destroy");
     this.ui_background.destroy();
     this.health_bar.destroy();
     this.level_display.destroy();

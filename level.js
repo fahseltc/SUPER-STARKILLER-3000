@@ -1,7 +1,6 @@
 class Level {
   constructor(level_data, level_manager) {
     this.level_data = level_data;
-    console.log(this.level_data);
     this.level_manager = level_manager;
     this.controls = new Controls(game);
     this.player = new PlayerShip(
@@ -33,13 +32,10 @@ class Level {
     this.ending = false;
 
     if (CURRENT_LEVEL_INDEX <= 17) {
-      console.log("playing song 1");
       this.music = sound_manager.play("song_1", GLOBAL_MUSIC_VOLUME, true);
     } else if (CURRENT_LEVEL_INDEX >= 18 && CURRENT_LEVEL_INDEX < 34) {
-      console.log("playing song 2");
       this.music = sound_manager.play("song_2", GLOBAL_MUSIC_VOLUME, true);
     } else if (CURRENT_LEVEL_INDEX >= 34) {
-      console.log("playing song 3");
       this.music = sound_manager.play("song_3", GLOBAL_MUSIC_VOLUME, true);
     }
   }
@@ -100,7 +96,6 @@ class Level {
       game.camera.fade(0x000000, 1500, true);
       game.camera.onFadeComplete.addOnce(function() {
         this.music.stop();
-        console.log("increasing lvl index");
         CURRENT_LEVEL_INDEX++;
         this.level_manager.change_level(CURRENT_LEVEL_INDEX);
       }, this);
@@ -117,7 +112,6 @@ class Level {
 
   handle_circle_weapon_collision(circle_weapon_sprite, turret) {
     if (turret.key == "turret_base_blue" && turret.alive) {
-      console.log("circle hit!");
       this.powerup_manager.enemy_died(turret.x, turret.y);
       turret = turret.kill(); // does lots of things
       this.enemy_manager.spawn = true;
@@ -126,7 +120,6 @@ class Level {
 
   handle_bullet_collision(bullet_sprite, turret) {
     if (turret.key == "turret_base_red" && turret.alive) {
-      console.log("bullet hit!");
       this.powerup_manager.enemy_died(turret.x, turret.y);
       turret = turret.kill(); // does a bunch of stuff!
       bullet_sprite.kill();
@@ -135,7 +128,6 @@ class Level {
   }
 
   handle_player_hit(player, bullet) {
-    console.log("something intersected player");
     bullet.kill();
     var player_died = this.player.process_hit();
     if (player_died) {

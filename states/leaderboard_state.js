@@ -39,9 +39,7 @@ var leaderboard_state = {
     request.onload = function() {
       if (request.status == 200) {
         spinner.visible = false;
-        console.log("Got data");
         var resp = request.responseText;
-        console.log(resp);
         leaderboard_data = JSON.parse(resp);
         leaderboard_data.sort(function(a, b) {
           return b.score - a.score;

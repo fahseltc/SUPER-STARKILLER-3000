@@ -35,13 +35,10 @@ class PlayerShip {
     game.physics.enable(this.shield_sprite, Phaser.Physics.ARCADE);
     this.shield_sprite.kill();
 
-    //this.sprite.body.setSize(75 / this.sprite.scale.x, 75 / this.sprite.scale.y, -32.5, 32.5)
     this.sprite.body.setCircle(35 / this.sprite.scale.x, -25, 40);
   }
 
   update() {
-    //this.shield_sprite.reset(this.sprite.x, this.sprite.y);
-
     this.shield_sprite.x = this.sprite.x;
     this.shield_sprite.y = this.sprite.y;
     if (this.controls.space == true) {
@@ -80,13 +77,10 @@ class PlayerShip {
 
   process_hit() {
     // if player is vulnerable
-    console.log("invuln:" + this.invuln);
     if (!this.invuln) {
       // check if the shield exists
-      console.log("shield sprite alive?: " + this.shield_sprite.alive);
       if (this.shield_sprite.alive) {
         // destroy the shield
-        console.log("shield took damage");
         this.shield_sprite.kill();
       } else {
         // but if it isnt, take the damage
@@ -100,7 +94,6 @@ class PlayerShip {
   }
 
   take_damage() {
-    console.log("player take damage");
     this.sprite.damage(1);
     game.camera.shake(0.005, 250);
     if (this.sprite.alive) {
@@ -119,7 +112,6 @@ class PlayerShip {
 
   handle_possible_death() {
     if (!this.sprite.alive) {
-      console.log("player died");
       this.flames.flames.kill();
       return true;
     }

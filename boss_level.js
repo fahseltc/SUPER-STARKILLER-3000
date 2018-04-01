@@ -1,9 +1,6 @@
 class BossLevel {
   constructor(level_data, level_manager) {
     this.level_data = level_data;
-    console.log(this.level_data);
-    console.log("Starting BOSS level!");
-
     this.level_manager = level_manager;
     this.controls = new Controls(game);
     this.player = new PlayerShip(
@@ -39,8 +36,7 @@ class BossLevel {
 
     this.boss_music = sound_manager.add("boss_main");
     this.intro_sound = sound_manager.play("boss_intro", GLOBAL_MUSIC_VOLUME);
-    this.intro_sound.onStop.addOnce(function(){
-      console.log("boss intro over");
+    this.intro_sound.onStop.addOnce(function() {
       this.boss_music.play("", 0, GLOBAL_MUSIC_VOLUME, true);
     }, this);
   }
@@ -67,7 +63,6 @@ class BossLevel {
 
   player_died() {
     GLOBAL_SCORE = this.UI.score.score + this.UI.score.score_buffer;
-    console.log("player died");
     this.destroyed = true;
     this.destroy();
     CURRENT_LEVEL_INDEX = 0;
@@ -86,7 +81,6 @@ class BossLevel {
   }
 
   handle_player_hit_spikes(player, bullet) {
-    console.log("bullet intersected player");
     bullet.kill();
     var player_died = this.player.process_hit();
     if (player_died) {
@@ -97,13 +91,11 @@ class BossLevel {
   }
 
   boss_died() {
-    console.log("boss died");
     this.destroyed = true;
     this.boss_music.fadeOut(1500);
     game.camera.fade(0x000000, 1500, true);
     game.camera.onFadeComplete.addOnce(function() {
       this.boss_music.stop();
-      console.log("increasing lvl index");
       CURRENT_LEVEL_INDEX++;
       this.level_manager.change_level(CURRENT_LEVEL_INDEX);
     }, this);
@@ -114,7 +106,6 @@ class BossLevel {
   }
 
   destroy() {
-    console.log("boss level destroy");
     this.destroyed = true;
     this.player.destroy();
     this.boss.destroy();
