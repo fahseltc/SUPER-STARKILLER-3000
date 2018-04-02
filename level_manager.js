@@ -8,6 +8,7 @@ class LevelManager {
     this.level_display = new LevelDisplay(
       this.level_json[CURRENT_LEVEL_INDEX].LEVEL_NUMBER
     );
+    this.level_display.text.visible = false;
   }
 
   update() {
@@ -34,12 +35,14 @@ class LevelManager {
 
     switch (change_level_type) {
       case "COMBAT":
+        if(this.level_display) { this.level_display.text.visible = true; }
         this.current_level = new Level(this.level_json[level_index], this);
         break;
       case "READY":
         game.state.start("ready");
         break;
       case "BOSS":
+        if(this.level_display) { this.level_display.text.visible = true; }
         this.current_level = new BossLevel(this.level_json[level_index], this);
         break;
       case "BOSS_DEAD":

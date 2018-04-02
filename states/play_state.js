@@ -1,13 +1,6 @@
 var play_state = {
   preload: function() {
     game.world.setBounds(0, 0, 1400, 700);
-
-    // this.pause_bg = game.add.button(100, 100, 'debug_button');
-    // this.pause_bg.scale.set(14,6);
-    // this.pause_bg.visible = false;
-
-    // this.pause_wait = 30;
-    // this.current_pause = 0;
     this.pause_menu = new PauseMenu();
   },
 

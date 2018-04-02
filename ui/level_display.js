@@ -1,6 +1,6 @@
 class LevelDisplay {
   constructor(current_level_index) {
-    this.level_display = game.add.text(
+    this.text = game.add.text(
       1230,
       730,
       "STAR " + current_level_index,
@@ -11,10 +11,10 @@ class LevelDisplay {
       }
     );
 
-    this.level_display.anchor.setTo(0.5, 0.5);
+    this.text.anchor.setTo(0.5, 0.5);
   }
 
   destroy() {
-    this.level_display.destroy();
+    this.text.destroy();
   }
 }

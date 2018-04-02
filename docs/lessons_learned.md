@@ -99,3 +99,7 @@ I really enjoyed all the tools that web browser development offered.
   - Chrome developer tools are awesome!
   - Easy to add analytics and ads. Lots of ways to monetize.
 
+## Add a debug menu to your game
+
+
+

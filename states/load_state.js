@@ -54,6 +54,8 @@ var load_state = {
       images_path + "title_screen_no_text.png"
     );
     game.load.image("game_background", images_path + "game_background.png");
+    game.load.image("all_green", images_path + "all_green.png");
+    game.load.image("story_background", images_path + "story_background.png");
     game.load.image(
       "game_background_clean",
       images_path + "game_background_clean.png"
