@@ -4,14 +4,14 @@ class PlayerShipFlame {
   constructor(player) {
     this.player = player;
 
-    this.flames = game.add.group();
-    this.flames.createMultiple(100, "flame");
-    this.flames.setAll("anchor.x", 0.5);
-    this.flames.setAll("anchor.y", 0.1);
+    this.sprite = game.add.group();
+    this.sprite.createMultiple(100, "flame");
+    this.sprite.setAll("anchor.x", 0.5);
+    this.sprite.setAll("anchor.y", 0.1);
   }
 
   render() {
-    var flame = this.flames.getFirstExists(false);
+    var flame = this.sprite.getFirstExists(false);
     if (flame) {
       flame.rotation = this.player.sprite.rotation + Math.PI / 2;
       flame.reset(

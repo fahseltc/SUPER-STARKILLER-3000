@@ -22,4 +22,10 @@ class Slider {
     this.value = (this.slider.x - this.slider_bg.x) / 192;
     this.slider_text.text = Math.round(Number(this.value * 100));
   }
+
+  destroy() {
+    this.slider_bg.destroy();
+    this.slider.destroy();
+    this.slider_text.destroy();
+  }
 }

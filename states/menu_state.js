@@ -1,6 +1,6 @@
 var menu_state = {
   create: function() {
-    var background_sprite = game.add.tileSprite(
+    this.background_sprite = game.add.tileSprite(
       0,
       0,
       1400,
@@ -8,28 +8,28 @@ var menu_state = {
       "title_screen_background"
     );
 
-    var space_to_begin_text = Utils.create_centered_stroke_text(
+    this.space_to_begin_text = Utils.create_centered_stroke_text(
       "Press Space to Start",
       850,
       35
     );
 
-    var now_with_text = Utils.create_stroke_text(
+    this.now_with_text = Utils.create_stroke_text(
       "Now it remembers\nyour volume!",
       1200,
       500,
       20,
       "#FFD700"
     );
-    var now_with_text2 = Utils.create_stroke_text(
+    this.now_with_text2 = Utils.create_stroke_text(
       "\n\nand you can actually\nbeat it now!",
       1200,
       550,
       18,
       "#FFD700"
     );
-    now_with_text.angle = -2;
-    game.add.tween(now_with_text).to(
+    this.now_with_text.angle = -2;
+    game.add.tween(this.now_with_text).to(
       { angle: 2 },
       5000,
       function(k) {
@@ -40,7 +40,7 @@ var menu_state = {
       -1
     );
 
-    game.add.tween(now_with_text2).to(
+    game.add.tween(this.now_with_text2).to(
       { angle: 2 },
       5000,
       function(k) {
@@ -109,6 +109,15 @@ var menu_state = {
     this.sound_slider.slider.events.onDragStop.add(function() {
       Utils.set_cookie("GLOBAL_SFX_VOLUME", GLOBAL_SFX_VOLUME, 90);
     }, this);
+
+    this.build_controls_images();
+  },
+
+  build_controls_images: function() {
+    this.mouse_icon = game.add.sprite(750, 670, "mouse");
+    this.mouse_icon.scale.set(0.75, 0.75);
+    this.space_icon = game.add.sprite(650, 670, "space_bar");
+    this.space_icon.scale.set(0.75, 0.75);
   },
 
   update: function() {
@@ -130,5 +139,19 @@ var menu_state = {
     }, this);
   },
 
-  destroy: function() {}
+  destroy: function() {
+    this.music_slider.destroy();
+    this.sound_slider.destroy();
+    this.mouse_icon.destroy();
+    this.space_icon.destroy();
+    this.sound_icon.destroy();
+    this.music_icon.destroy();
+    this.leaderboard_button.destroy();
+    this.credits_button.destroy();
+    this.music.destroy();
+    this.background_sprite.destroy();
+    this.now_with_text.destroy();
+    this.now_with_text2.destroy();
+    this.space_to_begin_text.destroy();
+  }
 };

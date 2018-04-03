@@ -112,7 +112,7 @@ class PlayerShip {
 
   handle_possible_death() {
     if (!this.sprite.alive) {
-      this.flames.flames.kill();
+      this.flames.sprite.kill();
       return true;
     }
     return false;

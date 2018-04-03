@@ -97,6 +97,8 @@ var load_state = {
     game.load.image("space_bar", ui_images_path + "space_bar.png");
     game.load.image("left_click", ui_images_path + "left_click.png");
     game.load.image("right_click", ui_images_path + "right_click.png");
+    game.load.image("mouse", ui_images_path + "mouse.png");
+    game.load.image("mouse_black_left", ui_images_path + "mouse_black_left.png");
 
     game.load.image("pink_rect_filled", images_path + "pink_rect_filled.png");
     game.load.image("pink_rect_empty", images_path + "pink_rect_empty.png");
