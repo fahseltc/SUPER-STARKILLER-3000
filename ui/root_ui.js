@@ -7,12 +7,14 @@ class RootUI {
     this.score = new Score();
     this.bullet_weapon_display = new BulletWeaponDisplay(player);
     this.shield_weapon_display = new ShieldWeaponDisplay(player);
+    this.hold_position_display = new HoldPositionDisplay(player);
   }
 
   update() {
     this.score.update();
     this.bullet_weapon_display.update();
     this.shield_weapon_display.update();
+    this.hold_position_display.update();
   }
 
   render() {

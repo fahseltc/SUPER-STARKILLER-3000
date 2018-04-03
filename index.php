@@ -37,6 +37,7 @@
     <script type="text/javascript" src="ui/remaining_enemies_bar.js"></script>
     <script type="text/javascript" src="ui/bullet_weapon_display.js"></script>
     <script type="text/javascript" src="ui/shield_weapon_display.js"></script>
+    <script type="text/javascript" src="ui/hold_position_display.js"></script>
     <script type="text/javascript" src="ui/pause_menu.js"></script>
     <script type="text/javascript" src="ui/slider.js"></script>
 
