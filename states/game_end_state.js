@@ -3,7 +3,7 @@ var game_end_state = {
     game.stage.backgroundColor = BLACK_HEX_COLOR;
 
     Utils.create_centered_text(
-      "CONGRATULATION",
+      "CONGRATULATIONS",
       200,
       80,
       WHITE_HEX_COLOR

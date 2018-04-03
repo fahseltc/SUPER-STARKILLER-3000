@@ -1,7 +1,7 @@
 var ready_state = {
   preload: function() {
     game.stage.backgroundColor = BLACK_HEX_COLOR;
-    var level_data = (this.level_json = game.cache.getJSON("levels"));
+    var level_data = game.cache.getJSON("levels");
 
     this.create_score_label();
 
@@ -9,14 +9,14 @@ var ready_state = {
       "DEFENSIVE FORCES\nELIMINATED",
       100,
       50,
-      RED_HEX_COLOR
+      WHITE_HEX_COLOR
     );
 
     Utils.create_centered_stroke_text(
       "--INCOMING TRANSMISSION--",
-      700,
+      780,
       50,
-      RED_HEX_COLOR
+      WHITE_HEX_COLOR
     );
 
     var circle_button = game.add.graphics(0, 0);
@@ -31,6 +31,8 @@ var ready_state = {
         game.state.start("play");
       }, this);
     }, this);
+
+    this.progress_meter = new ProgressMeter();
   },
 
   create_score_label: function() {
@@ -45,7 +47,7 @@ var ready_state = {
 
     Utils.create_centered_stroke_text(
       score_label_text,
-      320,
+      600,
       50,
       WHITE_HEX_COLOR
     );

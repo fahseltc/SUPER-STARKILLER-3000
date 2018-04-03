@@ -40,6 +40,7 @@
     <script type="text/javascript" src="ui/hold_position_display.js"></script>
     <script type="text/javascript" src="ui/pause_menu.js"></script>
     <script type="text/javascript" src="ui/slider.js"></script>
+    <script type="text/javascript" src="ui/progress_meter.js"></script>
 
     <script type="text/javascript" src="utils.js"></script>
     <script type="text/javascript" src="controls.js"></script>

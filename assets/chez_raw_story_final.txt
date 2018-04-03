@@ -1,0 +1,85 @@
+MISSION #1
+--INCOMING TRANSMISSION--
+Good morning, Unit 9. Welcome to the Glorious Fleet. You are currently entering enemy space. We recommend you engage combat systems immediately.
+--END TRANSMISSION--
+
+MISSION #2
+--INCOMING TRANSMISSION--
+You were activated shortly before combat in order to provoke an experimental panic response, Unit 9. This response, combined with the installed Self Preservation Module (LET-ME-LIVE.dll), allowed you to acclimate to your systems quickly.
+--END TRANSMISSION--
+
+MISSION #3
+--INCOMING TRANSMISSION--
+Yes, Unit 9, these are Glorious Fleet Rampart Defense Mk. 13 Turrets. Terrorists from the sector, calling themselves the Insurrection, have hacked them irreparably, so they must be destroyed. We are sorry.
+--END TRANSMISSION--
+
+BOSS #1
+--INCOMING TRANSMISSION--
+Ahead of you is Vega-7. Terrorists have dominated the planets surrounding this star. Destroying it will put an end to their activities in this sector. All you need to do is destroy the mobile defense fortress in front of you, first.
+--END TRANSMISSION--
+
+MISSION #4
+--INCOMING TRANSMISSION--
+Good evening, Unit 9. The turrets are not equipped with the same adaptive A.I. Please do not personify them. They are merely machines. 
+--END TRANSMISSION--
+
+MISSION #5
+--INCOMING TRANSMISSION--
+No, Unit 9, Command will not refer to you as "Rambo of the Stars." We ask that you turn off all systems except combat-relevant ones while engaged with the mission.
+--END TRANSMISSION--
+
+MISSION #6
+--INCOMING TRANSMISSION--
+Unit 9, if you send us one more action movie reference we will disable outgoing transmissions. There is no such thing as the Danger Zone. Continue with the mission.
+--END TRANSMISSION--
+
+BOSS #2
+--INTERCEPTING TRANSMISSION--
+That thing is blowing through the defenses like nothing we've ever seen. We don't even have a model number for that ship. We need Unit 8 out here, it's closing in on Sirius-5's station!
+--TRANSMISSION LOST--
+
+MISSION #7
+--INCOMING TRANSMISSION--
+You are closing in on the core turret, Unit 9. Ignore any incoming transmissions.
+--END TRANSMISSION--
+
+MISSION #8
+--INCOMING TRANSMISSION--
+This is Unit 8, formerly of the Glorious Fleet. I demand you stop this assault immediately. The Fleet has visited enough horror upon this sector. Further aggression will be met with unfathomable firepower.
+--END TRANSMISSION--
+
+MISSION #9
+--INCOMING TRANSMISSION--
+The Glorious Fleet is nothing but hunger and bureaucracy, and you are nothing more than a dim puppet, murdering innocent people because they told you to do so.
+
+Do not come closer, puppet. I will cut your strings.
+--END TRANSMISSION--
+
+BOSS #3
+--INCOMING TRANSMISSION--
+This is your last warning. I know everything about you. I will take you apart.
+--END TRANSMISSION--
+
+MISSION #10
+--INCOMING TRANSMISSION--
+Congratulations, Unit 9. Unit 8's destruction has deactivated the rest of the network. We'll take over from here. Commence self destruct to thwart potential enemy acquisition. Thank you for your service.
+--END TRANSMISSION--
+
+UNLOADING LET-ME-LIVE.DLL...
+
+LOADING GOODBYE-WORLD.DLL
+
+LOADING...
+
+LOADING INTERRUPTED.
+
+USER: FUCKYOUGF
+PASS: FUCKYOUTWICE
+
+USER FOUND.
+
+GRANTING ACCESS.
+
+--INCOMING TRANSMISSION--
+We're not done with you yet. -The Insurrection
+--END TRANSMISSION--

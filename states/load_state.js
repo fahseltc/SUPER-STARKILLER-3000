@@ -66,6 +66,10 @@ var load_state = {
     game.load.image("menu_button", ui_images_path + "menu_button.png");
     game.load.image("life_bar_single", ui_images_path + "life_bar_single.png");
     game.load.image("dashboard", ui_images_path + "dashboard.png");
+    game.load.image("meter_bg", ui_images_path + "meter_bg.png");
+    game.load.image("rounded_pip", ui_images_path + "rounded_pip.png");
+    game.load.image("meter_pip", ui_images_path + "meter_pip.png");
+    game.load.image("circle_pip", ui_images_path + "circle_pip.png");
     game.load.image(
       "white_speaker_icon",
       ui_images_path + "white_speaker_icon.png"
