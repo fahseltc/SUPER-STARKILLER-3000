@@ -3,3 +3,5 @@
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: "/SUPER-STARKILLER-3000"
+
+google_analytics: UA-116549101-3
