@@ -42,7 +42,10 @@ if (conf.env == "staging") {
   gtag("config", "UA-116549101-1");
 } else if (conf.env == "production") {
   gtag("config", "UA-116549101-2");
+}  else if (conf.env == "github") {
+  gtag("config", "UA-116549101-3");
 }
+
 
 var game = new Phaser.Game(conf);
 var sound_manager = new Phaser.SoundManager(game);
