@@ -125,3 +125,6 @@ Going forward, I want to improve the following:
 The first two week of development went great, and I worked on the project for many hours a day. But then as time went on, I spent less and less time each day, and even didnt work at all some days. I feel like if I kept up the development pace that I had in the first two weeks, then game would be done a month ago. Its hard to stay motivated, even on a short project, but if I could find a way then I could be much more productive.
 I also some family health issues happen during this time, which killed a lot of my productivity. I don't think there is a way around "shit happens" though, so sometimes you just have to roll with it, I guess.
 
+
+## One Last Thing
+Take images of your project as you go! Every screenshot or gif I made to share with others, I saved in my repo. Now, at the end, I get to make a cool album of all the work in progress art!  [BAM!](https://imgur.com/a/eTmm9)
