@@ -26,7 +26,7 @@ Postmortem
 (here is my look back at X. at released blach balch)
 
 After 2 months of development time, I finished SUPER STARKILLER 3000. Its a 2D action / bullet-hell style shooter with a full (short) story, made using Phaser. You can play it here: LINK
-This is my 3rd complete game, and its definitely my most finished and polished one yet.
+This is my 3rd complete game, my first game using Phaser, and my most finished / polished game yet.
 
 ## Things that went right
 
