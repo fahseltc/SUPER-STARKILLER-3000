@@ -13,7 +13,7 @@ class BossEnemy {
 
     if(level_data.BOSS_NUMBER == 3) {
       this.sprite.scale.set(0.75, 0.75);
-      this.sprite.anchor.set(0.5, 0);
+      this.sprite.anchor.set(0.5, 0.2);
     }
 
     this.all_bullets = game.add.group();

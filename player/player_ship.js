@@ -82,6 +82,7 @@ class PlayerShip {
       if (this.shield_sprite.alive) {
         // destroy the shield
         this.shield_sprite.kill();
+        sound_manager.play("shield_destroyed", GLOBAL_SFX_VOLUME);
       } else {
         // but if it isnt, take the damage
         sound_manager.play("player_damaged", GLOBAL_SFX_VOLUME);

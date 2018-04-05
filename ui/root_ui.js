@@ -2,7 +2,12 @@ class RootUI {
   constructor(player, level_data, current_level_index) {
     this.ui_background = game.add.sprite(0, 700, "dashboard");
     this.health_bar = new HealthBar(player);
-    this.level_display = new LevelDisplay(current_level_index);
+    if(level_data.LEVEL_TYPE == "BOSS"){
+      this.level_display = new LevelDisplay(current_level_index, level_data.BOSS_NUMBER);
+    } else {
+      this.level_display = new LevelDisplay(current_level_index);
+    }
+
     this.remaining_enemies_bar = new RemainingEnemiesBar(level_data);
     this.score = new Score();
     this.bullet_weapon_display = new BulletWeaponDisplay(player);

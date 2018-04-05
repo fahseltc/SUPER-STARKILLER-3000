@@ -1,9 +1,16 @@
 class LevelDisplay {
-  constructor(current_level_index) {
+  constructor(current_level_index, boss_number=0) {
+    var level_text = "";
+    if(boss_number == 0) {
+      level_text = "STAR " + current_level_index;
+    } else {
+      level_text = "BOSS " + boss_number;
+    }
+
     this.text = game.add.text(
       1230,
       730,
-      "STAR " + current_level_index,
+      level_text,
       {
         font: "30px prstart",
         fill: WHITE_HEX_COLOR,

@@ -587,7 +587,7 @@
         "TYPE": "NORMAL",
         "AIM_AT": "PLAYER",
         "OFFSET_X": 60,
-        "OFFSET_Y": 80,
+        "OFFSET_Y": 65,
         "BULLET_DELAY": 400,
         "BULLET_SPEED": 200
       },
@@ -595,7 +595,7 @@
         "TYPE": "NORMAL",
         "AIM_AT": "PLAYER",
         "OFFSET_X": -60,
-        "OFFSET_Y": 80,
+        "OFFSET_Y": 65,
         "BULLET_DELAY": 400,
         "BULLET_SPEED": 200
       },
@@ -603,12 +603,12 @@
         "TYPE": "NORMAL",
         "AIM_AT": "MOUSE",
         "OFFSET_X": 0,
-        "OFFSET_Y": 120,
+        "OFFSET_Y": 105,
         "BULLET_DELAY": 300,
         "BULLET_SPEED": 300
       }
     ],
-    "SHIELDS": ["red", "blue", "red", "red", "red", "blue"]
+    "SHIELDS": ["red", "blue", "red", "red", "red", "blue", "blue", "blue"]
   },
   {
     "LEVEL_TYPE": "GAME_ENDING_1"

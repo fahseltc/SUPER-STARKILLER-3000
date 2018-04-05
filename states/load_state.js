@@ -149,16 +149,12 @@ var load_state = {
     );
 
     game.load.audio(
-      "level_end_explosion",
-      "assets/sound_effects/level_end_explosion.wav"
-    );
-
-    game.load.audio(
       "player_damaged",
       "assets/sound_effects/player_damaged.wav"
     );
 
     game.load.audio("travel_whoosh", "assets/sound_effects/travel_whoosh.wav");
+    game.load.audio("shield_destroyed", "assets/sound_effects/shield_destroyed.wav");
     game.load.audio(
       "boss_shield_damaged",
       "assets/sound_effects/boss_shield_damaged.wav"
