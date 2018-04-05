@@ -35,7 +35,6 @@ var game_end_state = {
       1.5
     );
 
-    //this.music = sound_manager.play("ending", GLOBAL_MUSIC_VOLUME, true);
   },
 
   send_score: function() {

@@ -171,7 +171,6 @@ var load_state = {
     game.load.audio("title_song", "assets/music/title_theme.ogg");
     game.load.audio("boss_intro", "assets/music/boss_intro.ogg");
     game.load.audio("boss_main", "assets/music/boss_main.ogg");
-    game.load.audio("ending", "assets/music/ending.ogg");
     game.load.audio("game_complete", "assets/music/game_complete.ogg");
 
     // Add sounds to sound manager
