@@ -586,16 +586,16 @@
       {
         "TYPE": "NORMAL",
         "AIM_AT": "PLAYER",
-        "OFFSET_X": 40,
-        "OFFSET_Y": 45,
+        "OFFSET_X": 60,
+        "OFFSET_Y": 80,
         "BULLET_DELAY": 400,
         "BULLET_SPEED": 200
       },
       {
         "TYPE": "NORMAL",
         "AIM_AT": "PLAYER",
-        "OFFSET_X": -40,
-        "OFFSET_Y": 45,
+        "OFFSET_X": -60,
+        "OFFSET_Y": 80,
         "BULLET_DELAY": 400,
         "BULLET_SPEED": 200
       },
@@ -603,7 +603,7 @@
         "TYPE": "NORMAL",
         "AIM_AT": "MOUSE",
         "OFFSET_X": 0,
-        "OFFSET_Y": 70,
+        "OFFSET_Y": 120,
         "BULLET_DELAY": 300,
         "BULLET_SPEED": 300
       }

@@ -65,7 +65,7 @@ I did the same thing with all of my story text. Another global variable, global_
     "TEXT": "MISSION #2 ....."
   },
 ```
-With this technique I could also localize the text if needed. (A thing I learned at my day job) ¯\\_(ツ)_/¯
+With this technique I could also localize the text if needed. (A thing I also learned at my day job) ¯\\_(ツ)_/¯
 
 ## Cut your scope in half
 I started with plans for 20-25 total levels and 4-5 bosses, but my game ended with 9 levels and 3 bosses! My game only had so many mechanics, and I felt that I couldn't come up with more compelling levels without adding more features. So I cut the level amount and only added one new feature that wasn't initially planned (the spikey bouncing enemies).
@@ -90,6 +90,7 @@ Once you have a bunch of lists, its time to sort and prioritize the things on yo
 - Things I will not do
 
 I found it very easy to add things to these lists and tell myself "I really need this", but its important to re-evaluate often. Remove things that are _wants_ rather than _needs_. Identify and eliminate features that will take too much effort to implement. AKA "No I will not make it an open world game"
+
 
 ## The web browser environment is awesome:
 I really enjoyed all the tools that web browser development offered.

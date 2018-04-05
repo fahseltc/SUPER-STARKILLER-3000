@@ -11,6 +11,11 @@ class BossEnemy {
     this.sprite.anchor.set(0.5, 0.5);
     game.physics.enable(this.sprite, Phaser.Physics.ARCADE);
 
+    if(level_data.BOSS_NUMBER == 3) {
+      this.sprite.scale.set(0.75, 0.75);
+      this.sprite.anchor.set(0.5, 0);
+    }
+
     this.all_bullets = game.add.group();
     this.turrets = game.add.group();
     this.turret_data.forEach(function(turret, index) {

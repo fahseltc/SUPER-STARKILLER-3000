@@ -37,6 +37,7 @@ var load_state = {
 
     game.load.image("boss_1", bosses_path + "boss_1.png");
     game.load.image("boss_2", bosses_path + "boss_2.png");
+    game.load.image("boss_3", bosses_path + "boss_3.png");
 
     game.load.image("boss_shield_red", bosses_path + "boss_shield_red.png");
     game.load.image("boss_shield_blue", bosses_path + "boss_shield_blue.png");
