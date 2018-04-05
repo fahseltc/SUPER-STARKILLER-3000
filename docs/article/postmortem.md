@@ -43,6 +43,7 @@ Once you have a bunch of lists, its time to sort and prioritize the things on yo
 
 I found it very easy to add things to these lists and tell myself "I really need this", but its important to re-evaluate often. Remove things that are _wants_ rather than _needs_. Identify and eliminate features that will take too much effort to implement. AKA "No I will not make it an open world game".
 
+![Game image](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/gameplay_example.PNG)
 
 ### JSON-based level structure
 
@@ -95,6 +96,7 @@ I did the same thing with all of my story text. Another global variable, global_
 ```
 With this technique I could also localize the text if needed. (A thing I also learned at my day job) ¯\\_(ツ)_/¯
 
+![](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/story_example.PNG)
 
 #### Collaborate with other nerds
 Somehow, I managed to swindle two of my gaming friends to help out.
@@ -119,6 +121,7 @@ Going forward, I want to improve the following:
 
 #### Procrastination + Life getting in the way
 ![SUPER STARKILLER 3000](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/github_additions.PNG)
+
 The first two week of development went great, and I worked on the project for many hours a day. But then as time went on, I spent less and less time each day, and even didnt work at all some days. I feel like if I kept up the development pace that I had in the first two weeks, then game would be done a month ago. Its hard to stay motivated, even on a short project, but if I could find a way then I could be much more productive.
 I also some family health issues happen during this time, which killed a lot of my productivity. I don't think there is a way around "shit happens" though, so sometimes you just have to roll with it, I guess.
 
