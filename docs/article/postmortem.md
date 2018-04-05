@@ -129,4 +129,3 @@ I also some family health issues happen during this time, which killed a lot of 
 ## One Last Thing
 Take images of your project as you go! Every screenshot or gif I made to share with others, I saved in my repo. Now, at the end, I get to make a cool album of all the work in progress art!  [BAM!](https://imgur.com/a/eTmm9)
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/eTmm9"><a href="//imgur.com/eTmm9">starkiller</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
