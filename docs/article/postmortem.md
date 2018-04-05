@@ -1,8 +1,11 @@
 # SUPER STARKILLER 3000 Postmortem
 
 
-After 2 months of development time, I finished SUPER STARKILLER 3000. Its a 2D action / bullet-hell style shooter with a full (short) story, made using Phaser. You can play it here: LINK
-This is my 3rd complete game, my first game using Phaser, and my most finished / polished game yet.
+After 2 months of development time, I finished SUPER STARKILLER 3000. Its a 2D action / bullet-hell style shooter with a full (short) story, made using Phaser. You can play it here: [SUPER STARKILLER 3000](https://super-starkiller-3000.herokuapp.com/)
+
+This is my 3rd complete game, my first game using Phaser, and my most finished + polished game yet.
+
+![SUPER STARKILLER 3000](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/title.PNG)
 
 ## Things that went right
   
@@ -31,7 +34,7 @@ Here is a list of lists that I found useful:
 - Juice (meaning potential effects to make the game nicer/more polished. See: [Juice it or lose it, a GDC talk](https://www.youtube.com/watch?v=Fy0aCDmgnxg))
 - #Tutorial was strewn about my lists to remind me of things that need to be put in it.
 
-Every time I came up with a good idea for my game, I would either put it on the list or add it to the game immediately. Every time someone gave me some feedback about my game or had a cool idea, I would also put it on a list. I mostly used [Trello](https://trello.com/) to manage my lists, but there are a ton of tools for this. Even sticky notes or a whiteboard would work.
+Every time I came up with a good idea for my game, I would either put it on the list or add it to the game immediately. Every time someone gave me some feedback about my game or had a cool idea, I would also put it on a list. I mostly used [Trello](https://trello.com/) to manage my lists, but there are a ton of tools for this. Even sticky notes or a whiteboard would work
 
 Once you have a bunch of lists, its time to sort and prioritize the things on your lists. What art is most important now? What feature would add the most to the game next? Make new lists like:
 - Things that must be done
@@ -115,6 +118,7 @@ Going forward, I want to improve the following:
 - Pick a color pallete early and stick to it.
 
 #### Procrastination + Life getting in the way
+![SUPER STARKILLER 3000](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/github_additions.PNG)
 The first two week of development went great, and I worked on the project for many hours a day. But then as time went on, I spent less and less time each day, and even didnt work at all some days. I feel like if I kept up the development pace that I had in the first two weeks, then game would be done a month ago. Its hard to stay motivated, even on a short project, but if I could find a way then I could be much more productive.
 I also some family health issues happen during this time, which killed a lot of my productivity. I don't think there is a way around "shit happens" though, so sometimes you just have to roll with it, I guess.
 
