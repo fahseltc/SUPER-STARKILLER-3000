@@ -100,8 +100,10 @@ With this technique I could also localize the text if needed. (A thing I also le
 
 #### Collaborate with other nerds
 Somehow, I managed to swindle two of my gaming friends to help out.
+
 One friend, Chez, ended up writing a pretty great short story for me. Even just a few sentences of text between each level added a lot to make my simple game more interesting. Writing is a gamedev skill I havent really devoted any time to, so I was really thankful for his help.
-Another friend, Pat, helped my out by creating a majority of the art in the game. Again, Art is another gamedev skill I need way more practice in, and I did do some great work with Aseprite and paint.net.
+
+Another friend, Pat, helped me out by creating a majority of the art in the game. Again, Art is another gamedev skill I need way more practice in, and I did do some great work with Aseprite and paint.net.
 We quickly settled on the following workflow:
 1. I would make a white rectangle of the correct dimensions, and begin making this rectangle act as an enemy, or powerup or whathaveyou. I would then share my progress with Pat.
 2. Pat, upon seeing said rectangle, would berate me and immediately begin work on replacing it with something better.
