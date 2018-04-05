@@ -5,8 +5,8 @@ After 2 months of development time, I finished SUPER STARKILLER 3000. Its a 2D a
 This is my 3rd complete game, my first game using Phaser, and my most finished / polished game yet.
 
 ## Things that went right
-
-
+  
+  
 ### Accomplished goals
 #### Javascript
 I went into this project familiar with Javascript, but only through boring JQuery form submission and AJAX calls at work. So I wanted to learn more about the web development environent in general, and I also wanted to see how Phaser compared to other game libaries I have used (mostly libGDX). Part of this game involved creating a simple leaderboard database backend, which let me learn a lot about Express and the whole Node.js world. NPM turned out to be really interesting and useful, and nowhere near as complicated as I thought it would be.
