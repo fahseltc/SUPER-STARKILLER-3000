@@ -18,12 +18,16 @@ switch (conf.env) {
   case "production":
     conf.backend_url = "https://mecha-leaderboard.herokuapp.com";
     break;
+  case "github":
+    conf.backend_url = "https://mecha-leaderboard.herokuapp.com";
+    break;
   case "staging":
     conf.backend_url = "https://mecha-leaderboard-staging.herokuapp.com";
     break;
   case "dev":
     conf.backend_url = "https://mecha-leaderboard-staging.herokuapp.com";
     break;
+
   default:
     conf.backend_url = "";
 }
