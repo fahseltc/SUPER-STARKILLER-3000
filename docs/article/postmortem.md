@@ -1,7 +1,7 @@
 # SUPER STARKILLER 3000 Postmortem
 
 
-After 2 months of development time, I finished SUPER STARKILLER 3000. Its a 2D action / bullet-hell style shooter with a full (short) story, made using Phaser. You can play it here: [SUPER STARKILLER 3000](https://super-starkiller-3000.herokuapp.com/)
+After 2 months of development time, I finished SUPER STARKILLER 3000. Its a 2D action / bullet-hell style shooter with a full (short) story, made using Phaser. You can play it here: [SUPER STARKILLER 3000](https://fahseltc.github.io/SUPER-STARKILLER-3000/)
 
 This is my 3rd complete game, my first game using Phaser, and my most finished + polished game yet.
 
