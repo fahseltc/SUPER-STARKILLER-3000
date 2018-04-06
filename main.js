@@ -32,19 +32,19 @@ switch (conf.env) {
     conf.backend_url = "";
 }
 
-// estup google analytics
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
-if (conf.env == "staging") {
-  gtag("config", "UA-116549101-1");
-} else if (conf.env == "production") {
-  gtag("config", "UA-116549101-2");
-}  else if (conf.env == "github") {
-  gtag("config", "UA-116549101-3");
-}
+// // estup google analytics
+// window.dataLayer = window.dataLayer || [];
+// function gtag() {
+//   dataLayer.push(arguments);
+// }
+// gtag("js", new Date());
+// if (conf.env == "staging") {
+//   gtag("config", "UA-116549101-1");
+// } else if (conf.env == "production") {
+//   gtag("config", "UA-116549101-2");
+// }  else if (conf.env == "github") {
+//   gtag("config", "UA-116549101-3");
+// }
 
 
 var game = new Phaser.Game(conf);
