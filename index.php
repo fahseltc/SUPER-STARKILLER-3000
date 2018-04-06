@@ -8,6 +8,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>SUPER STARKILLER 3000</title>
     <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
   </head>
   <body bgcolor="#FFFFFF">
     <script type="text/javascript">
