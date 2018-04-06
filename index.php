@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116549101-1"></script> -->
     <link rel="stylesheet" type = "text/css" href ="assets/css/font_loader.css">
     <script src="assets/js/phaser.min.js"></script>
     <script src="assets/js/phaser-particle-editor-plugin.js"></script>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <title>SUPER STARKILLER 3000</title>
-    <link rel="icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body bgcolor="#FFFFFF">
     <script type="text/javascript">
