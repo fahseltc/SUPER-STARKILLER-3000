@@ -17,7 +17,7 @@ var leaderboard_state = {
     this.refresh_button = Utils.create_button(
       1250,
       765,
-      "RERESH",
+      "REFRESH",
       this.get_leaderboard_data
     );
     this.back_button = Utils.create_button(1250, 850, "BACK", function() {
