@@ -39,7 +39,6 @@ class PlayerShip {
   }
 
   update() {
-    if(!this.alive) { return; }
     this.shield_sprite.x = this.sprite.x;
     this.shield_sprite.y = this.sprite.y;
     if (this.controls.space == true) {
