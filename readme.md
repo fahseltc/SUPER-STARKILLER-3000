@@ -1,4 +1,4 @@
-[SUPER STARKILLER 3000](https://fahseltc.github.io/SUPER-STARKILLER-3000/) is a 2D action / bullet hell game made using [Phaser](https://phaser.io/).
+SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](https://phaser.io/).
 
 [PLAY IT HERE](https://fahseltc.github.io/SUPER-STARKILLER-3000/)
 
@@ -7,19 +7,15 @@
 - 3 Bosses
 - Scifi story by [Chez](https://www.patreon.com/chezdispenser)
 - Intense Bullet-Dodging Action!
-
+- Global Leaderboards! (I don't think anyone's beat it yet!)
 
 # Technical Features
 - Fully deployable on heroku free tier.
 - Auto github deploy using heroku.
-- [Staging](https://super-starkiller-3000-staging.herokuapp.com/) and [Production](https://super-starkiller-3000.herokuapp.com/) environments using heroku pipelines.
+- Staging and Prod environments using heroku pipelines.
 - [Custom leaderboard](https://github.com/fahseltc/leaderboard-node) in nodejs using heroku postgres.
 - Uses cookies to save user volume settings.
 - Uses PHP to detect host system environment variables (dev/staging/production).
-
-
-
-
 
 # Credits
 
