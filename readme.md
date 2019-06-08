@@ -1,4 +1,6 @@
-SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](https://phaser.io/).
+[SUPER STARKILLER 3000](https://fahseltc.github.io/SUPER-STARKILLER-3000/) is a 2D action / bullet hell game made using [Phaser](https://phaser.io/).
+
+[PLAY IT HERE](https://fahseltc.github.io/SUPER-STARKILLER-3000/)
 
 # Game Features
 - 9 Levels
