@@ -5,7 +5,7 @@ SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](http
 # Game Features
 - 9 Levels
 - 3 Bosses
-- Scifi story by [Chez](https://www.patreon.com/chezdispenser)
+- Scifi story by Chez
 - Intense Bullet-Dodging Action!
 - Global Leaderboards! (I don't think anyone's beat it yet!)
 
@@ -21,7 +21,7 @@ SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](http
 
 Patrick "GG WP Pat" McDonough - for the spaceship sprites and other art.
 
-[Chez](https://www.patreon.com/chezdispenser) - for the story/writing.
+Chez - for the story/writing.
 
 koreezgames - Phaser Particle editor plugin : https://github.com/koreezgames/phaser-particle-editor-plugin
 
