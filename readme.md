@@ -2,6 +2,8 @@ SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](http
 
 [PLAY IT HERE](https://fahseltc.github.io/SUPER-STARKILLER-3000/)
 
+You can read a postmortem on this project here [postmortem]([PLAY IT HERE](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/postmortem.md)
+
 # Game Features
 - 9 Levels
 - 3 Bosses
