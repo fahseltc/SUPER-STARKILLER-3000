@@ -8,10 +8,7 @@ This is my 3rd complete game, my first game using Phaser, and my most finished +
 ![SUPER STARKILLER 3000](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/title.PNG)
 
 ## Things that went right
-  
-  
-### Accomplished goals
-#### Javascript
+#### Learn More Javascript
 I went into this project familiar with Javascript, but only through boring JQuery form submission and AJAX calls at work. So I wanted to learn more about the web development environent in general, and I also wanted to see how Phaser compared to other game libaries I have used (mostly libGDX). Part of this game involved creating a simple leaderboard database backend, which let me learn a lot about Express and the whole Node.js world. NPM turned out to be really interesting and useful, and nowhere near as complicated as I thought it would be.
 I also learned about Javascript prototypes, though they seem tricky still. I mostly stuck to Javascript Classes, which I understand is just some syntactic sugar.
 In my next project I want to use Nodes module system, along with NPM and webpack to compress/minify all my assets.
@@ -20,13 +17,12 @@ In my next project I want to use Nodes module system, along with NPM and webpack
 This is only my third game and I realize that to get better I must make more games. Not only that, but I must make them more quickly. So I planned to only spend 2 months on this game, which would include 4-5 bosses and 15-20 levels. Sadly, I ended up with only 3 bosses and 9 levels, but I did manage to complete my game in 2 months!
 I did manage to flex my programming skills and also worked extensively on my art ability (which is still terrible). This very article is another gamedev skill I'm trying to learn: writing and marketing!
 
-
-### Process
+### Development Process
 I didnt start this game with much of a plan, other than "I need to make a game in less than 2 months" and "synthwave". I decided early on what the basic game-type and mechanics would be, but other than that I took a lot of advice from testers and made stuff up as I went. One thing I really stuck with throughout was keeping meticulous lists.
 
 #### Lists!
 Here is a list of lists that I found useful:
-- What is most important next (AKA NEEDED TO COMPLETE GAME)
+- What is most important next (AKA MVP)
 - Art tasks
 - Story/Writing tasks
 - Audio tasks
@@ -98,7 +94,7 @@ With this technique I could also localize the text if needed. (A thing I also le
 
 ![](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/story_example.PNG)
 
-#### Collaborate with other nerds
+#### Collaborate with friends
 Somehow, I managed to swindle two of my gaming friends to help out.
 
 One friend, Chez, ended up writing a pretty great short story for me. Even just a few sentences of text between each level added a lot to make my simple game more interesting. Writing is a gamedev skill I havent really devoted any time to, so I was really thankful for his help.
@@ -125,9 +121,9 @@ Going forward, I want to improve the following:
 ![SUPER STARKILLER 3000](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/github_additions.PNG)
 
 The first two week of development went great, and I worked on the project for many hours a day. But then as time went on, I spent less and less time each day, and even didnt work at all some days. I feel like if I kept up the development pace that I had in the first two weeks, then game would be done a month ago. Its hard to stay motivated, even on a short project, but if I could find a way then I could be much more productive.
-I also some family health issues happen during this time, which killed a lot of my productivity. I don't think there is a way around "shit happens" though, so sometimes you just have to roll with it, I guess.
+I also some family health issues happen during this time, which killed a lot of my productivity. I don't think there is a way around "shit happens" though, so sometimes you just have to roll with it I guess.
 
 
 ## One Last Thing
-Take images of your project as you go! Every screenshot or gif I made to share with others, I saved in my repo. Now, at the end, I get to make a cool album of all the work in progress art!  [BAM!](https://imgur.com/a/eTmm9)
+Take images of your project as you go! Every screenshot or gif I made to share with others, I saved in my repo. Now, at the end, I get to make a cool album of all the work in progress art! [Album!](https://imgur.com/a/eTmm9)
 
