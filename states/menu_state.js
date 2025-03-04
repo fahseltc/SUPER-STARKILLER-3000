@@ -15,14 +15,15 @@ var menu_state = {
     );
 
     this.now_with_text = Utils.create_stroke_text(
-      "Now it remembers\nyour volume!",
+			"Now updated\n7 years later!",
+
       1200,
       500,
       20,
       "#FFD700"
     );
     this.now_with_text2 = Utils.create_stroke_text(
-      "\n\nand you can actually\nbeat it now!",
+      "\n\nWith\nWorking Scoreboard!",
       1200,
       550,
       18,

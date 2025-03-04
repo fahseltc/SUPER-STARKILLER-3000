@@ -1,13 +1,10 @@
 class ScoreboardHelper {
 	static async get_scoreboard() {
 		try {
-			const response = await fetch(game.config.scoreboard_get_url + "json", {
-				referrerPolicy: "unsafe-url"
-			});
+			const response = await fetch(game.config.scoreboard_get_url + "json");
 			if (!response.ok) {
 				throw new Error(`Response status: ${response.status}`);
 			}
-
 			const json = await response.json();
 			console.log(json);
 			return json;
@@ -19,9 +16,7 @@ class ScoreboardHelper {
 
 	static async submit_score(name, score) {
 		try {
-			const response = await fetch(game.config.scoreboard_submit_url + "add/" + name + "/" + score, {
-				referrerPolicy: "unsafe-url"
-			});
+			const response = await fetch(game.config.scoreboard_submit_url + "add/" + name + "/" + score);
 			if (!response.ok) {
 				throw new Error(`Response status: ${response.status}`);
 			}
