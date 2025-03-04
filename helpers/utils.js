@@ -18,6 +18,16 @@ class Utils {
     return label;
   }
 
+	static create_spinner() {
+		var spinner = game.add.sprite(700, 450, "spinner");
+		spinner.scale.x = 3;
+		spinner.scale.y = 3;
+		spinner.anchor.set(0.5);
+		game.add.tween(spinner).to({ angle: 359 }, 1500, null, true, 0, Infinity);
+		spinner.visible = true;
+		return spinner;
+	}
+
   static create_centered_text(text, y, px = 20, color = WHITE_HEX_COLOR) {
     var label = game.add.text(game.width / 2, y, text, {
       font: px + "px prstart",

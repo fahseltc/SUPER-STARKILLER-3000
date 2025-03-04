@@ -8,16 +8,16 @@ You can read a postmortem on this project here [postmortem](https://github.com/f
 - 9 Levels
 - 3 Bosses
 - Scifi story by Chez
-- Intense Bullet-Dodging Action!
-- Global Leaderboards! (I don't think anyone's beat it yet!)
+- Intense Bullet-Dodging Action
+- Online Leaderboards
 
 # Technical Features
-- Fully deployable on heroku free tier.
-- Auto github deploy using heroku.
-- Staging and Prod environments using heroku pipelines.
-- [Custom leaderboard](https://github.com/fahseltc/leaderboard-node) in nodejs using heroku postgres.
+- Fully deployable on heroku free tier. (Deprecated - Now hosted using Github Pages)
+- Auto github deploy using heroku. (Deprecated)
+- Staging and Prod environments using heroku pipelines. (Deprecated)
+- [Custom leaderboard](https://github.com/fahseltc/leaderboard-node) in nodejs using heroku postgres. (Deprecated, now using [dreamlo](https://dreamlo.com/))
 - Uses cookies to save user volume settings.
-- Uses PHP to detect host system environment variables (dev/staging/production).
+- Uses PHP to detect host system environment variables (dev/staging/production). (deprecated)
 
 # Credits
 

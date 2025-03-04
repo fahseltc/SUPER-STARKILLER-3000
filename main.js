@@ -5,46 +5,10 @@ var conf = {
   parent: "game",
   transparent: false,
   antialias: false,
-  scaleMode: Phaser.ScaleManager.NO_SCALE //RESIZE//SHOW_ALL //NO_SCALE
+  scaleMode: Phaser.ScaleManager.NO_SCALE, //RESIZE //SHOW_ALL //NO_SCALE
+  scoreboard_get_url: "http://dreamlo.com/lb/67c71f928f40be02406e3b44/",
+  scoreboard_submit_url: "http://dreamlo.com/lb/SrdVQ4-A50qcqEwLLAsVYQEdDLF3PJxEq6r3ZfRMppHg/"
 };
-
-var temp_env = document.getElementById("environment").innerText;
-if (temp_env == "<?php echo getenv('environment')?>") {
-  temp_env = "dev";
-}
-conf.env = temp_env;
-
-switch (conf.env) {
-  case "production":
-    conf.backend_url = "https://mecha-leaderboard.herokuapp.com";
-    break;
-  case "github":
-    conf.backend_url = "https://mecha-leaderboard.herokuapp.com";
-    break;
-  case "staging":
-    conf.backend_url = "https://mecha-leaderboard-staging.herokuapp.com";
-    break;
-  case "dev":
-    conf.backend_url = "https://mecha-leaderboard-staging.herokuapp.com";
-    break;
-
-  default:
-    conf.backend_url = "";
-}
-
-// // estup google analytics
-window.dataLayer = window.dataLayer || [];
-function gtag() {
-  dataLayer.push(arguments);
-}
-gtag("js", new Date());
-if (conf.env == "staging") {
-  gtag("config", "UA-116549101-1");
-} else if (conf.env == "production") {
-  gtag("config", "UA-116549101-2");
-}  else if (conf.env == "github") {
-  gtag("config", "UA-116549101-3");
-}
 
 var game = new Phaser.Game(conf);
 var sound_manager = new Phaser.SoundManager(game);

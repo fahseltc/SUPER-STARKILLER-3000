@@ -63,7 +63,7 @@ var menu_state = {
       game.state.start("debug");
     }, this);
 
-    // credits button
+    // Credits button
 
     this.credits_button = Utils.create_button(150, 850, "CREDITS", function() {
       game.state.start("credits");
@@ -135,6 +135,7 @@ var menu_state = {
     game.camera.fade(0x000000, 200, true);
     game.camera.onFadeComplete.addOnce(function() {
       sound_manager.stopAll();
+      GLOBAL_SCORE = 0;
       game.state.start("play");
     }, this);
   },

@@ -127,3 +127,7 @@ I also some family health issues happen during this time, which killed a lot of 
 ## One Last Thing
 Take images of your project as you go! Every screenshot or gif I made to share with others, I saved in my repo. Now, at the end, I get to make a cool album of all the work in progress art! [Album!](https://imgur.com/a/eTmm9)
 
+# The post-post mortem (7 years later)
+Heroku hosting ended up cancelling their free tier, so I have to find some other way to host the backend scoreboard.
+After some trial and error, I landed on https://dreamlo.com/ which is a place to host free scoreboards using a simple API. I've updated the game to use it from now on.
+7 years of professional software development has really improved my skills, so I decided to do some major refactoring and de-duplication of the code base.

@@ -12,10 +12,6 @@ class Powerup {
     game.physics.arcade.enable(this.sprite);
     this.sprite.body.collideWorldBounds = true;
     this.sprite.body.bounce.set(1);
-    //this.sprite.reset(this.get_random_x(), this.get_random_y());
-
-    //this.sprite.body.velocity.x = game.rnd.sign() * 500;
-    //this.sprite.body.velocity.y = game.rnd.sign() * 500;
 
     this.sprite.events.onKilled.add(function() {
       sound_manager.play("powerup_get", GLOBAL_SFX_VOLUME);

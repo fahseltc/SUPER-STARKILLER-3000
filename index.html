@@ -32,23 +32,18 @@
     <script type="text/javascript" src="ui/slider.js"></script>
     <script type="text/javascript" src="ui/progress_meter.js"></script>
 
-    <script type="text/javascript" src="utils.js"></script>
-    <script type="text/javascript" src="controls.js"></script>
-    <script type="text/javascript" src="level.js"></script>
-    <script type="text/javascript" src="tutorial_level.js"></script>
-    <script type="text/javascript" src="boss_level.js"></script>
-    <script type="text/javascript" src="boss_enemy.js"></script>
-    <script type="text/javascript" src="boss_turret.js"></script>
-    <script type="text/javascript" src="boss_reactionary_turret.js"></script>
-    <script type="text/javascript" src="boss_shield.js"></script>
-    <script type="text/javascript" src="level_manager.js"></script>
-    <script type="text/javascript" src="powerup.js"></script>
-    <script type="text/javascript" src="powerup_manager.js"></script>
-    <script type="text/javascript" src="shooting_enemy.js"></script>
-    <script type="text/javascript" src="spike_enemy.js"></script>
+    <!-- Enemies -->
+    <script type="text/javascript" src="enemies/shooting_enemy.js"></script>
+    <script type="text/javascript" src="enemies/spike_enemy.js"></script>
     <script type="text/javascript" src="tutorial_enemy.js"></script>
-    <script type="text/javascript" src="enemy_manager.js"></script>
+    <script type="text/javascript" src="enemies/enemy_manager.js"></script>
 
+    <!-- Boss -->
+    <script type="text/javascript" src="boss/boss_level.js"></script>
+    <script type="text/javascript" src="boss/boss_enemy.js"></script>
+    <script type="text/javascript" src="boss/boss_turret.js"></script>
+    <script type="text/javascript" src="boss/boss_reactionary_turret.js"></script>
+    <script type="text/javascript" src="boss/boss_shield.js"></script>
 
     <!-- Game States -->
     <script type="text/javascript" src="states/menu_state.js"></script>
@@ -70,12 +65,23 @@
     <script type="text/javascript" src="states/ending_state_2.js"></script>
     <script type="text/javascript" src="states/ending_state_3.js"></script>
 
+    <!-- Helpers -->
+    <script type="text/javascript" src="helpers/scoreboard_helper.js"></script>
+    <script type="text/javascript" src="helpers/utils.js"></script>
+
+    <!-- Misc -->
+    <script type="text/javascript" src="controls.js"></script>
+    <script type="text/javascript" src="level.js"></script>
+    <script type="text/javascript" src="tutorial_level.js"></script>
+    <script type="text/javascript" src="level_manager.js"></script>
+    <script type="text/javascript" src="powerup.js"></script>
+    <script type="text/javascript" src="powerup_manager.js"></script>
+
     <!-- Main entry point to game  -->
     <script type="text/javascript" src="main.js"></script>
 
     <div id="game" style="margin:0 auto;"></div>
     <div style="padding: 25px 25px 0px 0px; display: inline-block;">
-      <a href='https://ko-fi.com/V7V4BDH7' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
       <a class="github-button" href="https://github.com/fahseltc/SUPER-STARKILLER-3000" data-size="large" aria-label="Follow @fahseltc on GitHub">GitHub</a>
     </div>
 
