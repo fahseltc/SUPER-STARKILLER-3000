@@ -6,8 +6,8 @@ var conf = {
   transparent: false,
   antialias: false,
   scaleMode: Phaser.ScaleManager.NO_SCALE, //RESIZE //SHOW_ALL //NO_SCALE
-  scoreboard_get_url: "http://dreamlo.com/lb/67c71f928f40be02406e3b44/",
-  scoreboard_submit_url: "http://dreamlo.com/lb/SrdVQ4-A50qcqEwLLAsVYQEdDLF3PJxEq6r3ZfRMppHg/"
+  scoreboard_get_url: "https://dreamlo.com/lb/67c71f928f40be02406e3b44/",
+  scoreboard_submit_url: "https://dreamlo.com/lb/SrdVQ4-A50qcqEwLLAsVYQEdDLF3PJxEq6r3ZfRMppHg/"
 };
 
 var game = new Phaser.Game(conf);
