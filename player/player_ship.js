@@ -34,12 +34,11 @@ class PlayerShip {
     this.shield_sprite.scale.set(0.5, 0.5);
     game.physics.enable(this.shield_sprite, Phaser.Physics.ARCADE);
     this.shield_sprite.kill();
-
     this.sprite.body.setCircle(35 / this.sprite.scale.x, -25, 40);
   }
 
   update() {
-    if(!this.alive) { return; }
+    if(!this.sprite.alive) { return; }
     this.shield_sprite.x = this.sprite.x;
     this.shield_sprite.y = this.sprite.y;
     if (this.controls.space == true) {

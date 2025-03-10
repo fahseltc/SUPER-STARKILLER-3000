@@ -22,6 +22,10 @@ var ready_state = {
     var circle_button = game.add.graphics(0, 0);
     circle_button.beginFill(0xffffff, 1);
     circle_button.drawCircle(game.width / 2, game.height / 2, 100);
+    this.go = Utils.create_centered_stroke_text(
+      "GO!",
+      (game.height / 2) + 10
+    );
 
     circle_button.inputEnabled = true;
     circle_button.events.onInputDown.addOnce(function() {
