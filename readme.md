@@ -5,19 +5,16 @@ SUPER STARKILLER 3000 is a 2D action / bullet hell game made using [Phaser](http
 You can read a postmortem on this project here [postmortem](https://github.com/fahseltc/SUPER-STARKILLER-3000/blob/master/docs/article/postmortem.md)
 
 # Game Features
+- Top-Down, Arcade Style, Bullet-Dodging Action (similar to asteroids)
 - 9 Levels
 - 3 Bosses
-- Scifi story by Chez
-- Intense Bullet-Dodging Action
+- Intruiging Sci-fi story by Chez
 - Online Leaderboards
 
 # Technical Features
-- Fully deployable on heroku free tier. (Deprecated - Now hosted using Github Pages)
-- Auto github deploy using heroku. (Deprecated)
-- Staging and Prod environments using heroku pipelines. (Deprecated)
 - [Custom leaderboard](https://github.com/fahseltc/leaderboard-node) in nodejs using heroku postgres. (Deprecated, now using [dreamlo](https://dreamlo.com/))
 - Uses cookies to save user volume settings.
-- Uses PHP to detect host system environment variables (dev/staging/production). (deprecated)
+- Github Actions pipeline to auto-deploy updates to GH pages
 
 # Credits
 
